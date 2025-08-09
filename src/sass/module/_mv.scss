@@ -1,0 +1,88 @@
+@use "global" as *;
+
+.mv {
+  overflow: hidden;
+  width: 100%;
+  background-color: #000;
+  position: relative;
+  padding-top: rem(65);
+  @include mq(md) {
+    padding-top: rem(90);
+  }
+}
+
+.mv__title {
+  position: absolute;
+  max-width: 70%;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: block;
+  object-fit: contain;
+  z-index: 2;
+  top: 40%;
+  left: 15%;
+  @include mq(md) {
+    max-width: 50%;
+    top: 34%;
+    left: 23%;
+  }
+}
+
+.mv__titles img {
+  width: 100%;
+  height: 100%;
+}
+
+.mv__scroll-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.mv__scroll-row {
+  display: flex;
+  width: fit-content;
+}
+
+.mv__scroll-row img {
+  width: calc(100 / 3);
+  height: calc(100 / 5);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  @include mq(md) {
+    width: calc(100% / 3);
+    height: calc(100 / 5);
+  }
+}
+
+.mv__scroll-row.mv__scroll-row--row1 {
+  animation: scroll-left 30s linear infinite;
+}
+
+.mv__scroll-row.mv__scroll-row--row2 {
+  animation: scroll-right 40s linear infinite;
+}
+
+.mv__scroll-row.mv__scroll-row--row3 {
+  animation: scroll-left 35s linear infinite;
+}
+
+// 左方向へループ
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+// 右方向へループ（逆再生）
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}

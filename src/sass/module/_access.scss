@@ -1,0 +1,177 @@
+@use "global" as *;
+
+
+.access__wrap {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(40);
+  @include mq(md) {
+    flex-direction: row;
+    margin-top: rem(80);
+  }
+}
+
+.access__info {
+  width: 100%;
+  @include mq(md) {
+    width: 60%;
+  }
+}
+
+.access__google {
+  // Googleマップの比率を正しく表示するために、アスペクト比をiframeに任せる
+  width: 100%;
+  aspect-ratio: 295 / 160; // デフォルトの比率
+  margin-top: rem(16);
+  @include mq(md) {
+    width: 40%;
+    aspect-ratio: 273 / 148; // 中サイズ以上の画面で変更
+    margin-top: rem(0);
+    margin-left: rem(20);
+  }
+}
+
+// このスタイルでiframeが親要素にフィットするようにする
+.access__google iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.access__google-street {
+  margin-top: rem(20);
+  width: 100%;
+  aspect-ratio: 16 / 9; /* 高さもレスポンシブにしたい場合 */
+  iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+.access__wrapper {
+  gap: 2rem; /* 要素の間の余白 */
+  align-items: flex-start; /* 上揃え */
+  flex-wrap: wrap; /* スマホなど狭い画面では縦並びになる */
+  margin-top: rem(60);
+  @include mq(md) {
+    margin-top: rem(24);
+    display: flex;
+    flex-wrap: nowrap;
+  }
+}
+
+.access__route {
+  margin-top: rem(18);
+  @include mq(md) {
+    margin-top: rem(24);
+  }
+}
+
+.access__route-title {
+  font-weight: normal;
+  font-size: rem(16);
+  padding: rem(8) 0;
+  border-top: rem(1) solid $black;
+  @include mq(md) {
+    padding: rem(16) 0;
+  }
+}
+
+//アクセスページ
+.access__item {
+  margin-top: rem(20);
+  @include mq(md) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: rem(40);
+  }
+}
+
+.access__item + .access__item {
+  margin-top: rem(30);
+}
+
+.access__item-img {
+  width: 100%;
+  @include mq(md) {
+    max-width: rem(600);
+  }
+}
+
+.access__item img {
+  width: 100%;
+  aspect-ratio: 550/420;
+  object-fit: cover;
+}
+
+.access__item-text-block {
+  margin-top: rem(20);
+  font-size: rem(16);
+  line-height: 1.6;
+  letter-spacing: 0.05em;
+  @include mq(md) {
+    margin-top: 0;
+    margin-left: rem(100);
+    max-width: rem(550);
+    width: 100%;
+  }
+}
+
+.access__item.access__item--arrow img {
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.access__google.access__google--page {
+  width: 100%;
+  margin-left: 0;
+}
+
+.access__row.access__row--page .access__label {
+  padding-left: 0;
+}
+
+.access__item-title {
+  font-size: rem(20);
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
+.access__item-text {
+  line-height: 2;
+  margin-top: rem(24);
+  @include mq(md) {
+    margin-top: rem(40);
+    font-size: rem(18);
+  }
+}
+
+.access__item-text a {
+  text-decoration: underline;
+}
+
+.access__info--page {
+  margin-top: rem(24);
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+.access__sub-title {
+  margin-top: rem(30);
+  font-size: rem(24);
+  text-align: center;
+  color: $white;
+  background: $title;
+  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+  @include mq(md) {
+    margin-top: rem(50);
+    font-size: rem(32);
+  }
+}
+

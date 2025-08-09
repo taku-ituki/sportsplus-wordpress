@@ -1,0 +1,136 @@
+@use "global" as *;
+.partnership [id] {
+  scroll-margin-top: rem(90);
+}
+
+.partnership__sub-title.partnership__sub-title--color {
+  background: $skyblue;
+  padding-top: rem(30);
+}
+
+.partnership__text {
+  font-size: rem(18);
+  padding: rem(40) rem(20);
+  background: $skyblue;
+  color: $white;
+  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+  @include mq(md) {
+    font-size: rem(24);
+  }
+}
+
+.partnership__img {
+  margin-top: rem(20);
+}
+
+.partnership__sub-title {
+  background: $bg;
+  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+  color: $white;
+  text-align: center;
+  margin-top: rem(20);
+  scroll-margin-top: rem(90); /* 固定ヘッダーの高さ + 余白分 */
+  @include mq(md) {
+    font-size: rem(32);
+    margin-top: rem(80);
+  }
+}
+
+.partnership__list-card.intro-card {
+  margin-top: rem(30);
+  @include mq(md) {
+    margin-top: rem(60);
+  }
+}
+
+.partnership__support {
+  margin-top: rem(32);
+  padding: rem(32);
+  background-color: #f4f8ff;
+  border-radius: rem(8);
+}
+
+.partnership__support-lead {
+  margin-bottom: rem(24);
+}
+
+.partnership__support-title {
+  font-size: rem(20);
+  font-weight: bold;
+  border-left: rem(4) solid $partnership-blue;
+  padding-left: rem(16);
+  margin-bottom: rem(16);
+  color: #004080;
+}
+
+.partnership__support-text {
+  font-size: rem(16);
+  line-height: 1.75;
+  color: $black333;
+}
+
+.partnership__support-list {
+  margin-top: rem(16);
+  padding-left: rem(24);
+}
+
+.partnership__support-item {
+  list-style: disc;
+  margin-bottom: rem(8);
+}
+
+.partnership__difference {
+  background-color: #f4f9ff;
+  padding: rem(48) rem(24);
+}
+
+.partnership__difference-title {
+  font-size: rem(28);
+  margin-bottom: rem(32);
+  border-left: rem(6) solid $partnership-blue;
+  padding-left: rem(16);
+  color: $black333;
+}
+
+.partnership__difference-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: rem(32);
+}
+
+.partnership__difference-card {
+  background-color: $white;
+  border: rem(1) solid #dcdcdc;
+  border-radius: rem(8);
+  padding: rem(24);
+  box-shadow: 0 rem(4) rem(8) rgba(0, 0, 0, 0.05);
+}
+
+.partnership__difference-card-title {
+  font-size: rem(20);
+  margin-bottom: rem(16);
+  color: #005b96;
+}
+
+.partnership__difference-card-text {
+  font-size: rem(16);
+  line-height: rem(28);
+  color: $black;
+}
+
+.partnership__btn.common-btn {
+  text-align: center;
+}
+
+.partnership__btn-link.common-btn__link {
+  padding: rem(14) rem(20);
+}
+
+.partnership__bg-color {
+  padding-bottom: rem(30);
+  background: $skyblue;
+}
+
+.partnership__btn.common-btn {
+  text-shadow: none;
+}

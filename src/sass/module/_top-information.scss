@@ -1,0 +1,74 @@
+@use "global" as *;
+
+.top-information__news-list {
+  font-size: rem(24);
+  margin-top: rem(30);
+}
+
+
+//ホバー時にテキストにホバー表示（擬似要素では不可能）
+
+.top-information__news-title {
+  margin-top: rem(12);
+  font-size: rem(16);
+  line-height: 1.5;
+  position: relative;
+  text-decoration: none; /* 最初は下線なし */
+  text-underline-offset: rem(4); /* 下線と文字の間にスペースを作る */
+  @include mq(md) {
+    margin-top: 0;
+    margin-left: rem(60);
+  }
+}
+
+.top-information__news-item a:hover .top-information__news-title {
+  text-decoration: underline; /* ホバー時に下線表示 */
+}
+
+//お知らせ記事CSS//
+.top-information__news-item a {
+  padding: rem(20) 0;
+  display: block;
+  @include mq(md) {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.top-information__news-meta {
+  display: flex;
+  align-items: center;
+}
+
+.top-information__news-date {
+  font-size: rem(16);
+  line-height: 1;
+}
+
+.top-information__news-category {
+  margin-left: rem(30);
+  padding: rem(5);
+  //ボックス幅の最低ラインの確保
+  min-width: rem(80);
+  //
+  //中の文字量に合わせてボックスの幅を伸び縮みさせる
+  width: fit-content;
+  //
+  font-size: rem(14);
+  line-height: 1;
+  color: $white;
+  background-color: $bg-blue;
+  text-align: center;
+}
+
+
+// .top-information__label-new {
+//   display: inline-block;
+//   background-color: #e60033; /* 赤 */
+//   color: $white;
+//   font-size: 0.75rem;
+//   font-weight: bold;
+//   padding: 0.2em 0.6em;
+//   border-radius: 3px;
+//   margin-left: 0.5em;
+// }

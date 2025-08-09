@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="noindex" />
+    <!-- meta情報 -->
+    <title>スポーツ講座のご案内 | スポーツプラスおおはる</title>
+    <meta name="description" content="年間講座・短期講座・イベントなど、自分に合った運動を楽しめるスポーツ講座をご案内。大治町内外の方どなたでも参加できます。" />
+    <meta name="keywords" content="スポーツ講座, 運動教室, 年間講座, 短期講座, イベント, 大治町, スポーツプラスおおはる" />
+    <!-- ogp -->
+    <meta property="og:title" content="スポーツ講座のご案内 | スポーツプラスおおはる" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/programs/" />
+    <meta property="og:image" content="https://example.com/assets/images/common/ogp.jpg" />
+    <meta property="og:site_name" content="スポーツプラスおおはる" />
+    <meta property="og:description" content="年間講座・短期講座・イベントなど、子どもから大人まで参加できる多彩なスポーツ講座をご紹介。町内外の皆さまのご参加をお待ちしています。" />
+    <!-- ファビコン -->
+    <link rel="icon" href="./assets/images/common/favicon.ico" />
+    <!-- google フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://deno.land/x/embed_pdf@v1.3.0/mod.js" type="module"></script>
+    <script src="./assets/js/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script defer src="./assets/js/script.js"></script>
+  </head>
+  <body>
+    <!-- ページトップボタン -->
+    <button class="top-button js-top-button"><span></span>TOP</button>
+    <header class="header layout-header">
+      <div class="header__inner">
+        <div class="header__logo">
+          <a href="index.html">
+            <img src="./assets/images/common/logo.svg" alt="ロゴ" />
+          </a>
+        </div>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-modal-wrap">
+              <p>実施事業</p>
+              <ul class="header__nav-modal">
+                <li class="header__nav-modal-item">
+                  <a href="program.html"><span>スポーツ講座</span></a>
+                </li>
+                <li class="header__nav-modal-item">
+                  <a href="partnership.html"><span>部活動地域連携</span></a>
+                </li>
+                <li class="header__nav-modal-item">
+                  <a href="challenge.html"><span>スポーツチャレンジ</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-modal-wrap">
+              <p>施設案内</p>
+              <ul class="header__nav-modal">
+                <li class="header__nav-modal-item">
+                  <a href="access.html"><span>アクセス</span></a>
+                </li>
+                <li class="header__nav-modal-item">
+                  <a href="faq.html"><span>よくあるご質問 </span></a>
+                </li>
+                <li class="header__nav-modal-item">
+                  <a href="support.html"><span>賛助団体</span></a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__nav-item">
+              <a href="entry.html"><span>入会案内</span></a>
+            </li>
+            <li class="header__nav-item">
+              <a href="archive-blog.html"><span>活動報告</span></a>
+            </li>
+            <li class="header__nav-item">
+              <a href="application.html"><span>各種申請用紙</span></a>
+            </li>
+            <li class="header__nav-item header__nav-item--access">
+              <a href="mailto:spplus-oharu@clovernet.ne.jp">お問い合わせ</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="header__hamburger js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="header__drawer js-drawer">
+          <nav class="header__drawer-nav">
+            <ul class="header__drawer-list">
+              <li class="header__drawer-item">
+                <p class="header__drawer-accordion-title js-drawer-accordion">実施事業</p>
+                <ul class="header__drawer-accordion-list">
+                  <li class="header__drawer-accordion-item">
+                    <a href="program.html">スポーツ講座</a>
+                  </li>
+                  <li class="header__drawer-accordion-item">
+                    <a href="partnership.html">部活動地域連携</a>
+                  </li>
+                  <li class="header__drawer-accordion-item">
+                    <a href="challenge.html">スポーツチャレンジ</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__drawer-item">
+                <p class="header__drawer-accordion-title js-drawer-accordion">施設案内</p>
+                <ul class="header__drawer-accordion-list">
+                  <li class="header__drawer-accordion-item">
+                    <a href="access.html">アクセス</a>
+                  </li>
+                  <li class="header__drawer-accordion-item">
+                    <a href="faq.html">よくあるご質問 </a>
+                  </li>
+                  <li class="header__drawer-accordion-item">
+                    <a href="support.html">賛助団体</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__drawer-item">
+                <a href="entry.html"><span>入会案内</span></a>
+              </li>
+              <li class="header__drawer-item">
+                <a href="archive-blog.html">活動報告</a>
+              </li>
+              <li class="header__drawer-item">
+                <a href="application.html">各種申請用紙</a>
+              </li>
+              <li class="header__drawer-item header__drawer-item--access">
+                <a href="mailto:spplus-oharu@clovernet.ne.jp">お問い合わせ</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <!-- メインビュー -->
+      <section class="sub-fv sub-fv-layout">
+        <picture class="sub-fv__img">
+          <source srcset="./assets/images/common/yoga.jpg" media="(max-width: 767px)" />
+          <img src="./assets/images/common/yoga.jpg" alt="diving" />
+        </picture>
+        <h1 class="sub-fv__title sub-fv__title--program">sports program<span>スポーツ講座</span></h1>
+      </section>
+      <!-- パンくずリスト -->
+      <div class="breadcrumbs breadcrumbs-blog-layout">
+        <div class="breadcrumbs__inner inner">
+          <span class="breadcrumbs__top"><a href="index.html">TOP</a></span>
+          >
+          <span class="breadcrumbs__page-title">スポーツ講座</span>
+        </div>
+      </div>
+      <section class="program program-layout">
+        <div class="program__inner inner">
+          <h2 class="program__title section-title">スポーツ講座のご案内</h2>
+          <!-- カテゴリー -->
+          <div class="program__category category">
+            <ul class="category__list">
+              <li class="category__menu category__menu--current"><a>年間講座</a></li>
+              <li class="category__menu"><a>短期講座</a></li>
+              <li class="category__menu"><a>イベント</a></li>
+            </ul>
+          </div>
+          <ul class="program__list intro-cards">
+            <li class="program__list-card intro-card js-modal-trigger" data-modal-id="modal1">
+              <figure class="intro-card__image">
+                <img src="./assets/images/common/suguru.jpg" alt="卓球教室の様子" />
+              </figure>
+              <div class="intro-card__content">
+                <div class="intro-card__header">
+                  <span class="intro-card__number"></span>
+                  <!-- 自動連番 -->
+                  <h3 class="intro-card__title">小中学生卓球教室</h3>
+                </div>
+                <dl class="intro-card__details">
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">開催日</dt>
+                    <dd class="intro-card__text">月曜日　月３回</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">時間</dt>
+                    <dd class="intro-card__text">18:30〜19:30</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">対象年齢</dt>
+                    <dd class="intro-card__text">小学４〜中学３年性</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">講師</dt>
+                    <dd class="intro-card__text">宅見直己　岡本まゆみ</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">紹介文</dt>
+                    <dd class="intro-card__text">テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</dd>
+                  </div>
+                </dl>
+              </div>
+            </li>
+            <!-- 2件目以降も同様に繰り返し -->
+            <li class="program__list-card intro-card js-modal-trigger" data-modal-id="modal2">
+              <figure class="intro-card__image">
+                <img src="./assets/images/common/works.jpg" alt="体操教室の様子" />
+              </figure>
+              <div class="intro-card__content">
+                <div class="intro-card__header">
+                  <span class="intro-card__number"></span>
+                  <!-- 自動連番 -->
+                  <h3 class="intro-card__title">のびのびちびっこ体操 コアラ</h3>
+                </div>
+                <dl class="intro-card__details">
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">開催日</dt>
+                    <dd class="intro-card__text">第1・3金曜日</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">時間</dt>
+                    <dd class="intro-card__text">10:45〜11:45</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">対象年齢</dt>
+                    <dd class="intro-card__text">親子（原則2・3歳児）1歳児でも歩行できれば参加可</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">講師</dt>
+                    <dd class="intro-card__text">NPO法人ママ・ぷらす 認定講師</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">紹介文</dt>
+                    <dd class="intro-card__text">テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</dd>
+                  </div>
+                </dl>
+              </div>
+            </li>
+            <li class="program__list-card intro-card js-modal-trigger" data-modal-id="modal3">
+              <figure class="intro-card__image">
+                <img src="./assets/images/common/works.jpg" alt="体操教室の様子" />
+              </figure>
+              <div class="intro-card__content">
+                <div class="intro-card__header">
+                  <span class="intro-card__number"></span>
+                  <!-- 自動連番 -->
+                  <h3 class="intro-card__title">のびのびちびっこ体操 コアラ</h3>
+                </div>
+                <dl class="intro-card__details">
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">開催日</dt>
+                    <dd class="intro-card__text">第1・3金曜日</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">時間</dt>
+                    <dd class="intro-card__text">10:45〜11:45</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">対象年齢</dt>
+                    <dd class="intro-card__text">親子（原則2・3歳児）1歳児でも歩行できれば参加可</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">講師</dt>
+                    <dd class="intro-card__text">NPO法人ママ・ぷらす 認定講師</dd>
+                  </div>
+                  <div class="intro-card__detail">
+                    <dt class="intro-card__label">紹介文</dt>
+                    <dd class="intro-card__text">テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト</dd>
+                  </div>
+                </dl>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- 申し込み状況 -->
+      <section class="entry-status entry-status-layout">
+        <div class="entry-status__inner inner">
+          <h2 class="entry-status__title section-title">講座別入会者数</h2>
+          <div class="entry-status__pdf pdf">
+            <embed-pdf src="./assets/images/common/school.pdf" class="pdf__url"></embed-pdf>
+          </div>
+        </div>
+        <div class="entry-status__btn common-btn">
+          <a class="entry-status__btn-link common-btn__link" href="entry.html">お申し込みの流れ</a>
+        </div>
+      </section>
+    </main>
+
+    <div class="overlay js-overlay"></div>
+    <footer class="footer footer-layout">
+      <div class="footer__inner inner">
+        <div class="footer__box-wrap">
+          <div class="footer__box">
+            <div class="footer__box-left">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a class="footer__item-link" href="index.html">トップページ</a>
+                </li>
+                <li class="footer__item">
+                  <div class="footer__item-link">実施事業</div>
+                  <ul class="footer__sub-list">
+                    <li class="footer__sub-item">
+                      <a class="footer__sub-item-link" href="program.html">スポーツ講座</a>
+                    </li>
+                    <li class="footer__sub-item">
+                      <a class="footer__sub-item-link" href="partnership.html">部活動地域連携</a>
+                    </li>
+                    <li class="footer__sub-item">
+                      <a class="footer__sub-item-link" href="challenge.html">スポーツチャレンジ</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="footer__item">
+                  <div class="footer__item-link">施設案内</div>
+                  <ul class="footer__sub-list">
+                    <li class="footer__sub-item">
+                      <a class="footer__sub-item-link" href="access.html">アクセス</a>
+                    </li>
+                    <li class="footer__sub-item">
+                      <a class="footer__sub-item-link" href="faq.html">よくあるご質問 </a>
+                    </li>
+                    <li class="footer__sub-item">
+                      <a class="footer__sub-item-link" href="support.html">賛助団体</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__box-right">
+              <ul class="footer__list">
+                <li class="footer__item">
+                  <a class="footer__item-link" href="entry.html">入会案内</a>
+                </li>
+                <li class="footer__item">
+                  <a class="footer__item-link" href="archive-blog.html">活動報告</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__logo">
+            <a href="index.html"> <img src="./assets/images/common/logo.svg" alt="ロゴ" /></a>
+          </div>
+        </div>
+      </div>
+      <small class="footer__copy-right">Copyright &copy; 2015 - 2025 Sports plus Oharu.</small>
+    </footer>
+  </body>
+</html>

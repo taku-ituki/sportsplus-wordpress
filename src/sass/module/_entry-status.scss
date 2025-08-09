@@ -1,0 +1,17 @@
+@use "global" as *;
+
+.entry-status__btn.common-btn {
+  text-align: center;
+  margin-top: rem(20);
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+
+.entry-status__pdf{
+  margin-top:rem(20);
+  @include mq(md){
+     margin-top:rem(40); 
+  }
+}
