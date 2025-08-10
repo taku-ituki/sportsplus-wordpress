@@ -77,18 +77,35 @@
         <div class="page-link">
             <div class="page-link__inner inner">
                 <div class="page-link__flex">
+                    <?php
+      // 前後の記事オブジェクトを取得（存在しない場合は null）
+      $prev = get_previous_post();
+      $next = get_next_post();
+
+      // 存在チェックをしてからパーマリンクを取得（存在しないときは空文字）
+      // esc_url() は出力直前に使うため、ここでは純粋なURL文字列のままにしておく
+      $prev_url = $prev ? get_permalink( $prev->ID ) : '';
+      $next_url = $next ? get_permalink( $next->ID ) : '';
+      ?>
                     <div class="page-link__prev">
-                        <a href="">前の記事</a>
+                        <?php if ( $prev ) : ?>
+                        <a href="<?php echo esc_url( $prev_url ); ?>" rel="prev" aria-label="前の記事へ">前の記事（古い記事）</a>
+                        <?php endif; ?>
                     </div>
                     <div class="page-link__next">
-                        <a href="">次の記事</a>
+                        <?php if ( $next ) : ?>
+                        <a href="<?php echo esc_url( $next_url ); ?>" rel="next" aria-label="次の記事へ">次の記事（新しい記事）</a>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <div class="page-link__archive">
-                    <a href="">活動報告一覧</a>
+                    <!-- 存在しない echo_url() ではなく、echo + esc_url( home_url(...) ) を使用 -->
+                    <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">活動報告一覧</a>
                 </div>
             </div>
         </div>
+
+
     </div>
 </section>
 <?php endwhile; endif; ?>
