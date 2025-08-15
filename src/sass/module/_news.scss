@@ -1,11 +1,13 @@
-@use 'global' as *;
+@use "global" as *;
 
-.news__pagination {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    margin-top: rem(30);
-    @include mq(md) {
-      margin-top: rem(60);
-    }
+.news__inner.inner {
+  max-width: rem(640);
+  width: 100%;
+  @include mq(md) {
+    max-width: rem(840);
   }
+}
+
+.news__list.list{
+  margin-top:rem(40);
+}

@@ -1,25 +1,13 @@
 <?php get_header(); ?>
-<!-- メインビュー -->
-<section class="sub-fv sub-fv-layout">
-    <picture class="sub-fv__img">
-        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/challenge-view.jpg"
-            media="(max-width: 767px)" />
-        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challenge-view.jpg" alt="メイン画像" />
-    </picture>
-    <div class="sub-fv__overlay"></div>
-    <h1 class="sub-fv__title">activities<span>活動報告</span></h1>
-</section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <div class="breadcrumbs__inner inner">
-        <span class="breadcrumbs__top"><a href="index.php">TOP</a></span>
-        >
-        <span class="breadcrumbs__page-title">活動報告一覧</span>
+       <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
 <div class="news news-layout">
     <div class="news__inner inner">
-        <!-- お知らせのカテゴリー切り替え -->
+        <!-- ブログのカテゴリー切り替え -->
         <div class="news__nav information-category">
             <nav class="news__nav-category information-category__nav">
                 <a href="#">最新</a>

@@ -12,9 +12,7 @@
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <div class="breadcrumbs__inner inner">
-        <span class="breadcrumbs__top"><a href="index.php">TOP</a></span>
-        >
-        <span class="breadcrumbs__page-title">よくあるご質問 </span>
+       <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
 <!-- faq -->
@@ -23,12 +21,12 @@
         <h2 class="faq__title section-title">よくあるご質問</h2>
         <div class="faq__block">
             <h3 class="faq__sub-title">スポーツプラスおおはる<br />について</h3>
-            <ul class="faq__accordion-area js-faq-accordion-area">
+            <ul class="faq-item__accordion-area js-faq-accordion-area">
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -36,8 +34,8 @@
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -45,8 +43,8 @@
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -54,16 +52,16 @@
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
                     </div>
                 </li>
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -72,8 +70,8 @@
                     <h2 class="faq-item__accordion-title js-faq-accordion-title">
                         <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
                     </h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -82,8 +80,8 @@
                     <h2 class="faq-item__accordion-title js-faq-accordion-title">
                         <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
                     </h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -92,12 +90,12 @@
         </div>
         <div class="faq__block" id="partnership">
             <h3 class="faq__sub-title">部活動地域連携について</h3>
-            <ul class="faq__accordion-area js-faq-accordion-area">
+            <ul class="faq-item__accordion-area js-faq-accordion-area">
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -105,8 +103,8 @@
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -114,8 +112,8 @@
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -123,16 +121,16 @@
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
                     </div>
                 </li>
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -141,8 +139,8 @@
                     <h2 class="faq-item__accordion-title js-faq-accordion-title">
                         <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
                     </h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -151,8 +149,8 @@
                     <h2 class="faq-item__accordion-title js-faq-accordion-title">
                         <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
                     </h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -161,12 +159,12 @@
         </div>
         <div class="faq__block" id="spochalle">
             <h3 class="faq__sub-title">スポーツチャレンジについて</h3>
-            <ul class="faq__accordion-area js-faq-accordion-area">
+            <ul class="faq-item__accordion-area js-faq-accordion-area">
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -174,8 +172,8 @@
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -183,8 +181,8 @@
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -192,16 +190,16 @@
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
                     </div>
                 </li>
                 <li class="faq-item faq__item">
                     <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
                             class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -210,8 +208,8 @@
                     <h2 class="faq-item__accordion-title js-faq-accordion-title">
                         <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
                     </h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>
@@ -220,8 +218,8 @@
                     <h2 class="faq-item__accordion-title js-faq-accordion-title">
                         <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
                     </h2>
-                    <div class="faq__accordion-box js-faq-accordion-box">
-                        <p class="faq__accordion-box-text">
+                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                        <p class="faq-item__accordion-box-text">
                             ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
                         </p>
                     </div>

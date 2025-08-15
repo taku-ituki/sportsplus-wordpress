@@ -11,9 +11,7 @@
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <div class="breadcrumbs__inner inner">
-        <span class="breadcrumbs__top"><a href="index.php">TOP</a></span>
-        >
-        <span class="breadcrumbs__page-title">スポーツ講座記事</span>
+      <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
 <section class="single-blog single-blog-layout">

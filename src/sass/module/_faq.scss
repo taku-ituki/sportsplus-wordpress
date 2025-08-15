@@ -62,24 +62,3 @@
   }
 }
 
-/*アコーディオン全体*/
-.faq__accordion-area {
-  list-style: none;
-  margin: 0 auto;
-}
-
-/*アコーディオンで現れるエリア*/
-.faq__accordion-box {
-  display: none;
-  background: #f9f9f9;
-  padding: rem(19) rem(19);
-  @include mq(md) {
-    padding: rem(37) rem(37) rem(16) rem(45);
-    margin-top: rem(16);
-    border: rem(1) solid $skyblue;
-    @include mq(md) {
-      margin-top: rem(19);
-      padding-bottom: rem(33);
-    }
-  }
-}

@@ -12,9 +12,7 @@
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <div class="breadcrumbs__inner inner">
-        <span class="breadcrumbs__top"><a href="index.php">TOP</a></span>
-        >
-        <span class="breadcrumbs__page-title">スポーツチャレンジ</span>
+       <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
 <!-- 目次 -->
@@ -68,7 +66,8 @@
                     </li>
                 </ul>
                 <div class="partnership__btn common-btn">
-                    <a class="partnership__btn-link common-btn__link" href="faq.html#spochalle">「スポーツチャレンジ」に関するQ&A</a>
+                    <a class="partnership__btn-link common-btn__link" href="
+                    <?php echo esc_url( home_url( '/faq/#spochalle' ) ); ?>">「スポーツチャレンジ」に関するQ&A</a>
                 </div>
             </div>
         </div>

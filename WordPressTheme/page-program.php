@@ -11,9 +11,7 @@
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <div class="breadcrumbs__inner inner">
-        <span class="breadcrumbs__top"><a href="index.php">TOP</a></span>
-        >
-        <span class="breadcrumbs__page-title">スポーツ講座</span>
+       <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
 <section class="program program-layout">
@@ -147,7 +145,7 @@
         </div>
     </div>
     <div class="entry-status__btn common-btn">
-        <a class="entry-status__btn-link common-btn__link" href="entry.html">お申し込みの流れ</a>
+        <a class="entry-status__btn-link common-btn__link" href="<?php echo esc_url(home_url("/entry")) ?>">お申し込みの流れ</a>
     </div>
 </section>
 <?php get_footer(); ?>

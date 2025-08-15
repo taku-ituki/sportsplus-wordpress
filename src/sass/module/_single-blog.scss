@@ -1,8 +1,9 @@
 @use "global" as *;
 .single-blog__inner.inner{
+  max-width:rem(640);
+  width:100%;
   @include mq(md){
   max-width:rem(840);
-  width:100%;
   }
 }
 

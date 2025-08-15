@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.top-news__list {
+  margin-top: rem(30);
+}
+
+.top-news__btn-wrap.common-btn {
+  margin-top: rem(40);
+  text-align: center;
+}

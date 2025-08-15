@@ -12,36 +12,34 @@
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-single-layout">
     <div class="breadcrumbs__inner inner">
-        <span class="breadcrumbs__top"><a href="index.php">TOP</a></span>
-        >
-        <span class="breadcrumbs__page-title">活動報告記事</span>
+        <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+<?php if (have_posts()):
+    while (have_posts()):
+        the_post(); ?>
 <section class="single-blog single-blog-layout">
     <div class="single-blog__inner inner">
-
         <?php
-      // ------------------------------
-      // データ取得ゾーン（ループ先頭でまとめる）
-      // ------------------------------
-      $date_machine = get_the_time('Y-m-d');   // 機械可読（datetime属性に使う）
-      $date_human   = get_the_time('Y.m.d');   // 人間可読（画面表示に使う）
-      $cats         = get_the_category();      // カテゴリー配列（空の可能性あり）
-      $cat_name     = ! empty($cats) ? $cats[0]->name : ''; // 先頭カテゴリ名（なければ空）
-      // アイキャッチ：有り→サムネ、無し→ダミー
-      $fallback_src = get_theme_file_uri('/assets/images/common/no-image.jpg');
-    ?>
+                // ------------------------------
+                // データ取得ゾーン（ループ先頭でまとめる）
+                // ------------------------------
+                $date_machine = get_the_time('Y-m-d');   // 機械可読（datetime属性に使う）
+                $date_human = get_the_time('Y.m.d');   // 人間可読（画面表示に使う）
+                $cats = get_the_category();      // カテゴリー配列（空の可能性あり）
+                $cat_name = !empty($cats) ? $cats[0]->name : ''; // 先頭カテゴリ名（なければ空）
+                // アイキャッチ：有り→サムネ、無し→ダミー
+                $fallback_src = get_theme_file_uri('/assets/images/common/no-image.jpg');
+                ?>
         <!-- 投稿日＋カテゴリー -->
         <div class="single-blog__meta">
             <!-- datetimeは機械可読、表示は人間可読 -->
-            <time class="single-blog__date" datetime="<?php echo esc_attr( $date_machine ); ?>">
-                <?php echo esc_html( $date_human ); ?>
+            <time class="single-blog__date" datetime="<?php echo esc_attr($date_machine); ?>">
+                <?php echo esc_html($date_human); ?>
             </time>
-
-            <?php if ( $cat_name ) : ?>
+            <?php if ($cat_name): ?>
             <p class="single-blog__category">
-                <?php echo esc_html( $cat_name ); ?>
+                <?php echo esc_html($cat_name); ?>
             </p>
             <?php endif; ?>
         </div>
@@ -49,63 +47,62 @@
         <h1 class="single-blog__title"><?php the_title(); ?></h1>
         <!-- メインビジュアル（アイキャッチ or 代替画像） -->
         <div class="single-blog__mv">
-            <?php if ( has_post_thumbnail() ) : ?>
+            <?php if (has_post_thumbnail()): ?>
             <?php
-        // 'large' はWordPressの中〜大サイズ。width/height属性は functions.php のフィルターで除去済み
-        // classを付与してBEMでスタイルしやすく
-        the_post_thumbnail( 'large', array( 'class' => 'single-blog__mv-img' ) );
-        ?>
-            <?php else : ?>
-            <img class="single-blog__mv-img" src="<?php echo esc_url( $fallback_src ); ?>"
+                        // 'large' はWordPressの中〜大サイズ。width/height属性は functions.php のフィルターで除去済み
+                        // classを付与してBEMでスタイルしやすく
+                        the_post_thumbnail('large', array('class' => 'single-blog__mv-img'));
+                        ?>
+            <?php else: ?>
+            <img class="single-blog__mv-img" src="<?php echo esc_url($fallback_src); ?>"
                 alt="<?php the_title(); ?>のアイキャッチ画像">
             <?php endif; ?>
         </div>
         <!-- 本文（ブロックエディタの出力） -->
         <div class="single-blog__content entry-content">
             <?php
-        // 記事本文を出力（エディタのHTMLを含む）
-        the_content();
-        // ページ分割（<!--nextpage-->）対応
-        wp_link_pages( array(
-          'before' => '<nav class="single-blog__pages">',
-          'after'  => '</nav>',
-          'link_before' => '<span class="single-blog__page-link">',
-          'link_after'  => '</span>',
-        ) );
-      ?>
+                    // 記事本文を出力（エディタのHTMLを含む）
+                    the_content();
+                    // ページ分割（<!--nextpage-->）対応
+                    wp_link_pages(array(
+                        'before' => '<nav class="single-blog__pages">',
+                        'after' => '</nav>',
+                        'link_before' => '<span class="single-blog__page-link">',
+                        'link_after' => '</span>',
+                    ));
+                    ?>
         </div>
         <div class="page-link">
             <div class="page-link__inner inner">
                 <div class="page-link__flex">
                     <?php
-      // 前後の記事オブジェクトを取得（存在しない場合は null）
-      $prev = get_previous_post();
-      $next = get_next_post();
+                            $prev = get_previous_post();
+                            if (!empty($prev)) {
+                                $prev_url = esc_url(get_permalink($prev->ID));
+                            }
 
-      // 存在チェックをしてからパーマリンクを取得（存在しないときは空文字）
-      // esc_url() は出力直前に使うため、ここでは純粋なURL文字列のままにしておく
-      $prev_url = $prev ? get_permalink( $prev->ID ) : '';
-      $next_url = $next ? get_permalink( $next->ID ) : '';
-      ?>
+                            $next = get_next_post();
+                            if (!empty($next)) {
+                                $next_url = esc_url(get_permalink($next->ID));
+                            }
+                            ?>
                     <div class="page-link__prev">
-                        <?php if ( $prev ) : ?>
-                        <a href="<?php echo esc_url( $prev_url ); ?>" rel="prev" aria-label="前の記事へ">前の記事（古い記事）</a>
+                        <?php if (!empty($prev)): ?>
+                        <a href="<?php echo $prev_url; ?>">前の記事</a>
                         <?php endif; ?>
                     </div>
                     <div class="page-link__next">
-                        <?php if ( $next ) : ?>
-                        <a href="<?php echo esc_url( $next_url ); ?>" rel="next" aria-label="次の記事へ">次の記事（新しい記事）</a>
+                        <?php if (!empty($next)): ?>
+                        <a href="<?php echo $next_url; ?>">次の記事</a>
                         <?php endif; ?>
                     </div>
                 </div>
                 <div class="page-link__archive">
                     <!-- 存在しない echo_url() ではなく、echo + esc_url( home_url(...) ) を使用 -->
-                    <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">活動報告一覧</a>
+                    <a href="<?php echo esc_url(home_url('/blog/')); ?>">活動報告一覧</a>
                 </div>
             </div>
         </div>
-
-
     </div>
 </section>
 <?php endwhile; endif; ?>

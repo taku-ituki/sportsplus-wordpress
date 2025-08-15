@@ -2,32 +2,63 @@
 
 .wp-pagenavi {
   display: flex;
-  gap: 6px;
+  gap: rem(6);
+  @include mq(md) {
+    gap: rem(12);
+  }
 }
 
-.wp-pagenavi .news__pagination-arrow,
+.wp-pagenavi .blog__pagination-arrow,
+.wp-pagenavi .current,
 .wp-pagenavi .page {
   display: inline-block;
   padding: 0.5rem 0.7rem;
-  background-color: #eee;
-  text-decoration: none;
-  color: black;
-  border-radius: 4px;
-  font-size: 14px;
+  color: $black;
+  border-radius: rem(4);
+  @include mq(md) {
+    font-size: rem(24);
+  }
 }
 
-.wp-pagenavi .news__pagination-arrow:hover,
+.wp-pagenavi .blog__pagination-arrow,
+.wp-pagenavi .page {
+  background-color: #eee;
+  text-decoration: none;
+}
+
+.wp-pagenavi .blog__pagination-arrow:hover,
 .wp-pagenavi .page:hover,
-.wp-pagenavi .news__pagination-arrow:focus,
+.wp-pagenavi .blog__pagination-arrow:focus,
 .wp-pagenavi .page:focus {
   background-color: #ddd;
 }
 
 .wp-pagenavi .current {
-  background-color:$accent;
+  background-color: $accent;
   color: $white;
   pointer-events: none;
 }
+
+.wp-pagenavi .previouspostslink,
+.wp-pagenavi .nextpostslink {
+  //管理画面で入力した「前へのテキスト」「後ろへのテキスト」文字を透明化させ、擬似要素のみ反映させる
+  color: transparent;
+  border-radius: rem(4);
+  position: relative;
+}
+
+.wp-pagenavi .previouspostslink::before,
+.wp-pagenavi .nextpostslink::before {
+  color: $black;
+  position: absolute; /* 親を基準に絶対配置 */
+  top: 50%; /* 親の高さの50%の位置に移動 */
+  left: 50%; /* 親の幅の50%の位置に移動 */
+  transform: translate(-50%, -50%); /* 自身のサイズの半分だけ戻して中央揃え */
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
 .wp-pagenavi .previouspostslink::before {
   content: "<";
 }
@@ -36,11 +67,11 @@
   content: ">";
 }
 
-.wp-pagenavi .news__pagination-arrow span {
-  position: absolute;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+// .wp-pagenavi .blog__pagination-arrow span {
+//   position: absolute;
+//   padding: 0;
+//   overflow: hidden;
+//   clip: rect(0, 0, 0, 0);
+//   white-space: nowrap;
+//   border: 0;
+// }

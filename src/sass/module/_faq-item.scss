@@ -38,7 +38,7 @@
   top: 0;
   left: rem(-18);
   color: $white;
-  @include mq(md){
+  @include mq(md) {
     top: rem(-1);
     left: rem(-25);
   }
@@ -78,4 +78,42 @@
 /* クローズ状態（開いているとき）→ 縦線を非表示（回転させて重ねる） */
 .faq-item__accordion-title.close::after {
   transform: rotate(180deg); // 回転させて縦線を見えなくする（横線と重なる）
+}
+
+/*アコーディオン全体*/
+.faq-item__accordion-area {
+  list-style: none;
+  margin: 0 auto;
+}
+
+/*アコーディオンで現れるエリア*/
+.faq-item__accordion-box {
+  display: none;
+  background: #f9f9f9;
+  // padding: rem(19) rem(19);
+  padding: rem(25) rem(25);
+  @include mq(md) {
+    padding: rem(37) rem(37) rem(16) rem(45);
+    margin-top: rem(16);
+    border: rem(1) solid $skyblue;
+    @include mq(md) {
+      margin-top: rem(19);
+      padding-bottom: rem(33);
+    }
+  }
+}
+
+.faq-item__accordion-box-text {
+  position: relative;
+}
+
+.faq-item__accordion-box-text::before {
+  content: "A.";
+  position: absolute;
+  left: rem(-15);
+  top: 0;
+  color: $black;
+  @include mq(md) {
+    left: rem(-25);
+  }
 }

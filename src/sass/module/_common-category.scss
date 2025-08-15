@@ -1,20 +1,20 @@
 @use "global" as *;
 
-.information-category {
+.common-category {
   margin-top: rem(60);
   @include mq(md) {
   }
   font-size: rem(24);
 }
 
-.news__nav.information-category {
+.top-news__nav.common-category {
   font-size: rem(16);
   @include mq(md) {
     font-size: rem(24);
   }
 }
 
-.information-category__nav {
+.common-category__nav {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: rem(15);
@@ -25,7 +25,7 @@
   }
 }
 
-.information-category__nav a {
+.common-category__nav a {
   display: block;
   position: relative;
   text-align: center;
@@ -34,7 +34,7 @@
 
 //カテゴリーホバー時の線//
 //初期の線
-.information-category__nav a::before {
+.common-category__nav a::before {
   left: 0;
   width: 100%;
   background-color: $accent;
@@ -46,7 +46,7 @@
   bottom: rem(-5);
 }
 
-.information-category__nav a:hover::before {
+.common-category__nav a:hover::before {
   left: 50%;
   width: 0;
   opacity: 0.5;
@@ -54,7 +54,7 @@
 }
 
 //ホバー時の線
-.information-category__nav a::after {
+.common-category__nav a::after {
   content: "";
   display: block;
   position: absolute;
@@ -64,7 +64,7 @@
   bottom: 0;
 }
 
-.information-category__nav a:hover::after {
+.common-category__nav a:hover::after {
   left: 0;
   width: 100%;
   background-color: $bg;

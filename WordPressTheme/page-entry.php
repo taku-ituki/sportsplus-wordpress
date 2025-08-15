@@ -12,9 +12,7 @@
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <div class="breadcrumbs__inner inner">
-        <span class="breadcrumbs__top"><a href="index.php">TOP</a></span>
-        >
-        <span class="breadcrumbs__page-title">入会案内（講座）</span>
+      <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
 <section class="entry entry-layout">
@@ -30,7 +28,7 @@
                         パンフレットやホームページで講座をチェックし、受講したい講座を決めます。<br />
                         開講日・対象者・時間なども事前に確認しましょう。
                     </p>
-                    <a class="entry__link" href="program.html">講座を見る</a>
+                    <a class="entry__link" href="<?php echo esc_url(home_url("/program")) ?>">講座を見る</a>
                 </div>
             </li>
             <li class="entry__step">
@@ -40,7 +38,7 @@
                     <p class="entry__step-text">
                         継続会員・新規会員で申込み開始時期が異なります。<br />
                         申込みは、窓口での提出が必要です。申込書は窓口で受け取るか、
-                        <a class="entry__link" href="application.html" target="_blank" rel="noopener noreferrer">こちら</a>
+                        <a class="entry__link" href="<?php echo esc_url(home_url("/application")) ?>" target="_blank" rel="noopener noreferrer">こちら</a>
                         から入会申込書ダウンロードしてご持参ください。<br />抽選対象の講座もございますので、ご注意ください。
                     </p>
                 </div>
@@ -172,7 +170,7 @@
             </table>
         </div>
         <div class="membership-info__btn common-btn">
-            <a class="membership-info__btn-link common-btn__link" href="application.html">各種申込書はこちら</a>
+            <a class="membership-info__btn-link common-btn__link" href="<?php echo esc_url(home_url("/application")) ?>">各種申込書はこちら</a>
         </div>
     </div>
 </section>

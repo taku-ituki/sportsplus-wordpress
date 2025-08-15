@@ -1,14 +1,11 @@
 @use "global" as *;
 
-.top-information__news-list {
+.list {
   font-size: rem(24);
-  margin-top: rem(30);
 }
 
-
 //ホバー時にテキストにホバー表示（擬似要素では不可能）
-
-.top-information__news-title {
+.list__item-title {
   margin-top: rem(12);
   font-size: rem(16);
   line-height: 1.5;
@@ -21,12 +18,22 @@
   }
 }
 
-.top-information__news-item a:hover .top-information__news-title {
+.list__item{
+      border-bottom:1px solid #e2e2e2;
+      //  border-bottom:1px solid $purple
+}
+
+.list__item:first-child{
+      border-top:1px solid #e2e2e2;
+      // border-top:1px solid $purple
+}
+
+.list__item a:hover .list__item-title {
   text-decoration: underline; /* ホバー時に下線表示 */
 }
 
 //お知らせ記事CSS//
-.top-information__news-item a {
+.list__item a {
   padding: rem(20) 0;
   display: block;
   @include mq(md) {
@@ -35,17 +42,17 @@
   }
 }
 
-.top-information__news-meta {
+.list__item-meta {
   display: flex;
   align-items: center;
 }
 
-.top-information__news-date {
+.list__item-date {
   font-size: rem(16);
   line-height: 1;
 }
 
-.top-information__news-category {
+.list__item-category {
   margin-left: rem(30);
   padding: rem(5);
   //ボックス幅の最低ラインの確保
@@ -62,13 +69,3 @@
 }
 
 
-// .top-information__label-new {
-//   display: inline-block;
-//   background-color: #e60033; /* 赤 */
-//   color: $white;
-//   font-size: 0.75rem;
-//   font-weight: bold;
-//   padding: 0.2em 0.6em;
-//   border-radius: 3px;
-//   margin-left: 0.5em;
-// }

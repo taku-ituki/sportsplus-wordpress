@@ -135,7 +135,7 @@
                         <p class="works-list__item-text">年間講座
                             、短期講座、イベントがあり、自分に合った運動を楽しむことができます。複数の講座が受講できます。大治町の方はもちろん、町外のどなたでも参加できます！</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                            <a class="works-list__item-btn common-btn__link" href="program.html">詳しく見る</a>
+                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/program")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +150,7 @@
                         <p class="works-list__item-text">
                             学校で「部活動」として活動していた土日の活動を「地域クラブ活動」とし、実業団や競技経験豊富な方が指導に加わるようになります。</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                            <a class="works-list__item-btn common-btn__link" href="partnership.html">詳しく見る</a>
+                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/partnership")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>
@@ -164,7 +164,7 @@
                         <h3 class="works-list__item-title">スポーツチャレンジ</h3>
                         <p class="works-list__item-text">子どもたちの体力やコミュニケーション力向上を目指して、球技を中心に様々なレクリエーションをします！</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                            <a class="works-list__item-btn common-btn__link" href="challenge.html">詳しく見る</a>
+                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/challenge")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>

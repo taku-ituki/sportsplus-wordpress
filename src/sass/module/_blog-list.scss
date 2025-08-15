@@ -1,13 +1,13 @@
 @use "global" as *;
 
-.news__list.news-list {
+.blog__list.blog-list {
   margin-top: rem(40);
   @include mq(md) {
     margin-top: rem(60);
   }
 }
 
-.news-list {
+.blog-list {
   display: grid;
   gap: rem(30);
   grid-template-columns: repeat(1, 1fr);
@@ -17,18 +17,18 @@
   }
 }
 
-.news-list__item a {
+.blog-list__item a {
   display: block;
   height: 100%;
   background-color: $white;
 }
 
-.news-list__item-img {
+.blog-list__item-img {
   width: 100%;
   overflow: hidden;
 }
 
-.news-list__item-img img {
+.blog-list__item-img img {
   width: 100%;
   aspect-ratio: 195/160;
   object-fit: cover;
@@ -37,21 +37,21 @@
 }
 
 @media (any-hover: hover) {
-  .news-list__item:hover img {
+  .blog-list__item:hover img {
     transform: scale(1.2);
   }
 }
 
-.news-list__item-meta {
+.blog-list__item-meta {
   display: flex;
   align-items: center;
-  margin-top: rem(13);
+  margin-top: rem(15);
   @include mq(md) {
     margin-top: rem(20);
   }
 }
 
-.news-list__item-category {
+.blog-list__item-category {
   margin-left: rem(20);
   padding: rem(5);
   min-width: rem(80);
@@ -63,7 +63,7 @@
   text-align: center;
 }
 
-.news-list__item-date {
+.blog-list__item-date {
   display: flex;
   align-items: center;
   font-size: rem(13);
@@ -74,7 +74,7 @@
   }
 }
 
-.news-list__item-date::before {
+.blog-list__item-date::before {
   content: "";
   margin-right: rem(6);
   width: rem(6);
@@ -84,7 +84,7 @@
   background: $bg-blue;
 }
 
-.news-list__item-text {
+.blog-list__item-text {
   margin-top: rem(5);
   font-size: rem(13);
   line-height: 1.5;

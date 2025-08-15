@@ -1,12 +1,6 @@
 <?php get_header(); ?>
 <!-- パンくずリスト -->
-<div class="breadcrumbs breadcrumbs-notfound-layout">
-    <div class="breadcrumbs__inner inner">
-        <span class="breadcrumbs__top"><a href="index.php">TOP</a></span>
-        >
-        <span class="breadcrumbs__page-title">お探しのページが見つかりませんでした。</span>
-    </div>
-</div>
+<?php get_template_part('') ?>
 <section class="notfound notfound-layout">
     <div class="inner notfound__inner">
         <h2 class="notfound__title">404</h2>

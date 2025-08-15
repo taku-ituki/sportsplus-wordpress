@@ -1,26 +1,28 @@
-@use 'global' as *;
+@use "global" as *;
 
 .page-link {
-  color: #391E88;
+  color: $purple;
   margin-top: rem(40);
 }
+
 .page-link__flex {
   display: flex;
   align-items: center;
+  text-align: center;
   padding: rem(15) 0;
-  border-top: 1px solid #B8AED5;
-  border-bottom: 1px solid #B8AED5;
+  border-top: rem(1) solid #b8aed5;
+  border-bottom: rem(1) solid #b8aed5;
 }
 
 .page-link__prev,
 .page-link__next {
-  padding:0 rem(20);
-  font-size: rem(12);
+  padding: 0 rem(20);
+  font-size: rem(14);
   width: 50%;
   position: relative;
   line-height: calc(22 / 14);
-  @include mq(md){
-    font-size: rem(14);
+  @include mq(md) {
+    font-size: rem(18);
   }
 }
 
@@ -30,9 +32,9 @@
 
 .page-link__prev::after {
   content: "";
-  width: 1px;
+  width: rem(1);
   height: 100%;
-  background-color: #B8AED5;
+  background-color: #b8aed5;
   position: absolute;
   top: 0;
   right: 0;
@@ -46,4 +48,7 @@
   margin-top: rem(20);
   text-align: center;
   font-size: rem(14);
+  @include mq(md){
+    font-size:rem(18);
+  }
 }
