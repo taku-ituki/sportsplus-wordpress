@@ -12,7 +12,7 @@
 <!-- パンくずリスト -->
 <div class="breadcrumbs">
     <div class="breadcrumbs__inner inner">
-       <?php get_template_part('parts/breadcrumb'); ?>
+        <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
 <!-- 各種申請用紙 -->

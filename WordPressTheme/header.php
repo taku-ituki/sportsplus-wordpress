@@ -71,7 +71,7 @@
                                     <a href="<?php echo esc_url(home_url("/program")) ?>">スポーツ講座</a>
                                 </li>
                                 <li class="header__drawer-acc-accordion-item">
-                                 <a href="<?php echo esc_url(home_url("/partnership")) ?>">部活動地域連携</a>
+                                    <a href="<?php echo esc_url(home_url("/partnership")) ?>">部活動地域連携</a>
                                 </li>
                                 <li class="header__drawer-accordion-item">
                                     <a href="<?php echo esc_url(home_url("/challenge")) ?>">スポーツチャレンジ</a>

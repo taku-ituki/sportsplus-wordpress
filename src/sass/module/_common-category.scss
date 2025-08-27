@@ -14,27 +14,33 @@
   }
 }
 
-.common-category__nav {
+
+.common-category__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: rem(15);
   row-gap: rem(20);
+  left: 0;
+  width: 100%;
+  background-color: $bg;
+  padding-top: rem(3);
+  padding-bottom: rem(3);
+  transition: right, 0.5s ease, width 0.5s ease;
   @include mq(md) {
     display: flex;
     gap: rem(25);
   }
 }
 
-.common-category__nav a {
+
+.common-category__link{
   display: block;
   position: relative;
   text-align: center;
   cursor: pointer;
 }
 
-//カテゴリーホバー時の線//
-//初期の線
-.common-category__nav a::before {
+.common-category__link::before{
   left: 0;
   width: 100%;
   background-color: $accent;
@@ -46,7 +52,7 @@
   bottom: rem(-5);
 }
 
-.common-category__nav a:hover::before {
+.common-category__link:hover::before {
   left: 50%;
   width: 0;
   opacity: 0.5;
@@ -54,7 +60,7 @@
 }
 
 //ホバー時の線
-.common-category__nav a::after {
+.common-category__link::after {
   content: "";
   display: block;
   position: absolute;
@@ -64,12 +70,4 @@
   bottom: 0;
 }
 
-.common-category__nav a:hover::after {
-  left: 0;
-  width: 100%;
-  background-color: $bg;
-  padding-top: rem(3);
-  padding-bottom: rem(3);
-  transition: right, 0.5s ease, width 0.5s ease;
-  opacity: 0.5;
-}
+

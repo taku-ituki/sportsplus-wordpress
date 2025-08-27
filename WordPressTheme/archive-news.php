@@ -1,104 +1,56 @@
 <?php get_header(); ?>
 <!-- パンくずリスト -->
-<div class="breadcrumbs breadcrumbs-blog-layout">
-    <div class="breadcrumbs__inner inner">
-       <?php get_template_part('parts/breadcrumb'); ?>
-    </div>
+<div class="breadcrumbs breadcrumbs-news-layout">
+  <div class="breadcrumbs__inner inner">
+    <?php get_template_part('parts/breadcrumb'); ?>
+  </div>
 </div>
-<div class="news news-layout">
-    <div class="news__inner inner">
-        <!-- ブログのカテゴリー切り替え -->
-        <div class="news__nav information-category">
-            <nav class="news__nav-category information-category__nav">
-                <a href="#">最新</a>
-                <a href="#">講座</a>
-                <a href="#">部活動地域連携</a>
-                <a href="#">スポーツチャレンジ</a>
-            </nav>
-        </div>
-        <ul class="news__list news-list">
-            <li class="news-list__item">
-                <a href="single.html">
-                    <div class="news-list__item-img">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/dumy-archive-blog01.jpg"
-                            alt="省略" />
-                    </div>
-                    <div class="news-list__item-meta">
-                        <time class="news-list__item-date" datetime="2023-12-18">2023.12.18</time>
-                        <p class="news-list__item-category">講座</p>
-                    </div>
-                    <p class="news-list__item-text">テキストテキストテキストテキストテキストテキスト</p>
-                </a>
-            </li>
-            <li class="news-list__item">
-                <a href="#">
-                    <div class="news-list__item-img">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/dumy-archive-blog02.jpg"
-                            alt="省略" />
-                    </div>
-                    <div class="news-list__item-meta">
-                        <time class="news-list__item-date" datetime="2023-12-18">2023.12.18</time>
-                        <p class="news-list__item-category">部活動地域連携</p>
-                    </div>
-                    <p class="news-list__item-text">テキストテキストテキストテキストテキストテキストテキスト</p>
-                </a>
-            </li>
-            <li class="news-list__item">
-                <a href="#">
-                    <div class="news-list__item-img"><img
-                            src="<?php echo get_theme_file_uri(); ?>/assets/images/common/dumy-archive-blog01.jpg"
-                            alt="省略" /></div>
-                    <div class="news-list__item-meta">
-                        <time class="news-list__item-date" datetime="2023-12-18">2023.12.18</time>
-                        <p class="news-list__item-category">スポーツチャレンジ</p>
-                    </div>
-                    <p class="news-list__item-text">テキストテキストテキストテキストテキストテキストテキストテキスト</p>
-                </a>
-            </li>
-            <li class="news-list__item">
-                <a href="#">
-                    <div class="news-list__item-img">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/dumy-archive-blog01.jpg"
-                            alt="省略" />
-                    </div>
-                    <div class="news-list__item-meta">
-                        <time class="news-list__item-date" datetime="2023-12-18">2023.12.18</time>
-                        <p class="news-list__item-category">講座</p>
-                    </div>
-                    <p class="news-list__item-text">テキストテキストテキストテキストテキストテキスト</p>
-                </a>
-            </li>
-            <li class="news-list__item">
-                <a href="#">
-                    <div class="news-list__item-img">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/dumy-archive-blog02.jpg"
-                            alt="省略" />
-                    </div>
-                    <div class="news-list__item-meta">
-                        <time class="news-list__item-date" datetime="2023-12-18">2023.12.18</time>
-                        <p class="news-list__item-category">部活動地域連携</p>
-                    </div>
-                    <p class="news-list__item-text">テキストテキストテキストテキストテキストテキストテキスト</p>
-                </a>
-            </li>
-        </ul>
-    </div>
-    <!-- ページナビ -->
-    <nav class="news__pagination">
-        <div class="wp-pagenavi news__pagination-nav">
-            <a rel="prev" href="#" class="previouspostslink news__pagination-arrow">
-                <span>Previous</span>
+<section class="news news-layout">
+  <div class="news__inner inner">
+    <h2 class="news__title">お知らせ</h2>
+
+    <!-- お知らせ記事：カスタム投稿「news」のサブループ -->
+    <?php
+    // WP_Queryを使用してカスタム投稿タイプ「news」の投稿を取得
+    $args = array(
+      'post_type'      => 'news',             // ← 正しいカスタム投稿タイプ名
+      'posts_per_page' => 10,                 // 最大10件表示
+      'post_status'    => 'publish',          // 公開済みの記事のみ
+    );
+    $news_query = new WP_Query($args);
+    ?>
+    <?php if ($news_query->have_posts()) : ?>
+      <ul class="news__list list">
+        <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
+          <li class="list__item">
+            <a href="<?php the_permalink(); ?>">
+              <div class="news__meta list__item-meta">
+                <time class="news__date list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                  <?php echo get_the_date('Y.m.d'); ?>
+                </time>
+                <!-- カスタムタクソノミー「news_category」を使ってカテゴリを表示 -->
+                <?php
+                $terms = get_the_terms(get_the_ID(), 'news_category'); // ← カスタムタクソノミー名に合わせて変更
+                if ($terms && !is_wp_error($terms)) :
+                  $term = $terms[0]; // 最初のカテゴリのみ表示
+                ?>
+                  <p class="news__category list__item-category"><?php echo esc_html($term->name); ?></p>
+                <?php endif; ?>
+              </div>
+              <p class="news__title list__item-title"><?php the_title(); ?></p>
             </a>
-            <a href="#" class="page current"><span>1</span></a>
-            <a href="#" class="page smaller">2</a>
-            <a href="#" class="page smaller">3</a>
-            <a href="#" class="page larger">4</a>
-            <a href="#" class="page larger">5</a>
-            <a href="#" class="page larger">6</a>
-            <a rel="next" href="#" class="nextpostslink news__pagination-arrow">
-                <span>Next</span>
-            </a>
-        </div>
-    </nav>
+          </li>
+        <?php endwhile; ?>
+      </ul>
+      <?php wp_reset_postdata(); ?>
+    <?php else : ?>
+      <p>現在お知らせはありません。</p>
+    <?php endif; ?>
+  </div>
+</section>
+<!-- ページナビ -->
+<nav class="news__pagination">
+  <?php wp_pagenavi(); ?>
+</nav>
 </div>
 <?php get_footer(); ?>

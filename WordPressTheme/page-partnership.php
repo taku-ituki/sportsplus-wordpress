@@ -12,7 +12,7 @@
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <div class="breadcrumbs__inner inner">
-       <?php get_template_part('parts/breadcrumb'); ?>
+        <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
 <!-- 部活動地域連携 -->
@@ -38,7 +38,7 @@
                 </p>
             </div>
             <div class="partnership__btn common-btn">
-                <a class="partnership__btn-link common-btn__link" href=" <?php echo esc_url( home_url( '/faq/#partnership' ) ); ?>">「部活動地域連携」に関するQ&A</a>
+                <a class="partnership__btn-link common-btn__link" href=" <?php echo esc_url(home_url('/faq/#partnership')); ?>">「部活動地域連携」に関するQ&A</a>
             </div>
         </div>
         <h3 class="partnership__sub-title" id="area-club">「部活動」・「地域クラブ」・「クラブチーム」との違い</h3>

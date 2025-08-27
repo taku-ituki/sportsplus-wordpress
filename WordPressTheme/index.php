@@ -39,51 +39,52 @@
         </div>
     </div>
 </div>
-<section class="top-information top-information-layout">
-    <div class="top-information__inner inner">
-        <h2 class="top-information__title section-title">お知らせ</h2>
-        <!-- お知らせのカテゴリー切り替え -->
-        <div class="top-information__news-nav information-category">
-            <nav class="top-information__news-nav-category information-category__nav">
-                <a href="#">一覧</a>
-                <a href="#">お知らせ</a>
-                <a href="#">募集</a>
+<section class="top-news top-news-layout">
+        <div class="top-news__inner inner">
+          <h2 class="top-news__title section-title">お知らせ</h2>
+          <!-- お知らせのカテゴリー切り替え -->
+          <div class="top-news__nav common-category">
+            <nav class="top-news__category common-category__nav">
+              <a href="#">一覧</a>
+              <a href="#">お知らせ</a>
+              <a href="#">募集</a>
             </nav>
+          </div>
+          <!-- お知らせ記事 -->
+          <ul class="top-news__list list">
+            <li class="list__item">
+              <a href="#">
+                <div class="top-news__news-meta list__item-meta">
+                  <time class="top-news__news-date list__item-date" datetime="2023-05-10">2023.05.10</time>
+                  <p class="top-news__news-category list__item-category">お知らせ</p>
+                </div>
+                <p class="top-news__news-title list__item-title">スポーツチャレンジの申込状況につきましては、大治南小低学年が満員となっていましたが、残り１名の空きがあります。訂正し、お詫びします。現在、満員なのは、大治小高学年と大治南小高学年です。【令和7年6月8日】</p>
+              </a>
+            </li>
+            <li class="list__item">
+              <a href="#">
+                <div class="top-news__news-meta list__item-meta">
+                  <time class="top-news__news-date list__item-date" datetime="2023-05-10">2023.05.10</time>
+                  <p class="top-news__news-category list__item-category">お知らせ</p>
+                </div>
+                <p class="top-news__news-title list__item-title">〇〇講座休講のお知らせ</p>
+              </a>
+            </li>
+            <li class="list__item">
+              <a href="#">
+                <div class="top-news__news-meta list__item-meta">
+                  <time class="top-news__news-date list__item-date" datetime="2023-05-10">2023.05.10</time>
+                  <p class="top-news__news-category list__item-category">募集</p>
+                </div>
+                <p class="top-news__news-title list__item-title">〇〇講座の募集を開始しました！</p>
+              </a>
+            </li>
+          </ul>
+           <div class="top-news__btn-wrap common-btn">
+             <a class="top-news__btn common-btn__link" href="<?php echo esc_url(home_url("/news")) ?>">お知らせ一覧</a>
+            </div>
         </div>
-        <!-- お知らせ記事 -->
-        <ul class="top-information__news-list">
-            <li class="top-information__news-item">
-                <a href="#">
-                    <div class="top-information__news-meta">
-                        <time class="top-information__news-date" datetime="2023-05-10">2023.05.10</time>
-                        <p class="top-information__news-category">お知らせ</p>
-                    </div>
-                    <p class="top-information__news-title">
-                        スポーツチャレンジの申込状況につきましては、大治南小低学年が満員となっていましたが、残り１名の空きがあります。訂正し、お詫びします。現在、満員なのは、大治小高学年と大治南小高学年です。【令和7年6月8日】
-                    </p>
-                </a>
-            </li>
-            <li class="top-information__news-item">
-                <a href="#">
-                    <div class="top-information__news-meta">
-                        <time class="top-information__news-date" datetime="2023-05-10">2023.05.10</time>
-                        <p class="top-information__news-category">お知らせ</p>
-                    </div>
-                    <p class="top-information__news-title">〇〇講座休講のお知らせ</p>
-                </a>
-            </li>
-            <li class="top-information__news-item">
-                <a href="#">
-                    <div class="top-information__news-meta">
-                        <time class="top-information__news-date" datetime="2023-05-10">2023.05.10</time>
-                        <p class="top-information__news-category">募集</p>
-                    </div>
-                    <p class="top-information__news-title">〇〇講座の募集を開始しました！</p>
-                </a>
-            </li>
-        </ul>
-    </div>
-</section>
+      </section>
 <!-- スポーツプラスおおはるについて -->
 <section class="about about-layout">
     <div class="about__inner inner">
@@ -95,8 +96,8 @@
         <ul class="about__list fade-in js-fadeIn">
             <li class="about__item">
                 <div class="about__item-img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/family.jpg"
-                        alt="スポーツクラブアイコン" class="about__icon" />
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/family.jpg" alt="スポーツクラブアイコン"
+                        class="about__icon" />
                 </div>
                 <h3 class="about__item-title">幅広い年齢層が選べる<br />スポーツクラブ</h3>
                 <p class="about__text">子どもから高齢者まで、自分にあった種目を選べて、初心者から上級者まで参加できます。</p>
@@ -135,7 +136,7 @@
                         <p class="works-list__item-text">年間講座
                             、短期講座、イベントがあり、自分に合った運動を楽しむことができます。複数の講座が受講できます。大治町の方はもちろん、町外のどなたでも参加できます！</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/program")) ?>">詳しく見る</a>
+                             <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/program")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>
@@ -150,7 +151,7 @@
                         <p class="works-list__item-text">
                             学校で「部活動」として活動していた土日の活動を「地域クラブ活動」とし、実業団や競技経験豊富な方が指導に加わるようになります。</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/partnership")) ?>">詳しく見る</a>
+                             <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/partnership")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>
@@ -228,7 +229,7 @@
             </div>
         </div>
         <div class="access__btn common-btn">
-            <a class="access__btn-link common-btn__link" href="access.html">詳しく見る</a>
+            <a class="access__btn-link common-btn__link" href="<?php echo esc_url(home_url("/access")) ?>">詳しく見る</a>
         </div>
     </div>
 </section><?php get_footer(); ?>

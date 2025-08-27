@@ -13,18 +13,39 @@
  <?php get_template_part('parts/breadcrumb') ?>
 <div class="blog blog-layout">
     <div class="blog__inner inner">
-       <!-- カテゴリー一覧 -->
-<div class="program__category category">
+<!-- カテゴリー一覧 -->
+<div class="category">
   <ul class="category__list">
     <?php
-    $categories = get_categories(); // 全カテゴリー取得
-    foreach ($categories as $category) {
-        // 現在表示中のカテゴリーページかどうかを判定
-        $current_class = (is_category($category->term_id)) ? ' category__menu--current' : '';
+    // 表示中のページのカテゴリーIDを取得
+    $current_category_id = get_queried_object_id();
 
-        echo '<li class="category__menu' . $current_class . '">';
-        echo '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
-        echo '</li>';
+    // 「最新」リンクのクラス判定（トップページ or 投稿一覧）
+    $home_class = (is_home() || is_front_page() || is_post_type_archive('post')) ? 'category__menu--current' : '';
+
+    // 「最新」リンク出力（例: /blog にリンク）
+    echo '<li class="category__menu ' . $home_class . '">';
+    echo '<a href="' . esc_url(home_url('/blog')) . '">一覧</a>';
+    echo '</li>';
+
+    // カテゴリー取得と出力
+    $categories = get_categories([
+        'orderby' => 'name', // 名前順でソート
+        'order'   => 'ASC',
+        'number'  => 5 // 表示数上限（必要に応じて変更）
+    ]);
+
+    if ($categories) {
+        foreach ($categories as $category) {
+            // 表示中のカテゴリーと一致するか判定
+            $category_class = ($current_category_id === $category->term_id) ? 'category__menu--current' : '';
+
+            echo '<li class="category__menu ' . $category_class . '">';
+            echo '<a href="' . esc_url(get_category_link($category->term_id)) . '">';
+            echo esc_html($category->name);
+            echo '</a>';
+            echo '</li>';
+        }
     }
     ?>
   </ul>

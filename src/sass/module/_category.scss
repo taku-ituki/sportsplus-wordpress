@@ -5,9 +5,15 @@
   grid-template-columns: repeat(2, 1fr);
   gap: rem(20);
   row-gap: rem(15);
+  max-width:rem(600);
+  width:100%;
+  margin-left: auto;
+  margin-right: auto;
   @include mq(md) {
-    display: flex;
+    grid-template-columns: repeat(3, 1fr);
     gap: rem(31);
+    max-width:80%;
+    width:100%;
   }
 }
 
@@ -21,22 +27,29 @@
   border: rem(1) solid $black;
   text-align: center;
   background-color: $white;
-  @include mq(md) {
-    max-width: rem(165);
+   max-width: rem(200);
     width: 100%;
-  }
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .category__menu a {
   padding: rem(5) 0;
   display: block;
-  font-size: rem(20);
+  font-size: rem(16);
   color: $black;
   cursor: pointer;
+  transition: 0.3s;
   @include mq(md) {
-    max-width: rem(165);
     width: 100%;
+    font-size: rem(20);
   }
+}
+
+.category__menu:hover a{
+  color: $white;
+  background-color: $accent;
+  transition: 0.3s;
 }
 
 .category__menu.category__menu--current {

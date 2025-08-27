@@ -11,130 +11,86 @@
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <div class="breadcrumbs__inner inner">
-       <?php get_template_part('parts/breadcrumb'); ?>
+        <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
 <section class="program program-layout">
     <div class="program__inner inner">
         <h2 class="program__title section-title">スポーツ講座のご案内</h2>
-        <!-- カテゴリー -->
+
+        <!-- カテゴリータブ -->
         <div class="program__category category">
-            <ul class="category__list">
-                <li class="category__menu category__menu--current"><a>年間講座</a></li>
-                <li class="category__menu"><a>短期講座</a></li>
-                <li class="category__menu"><a>イベント</a></li>
+            <ul class="category__list js-program-tabs">
+                <li class="category__menu category__menu--current"><a href="#" data-slug="all">すべて</a></li>
+                <li class="category__menu"><a href="#" data-slug="annual">年間講座</a></li>
+                <li class="category__menu"><a href="#" data-slug="short">短期講座</a></li>
+                <li class="category__menu"><a href="#" data-slug="event">イベント</a></li>
             </ul>
         </div>
-        <ul class="program__list intro-cards">
-            <li class="program__list-card intro-card js-modal-trigger" data-modal-id="modal1">
-                <figure class="intro-card__image">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/suguru.jpg" alt="卓球教室の様子" />
-                </figure>
-                <div class="intro-card__content">
-                    <div class="intro-card__header">
-                        <span class="intro-card__number"></span>
-                        <!-- 自動連番 -->
-                        <h3 class="intro-card__title">小中学生卓球教室</h3>
-                    </div>
-                    <dl class="intro-card__details">
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">開催日</dt>
-                            <dd class="intro-card__text">月曜日　月３回</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">時間</dt>
-                            <dd class="intro-card__text">18:30〜19:30</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">対象年齢</dt>
-                            <dd class="intro-card__text">小学４〜中学３年性</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">講師</dt>
-                            <dd class="intro-card__text">宅見直己　岡本まゆみ</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">紹介文</dt>
-                            <dd class="intro-card__text">テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
-                            </dd>
-                        </div>
-                    </dl>
-                </div>
-            </li>
-            <!-- 2件目以降も同様に繰り返し -->
-            <li class="program__list-card intro-card js-modal-trigger" data-modal-id="modal2">
-                <figure class="intro-card__image">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/works.jpg" alt="体操教室の様子" />
-                </figure>
-                <div class="intro-card__content">
-                    <div class="intro-card__header">
-                        <span class="intro-card__number"></span>
-                        <!-- 自動連番 -->
-                        <h3 class="intro-card__title">のびのびちびっこ体操 コアラ</h3>
-                    </div>
-                    <dl class="intro-card__details">
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">開催日</dt>
-                            <dd class="intro-card__text">第1・3金曜日</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">時間</dt>
-                            <dd class="intro-card__text">10:45〜11:45</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">対象年齢</dt>
-                            <dd class="intro-card__text">親子（原則2・3歳児）1歳児でも歩行できれば参加可</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">講師</dt>
-                            <dd class="intro-card__text">NPO法人ママ・ぷらす 認定講師</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">紹介文</dt>
-                            <dd class="intro-card__text">テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
-                            </dd>
-                        </div>
-                    </dl>
-                </div>
-            </li>
-            <li class="program__list-card intro-card js-modal-trigger" data-modal-id="modal3">
-                <figure class="intro-card__image">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/works.jpg" alt="体操教室の様子" />
-                </figure>
-                <div class="intro-card__content">
-                    <div class="intro-card__header">
-                        <span class="intro-card__number"></span>
-                        <!-- 自動連番 -->
-                        <h3 class="intro-card__title">のびのびちびっこ体操 コアラ</h3>
-                    </div>
-                    <dl class="intro-card__details">
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">開催日</dt>
-                            <dd class="intro-card__text">第1・3金曜日</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">時間</dt>
-                            <dd class="intro-card__text">10:45〜11:45</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">対象年齢</dt>
-                            <dd class="intro-card__text">親子（原則2・3歳児）1歳児でも歩行できれば参加可</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">講師</dt>
-                            <dd class="intro-card__text">NPO法人ママ・ぷらす 認定講師</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">紹介文</dt>
-                            <dd class="intro-card__text">テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
-                            </dd>
-                        </div>
-                    </dl>
-                </div>
-            </li>
-        </ul>
+
+        <!-- 投稿一覧エリア（Ajaxで切り替え） -->
+        <div id="program-list">
+            <ul class="program__list intro-cards">
+                <?php
+                $args = [
+                    'post_type'      => 'program_list',
+                    'posts_per_page' => -1,
+                    'post_status'    => 'publish',
+                ];
+                $program_query = new WP_Query($args);
+                if ($program_query->have_posts()) :
+                    while ($program_query->have_posts()) : $program_query->the_post();
+                ?>
+                        <li class="intro-card">
+                            <figure class="intro-card__image">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('medium'); ?>
+                                <?php else : ?>
+                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/noimage.jpg'); ?>" alt="">
+                                <?php endif; ?>
+                            </figure>
+                            <div class="intro-card__content">
+                                <div class="intro-card__header">
+                                    <span class="intro-card__number"></span>
+                                    <h3 class="intro-card__title"><?php the_title(); ?></h3>
+                                </div>
+                                <dl class="intro-card__details">
+                                    <div class="intro-card__detail">
+                                        <dt>開催日</dt>
+                                        <dd><?php the_field('program_day'); ?></dd>
+                                    </div>
+                                    <div class="intro-card__detail">
+                                        <dt>時間</dt>
+                                        <dd><?php the_field('program_time'); ?></dd>
+                                    </div>
+                                    <div class="intro-card__detail">
+                                        <dt>対象年齢</dt>
+                                        <dd><?php the_field('program_age'); ?></dd>
+                                    </div>
+                                    <div class="intro-card__detail">
+                                        <dt>講師</dt>
+                                        <dd><?php the_field('program_teacher'); ?></dd>
+                                    </div>
+                                    <div class="intro-card__detail">
+                                        <dt>紹介文</dt>
+                                        <dd><?php the_field('program_description'); ?></dd>
+                                    </div>
+                                </dl>
+                            </div>
+                        </li>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    echo '<p class="program__no-posts">該当する講座はありません。</p>';
+                endif;
+                ?>
+            </ul>
+        </div>
     </div>
 </section>
+
+
 <!-- 申し込み状況 -->
 <section class="entry-status entry-status-layout">
     <div class="entry-status__inner inner">

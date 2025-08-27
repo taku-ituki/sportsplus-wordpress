@@ -3,7 +3,7 @@
 .mv {
   overflow: hidden;
   width: 100%;
-  background-color: #000;
+  background-color:$white;
   position: relative;
   padding-top: rem(65);
   @include mq(md) {

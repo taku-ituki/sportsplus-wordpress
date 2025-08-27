@@ -183,13 +183,22 @@
         <div class="top-news__inner inner">
           <h2 class="top-news__title section-title">お知らせ</h2>
           <!-- お知らせのカテゴリー切り替え -->
-          <div class="top-news__nav common-category">
-            <nav class="top-news__category common-category__nav">
-              <a href="#">一覧</a>
-              <a href="#">お知らせ</a>
-              <a href="#">募集</a>
-            </nav>
-          </div>
+          <div class="top-news__category category">
+            <ul class="top-news__category category__list">
+                <li class="top-news__category-item category__menu category__menu--current">
+                    <a href="#" class="top-news__category-link category__link">最新</a>
+                </li>
+                <li class="top-news__category-item category__menu">
+                    <a href="#" class="top-news__category-link category__link">講座</a>
+                </li>
+                <li class="top-news__category-item category__menu">
+                    <a href="#" class="top-news__category-link category__link">部活動地域連携</a>
+                </li>
+                <li class="top-news__category-item category__menu">
+                    <a href="#" class="top-news__category-link category__link">スポーツチャレンジ</a>
+                </li>
+            </ul>
+        </div>
           <!-- お知らせ記事 -->
           <ul class="top-news__list list">
             <li class="list__item">
@@ -220,9 +229,9 @@
               </a>
             </li>
           </ul>
-           <div class="top-news__btn-wrap common-btn">
-              <a class="top-news__btn common-btn__link" href="news.html">お知らせ一覧</a>
-            </div>
+          <div class="top-news__btn-wrap common-btn">
+            <a class="top-news__btn common-btn__link" href="news.html">お知らせ一覧</a>
+          </div>
         </div>
       </section>
       <!-- スポーツプラスおおはるについて -->

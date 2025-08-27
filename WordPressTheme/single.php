@@ -18,9 +18,9 @@
 <?php if (have_posts()):
     while (have_posts()):
         the_post(); ?>
-<section class="single-blog single-blog-layout">
-    <div class="single-blog__inner inner">
-        <?php
+        <section class="single-blog single-blog-layout">
+            <div class="single-blog__inner inner">
+                <?php
                 // ------------------------------
                 // データ取得ゾーン（ループ先頭でまとめる）
                 // ------------------------------
@@ -31,36 +31,36 @@
                 // アイキャッチ：有り→サムネ、無し→ダミー
                 $fallback_src = get_theme_file_uri('/assets/images/common/no-image.jpg');
                 ?>
-        <!-- 投稿日＋カテゴリー -->
-        <div class="single-blog__meta">
-            <!-- datetimeは機械可読、表示は人間可読 -->
-            <time class="single-blog__date" datetime="<?php echo esc_attr($date_machine); ?>">
-                <?php echo esc_html($date_human); ?>
-            </time>
-            <?php if ($cat_name): ?>
-            <p class="single-blog__category">
-                <?php echo esc_html($cat_name); ?>
-            </p>
-            <?php endif; ?>
-        </div>
-        <!-- タイトル -->
-        <h1 class="single-blog__title"><?php the_title(); ?></h1>
-        <!-- メインビジュアル（アイキャッチ or 代替画像） -->
-        <div class="single-blog__mv">
-            <?php if (has_post_thumbnail()): ?>
-            <?php
+                <!-- 投稿日＋カテゴリー -->
+                <div class="single-blog__meta">
+                    <!-- datetimeは機械可読、表示は人間可読 -->
+                    <time class="single-blog__date" datetime="<?php echo esc_attr($date_machine); ?>">
+                        <?php echo esc_html($date_human); ?>
+                    </time>
+                    <?php if ($cat_name): ?>
+                        <p class="single-blog__category">
+                            <?php echo esc_html($cat_name); ?>
+                        </p>
+                    <?php endif; ?>
+                </div>
+                <!-- タイトル -->
+                <h1 class="single-blog__title"><?php the_title(); ?></h1>
+                <!-- メインビジュアル（アイキャッチ or 代替画像） -->
+                <div class="single-blog__mv">
+                    <?php if (has_post_thumbnail()): ?>
+                        <?php
                         // 'large' はWordPressの中〜大サイズ。width/height属性は functions.php のフィルターで除去済み
                         // classを付与してBEMでスタイルしやすく
                         the_post_thumbnail('large', array('class' => 'single-blog__mv-img'));
                         ?>
-            <?php else: ?>
-            <img class="single-blog__mv-img" src="<?php echo esc_url($fallback_src); ?>"
-                alt="<?php the_title(); ?>のアイキャッチ画像">
-            <?php endif; ?>
-        </div>
-        <!-- 本文（ブロックエディタの出力） -->
-        <div class="single-blog__content entry-content">
-            <?php
+                    <?php else: ?>
+                        <img class="single-blog__mv-img" src="<?php echo esc_url($fallback_src); ?>"
+                            alt="<?php the_title(); ?>のアイキャッチ画像">
+                    <?php endif; ?>
+                </div>
+                <!-- 本文（ブロックエディタの出力） -->
+                <div class="single-blog__content entry-content">
+                    <?php
                     // 記事本文を出力（エディタのHTMLを含む）
                     the_content();
                     // ページ分割（<!--nextpage-->）対応
@@ -71,11 +71,11 @@
                         'link_after' => '</span>',
                     ));
                     ?>
-        </div>
-        <div class="page-link">
-            <div class="page-link__inner inner">
-                <div class="page-link__flex">
-                    <?php
+                </div>
+                <div class="page-link">
+                    <div class="page-link__inner inner">
+                        <div class="page-link__flex">
+                            <?php
                             $prev = get_previous_post();
                             if (!empty($prev)) {
                                 $prev_url = esc_url(get_permalink($prev->ID));
@@ -86,25 +86,26 @@
                                 $next_url = esc_url(get_permalink($next->ID));
                             }
                             ?>
-                    <div class="page-link__prev">
-                        <?php if (!empty($prev)): ?>
-                        <a href="<?php echo $prev_url; ?>">前の記事</a>
-                        <?php endif; ?>
+                            <div class="page-link__prev">
+                                <?php if (!empty($prev)): ?>
+                                    <a href="<?php echo $prev_url; ?>">前の記事</a>
+                                <?php endif; ?>
+                            </div>
+                            <div class="page-link__next">
+                                <?php if (!empty($next)): ?>
+                                    <a href="<?php echo $next_url; ?>">次の記事</a>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="page-link__archive">
+                            <!-- 存在しない echo_url() ではなく、echo + esc_url( home_url(...) ) を使用 -->
+                            <a href="<?php echo esc_url(home_url('/blog/')); ?>">活動報告一覧</a>
+                        </div>
                     </div>
-                    <div class="page-link__next">
-                        <?php if (!empty($next)): ?>
-                        <a href="<?php echo $next_url; ?>">次の記事</a>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="page-link__archive">
-                    <!-- 存在しない echo_url() ではなく、echo + esc_url( home_url(...) ) を使用 -->
-                    <a href="<?php echo esc_url(home_url('/blog/')); ?>">活動報告一覧</a>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<?php endwhile; endif; ?>
+        </section>
+<?php endwhile;
+endif; ?>
 
 <?php get_footer(); ?>

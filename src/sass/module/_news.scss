@@ -11,3 +11,13 @@
 .news__list.list{
   margin-top:rem(40);
 }
+
+.news__pagination {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: rem(30);
+  @include mq(md) {
+    margin-top: rem(60);
+  }
+}

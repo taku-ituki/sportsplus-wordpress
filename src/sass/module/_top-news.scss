@@ -8,3 +8,10 @@
   margin-top: rem(40);
   text-align: center;
 }
+
+.top-news__tabs{
+  margin-top:rem(20);
+  @include mq(md){
+    margin-top:rem(40);
+  }
+}

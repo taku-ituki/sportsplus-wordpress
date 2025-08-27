@@ -11,7 +11,7 @@
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <div class="breadcrumbs__inner inner">
-     <?php get_template_part('parts/breadcrumb'); ?>
+        <?php get_template_part('parts/breadcrumb'); ?>
     </div>
 </div>
 <!-- 施設案内 -->

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="robots" content="noindex" />
+    <!-- meta情報 -->
+    <title>スポーツプラスおおはる | 総合型地域スポーツクラブ（大治町）</title>
+    <meta name="description" content="スポーツプラスおおはるは大治町を拠点とした総合型地域スポーツクラブです。子どもから高齢者まで誰もがスポーツを楽しめる環境を提供しています" />
+    <meta name="keywords" content="スポーツプラスおおはる" />
+    <!-- ogp -->
+    <meta property="og:title" content="スポーツプラスおおはる | 総合型地域スポーツクラブ（大治町）" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/assets/images/common/logo.svg" />
+    <meta property="og:site_name" content="スポーツプラスおおはる" />
+    <meta property="og:description" content="スポーツプラスおおはるは、大治町を拠点とした総合型地域スポーツクラブ。子どもから高齢者までが参加できる、地域密着型のスポーツクラブです。" />
+
+    <!-- ファビコン -->
+    <link rel="icon" href="./assets/images/common/favicon.ico" />
+    <!-- google フォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script defer src="./assets/js/script.js"></script>
+  </head>
+  <body>
+    <!-- ページトップボタン -->
+    <button class="button js-button"><span></span>TOP</button>
+    <div class="footer-wrap">
+      <header class="header layout-header">
+        <div class="header__inner">
+          <div class="header__logo">
+            <a href="index.html">
+              <img src="./assets/images/common/logo.svg" alt="ロゴ" />
+            </a>
+          </div>
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li class="header__nav-modal-wrap">
+                <p>実施事業</p>
+                <ul class="header__nav-modal">
+                  <li class="header__nav-modal-item">
+                    <a href="program.html"><span>スポーツ講座</span></a>
+                  </li>
+                  <li class="header__nav-modal-item">
+                    <a href="partnership.html"><span>部活動地域連携</span></a>
+                  </li>
+                  <li class="header__nav-modal-item">
+                    <a href="challenge.html"><span>スポーツチャレンジ</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__nav-modal-wrap">
+                <p>施設案内</p>
+                <ul class="header__nav-modal">
+                  <li class="header__nav-modal-item">
+                    <a href="access.html"><span>アクセス</span></a>
+                  </li>
+                  <li class="header__nav-modal-item">
+                    <a href="faq.html"><span>よくあるご質問 </span></a>
+                  </li>
+                  <li class="header__nav-modal-item">
+                    <a href="support.html"><span>賛助団体</span></a>
+                  </li>
+                </ul>
+              </li>
+              <li class="header__nav-item">
+                <a href="entry.html"><span>入会案内</span></a>
+              </li>
+              <li class="header__nav-item">
+                <a href="archive-blog.html"><span>活動報告</span></a>
+              </li>
+              <li class="header__nav-item">
+                <a href="application.html"><span>各種申請用紙</span></a>
+              </li>
+              <li class="header__nav-item header__nav-item--access">
+                <a href="mailto:spplus-oharu@clovernet.ne.jp">お問い合わせ</a>
+              </li>
+            </ul>
+          </nav>
+          <button class="header__hamburger js-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="header__drawer js-drawer">
+            <nav class="header__drawer-nav">
+              <ul class="header__drawer-list">
+                <li class="header__drawer-item">
+                  <p class="header__drawer-accordion-title js-drawer-accordion">実施事業</p>
+                  <ul class="header__drawer-accordion-list">
+                    <li class="header__drawer-accordion-item">
+                      <a href="program.html">スポーツ講座</a>
+                    </li>
+                    <li class="header__drawer-accordion-item">
+                      <a href="partnership.html">部活動地域連携</a>
+                    </li>
+                    <li class="header__drawer-accordion-item">
+                      <a href="challenge.html">スポーツチャレンジ</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__drawer-item">
+                  <p class="header__drawer-accordion-title js-drawer-accordion">施設案内</p>
+                  <ul class="header__drawer-accordion-list">
+                    <li class="header__drawer-accordion-item">
+                      <a href="access.html">アクセス</a>
+                    </li>
+                    <li class="header__drawer-accordion-item">
+                      <a href="faq.html">よくあるご質問 </a>
+                    </li>
+                    <li class="header__drawer-accordion-item">
+                      <a href="support.html">賛助団体</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="header__drawer-item">
+                  <a href="entry.html"><span>入会案内</span></a>
+                </li>
+                <li class="header__drawer-item">
+                  <a href="archive-blog.html">活動報告</a>
+                </li>
+                <li class="header__drawer-item">
+                  <a href="application.html">各種申請用紙</a>
+                </li>
+                <li class="header__drawer-item header__drawer-item--access">
+                  <a href="mailto:spplus-oharu@clovernet.ne.jp">お問い合わせ</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section class="single-news single-news-layout">
+          <div class="single-news__inner inner">
+            <h1 class="single-news__title">夏季休業のお知らせ</h1>
+            <div class="single-news__meta">
+              <time datetime="2025-08-05">2025.08.05</time>
+              <span class="single-news__category">お知らせ</span>
+            </div>
+            <div class="single-news__content">
+              <p>いつもキングラムリカーをご利用いただき、誠にありがとうございます。</p>
+              <p>誠に勝手ながら、一部店舗は夏季休業に伴い、臨時休業とさせていただきます。詳しくは各店舗ページのお知らせをご確認ください。</p>
+              <p>また、宅配買取のお申込み・お問い合わせにつきましても、休業になります。休業期間中にお申込み等につきましては、休業明けより順次対応いたします。</p>
+              <p><strong>〖休業期間〗8月13日（水）～ 8月16日（土）</strong></p>
+              <p>お客様にはご不便・ご迷惑をおかけいたしますが、何卒ご理解のほどよろしくお願い申し上げます。</p>
+            </div>
+            <div class="single-news__back">
+              <a href="/news">お知らせ一覧へ戻る</a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <div class="overlay js-overlay"></div>
+      <footer class="footer footer-layout">
+        <div class="footer__inner inner">
+          <div class="footer__box-wrap">
+            <div class="footer__box">
+              <div class="footer__box-left">
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__item-link" href="index.html">トップページ</a>
+                  </li>
+                  <li class="footer__item">
+                    <div class="footer__item-link">実施事業</div>
+                    <ul class="footer__sub-list">
+                      <li class="footer__sub-item">
+                        <a class="footer__sub-item-link" href="program.html">スポーツ講座</a>
+                      </li>
+                      <li class="footer__sub-item">
+                        <a class="footer__sub-item-link" href="partnership.html">部活動地域連携</a>
+                      </li>
+                      <li class="footer__sub-item">
+                        <a class="footer__sub-item-link" href="challenge.html">スポーツチャレンジ</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="footer__item">
+                    <div class="footer__item-link">施設案内</div>
+                    <ul class="footer__sub-list">
+                      <li class="footer__sub-item">
+                        <a class="footer__sub-item-link" href="access.html">アクセス</a>
+                      </li>
+                      <li class="footer__sub-item">
+                        <a class="footer__sub-item-link" href="faq.html">よくあるご質問 </a>
+                      </li>
+                      <li class="footer__sub-item">
+                        <a class="footer__sub-item-link" href="support.html">賛助団体</a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__box-right">
+                <ul class="footer__list">
+                  <li class="footer__item">
+                    <a class="footer__item-link" href="entry.html">入会案内</a>
+                  </li>
+                  <li class="footer__item">
+                    <a class="footer__item-link" href="archive-blog.html">活動報告</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__logo">
+              <a href="index.html"> <img src="./assets/images/common/logo.svg" alt="ロゴ" /></a>
+            </div>
+          </div>
+        </div>
+        <small class="footer__copy-right">Copyright &copy; 2015 - 2025 Sports plus Oharu.</small>
+      </footer>
+    </div>
+  </body>
+</html>

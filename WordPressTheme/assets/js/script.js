@@ -195,4 +195,51 @@ jQuery(function ($) {
     e.preventDefault();
     moveActive(1);
   });
+  $(".top-news__tabs .category__menu a").on("click", function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    var slug = $this.data("slug");
+    $this.closest(".category__menu").addClass("category__menu--current").siblings().removeClass("category__menu--current");
+    $.ajax({
+      url: ajax_news.url,
+      type: "POST",
+      data: {
+        action: "filter_news_by_category",
+        slug: slug
+      },
+      success: function success(res) {
+        $("#news-list").html(res);
+      },
+      error: function error() {
+        $("#news-list").html("<p>読み込みに失敗しました。</p>");
+      }
+    });
+  });
+
+  // Ajaxタブ切り替え（スポーツ講座）
+  $(".js-program-tabs .category__menu a").on("click", function (e) {
+    e.preventDefault();
+    var $this = $(this);
+    var slug = $this.data("slug");
+
+    // タブ見た目切り替え
+    $this.parent().addClass("category__menu--current").siblings().removeClass("category__menu--current");
+
+    // Ajaxで絞り込み
+    $.ajax({
+      url: ajax_news.url,
+      // admin-ajax.php
+      type: "POST",
+      data: {
+        action: "filter_program_by_category",
+        slug: slug
+      },
+      success: function success(res) {
+        $("#program-list").html(res);
+      },
+      error: function error() {
+        $("#program-list").html("<p class='program__no-posts'>読み込みに失敗しました。</p>");
+      }
+    });
+  });
 });

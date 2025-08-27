@@ -15,14 +15,15 @@
 }
 
 .intro-card:not(:first-child) {
-  margin-top: rem(20);
+  margin-top: rem(40);
   @include mq(md) {
-    margin-top: rem(40);
+    margin-top: rem(60);
   }
 }
 
 /* 左側画像 */
 .intro-card__image {
+  flex-shrink: 0;
   overflow: hidden;
   @include mq(md) {
     width: 30%;
@@ -30,11 +31,15 @@
 }
 
 .intro-card__image img {
-  aspect-ratio: 4/3;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  aspect-ratio: 1/1;
+  object-fit: contain;
   transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
+  @include mq(md){
+      aspect-ratio: 4/3;
+      object-fit: cover;
+  }
 }
 
 @media (any-hover: hover) {
@@ -89,6 +94,11 @@
   margin-top: rem(8);
 }
 
+//項目が改行しないように幅確保。「対象年齢」の幅に合わせて整形
+.intro-card__detail dt{
+  min-width:rem(64);
+}
+
 /* 各ラベル（開催日など） */
 .intro-card__label {
   font-weight: bold;
@@ -102,3 +112,4 @@
   color: #444;
   font-size: rem(18);
 }
+
