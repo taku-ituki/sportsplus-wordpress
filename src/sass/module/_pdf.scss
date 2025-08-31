@@ -8,3 +8,10 @@
     margin: 0 auto;
     display: block;
   }
+
+  .pdf p{
+    text-align: center;
+    @include mq(md){
+      font-size:rem(24);
+    }
+  }

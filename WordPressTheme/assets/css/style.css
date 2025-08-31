@@ -2450,6 +2450,10 @@ main {
 	width: 100%;
 }
 
+.pdf p {
+	text-align: center;
+}
+
 .program__category {
 	margin-top: 1.25rem;
 }
@@ -3828,6 +3832,10 @@ html {
 
 .partnership__list-card.intro-card {
 	margin-top: 3.75rem;
+}
+
+.pdf p {
+	font-size: 1.5rem;
 }
 
 .program__category {

@@ -71,52 +71,86 @@
                 </div>
             </div>
         </div>
+        <!-- 共通のPDF表示ブロック -->
+        <?php
+        // 各PDFのURLを個別に取得する例（必要に応じてカスタムフィールド名を変更）
+        $pdf_oharu       = get_field('pdf_oharu');       // 大治小学校
+        $pdf_oharu_south = get_field('pdf_oharu_south'); // 大治南小学校
+        $pdf_oharu_west  = get_field('pdf_oharu_west');  // 大治西小学校
+        $pdf_spring      = get_field('pdf_spring');      // 春休みスポーツチャレンジ
+        $pdf_summer      = get_field('pdf_summer');      // 夏休みスポーツチャレンジ
+        $pdf_schedule    = get_field('pdf_schedule');    // 申込状況・日程
+        ?>
+
         <!-- 大治小学校 -->
         <div class="challenge__item" id="oharu">
             <h2 class="challenge__title section-title">「大治小学校」<br />募集要項</h2>
             <div class="challenge__pdf pdf">
-                <embed-pdf src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challenge.pdf"
-                    class="pdf__url"></embed-pdf>
+                <?php if ($pdf_oharu): ?>
+                    <embed src="<?php echo esc_url($pdf_oharu); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <?php else: ?>
+                    <p>現在準備中</p>
+                <?php endif; ?>
             </div>
         </div>
+
         <!-- 大治南小学校 -->
         <div class="challenge__item" id="oharu-south">
             <h2 class="challenge__title section-title">「大治南小学校」<br />募集要項</h2>
             <div class="challenge__pdf pdf">
-                <embed-pdf src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challenge.pdf"
-                    class="pdf__url"></embed-pdf>
+                <?php if ($pdf_oharu_south): ?>
+                    <embed src="<?php echo esc_url($pdf_oharu_south); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <?php else: ?>
+                    <p>現在準備中</p>
+                <?php endif; ?>
             </div>
         </div>
+
         <!-- 大治西小学校 -->
         <div class="challenge__item" id="oharu-west">
             <h2 class="challenge__title section-title">「大治西小学校」<br />募集要項</h2>
             <div class="challenge__pdf pdf">
-                <embed-pdf src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challenge.pdf"
-                    class="pdf__url"></embed-pdf>
+                <?php if ($pdf_oharu_west): ?>
+                    <embed src="<?php echo esc_url($pdf_oharu_west); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <?php else: ?>
+                    <p>現在準備中</p>
+                <?php endif; ?>
             </div>
         </div>
+
         <!-- 春休みスポーツチャレンジ -->
         <div class="challenge__item" id="spring">
             <h2 class="challenge__title section-title">「春休みスポーツチャレンジ」<br />募集要項</h2>
             <div class="challenge__pdf pdf">
-                <embed-pdf src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challenge.pdf"
-                    class="pdf__url"></embed-pdf>
+                <?php if ($pdf_spring): ?>
+                    <embed src="<?php echo esc_url($pdf_spring); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <?php else: ?>
+                    <p>現在準備中</p>
+                <?php endif; ?>
             </div>
         </div>
-        <!-- 春休みスポーツチャレンジ -->
+
+        <!-- 夏休みスポーツチャレンジ -->
         <div class="challenge__item" id="summer">
             <h2 class="challenge__title section-title">「夏休みスポーツチャレンジ」<br />募集要項</h2>
             <div class="challenge__pdf pdf">
-                <embed-pdf src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challenge.pdf"
-                    class="pdf__url"></embed-pdf>
+                <?php if ($pdf_summer): ?>
+                    <embed src="<?php echo esc_url($pdf_summer); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <?php else: ?>
+                    <p>現在準備中</p>
+                <?php endif; ?>
             </div>
         </div>
+
         <!-- 申込状況・日程 -->
         <div class="challenge__item" id="challenge-date">
             <h2 class="challenge__title section-title">申込状況・日程</h2>
             <div class="challenge__pdf pdf">
-                <embed-pdf src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challenge.pdf"
-                    class="pdf__url"></embed-pdf>
+                <?php if ($pdf_schedule): ?>
+                    <embed src="<?php echo esc_url($pdf_schedule); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <?php else: ?>
+                    <p>現在準備中</p>
+                <?php endif; ?>
             </div>
         </div>
         <!-- 申し込み・お問い合わせ -->
@@ -162,6 +196,7 @@
                 </tbody>
             </table>
         </div>
+    </div>
     </div>
     <!-- //inner -->
 </section>

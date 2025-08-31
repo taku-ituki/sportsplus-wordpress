@@ -207,7 +207,8 @@ jQuery(function ($) {
     moveActive(1);
   });
 
-  $(".top-news__tabs .category__menu a").on("click", function (e) {
+  //////トップページお知らせ（Ajax）//////
+  $(".js-top-news__tabs .category__menu a").on("click", function (e) {
     e.preventDefault();
     var $this = $(this);
     var slug = $this.data("slug");
@@ -230,21 +231,22 @@ jQuery(function ($) {
     });
   });
 
-  // Ajaxタブ切り替え（スポーツ講座）
+  //////講座ページ（Ajax）//////
   $(".js-program-tabs .category__menu a").on("click", function (e) {
     e.preventDefault();
-    const $this = $(this);
-    const slug = $this.data("slug");
 
-    // タブ見た目切り替え
-    $this.parent().addClass("category__menu--current").siblings().removeClass("category__menu--current");
+    var $this = $(this);
+    var slug = $this.data("slug");
 
-    // Ajaxで絞り込み
+    // タブの見た目を更新
+    $this.closest(".category__menu").addClass("category__menu--current").siblings().removeClass("category__menu--current");
+
+    // Ajaxリクエスト
     $.ajax({
-      url: ajax_news.url, // admin-ajax.php
+      url: ajax_news.url, // wp_localize_scriptで渡した変数
       type: "POST",
       data: {
-        action: "filter_program_by_category",
+        action: "filter_program_by_category", // ← PHP側のアクション名と合わせる
         slug: slug,
       },
       success: function (res) {
@@ -256,4 +258,7 @@ jQuery(function ($) {
     });
   });
 });
+
+
+
 

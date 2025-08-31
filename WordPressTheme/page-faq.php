@@ -19,213 +19,42 @@
 <section class="faq faq-layout">
     <div class="faq__inner inner">
         <h2 class="faq__title section-title">よくあるご質問</h2>
-        <div class="faq__block">
-            <h3 class="faq__sub-title">スポーツプラスおおはる<br />について</h3>
-            <ul class="faq-item__accordion-area js-faq-accordion-area">
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title">
-                        <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
-                    </h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title">
-                        <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
-                    </h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="faq__block" id="partnership">
-            <h3 class="faq__sub-title">部活動地域連携について</h3>
-            <ul class="faq-item__accordion-area js-faq-accordion-area">
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title">
-                        <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
-                    </h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title">
-                        <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
-                    </h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="faq__block" id="spochalle">
-            <h3 class="faq__sub-title">スポーツチャレンジについて</h3>
-            <ul class="faq-item__accordion-area js-faq-accordion-area">
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります。</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります</p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title"><span
-                            class="faq-item__accordion-title-text">ここに質問が入ります</span></h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title">
-                        <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
-                    </h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-                <li class="faq-item faq__item">
-                    <h2 class="faq-item__accordion-title js-faq-accordion-title">
-                        <span class="faq-item__accordion-title-text">ここに質問が入ります。</span>
-                    </h2>
-                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                        <p class="faq-item__accordion-box-text">
-                            ここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入りますここに質問の答えが入ります
-                        </p>
-                    </div>
-                </li>
-            </ul>
-        </div>
+
+        <?php $faq_blocks = SCF::get('faq_blocks'); ?>
+        <?php if (!empty($faq_blocks)) : ?>
+            <?php foreach ($faq_blocks as $block) : ?>
+                <?php
+                $block_title = esc_html($block['faq_block_title']);
+                $block_id = esc_attr($block['faq_block_id']);
+                ?>
+                <div class="faq__block" id="<?php echo $block_id; ?>">
+                    <h3 class="faq__sub-title"><?php echo $block_title; ?></h3>
+                    <ul class="faq-item__accordion-area js-faq-accordion-area">
+
+                        <?php
+                        for ($i = 1; $i <= 10; $i++) :
+                            $q = $block["faq_question_{$i}"] ?? '';
+                            $a = $block["faq_answer_{$i}"] ?? '';
+                            if (!empty($q) && !empty($a)) :
+                        ?>
+                                <li class="faq-item faq__item">
+                                    <div class="faq-item__accordion-title js-faq-accordion-title">
+                                        <span class="faq-item__accordion-title-text"><?php echo esc_html($q); ?></span>
+                                    </div>
+                                    <div class="faq-item__accordion-box js-faq-accordion-box">
+                                        <p class="faq-item__accordion-box-text"><?php echo nl2br(esc_html($a)); ?></p>
+                                    </div>
+                                </li>
+                        <?php
+                            endif;
+                        endfor;
+                        ?>
+
+                    </ul>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </div>
 </section>
+
 <?php get_footer(); ?>

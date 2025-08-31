@@ -44,7 +44,7 @@
         <h2 class="top-news__title section-title">お知らせ</h2>
 
         <!-- タブ -->
-        <ul class="top-news__tabs category__list">
+        <ul class="top-news__tabs category__list js-top-news__tabs">
             <li class="category__menu category__menu--current">
                 <a href="#" data-slug="all">最新</a>
             </li>
@@ -60,7 +60,7 @@
             <?php
             $args = [
                 'post_type'      => 'news',
-                'posts_per_page' => 3,
+                'posts_per_page' => 5,
                 'post_status'    => 'publish',
             ];
             $query = new WP_Query($args);
