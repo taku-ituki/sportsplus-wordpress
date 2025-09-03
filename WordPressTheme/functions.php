@@ -263,3 +263,32 @@ function filter_program_by_category()
     echo ob_get_clean();
     wp_die();
 }
+
+
+// 管理画面の「投稿」の名称とアイコンを変更する
+function custom_post_menu_label() {
+    global $menu;
+    global $submenu;
+
+    // 投稿のメニューを「ニュース」に変更
+    $menu[5][0] = '活動報告';
+
+    // 投稿 > 投稿一覧のメニュー名を変更
+    $submenu['edit.php'][5][0] = '活動報告一覧';
+    // 投稿 > 新規追加 のメニュー名を変更
+    $submenu['edit.php'][10][0] = '活動報告を追加';
+}
+
+add_action('admin_menu', 'custom_post_menu_label');
+
+function custom_post_menu_icon() {
+    // メニューアイコンを megaphone（拡声器）アイコンに変更（dashicons）
+    echo '
+    <style>
+        #menu-posts .dashicons-admin-post:before {
+            content: "\f330"; /* dashicons-book */
+        }
+    </style>';
+}
+add_action('admin_head', 'custom_post_menu_icon');
+

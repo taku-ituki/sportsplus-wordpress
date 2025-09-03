@@ -11,9 +11,7 @@
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
-    <div class="breadcrumbs__inner inner">
-        <?php get_template_part('parts/breadcrumb'); ?>
-    </div>
+    <?php get_template_part('parts/breadcrumb'); ?>
 </div>
 <section class="entry entry-layout">
     <div class="entry__inner inner">
@@ -70,108 +68,64 @@
 <section class="membership-info membership-info-layout">
     <div class="membership-info__inner inner">
         <h2 class="entry__title section-title">入会手続・費用</h2>
-        <div class="membership-info__section membership-info__section--blue">
-            <h2 class="membership-info__title">入会手続きの方法</h2>
-            <dl class="membership-info__definition-list">
-                <div class="membership-info__definition">
-                    <dt class="membership-info__term">継続会員受付</dt>
-                    <dd class="membership-info__desc">令和6年度と同一講座に限り、令和7年2月6日（木）以降の各講座開催日時から受付します。</dd>
+        <?php
+        /**
+         * Template Name: 入会ページ（Entry）
+         */
+
+        get_header();
+        $membership = get_field('membership_info');
+        ?>
+
+        <div class="membership-info">
+
+            <!-- 🔵 入会手続き -->
+            <div class="membership-info__section membership-info__section--blue">
+                <h2 class="membership-info__title">
+                    <?php echo esc_html($membership['admission_section']['admission_title']); ?>
+                </h2>
+
+                <div class="membership-info__definition-wrap">
+                    <?php echo wp_kses_post($membership['admission_section']['admission_registration_dl']); ?>
                 </div>
-                <div class="membership-info__definition">
-                    <dt class="membership-info__term">新規会員受付</dt>
-                    <dd class="membership-info__desc">
-                        令和7年2月20日（火）13:30〜15:00に受付します。<br />※定員を超えた場合は抽選となり、整理券を13:00より配布します。</dd>
+
+                <div class="membership-info__definition-wrap">
+                    <?php echo wp_kses_post($membership['admission_section']['admission_others_dl']); ?>
                 </div>
-                <div class="membership-info__definition">
-                    <dt class="membership-info__term">随 時 受 付</dt>
-                    <dd class="membership-info__desc">令和7年3月以降、定員に空きがある場合に随時受付します。</dd>
+            </div>
+
+            <!-- 🟠 年会費・参加費 -->
+            <div class="membership-info__section membership-info__section--orange">
+                <h2 class="membership-info__title">
+                    <?php echo esc_html($membership['fee_section']['fee_title']); ?>
+                </h2>
+
+                <p class="membership-info__text">
+                    <?php echo wp_kses_post($membership['fee_section']['fee_description']); ?>
+                </p>
+
+                <div class="membership-info__table-wrap">
+                    <?php echo wp_kses_post($membership['fee_section']['fee_table']); ?>
                 </div>
-            </dl>
-            <dl class="membership-info__definition-list">
-                <div class="membership-info__definition">
-                    <dt class="membership-info__term">場所</dt>
-                    <dd class="membership-info__desc">大治町スポーツセンター内　スポーツプラスおおはる窓口</dd>
+
+                <div class="membership-info__notes">
+                    <?php echo wp_kses_post($membership['fee_section']['fee_notes']); ?>
                 </div>
-                <div class="membership-info__definition">
-                    <dt class="membership-info__term">方法</dt>
-                    <dd class="membership-info__desc"><a href="application.html">申込書は窓口にて配布またはホームページからダウンロード可能です。</a>
-                    </dd>
+            </div>
+
+            <!-- 🌸 賛助会員 -->
+            <div class="membership-info__section membership-info__section--pink">
+                <h2 class="membership-info__title">
+                    <?php echo esc_html($membership['supporter_section']['supporter_title']); ?>
+                </h2>
+
+                <div class="membership-info__table-wrap">
+                    <?php echo wp_kses_post($membership['supporter_section']['supporter_table']); ?>
                 </div>
-                <div class="membership-info__definition">
-                    <dt class="membership-info__term">注意</dt>
-                    <dd class="membership-info__desc">原則として本人・保護者のみ受付。電話・FAX・メールでは受付できません。</dd>
-                </div>
-            </dl>
-        </div>
-        <!-- 年会費・参加費 -->
-        <div class="membership-info__section membership-info__section--orange">
-            <h2 class="membership-info__title">年会費・参加費</h2>
-            <p class="membership-info__text">入会には、年会費（保険料を含む）＋参加費が必要です。</p>
-            <table class="membership-info__table">
-                <thead>
-                    <tr>
-                        <th>区分</th>
-                        <th>年会費（10月以降）</th>
-                        <th>参加費</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>中学生以下</td>
-                        <td>1,500円（1,000円）</td>
-                        <td rowspan="3">
-                            月単位 1回500円（コアラクラスのみ800円）<br />
-                            ※講座単位であり月単位<br />
-                            ※昼講座は2か月単位、夜講座は3か月単位
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>一般（高校生以上）</td>
-                        <td>3,000円（2,000円）</td>
-                    </tr>
-                    <tr>
-                        <td>65歳以上（2025年4月1日現在）</td>
-                        <td>2,200円（1,500円）</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="membership-info__notes">
-                <ol class="membership-info__note-list">
-                    <li class="membership-info__note">申し込み時、年会費と参加費2か月分（夜講座は3か月分）を納入してください。</li>
-                    <li class="membership-info__note">一度納入された費用は、理由のいかんを問わず返金できません。</li>
-                    <li class="membership-info__note">年会費の有効期間は、令和7年4月末までです。</li>
-                    <li class="membership-info__note">各講座の申込は、継続会員が優先です。定員になり次第締め切ります。</li>
-                    <li class="membership-info__note">暴風警報等発令時には中止となる場合があります。</li>
-                </ol>
+            </div>
+            <div class="membership-info__btn common-btn">
+                <a class="membership-info__btn-link common-btn__link" href="<?php echo esc_url(home_url("/application")) ?>">各種申込書はこちら</a>
             </div>
         </div>
-        <!-- 賛助会員 -->
-        <div class="membership-info__section membership-info__section--pink">
-            <h2 class="membership-info__title">賛助会員の募集</h2>
-            <table class="membership-info__table">
-                <thead>
-                    <tr>
-                        <th>区分</th>
-                        <th>年会費</th>
-                        <th>備考</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>個人</td>
-                        <td>1口 3,000円</td>
-                        <td rowspan="2">当クラブの趣旨に賛同し、活動を支援していただける方</td>
-                    </tr>
-                    <tr>
-                        <td>法人および団体</td>
-                        <td>1口 10,000円</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="membership-info__btn common-btn">
-            <a class="membership-info__btn-link common-btn__link" href="<?php echo esc_url(home_url("/application")) ?>">各種申込書はこちら</a>
-        </div>
-    </div>
 </section>
 <?php get_footer(); ?>

@@ -1,9 +1,7 @@
 <?php get_header(); ?>
 <!-- パンくずリスト -->
-<div class="breadcrumbs breadcrumbs-single-news-layout">
-    <div class="breadcrumbs__inner inner">
-        <?php get_template_part('parts/breadcrumb'); ?>
-    </div>
+<div class="breadcrumbs breadcrumbs-layout">
+    <?php get_template_part('parts/breadcrumb'); ?>
 </div>
 <section class="single-news single-news-layout">
     <div class="single-news__inner inner">

@@ -10,66 +10,68 @@
     <h1 class="sub-fv__title">activities<span>活動報告</span></h1>
 </section>
 <!-- パンくずリスト -->
- <?php get_template_part('parts/breadcrumb') ?>
+<div class="breadcrumbs breadcrumbs-layout">
+    <?php get_template_part('parts/breadcrumb') ?>
+</div>
 <div class="blog blog-layout">
     <div class="blog__inner inner">
-       <!-- カテゴリー一覧 -->
-<div class="program__category category">
-  <ul class="category__list">
-    <?php
-    $categories = get_categories(); // 全カテゴリー取得
-    foreach ($categories as $category) {
-        // 現在表示中のカテゴリーページかどうかを判定
-        $current_class = (is_category($category->term_id)) ? ' category__menu--current' : '';
+        <!-- カテゴリー一覧 -->
+        <div class="program__category category">
+            <ul class="category__list">
+                <?php
+                $categories = get_categories(); // 全カテゴリー取得
+                foreach ($categories as $category) {
+                    // 現在表示中のカテゴリーページかどうかを判定
+                    $current_class = (is_category($category->term_id)) ? ' category__menu--current' : '';
 
-        echo '<li class="category__menu' . $current_class . '">';
-        echo '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
-        echo '</li>';
-    }
-    ?>
-  </ul>
-</div>
-        <?php if ( have_posts() ) : ?>
-        <ul class="blog__list blog-list">
-            <?php while ( have_posts() ) : the_post(); ?>
-            <?php
-      // ▼ここでカテゴリー配列を取得（※これを消すと表示できません）
-      $cats = get_the_category();
-      // 先頭のカテゴリ名を安全に取り出す（ない場合は空文字）
-      $cat_name = ! empty( $cats ) ? $cats[0]->name : '';
-    ?>
-            <li class="blog-list__item">
-                <a href="<?php the_permalink(); ?>">
-                    <div class="blog-list__item-img">
-                        <?php if ( has_post_thumbnail() ) : ?>
-                        <?php the_post_thumbnail('full'); ?>
-                        <?php else : ?>
-                        <img src="<?php echo esc_url( get_theme_file_uri('/assets/images/common/no-image.jpg') ); ?>"
-                            alt="アイキャッチ画像未設定">
-                        <?php endif; ?>
-                    </div>
-                    <div class="blog-list__item-meta">
-                        <time class="blog-list__item-date" datetime="<?php echo esc_attr( get_the_time('Y-m-d') ); ?>">
-                            <?php echo esc_html( get_the_time('Y.m.d') ); ?>
-                        </time>
-                        <?php if ( $cat_name ) : ?>
-                        <p class="blog-list__item-category">
-                            <?php echo esc_html( $cat_name ); ?>
-                        </p>
-                        <?php endif; ?>
-                    </div>
-                    <h3 class="blog-list__item-title"><?php the_title(); ?></h3>
-                </a>
-            </li>
-            <?php endwhile; ?>
-        </ul>
+                    echo '<li class="category__menu' . $current_class . '">';
+                    echo '<a href="' . esc_url(get_category_link($category->term_id)) . '">' . esc_html($category->name) . '</a>';
+                    echo '</li>';
+                }
+                ?>
+            </ul>
+        </div>
+        <?php if (have_posts()) : ?>
+            <ul class="blog__list blog-list">
+                <?php while (have_posts()) : the_post(); ?>
+                    <?php
+                    // ▼ここでカテゴリー配列を取得（※これを消すと表示できません）
+                    $cats = get_the_category();
+                    // 先頭のカテゴリ名を安全に取り出す（ない場合は空文字）
+                    $cat_name = ! empty($cats) ? $cats[0]->name : '';
+                    ?>
+                    <li class="blog-list__item">
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="blog-list__item-img">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('full'); ?>
+                                <?php else : ?>
+                                    <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/common/no-image.jpg')); ?>"
+                                        alt="アイキャッチ画像未設定">
+                                <?php endif; ?>
+                            </div>
+                            <div class="blog-list__item-meta">
+                                <time class="blog-list__item-date" datetime="<?php echo esc_attr(get_the_time('Y-m-d')); ?>">
+                                    <?php echo esc_html(get_the_time('Y.m.d')); ?>
+                                </time>
+                                <?php if ($cat_name) : ?>
+                                    <p class="blog-list__item-category">
+                                        <?php echo esc_html($cat_name); ?>
+                                    </p>
+                                <?php endif; ?>
+                            </div>
+                            <h3 class="blog-list__item-title"><?php the_title(); ?></h3>
+                        </a>
+                    </li>
+                <?php endwhile; ?>
+            </ul>
         <?php else : ?>
-        <p>記事が見つかりませんでした。</p>
+            <p>記事が見つかりませんでした。</p>
         <?php endif; ?>
     </div>
     <!-- ページナビ -->
     <nav class="blog__pagination">
-       <?php wp_pagenavi(); ?>
+        <?php wp_pagenavi(); ?>
     </nav>
 </div>
 <?php get_footer(); ?>

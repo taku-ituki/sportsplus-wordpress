@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.breadcrumbs-mini-layout{
+  margin-top:rem(15);
+}
+
+.breadcrumbs-mini-layout .breadcrumbs__inner.inner {
+  @include mq(md) {
+    width: 80%;
+  }
+}

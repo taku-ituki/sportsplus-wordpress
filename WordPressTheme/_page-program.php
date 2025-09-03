@@ -9,11 +9,7 @@
     <h1 class="sub-fv__title sub-fv__title--program">sports program<span>スポーツ講座</span></h1>
 </section>
 <!-- パンくずリスト -->
-<div class="breadcrumbs breadcrumbs-blog-layout">
-    <div class="breadcrumbs__inner inner">
-        <?php get_template_part('parts/breadcrumb'); ?>
-    </div>
-</div>
+<?php get_template_part('parts/breadcrumb'); ?>
 <section class="program program-layout">
     <div class="program__inner inner">
         <h2 class="program__title section-title">スポーツ講座のご案内</h2>

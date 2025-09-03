@@ -10,10 +10,8 @@
     <h1 class="sub-fv__title">sports challenge<span>スポーツチャレンジ</span></h1>
 </section>
 <!-- パンくずリスト -->
-<div class="breadcrumbs breadcrumbs-blog-layout">
-    <div class="breadcrumbs__inner inner">
-        <?php get_template_part('parts/breadcrumb'); ?>
-    </div>
+<div class="breadcrumbs .breadcrumbs-mini-layout">
+    <?php get_template_part('parts/breadcrumb'); ?>
 </div>
 <!-- 目次 -->
 <section class="challenge challenge-layout">

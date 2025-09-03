@@ -157,23 +157,19 @@ a {
 }
 
 .application-layout {
-	margin-top: 1.875rem;
+	margin-top: 2.5rem;
 }
 
 .blog-layout {
 	margin-top: 2.5rem;
 }
 
-.breadcrumbs-news-layout {
-	margin-top: 5.625rem;
+.breadcrumbs-layout {
+	margin-top: 0.9375rem;
 }
 
-.breadcrumbs-notfound-layout {
-	margin-top: 5.625rem;
-}
-
-.breadcrumbs-single-news-layout {
-	margin-top: 5.625rem;
+.breadcrumbs-mini-layout {
+	margin-top: 0.9375rem;
 }
 
 .challenge-info-layout {
@@ -185,21 +181,15 @@ a {
 }
 
 .entry-layout {
-	margin-top: 1.875rem;
+	margin-top: 2.5rem;
 }
 
 .entry-status-layout {
 	margin-top: 2.5rem;
 }
 
-/*========= レイアウトのためのCSS ===============*/
-
-.faq__item {
-	margin-top: 2.5rem;
-}
-
 .faq-layout {
-	margin-top: 1.25rem;
+	margin-top: 2.5rem;
 }
 
 .footer-layout {
@@ -231,7 +221,7 @@ a {
 }
 
 .notfound-layout {
-	margin-top: 5.625rem;
+	margin-top: 5rem;
 }
 
 .partnership-layout {
@@ -1332,6 +1322,12 @@ a {
 .faq__sub-title::after {
 	margin-left: 1.875rem;
 	transform: rotate(30deg);
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+.faq__item {
+	margin-top: 2.5rem;
 }
 
 .footer-wrap {
@@ -2463,7 +2459,11 @@ main {
 .program__list {
 	counter-reset: program-number;
 	list-style: none;
+	margin-left: auto;
+	margin-right: auto;
 	margin-top: 1.25rem;
+	max-width: 31.25rem;
+	width: 100%;
 }
 
 /* 各リストアイテム（講座1件分） */
@@ -2865,7 +2865,6 @@ main {
 	margin-top: 0.625rem;
 }
 
-.support__oharu-link,
 .support__group-link {
 	border: 0.0625rem solid #ccc;
 	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
@@ -3181,15 +3180,19 @@ html {
 }
 
 .access-layout {
-	margin-top: 7.5rem;
+	margin-top: 5rem;
 }
 
 .application-layout {
-	margin-top: 2.5rem;
+	margin-top: 5rem;
 }
 
 .blog-layout {
 	margin-top: 5rem;
+}
+
+.breadcrumbs-mini-layout .breadcrumbs__inner.inner {
+	width: 80%;
 }
 
 .challenge-info-layout {
@@ -3201,15 +3204,11 @@ html {
 }
 
 .entry-layout {
-	margin-top: 2.5rem;
+	margin-top: 5rem;
 }
 
 .entry-status-layout {
-	margin-top: 3.75rem;
-}
-
-.faq__item {
-	margin-top: 2.6875rem;
+	margin-top: 5rem;
 }
 
 .faq-layout {
@@ -3237,23 +3236,23 @@ html {
 }
 
 .single-blog-layout {
-	margin-top: 3.75rem;
+	margin-top: 5rem;
 }
 
 .single-news-layout {
-	margin-top: 3.75rem;
+	margin-top: 5rem;
 }
 
 .support-layout {
-	margin-top: 3.75rem;
+	margin-top: 5rem;
 }
 
 .top-news-layout {
-	margin-top: 7.5rem;
+	margin-top: 5rem;
 }
 
 .works-layout {
-	margin-top: 7.5rem;
+	margin-top: 5rem;
 }
 
 .about__title br {
@@ -3465,7 +3464,7 @@ html {
 
 .category__list {
 	gap: 1.9375rem;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	max-width: 80%;
 	width: 100%;
 }
@@ -3648,6 +3647,10 @@ html {
 
 .faq__sub-title::after {
 	margin-left: 3.125rem;
+}
+
+.faq__item {
+	margin-top: 2.6875rem;
 }
 
 .footer__logo {
@@ -3844,6 +3847,7 @@ html {
 
 .program__list {
 	margin-top: 2.5rem;
+	max-width: 100%;
 }
 
 .section-title {

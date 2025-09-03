@@ -10,10 +10,8 @@
     <h1 class="sub-fv__title sub-fv__title--challenge">club partnership<span>部活動地域連携</span></h1>
 </section>
 <!-- パンくずリスト -->
-<div class="breadcrumbs breadcrumbs-blog-layout">
-    <div class="breadcrumbs__inner inner">
-        <?php get_template_part('parts/breadcrumb'); ?>
-    </div>
+<div class="breadcrumbs breadcrumbs-layout">
+    <?php get_template_part('parts/breadcrumb'); ?>
 </div>
 <!-- 部活動地域連携 -->
 <section class="partnership partnership-layout">

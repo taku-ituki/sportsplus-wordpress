@@ -2,17 +2,29 @@
 
 jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
-  //ローディングアニメーション
+  // //ローディングアニメーション
   function loading() {
-    setTimeout(function () {
-      $(".js-loading").addClass("is-hide");
+    // すでにローディング済みかをsessionStorageで確認
+    const hasLoaded = sessionStorage.getItem("hasLoaded");
+
+    if (!hasLoaded) {
+      // 初回アクセス：ローディングアニメーションを実行
       setTimeout(function () {
-        $(".js-loading").remove();
-      }, 800);
-    }, 2000);
+        $(".js-loading").addClass("is-hide");
+        setTimeout(function () {
+          $(".js-loading").remove();
+        }, 800);
+      }, 2000);
+
+      // フラグを保存（再訪問時はスキップするため）
+      sessionStorage.setItem("hasLoaded", "true");
+    } else {
+      // 2回目以降：即座に非表示
+      $(".js-loading").remove();
+    }
   }
-  $(document).ready(loading);
   $(window).on("load", loading);
+
 
   //ハンバーガーメニュー
   $(function () {

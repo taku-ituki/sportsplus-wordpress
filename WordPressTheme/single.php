@@ -10,10 +10,8 @@
     <div class="sub-fv__overlay"></div>
 </section>
 <!-- パンくずリスト -->
-<div class="breadcrumbs breadcrumbs-single-layout">
-    <div class="breadcrumbs__inner inner">
+<div class="breadcrumbs breadcrumbs-layout">
         <?php get_template_part('parts/breadcrumb'); ?>
-    </div>
 </div>
 <?php if (have_posts()):
     while (have_posts()):

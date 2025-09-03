@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
 <?php wp_head(); ?>
-
 <body>
     <!-- ページトップボタン -->
     <button class="top-button js-top-button"><span></span>TOP</button>
@@ -109,4 +108,4 @@
             </div>
         </div>
     </header>
-    <main>
+<main>
