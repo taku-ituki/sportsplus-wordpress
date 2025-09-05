@@ -92,4 +92,42 @@
         </div>
     </div>
 </section>
+<?php
+// 固定ページのスラッグからページ情報を取得
+$pdf_page = get_page_by_path('program-pdf'); // ← スラッグ名を指定
+$pdf_page_id = $pdf_page ? $pdf_page->ID : null; // ページが存在すればID取得
+
+// ACFのファイルフィールドからPDFのURLを取得
+$pdf_availability = get_field('pdf_availability', $pdf_page_id);
+?>
+
+<section class="program-availability program-availability-layout">
+    <div class="inner program-availability__inner">
+        <h2 class="program-availability__title section-title">講座の申し込み状況</h2>
+
+        <div class="program-availability__item">
+            <div class="program-availability__pdf">
+                <?php if ($pdf_availability): ?>
+                    <embed
+                        src="<?php echo esc_url($pdf_availability); ?>"
+                        type="application/pdf"
+                        width="100%"
+                        height="600px"
+                        class="pdf__url" />
+                    <p>
+                    <div class="access__btn common-btn">
+                        <a class="access__btn-link common-btn__link" href="<?php echo esc_url($pdf_availability); ?>" download
+                            target="_blank"
+                            rel="noopener">PDFをダウンロードする</a>
+                    </div>
+                    </p>
+                <?php else: ?>
+                    <p>現在準備中</p>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 <?php get_footer(); ?>

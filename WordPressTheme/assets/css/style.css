@@ -228,6 +228,10 @@ a {
 	margin-top: 2.5rem;
 }
 
+.program-availability-layout {
+	margin-top: 2.5rem;
+}
+
 .program-layout {
 	margin-top: 2.5rem;
 }
@@ -1898,7 +1902,7 @@ main {
 }
 
 .list__item:first-child {
-	border-top: 1px solid #e2e2e2;
+	border-top: 0.0625rem solid #e2e2e2;
 }
 
 .list__item a:hover .list__item-title {
@@ -2437,6 +2441,52 @@ main {
 	text-shadow: none;
 }
 
+.partner-card {
+	display: flex;
+	flex-direction: column;
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.partner-card__image {
+	overflow: hidden;
+	width: 100%;
+}
+
+.partner-card__image img {
+	-o-object-fit: cover;
+	aspect-ratio: 195/160;
+	object-fit: cover;
+	transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
+}
+
+.partner-card a {
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+}
+
+.partner-card__title {
+	font-size: 1.125rem;
+	text-align: center;
+}
+
+.partner-card__content {
+	margin-top: auto;
+}
+
+.partner-card__text {
+	margin-top: 0.9375rem;
+}
+
+/* アニメーション発火時：表示＋位置リセット */
+
+.partner-card.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
 .pdf__url {
 	aspect-ratio: 1/1;
 	display: block;
@@ -2448,6 +2498,10 @@ main {
 
 .pdf p {
 	text-align: center;
+}
+
+.program-availability__pdf {
+	margin-top: 2.5rem;
 }
 
 .program__category {
@@ -3159,6 +3213,10 @@ main {
 	transform: scale(1.2);
 }
 
+.partner-card:hover img {
+	transform: scale(1.2);
+}
+
 }
 
 @media screen and (min-width: 768px) {
@@ -3228,6 +3286,10 @@ html {
 }
 
 .partnership-layout {
+	margin-top: 5rem;
+}
+
+.program-availability-layout {
 	margin-top: 5rem;
 }
 
@@ -3837,8 +3899,19 @@ html {
 	margin-top: 3.75rem;
 }
 
+.partner-cards {
+	grid-gap: 0.9375rem;
+	display: grid;
+	gap: 0.9375rem;
+	grid-template-columns: repeat(3, 1fr);
+}
+
 .pdf p {
 	font-size: 1.5rem;
+}
+
+.program-availability__pdf {
+	margin-top: 5rem;
 }
 
 .program__category {

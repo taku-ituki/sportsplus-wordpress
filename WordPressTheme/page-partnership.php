@@ -59,78 +59,62 @@
         </div>
         <h3 class="partnership__sub-title" id="ongoing-activities">実施中の地域クラブ活動</h3>
         <ul class="partnership__list intro-cards">
-            <li class="partnership__list-card intro-card js-modal-trigger" data-modal-id="modal1">
-                <figure class="intro-card__image">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/baseball.jpg" alt="野球の様子" />
-                </figure>
-                <div class="intro-card__content">
-                    <div class="intro-card__header">
-                        <span class="intro-card__number"></span>
-                        <!-- 自動連番 -->
-                        <h3 class="intro-card__title">野球</h3>
-                    </div>
-                    <dl class="intro-card__details">
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">開催日</dt>
-                            <dd class="intro-card__text">第1・3金曜日</dd>
+            <?php if (have_rows('partnership_list')): ?>
+                <?php $modal_id = 1; // モーダル識別用のID 
+                ?>
+                <?php while (have_rows('partnership_list')): the_row(); ?>
+                    <?php
+                    $image = get_sub_field('image');
+                    $title = get_sub_field('title');
+                    $date = get_sub_field('date');
+                    $time = get_sub_field('time');
+                    $place = get_sub_field('place');
+                    $teacher = get_sub_field('teacher');
+                    $description = get_sub_field('description');
+
+                    // 画像の代替処理
+                    $fallback_src = get_theme_file_uri('/assets/images/common/no-image.jpg');
+                    $img_src = $image ? $image['url'] : $fallback_src;
+                    $img_alt = $image ? $image['alt'] : 'No Image';
+                    ?>
+                    <li class="partnership__list-card intro-card fade-in js-modal-trigger js-fadeIn" data-modal-id="modal<?php echo $modal_id; ?>">
+                        <figure class="intro-card__image">
+                            <img src="<?php echo esc_url($img_src); ?>" alt="<?php echo esc_attr($img_alt); ?>" />
+                        </figure>
+                        <div class="intro-card__content">
+                            <div class="intro-card__header">
+                                <span class="intro-card__number"></span> <!-- SCSS側で連番表示 -->
+                                <h3 class="intro-card__title"><?php echo esc_html($title); ?></h3>
+                            </div>
+                            <dl class="intro-card__details">
+                                <div class="intro-card__detail">
+                                    <dt class="intro-card__label">開催日</dt>
+                                    <dd class="intro-card__text"><?php echo esc_html($date); ?></dd>
+                                </div>
+                                <div class="intro-card__detail">
+                                    <dt class="intro-card__label">時間</dt>
+                                    <dd class="intro-card__text"><?php echo esc_html($time); ?></dd>
+                                </div>
+                                <div class="intro-card__detail">
+                                    <dt class="intro-card__label">開催場所</dt>
+                                    <dd class="intro-card__text"><?php echo esc_html($place); ?></dd>
+                                </div>
+                                <div class="intro-card__detail">
+                                    <dt class="intro-card__label">講師</dt>
+                                    <dd class="intro-card__text"><?php echo esc_html($teacher); ?></dd>
+                                </div>
+                                <div class="intro-card__detail">
+                                    <dt class="intro-card__label">紹介文</dt>
+                                    <dd class="intro-card__text"><?php echo esc_html($description); ?></dd>
+                                </div>
+                            </dl>
                         </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">時間</dt>
-                            <dd class="intro-card__text">8:45〜11:45</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">開催場所</dt>
-                            <dd class="intro-card__text">大治町営野球場</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">講師</dt>
-                            <dd class="intro-card__text">好生館病院軟式野球部</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">紹介文</dt>
-                            <dd class="intro-card__text">テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
-                            </dd>
-                        </div>
-                    </dl>
-                </div>
-            </li>
-            <!-- 2件目以降も同様に繰り返し -->
-            <li class="partnership__list-card intro-card js-modal-trigger" data-modal-id="modal2">
-                <figure class="intro-card__image">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hand4.jpg" alt="" />
-                </figure>
-                <div class="intro-card__content">
-                    <div class="intro-card__header">
-                        <span class="intro-card__number"></span>
-                        <!-- 自動連番 -->
-                        <h3 class="intro-card__title">男子ハンドボール</h3>
-                    </div>
-                    <dl class="intro-card__details">
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">開催日</dt>
-                            <dd class="intro-card__text">第1・3金曜日</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">時間</dt>
-                            <dd class="intro-card__text">8:45〜11:45</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">開催場所</dt>
-                            <dd class="intro-card__text">大治中学校運動場</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">講師</dt>
-                            <dd class="intro-card__text">山口拓馬　氏</dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt class="intro-card__label">紹介文</dt>
-                            <dd class="intro-card__text">テストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテストテスト
-                            </dd>
-                        </div>
-                    </dl>
-                </div>
-            </li>
+                    </li>
+                    <?php $modal_id++; ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </ul>
+
         <div class="partnership__support-wrap">
             <h3 class="partnership__sub-title" id="support-members">賛助会員の募集</h3>
             <div class="partnership__support">

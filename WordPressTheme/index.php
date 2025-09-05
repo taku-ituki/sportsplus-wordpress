@@ -40,51 +40,65 @@
     </div>
 </div>
 <section class="top-news top-news-layout">
-        <div class="top-news__inner inner">
-          <h2 class="top-news__title section-title">お知らせ</h2>
-          <!-- お知らせのカテゴリー切り替え -->
-          <div class="top-news__nav common-category">
-            <nav class="top-news__category common-category__nav">
-              <a href="#">一覧</a>
-              <a href="#">お知らせ</a>
-              <a href="#">募集</a>
-            </nav>
-          </div>
-          <!-- お知らせ記事 -->
-          <ul class="top-news__list list">
-            <li class="list__item">
-              <a href="#">
-                <div class="top-news__news-meta list__item-meta">
-                  <time class="top-news__news-date list__item-date" datetime="2023-05-10">2023.05.10</time>
-                  <p class="top-news__news-category list__item-category">お知らせ</p>
-                </div>
-                <p class="top-news__news-title list__item-title">スポーツチャレンジの申込状況につきましては、大治南小低学年が満員となっていましたが、残り１名の空きがあります。訂正し、お詫びします。現在、満員なのは、大治小高学年と大治南小高学年です。【令和7年6月8日】</p>
-              </a>
+    <div class="top-news__inner inner">
+        <h2 class="top-news__title section-title">お知らせ</h2>
+
+        <!-- タブ -->
+        <ul class="top-news__tabs category__list js-top-news__tabs">
+            <li class="category__menu category__menu--current">
+                <a href="#" data-slug="all">最新</a>
             </li>
-            <li class="list__item">
-              <a href="#">
-                <div class="top-news__news-meta list__item-meta">
-                  <time class="top-news__news-date list__item-date" datetime="2023-05-10">2023.05.10</time>
-                  <p class="top-news__news-category list__item-category">お知らせ</p>
-                </div>
-                <p class="top-news__news-title list__item-title">〇〇講座休講のお知らせ</p>
-              </a>
+            <li class="category__menu">
+                <a href="#" data-slug="info">お知らせ</a>
             </li>
-            <li class="list__item">
-              <a href="#">
-                <div class="top-news__news-meta list__item-meta">
-                  <time class="top-news__news-date list__item-date" datetime="2023-05-10">2023.05.10</time>
-                  <p class="top-news__news-category list__item-category">募集</p>
-                </div>
-                <p class="top-news__news-title list__item-title">〇〇講座の募集を開始しました！</p>
-              </a>
+            <li class="category__menu">
+                <a href="#" data-slug="boshu">募集</a>
             </li>
-          </ul>
-           <div class="top-news__btn-wrap common-btn">
-             <a class="top-news__btn common-btn__link" href="<?php echo esc_url(home_url("/news")) ?>">お知らせ一覧</a>
-            </div>
+        </ul>
+        <!-- Ajaxで切り替えるエリア -->
+        <div id="news-list">
+            <?php
+            $args = [
+                'post_type'      => 'news',
+                'posts_per_page' => 5,
+                'post_status'    => 'publish',
+            ];
+            $query = new WP_Query($args);
+            if ($query->have_posts()) :
+                echo '<ul class="top-news__list list">';
+                while ($query->have_posts()) : $query->the_post(); ?>
+                    <li class="list__item">
+                        <a href="<?php the_permalink(); ?>">
+                            <div class="list__item-meta">
+                                <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                                    <?php echo get_the_date('Y.m.d'); ?>
+                                </time>
+                                <?php
+                                $terms = get_the_terms(get_the_ID(), 'news_category');
+                                if ($terms && !is_wp_error($terms)) {
+                                    echo '<p class="list__item-category">' . esc_html($terms[0]->name) . '</p>';
+                                }
+                                ?>
+                            </div>
+                            <p class="list__item-title"><?php the_title(); ?></p>
+                        </a>
+                    </li>
+            <?php endwhile;
+                echo '</ul>';
+                wp_reset_postdata();
+            else :
+                echo '<p>現在お知らせはありません。</p>';
+            endif;
+            ?>
         </div>
-      </section>
+        <div class="top-news__btn-wrap common-btn">
+            <a class="top-news-btn common-btn__link" href="<?php echo esc_url(home_url("/news")) ?>">一覧へ</a>
+        </div>
+    </div>
+</section>
+
+
+
 <!-- スポーツプラスおおはるについて -->
 <section class="about about-layout">
     <div class="about__inner inner">
@@ -136,7 +150,7 @@
                         <p class="works-list__item-text">年間講座
                             、短期講座、イベントがあり、自分に合った運動を楽しむことができます。複数の講座が受講できます。大治町の方はもちろん、町外のどなたでも参加できます！</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                             <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/program")) ?>">詳しく見る</a>
+                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/program")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>
@@ -151,7 +165,7 @@
                         <p class="works-list__item-text">
                             学校で「部活動」として活動していた土日の活動を「地域クラブ活動」とし、実業団や競技経験豊富な方が指導に加わるようになります。</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                             <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/partnership")) ?>">詳しく見る</a>
+                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/partnership")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>

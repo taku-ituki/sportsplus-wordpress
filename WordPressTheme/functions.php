@@ -266,7 +266,8 @@ function filter_program_by_category()
 
 
 // 管理画面の「投稿」の名称とアイコンを変更する
-function custom_post_menu_label() {
+function custom_post_menu_label()
+{
     global $menu;
     global $submenu;
 
@@ -281,7 +282,8 @@ function custom_post_menu_label() {
 
 add_action('admin_menu', 'custom_post_menu_label');
 
-function custom_post_menu_icon() {
+function custom_post_menu_icon()
+{
     // メニューアイコンを megaphone（拡声器）アイコンに変更（dashicons）
     echo '
     <style>
@@ -291,4 +293,16 @@ function custom_post_menu_icon() {
     </style>';
 }
 add_action('admin_head', 'custom_post_menu_icon');
+
+
+//「講座申込状況PDF」の「公開」を押すと講座ページにリンクさせる。
+function redirect_program_pdf_to_archive()
+{
+    if (is_page('program-pdf')) {
+        wp_redirect(home_url('/program/'), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'redirect_program_pdf_to_archive');
+
 

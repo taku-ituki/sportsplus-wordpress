@@ -272,5 +272,54 @@ jQuery(function ($) {
 });
 
 
+//部活動地域移行カードのフェードアニメーショn
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".js-partner-card");
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("is-visible");
+        }, index * 150); // 順番に表示させるためのディレイ（150msずつ遅らせる）
+
+        observer.unobserve(entry.target); // 一度表示されたら監視解除
+      }
+    });
+  }, {
+    threshold: 0.1, // 10%見えたら発火
+  });
+
+  cards.forEach(card => {
+    observer.observe(card);
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".partner-card");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add("is-visible");
+            }, index * 150); // 順番に表示させるためのディレイ（150msずつ遅らせる）
+
+            observer.unobserve(entry.target); // 一度表示されたら監視解除
+          }
+        });
+      },
+      {
+        threshold: 0.1, // 10%見えたら発火
+      }
+    );
+
+    cards.forEach((card) => {
+      observer.observe(card);
+    });
+  });
+
+});
+
 
 

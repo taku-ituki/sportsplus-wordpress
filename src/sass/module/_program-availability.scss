@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.program-availability__pdf{
+    margin-top:rem(40);
+    @include mq(md){
+        margin-top:rem(80);
+    }
+}
+
