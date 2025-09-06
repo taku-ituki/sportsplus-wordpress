@@ -17,6 +17,13 @@
   }
 }
 
+.blog-list__item{
+  margin-left: auto;
+  margin-right: auto;
+  padding: rem(16) rem(16) rem(24) rem(16);
+  box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+}
+
 .blog-list__item a {
   display: block;
   height: 100%;

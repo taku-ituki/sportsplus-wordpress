@@ -8,6 +8,13 @@
   padding-top: rem(30);
 }
 
+.partnership__cards{
+  margin-top:rem(40);
+  @include mq(md){
+    margin-top:rem(80);
+  }
+}
+
 .partnership__text {
   font-size: rem(18);
   padding: rem(40) rem(20);

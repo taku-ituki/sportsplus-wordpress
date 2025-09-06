@@ -726,6 +726,13 @@ a {
 	grid-template-columns: repeat(1, 1fr);
 }
 
+.blog-list__item {
+	box-shadow: 0.125rem 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.25);
+	margin-left: auto;
+	margin-right: auto;
+	padding: 1rem 1rem 1.5rem 1rem;
+}
+
 .blog-list__item a {
 	background-color: #fff;
 	display: block;
@@ -2323,6 +2330,10 @@ main {
 	padding-top: 1.875rem;
 }
 
+.partnership__cards {
+	margin-top: 2.5rem;
+}
+
 .partnership__text {
 	background: #87ceeb;
 	color: #fff;
@@ -2441,12 +2452,27 @@ main {
 	text-shadow: none;
 }
 
+.partner-cards {
+	grid-gap: 2.5rem;
+	display: grid;
+	gap: 2.5rem;
+	grid-template-columns: repeat(1, 1fr);
+}
+
 .partner-card {
+	box-shadow: 0.125rem 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.25);
 	display: flex;
 	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
 	opacity: 0;
+	padding: 1rem 1rem 1.5rem 1rem;
 	transform: translateY(30px);
 	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.partner-card:first-child {
+	margin-top: 0rem;
 }
 
 .partner-card__image {
@@ -2468,6 +2494,7 @@ main {
 }
 
 .partner-card__title {
+	border-bottom: 0.0625rem solid #73b2c8;
 	font-size: 1.125rem;
 	text-align: center;
 }
@@ -3886,6 +3913,10 @@ html {
 	font-size: 1.125rem;
 }
 
+.partnership__cards {
+	margin-top: 5rem;
+}
+
 .partnership__text {
 	font-size: 1.5rem;
 }
@@ -3900,9 +3931,13 @@ html {
 }
 
 .partner-cards {
-	grid-gap: 0.9375rem;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.partner-cards {
+	grid-gap: 1.875rem;
 	display: grid;
-	gap: 0.9375rem;
+	gap: 1.875rem;
 	grid-template-columns: repeat(3, 1fr);
 }
 
