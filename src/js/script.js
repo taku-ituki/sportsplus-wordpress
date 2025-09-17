@@ -25,17 +25,18 @@ jQuery(function ($) {
   }
   $(window).on("load", loading);
 
-
   //ハンバーガーメニュー
   $(function () {
     $(".js-hamburger").click(function () {
       $(this).toggleClass("is-open");
+       $(".js-header").toggleClass("is-color");
       $(".js-drawer").fadeToggle();
     });
 
     // ドロワーナビのaタグをクリックで閉じる
     $(".js-drawer a[href]").on("click", function () {
       $(".js-hamburger").removeClass("is-open");
+       $(".js-header").removeClass("is-color");
       $(".js-drawer").fadeOut();
     });
 
@@ -43,6 +44,7 @@ jQuery(function ($) {
     $(window).on("resize", function () {
       if (window.matchMedia("(min-width: 768px)").matches) {
         $(".js-hamburger").removeClass("is-open");
+         $(".js-header").removeClass("is-color");
         $(".js-drawer").fadeOut();
       }
     });
@@ -271,31 +273,33 @@ jQuery(function ($) {
   });
 });
 
-
 //部活動地域移行カードのフェードアニメーショn
 document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".js-partner-card");
+  const cards = document.querySelectorAll(".js-club-card");
 
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add("is-visible");
-        }, index * 150); // 順番に表示させるためのディレイ（150msずつ遅らせる）
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add("is-visible");
+          }, index * 150); // 順番に表示させるためのディレイ（150msずつ遅らせる）
 
-        observer.unobserve(entry.target); // 一度表示されたら監視解除
-      }
-    });
-  }, {
-    threshold: 0.1, // 10%見えたら発火
-  });
+          observer.unobserve(entry.target); // 一度表示されたら監視解除
+        }
+      });
+    },
+    {
+      threshold: 0.1, // 10%見えたら発火
+    }
+  );
 
-  cards.forEach(card => {
+  cards.forEach((card) => {
     observer.observe(card);
   });
 
   document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".partner-card");
+    const cards = document.querySelectorAll(".club-card");
 
     const observer = new IntersectionObserver(
       (entries, observer) => {
@@ -318,8 +322,4 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(card);
     });
   });
-
 });
-
-
-

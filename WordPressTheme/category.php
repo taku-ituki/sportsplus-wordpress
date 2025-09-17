@@ -7,7 +7,7 @@
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challenge-view.jpg" alt="メイン画像" />
     </picture>
     <div class="sub-fv__overlay"></div>
-    <h1 class="sub-fv__title">activities<span>活動報告</span></h1>
+    <h1 class="sub-fv__title">活動報告<span>activities</span></h1>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-layout">

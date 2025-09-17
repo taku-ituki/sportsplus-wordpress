@@ -27,15 +27,6 @@ function custom_enqueue_scripts()
         filemtime(get_theme_file_path('/assets/css/style.css'))
     );
 
-    // jQuery
-    // wp_enqueue_script(
-    //     'custom-jquery',
-    //     get_theme_file_uri('/assets/js/jquery-3.7.1.js'),
-    //     [],
-    //     '3.7.1',
-    //     true
-    // );
-
     wp_enqueue_script('jquery');
 
     // Swiper JS

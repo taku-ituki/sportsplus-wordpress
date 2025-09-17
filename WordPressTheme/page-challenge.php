@@ -7,7 +7,7 @@
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challengetop.jpg" alt="diving" />
     </picture>
     <div class="sub-fv__overlay"></div>
-    <h1 class="sub-fv__title">sports challenge<span>スポーツチャレンジ</span></h1>
+    <h1 class="sub-fv__title">スポーツチャレンジ<span>sports challenge</span></h1>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs .breadcrumbs-mini-layout">
@@ -40,6 +40,9 @@
                 <li class="toc__item">
                     <a href="#challenge-date" class="toc__link">「申込状況・日程」</a>
                 </li>
+                <li class="club__toc-item toc__item"><a href="#challenge-info" class="toc__link">
+                        申し込み・問い合わせ先</a>
+                </li>
             </ul>
         </nav>
         <!-- スポーツチャレンジとは -->
@@ -63,8 +66,8 @@
                             alt="スポーツチャレンジの様子" />
                     </li>
                 </ul>
-                <div class="partnership__btn common-btn">
-                    <a class="partnership__btn-link common-btn__link" href="
+                <div class="club__btn common-btn">
+                    <a class="club__btn-link common-btn__link" href="
                     <?php echo esc_url(home_url('/faq/#spochalle')); ?>">「スポーツチャレンジ」に関するQ&A</a>
                 </div>
             </div>
@@ -153,7 +156,7 @@
         </div>
         <!-- 申し込み・お問い合わせ -->
         <div class="challenge__info">
-            <h2 class="challenge__title section-title">申し込み・問い合わせ先</h2>
+            <h2 class="challenge__title section-title" id="challenge-info">申し込み・問い合わせ先</h2>
             <table class="challenge__access-table access__table">
                 <tbody class="access-table__body">
                     <tr class="access-table__row">

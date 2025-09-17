@@ -3,12 +3,8 @@
 .mv {
   overflow: hidden;
   width: 100%;
-  background-color:$white;
+  background-color: $white;
   position: relative;
-  padding-top: rem(65);
-  @include mq(md) {
-    padding-top: rem(90);
-  }
 }
 
 .mv__title {
@@ -44,14 +40,14 @@
 }
 
 .mv__scroll-row img {
-  width: calc(100 / 3);
-  height: calc(100 / 5);
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  object-position: center 25%;
   display: block;
+  height: rem(150);
   @include mq(md) {
-    width: calc(100% / 3);
-    height: calc(100 / 5);
+    min-width: 33%;
+    height: rem(200);
   }
 }
 

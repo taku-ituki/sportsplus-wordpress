@@ -28,12 +28,14 @@ jQuery(function ($) {
   $(function () {
     $(".js-hamburger").click(function () {
       $(this).toggleClass("is-open");
+      $(".js-header").toggleClass("is-color");
       $(".js-drawer").fadeToggle();
     });
 
     // ドロワーナビのaタグをクリックで閉じる
     $(".js-drawer a[href]").on("click", function () {
       $(".js-hamburger").removeClass("is-open");
+      $(".js-header").removeClass("is-color");
       $(".js-drawer").fadeOut();
     });
 
@@ -41,6 +43,7 @@ jQuery(function ($) {
     $(window).on("resize", function () {
       if (window.matchMedia("(min-width: 768px)").matches) {
         $(".js-hamburger").removeClass("is-open");
+        $(".js-header").removeClass("is-color");
         $(".js-drawer").fadeOut();
       }
     });
@@ -259,7 +262,7 @@ jQuery(function ($) {
 
 //部活動地域移行カードのフェードアニメーショn
 document.addEventListener("DOMContentLoaded", function () {
-  var cards = document.querySelectorAll(".js-partner-card");
+  var cards = document.querySelectorAll(".js-club-card");
   var observer = new IntersectionObserver(function (entries, observer) {
     entries.forEach(function (entry, index) {
       if (entry.isIntersecting) {
@@ -278,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(card);
   });
   document.addEventListener("DOMContentLoaded", function () {
-    var cards = document.querySelectorAll(".partner-card");
+    var cards = document.querySelectorAll(".club-card");
     var observer = new IntersectionObserver(function (entries, observer) {
       entries.forEach(function (entry, index) {
         if (entry.isIntersecting) {

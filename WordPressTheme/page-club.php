@@ -7,62 +7,62 @@
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/valley.jpg" alt="diving" />
     </picture>
     <div class="sub-fv__overlay"></div>
-    <h1 class="sub-fv__title sub-fv__title--challenge">club partnership<span>部活動地域連携</span></h1>
+    <h1 class="sub-fv__title sub-fv__title--challenge">部活動地域連携<span>club partnership</span></h1>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-layout">
     <?php get_template_part('parts/breadcrumb'); ?>
 </div>
 <!-- 部活動地域連携 -->
-<section class="partnership partnership-layout">
-    <div class="inner partnership__inner">
-        <h2 class="partnership__title section-title">部活動地域連携</h2>
-        <nav class="partnership__toc toc">
-            <div class="partnership__tok-title toc__title">【目次】</div>
-            <ul class="partnership__toc-list toc__list">
-                <li class="partnership__toc-item toc__item"><a href="#club" class="toc__link">部活動地域連携とは？</a></li>
-                <li class="partnership__toc-item toc__item"><a href="#area-club"
+<section class="club club-layout">
+    <div class="inner club__inner">
+        <h2 class="club__title section-title">部活動地域連携</h2>
+        <nav class="club__toc toc">
+            <div class="club__tok-title toc__title">【目次】</div>
+            <ul class="club__toc-list toc__list">
+                <li class="club__toc-item toc__item"><a href="#club" class="toc__link">部活動地域連携とは？</a></li>
+                <li class="club__toc-item toc__item"><a href="#area-club"
                         class="toc__link">「部活動」・「地域クラブ」・「クラブチーム」との違い</a></li>
-                <li class="partnership__toc-item toc__item"><a href="#ongoing-activities"
+                <li class="club__toc-item toc__item"><a href="#ongoing-activities"
                         class="toc__link">実施中の地域クラブ活動</a></li>
-                <li class="partnership__toc-item toc__item"><a href="#support-members" class="toc__link">賛助会員の募集</a>
+                <li class="club__toc-item toc__item"><a href="#support-members" class="toc__link">賛助会員の募集</a>
                 </li>
             </ul>
         </nav>
-        <div class="partnership__bg-color">
-            <h3 class="partnership__sub-title partnership__sub-title--color" id="club">部活動地域連携とは？</h3>
-            <div class="partnership__text">
+        <div class="club__bg-color">
+            <h3 class="club__sub-title club__sub-title--color" id="club">部活動地域連携とは？</h3>
+            <div class="club__text">
                 <p>今まで中学校の部活動は、学校の教育活動の一環として行うことが基本でした。これからは、学習指導要領の改訂等により、休日の部活動を段階的に地域クラブ等へ移行していくことが求められています。そこで、大治町では学校と地域が連携して地域クラブ活動を実施していきます。
                 </p>
             </div>
-            <div class="partnership__btn common-btn">
-                <a class="partnership__btn-link common-btn__link" href=" <?php echo esc_url(home_url('/faq/#partnership')); ?>">「部活動地域連携」に関するQ&A</a>
+            <div class="club__btn common-btn">
+                <a class="club__btn-link common-btn__link" href=" <?php echo esc_url(home_url('/faq/#club')); ?>">「部活動地域連携」に関するQ&A</a>
             </div>
         </div>
-        <h3 class="partnership__sub-title" id="area-club">「部活動」・「地域クラブ」・「クラブチーム」との違い</h3>
-        <div class="partnership__img">
+        <h3 class="club__sub-title" id="area-club">「部活動」・「地域クラブ」・「クラブチーム」との違い</h3>
+        <div class="club__img">
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/bukatudou.jpg" alt="部活動地域連携とは" />
         </div>
-        <div class="partnership__difference-cards">
-            <div class="partnership__difference-card">
-                <h4 class="partnership__difference-card-title">学校部活動</h4>
-                <p class="partnership__difference-card-text">学校の教員が指導し、学校の施設内で実施される活動。主に放課後や休日に行われ、教員の負担が大きいのが課題です。</p>
+        <div class="club__difference-cards">
+            <div class="club__difference-card">
+                <h4 class="club__difference-card-title">学校部活動</h4>
+                <p class="club__difference-card-text">学校の教員が指導し、学校の施設内で実施される活動。主に放課後や休日に行われ、教員の負担が大きいのが課題です。</p>
             </div>
-            <div class="partnership__difference-card">
-                <h4 class="partnership__difference-card-title">地域クラブ活動</h4>
-                <p class="partnership__difference-card-text">地域の指導者が主体となり、地域施設を活用して行う活動。多世代が関われる持続可能な新しい部活動の形です。</p>
+            <div class="club__difference-card">
+                <h4 class="club__difference-card-title">地域クラブ活動</h4>
+                <p class="club__difference-card-text">地域の指導者が主体となり、地域施設を活用して行う活動。多世代が関われる持続可能な新しい部活動の形です。</p>
             </div>
-            <div class="partnership__difference-card">
-                <h4 class="partnership__difference-card-title">クラブチーム</h4>
-                <p class="partnership__difference-card-text">学校外で専門指導者が活動を主導し、競技力向上を目的とした活動。費用や保護者のサポートが求められます。</p>
+            <div class="club__difference-card">
+                <h4 class="club__difference-card-title">クラブチーム</h4>
+                <p class="club__difference-card-text">学校外で専門指導者が活動を主導し、競技力向上を目的とした活動。費用や保護者のサポートが求められます。</p>
             </div>
         </div>
-        <h3 class="partnership__sub-title" id="ongoing-activities">実施中の地域クラブ活動</h3>
-        <ul class="partnership__list intro-cards">
-            <?php if (have_rows('partnership_list')): ?>
+        <h3 class="club__sub-title" id="ongoing-activities">実施中の地域クラブ活動</h3>
+        <ul class="club__list intro-cards">
+            <?php if (have_rows('club_list')): ?>
                 <?php $modal_id = 1; // モーダル識別用のID 
                 ?>
-                <?php while (have_rows('partnership_list')): the_row(); ?>
+                <?php while (have_rows('club_list')): the_row(); ?>
                     <?php
                     $image = get_sub_field('image');
                     $title = get_sub_field('title');
@@ -77,7 +77,7 @@
                     $img_src = $image ? $image['url'] : $fallback_src;
                     $img_alt = $image ? $image['alt'] : 'No Image';
                     ?>
-                    <li class="partnership__list-card intro-card fade-in js-modal-trigger js-fadeIn" data-modal-id="modal<?php echo $modal_id; ?>">
+                    <li class="club__list-card intro-card fade-in js-modal-trigger js-fadeIn" data-modal-id="modal<?php echo $modal_id; ?>">
                         <figure class="intro-card__image">
                             <img src="<?php echo esc_url($img_src); ?>" alt="<?php echo esc_attr($img_alt); ?>" />
                         </figure>
@@ -115,22 +115,22 @@
             <?php endif; ?>
         </ul>
 
-        <div class="partnership__support-wrap">
-            <h3 class="partnership__sub-title" id="support-members">賛助会員の募集</h3>
-            <div class="partnership__support">
-                <div class="partnership__support-lead">
-                    <p class="partnership__support-text">
+        <div class="club__support-wrap">
+            <h3 class="club__sub-title" id="support-members">賛助会員の募集</h3>
+            <div class="club__support">
+                <div class="club__support-lead">
+                    <p class="club__support-text">
                         スポーツプラスおおはるの賛助会員になって部活動地域連携のサポーターになっていただき、 企業名等を練習用Tシャツに印刷して生徒へ配布します。<br />
                         生徒たちに応援してくださる地元企業を知る機会として紹介していきます。
                     </p>
                 </div>
-                <div class="partnership__support-shirt">
-                    <h4 class="partnership__support-title">サポーターTシャツについて</h4>
-                    <p class="partnership__support-text">Tシャツの前後を12分割し、協力いただける企業様の名称を印刷します。</p>
-                    <ul class="partnership__support-list">
-                        <li class="partnership__support-item">【前後】（ひと枠）：縦10cm×横10cm　10万円</li>
-                        <li class="partnership__support-item">上部2列・下部2列：各8万円</li>
-                        <li class="partnership__support-item">【袖】（ひと枠）：縦5cm×横8cm　5万円</li>
+                <div class="club__support-shirt">
+                    <h4 class="club__support-title">サポーターTシャツについて</h4>
+                    <p class="club__support-text">Tシャツの前後を12分割し、協力いただける企業様の名称を印刷します。</p>
+                    <ul class="club__support-list">
+                        <li class="club__support-item">【前後】（ひと枠）：縦10cm×横10cm　10万円</li>
+                        <li class="club__support-item">上部2列・下部2列：各8万円</li>
+                        <li class="club__support-item">【袖】（ひと枠）：縦5cm×横8cm　5万円</li>
                     </ul>
                 </div>
             </div>

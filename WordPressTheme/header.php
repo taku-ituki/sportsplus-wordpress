@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
 <?php wp_head(); ?>
+
 <body>
     <!-- ページトップボタン -->
     <button class="top-button js-top-button"><span></span>TOP</button>
-    <header class="header layout-header">
+    <header class="header layout-header js-header">
         <div class="header__inner">
             <h1 class="header__logo">
                 <a href="<?php echo esc_url(home_url("/")) ?>">
@@ -20,7 +21,7 @@
                                 <a href="<?php echo esc_url(home_url("/program")) ?>"><span>スポーツ講座</span></a>
                             </li>
                             <li class="header__nav-modal-item">
-                                <a href="<?php echo esc_url(home_url("/partnership")) ?>"><span>部活動地域連携</span></a>
+                                <a href="<?php echo esc_url(home_url("/club")) ?>"><span>部活動地域連携</span></a>
                             </li>
                             <li class="header__nav-modal-item">
                                 <a href="<?php echo esc_url(home_url("/challenge")) ?>"><span>スポーツチャレンジ</span></a>
@@ -67,10 +68,10 @@
                             <p class="header__drawer-accordion-title js-drawer-accordion">実施事業</p>
                             <ul class="header__drawer-accordion-list">
                                 <li class="header__drawer-accordion-item">
-                                    <a href="<?php echo esc_url(home_url("/program")) ?>">スポーツ講座</a>
+                                    <a href="<?php echo esc_url(home_url("/program")) ?>"><span>スポーツ講座</span></a>
                                 </li>
                                 <li class="header__drawer-acc-accordion-item">
-                                    <a href="<?php echo esc_url(home_url("/partnership")) ?>">部活動地域連携</a>
+                                    <a href="<?php echo esc_url(home_url("/club")) ?>">部活動地域連携</a>
                                 </li>
                                 <li class="header__drawer-accordion-item">
                                     <a href="<?php echo esc_url(home_url("/challenge")) ?>">スポーツチャレンジ</a>
@@ -100,7 +101,7 @@
                         <li class="header__drawer-item">
                             <a href="<?php echo esc_url(home_url("/application")) ?>">各種申請用紙</a>
                         </li>
-                        <li class="header__drawer-item header__drawer-item--access">
+                        <li class="header__drawer-item">
                             <a href="mailto:spplus-oharu@clovernet.ne.jp">お問い合わせ</a>
                         </li>
                     </ul>
@@ -108,4 +109,4 @@
             </div>
         </div>
     </header>
-<main>
+    <main>

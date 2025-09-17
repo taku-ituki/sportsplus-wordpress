@@ -2,10 +2,10 @@
 
 .sub-fv {
   width: 100%;
-  height: rem(460);
   position: relative;
+  height: rem(380);
   @include mq(md) {
-    height: rem(515);
+    height: rem(450);
   }
 }
 
@@ -43,7 +43,7 @@
   display: block;
   font-size: rem(35);
   margin-top: rem(20);
-  @include mq(md){
+  @include mq(md) {
     font-size: rem(40);
   }
 }

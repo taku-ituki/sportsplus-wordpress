@@ -7,7 +7,7 @@
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/spo.jpg" alt="メイン画像" />
     </picture>
     <div class="sub-fv__overlay"></div>
-    <h1 class="sub-fv__title">application<span>各種申請用紙</span></h1>
+    <h1 class="sub-fv__title">各種申請用紙<span>application</span></h1>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-layout">

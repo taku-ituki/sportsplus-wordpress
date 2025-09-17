@@ -16,7 +16,7 @@
                                     <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/program")) ?>">スポーツ講座</a>
                                 </li>
                                 <li class="footer__sub-item">
-                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/partnership")) ?>">部活動地域連携</a>
+                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/club")) ?>">部活動地域連携</a>
                                 </li>
                                 <li class="footer__sub-item">
                                     <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/challenge")) ?>">スポーツチャレンジ</a>
@@ -46,6 +46,9 @@
                         </li>
                         <li class="footer__item">
                             <a class="footer__item-link" href="<?php echo esc_url(home_url("/blog")) ?>">活動報告</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="<?php echo esc_url(home_url("/application")) ?>"><span>各種申請用紙</span></a>
                         </li>
                     </ul>
                 </div>

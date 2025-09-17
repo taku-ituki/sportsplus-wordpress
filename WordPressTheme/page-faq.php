@@ -6,7 +6,7 @@
             media="(max-width: 767px)" />
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/faq.jpg" alt="diving" />
     </picture>
-    <h1 class="sub-fv__title sub-fv__title--faq">q&a<span>よくあるご質問 </span></h1>
+    <h1 class="sub-fv__title sub-fv__title--faq">よくあるご質問<span>q&a</span></h1>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-mini-layout">

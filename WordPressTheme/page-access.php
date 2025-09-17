@@ -6,7 +6,7 @@
             media="(max-width: 767px)" />
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/centre.jpg" alt="メインビューの画像" />
     </picture>
-    <h1 class="sub-fv__title sub-fv__title--access">access<span>アクセス</span></h1>
+    <h1 class="sub-fv__title sub-fv__title--access">アクセス<span>access</span></h1>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">

@@ -1,71 +1,63 @@
 @use "global" as *;
 
-.partner-cards {
-  display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: rem(40);
-  @include mq(md) {
-    grid-template-columns: repeat(3, 1fr);
-
-  }
-}
-
-.partner-card {
+.club-card {
   margin-left: auto;
   margin-right: auto;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  display: flex; 
+  display: flex;
   flex-direction: column;
   padding: rem(16) rem(16) rem(24) rem(16);
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
 }
 
-.partner-card:first-child{
-  margin-top:rem(0);
+.club-card:first-child {
+  margin-top: rem(0);
 }
 
-
-.partner-card__image {
+.club-card__image {
   width: 100%;
   overflow: hidden;
 }
 
-.partner-card__image img {
-  aspect-ratio: 195/160;
+.club-card__image img {
+  aspect-ratio: 4/3;
   object-fit: cover;
   transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
 }
 
 @media (any-hover: hover) {
-  .partner-card:hover img {
+  .club-card:hover img {
     transform: scale(1.2);
   }
 }
 
-.partner-card a {
+.club-card a {
   cursor: pointer;
   display: flex;
   flex-direction: column;
 }
 
-.partner-card__title {
+.club-card__title {
+  margin-top:rem(10);
   text-align: center;
   font-size: rem(18);
-  border-bottom: rem(1) solid $bg-blue;
+  border-bottom: rem(1) solid $accent;
+  padding-bottom: rem(10);
+  color: $accent;
 }
 
-.partner-card__content {
+.club-card__content {
   margin-top: auto;
 }
 
-.partner-card__text {
+.club-card__text {
   margin-top: rem(15);
 }
 
 /* アニメーション発火時：表示＋位置リセット */
-.partner-card.is-visible {
+.club-card.is-visible {
   opacity: 1;
   transform: translateY(0);
 }

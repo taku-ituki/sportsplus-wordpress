@@ -120,7 +120,7 @@
   @include mq(md) {
     position: absolute;
     content: ":";
-    right: 0;
+    right: rem(-8);
     top: rem(-1);
   }
 }

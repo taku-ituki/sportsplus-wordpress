@@ -165,7 +165,7 @@
                         <p class="works-list__item-text">
                             学校で「部活動」として活動していた土日の活動を「地域クラブ活動」とし、実業団や競技経験豊富な方が指導に加わるようになります。</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/partnership")) ?>">詳しく見る</a>
+                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/club")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>

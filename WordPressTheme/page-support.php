@@ -7,7 +7,7 @@
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/support.jpg" alt="メイン画像" />
     </picture>
     <div class="sub-fv__overlay"></div>
-    <h1 class="sub-fv__title">support group<span>賛助団体</span></h1>
+    <h1 class="sub-fv__title">賛助団体<span>support group</span></h1>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-layout">

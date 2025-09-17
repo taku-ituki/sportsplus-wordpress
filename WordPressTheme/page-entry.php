@@ -7,7 +7,7 @@
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/spo.jpg" alt="diving" />
     </picture>
     <div class="sub-fv__overlay"></div>
-    <h2 class="sub-fv__title sub-fv__title--entry">program entry<span>講座お申込の流れ</span></h2>
+    <h2 class="sub-fv__title sub-fv__title--entry">講座お申込の流れ<span>program entry</span></h2>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
@@ -26,7 +26,7 @@
                         パンフレットやホームページで講座をチェックし、受講したい講座を決めます。<br />
                         開講日・対象者・時間なども事前に確認しましょう。
                     </p>
-                    <a class="entry__link" href="<?php echo esc_url(home_url("/program")) ?>">講座を見る</a>
+                    <a class="entry__link" href="program.html">講座を見る</a>
                 </div>
             </li>
             <li class="entry__step">
@@ -36,7 +36,7 @@
                     <p class="entry__step-text">
                         継続会員・新規会員で申込み開始時期が異なります。<br />
                         申込みは、窓口での提出が必要です。申込書は窓口で受け取るか、
-                        <a class="entry__link" href="<?php echo esc_url(home_url("/application")) ?>" target="_blank" rel="noopener noreferrer">こちら</a>
+                        <a class="entry__link" href="application.html" target="_blank" rel="noopener noreferrer">こちら</a>
                         から入会申込書ダウンロードしてご持参ください。<br />抽選対象の講座もございますので、ご注意ください。
                     </p>
                 </div>
@@ -64,68 +64,122 @@
         </ul>
     </div>
 </section>
+
 <!-- 入会手続きの詳細 -->
 <section class="membership-info membership-info-layout">
     <div class="membership-info__inner inner">
         <h2 class="entry__title section-title">入会手続・費用</h2>
-        <?php
-        /**
-         * Template Name: 入会ページ（Entry）
-         */
+        <div class="membership-info__section membership-info__section--blue">
+            <h2 class="membership-info__title">入会手続きの方法</h2>
+            <dl class="membership-info__definition-list">
+                <?php
+                $entry_group = get_field('entry_group1');
+                if ($entry_group) : ?>
+                    <div class="membership-info__definition">
+                        <dt class="membership-info__term">継続会員受付</dt>
+                        <dd class="membership-info__desc"><?php echo esc_html($entry_group['term1_desc']); ?></dd>
+                    </div>
+                    <div class="membership-info__definition">
+                        <dt class="membership-info__term">新規会員受付</dt>
+                        <dd class="membership-info__desc"><?php echo esc_html($entry_group['term2_desc']); ?></dd>
+                    </div>
+                    <div class="membership-info__definition">
+                        <dt class="membership-info__term">随 時 受 付</dt>
+                        <dd class="membership-info__desc"><?php echo esc_html($entry_group['term3_desc']); ?></dd>
+                    </div>
+            </dl>
 
-        get_header();
-        $membership = get_field('membership_info');
-        ?>
-
-        <div class="membership-info">
-
-            <!-- 🔵 入会手続き -->
-            <div class="membership-info__section membership-info__section--blue">
-                <h2 class="membership-info__title">
-                    <?php echo esc_html($membership['admission_section']['admission_title']); ?>
-                </h2>
-
-                <div class="membership-info__definition-wrap">
-                    <?php echo wp_kses_post($membership['admission_section']['admission_registration_dl']); ?>
+            <dl class="membership-info__definition-list">
+                <div class="membership-info__definition">
+                    <dt class="membership-info__term">場所</dt>
+                    <dd class="membership-info__desc"><?php echo esc_html($entry_group['term4_desc']); ?></dd>
                 </div>
-
-                <div class="membership-info__definition-wrap">
-                    <?php echo wp_kses_post($membership['admission_section']['admission_others_dl']); ?>
+                <div class="membership-info__definition">
+                    <dt class="membership-info__term">方法</dt>
+                    <dd class="membership-info__desc"> <?php echo apply_filters('the_content', $entry_group['term5_desc'] ?? ''); ?></dd>
                 </div>
-            </div>
-
-            <!-- 🟠 年会費・参加費 -->
-            <div class="membership-info__section membership-info__section--orange">
-                <h2 class="membership-info__title">
-                    <?php echo esc_html($membership['fee_section']['fee_title']); ?>
-                </h2>
-
-                <p class="membership-info__text">
-                    <?php echo wp_kses_post($membership['fee_section']['fee_description']); ?>
-                </p>
-
-                <div class="membership-info__table-wrap">
-                    <?php echo wp_kses_post($membership['fee_section']['fee_table']); ?>
+                <div class="membership-info__definition">
+                    <dt class="membership-info__term">注意</dt>
+                    <dd class="membership-info__desc"><?php echo esc_html($entry_group['term6_desc']); ?></dd>
                 </div>
-
-                <div class="membership-info__notes">
-                    <?php echo wp_kses_post($membership['fee_section']['fee_notes']); ?>
-                </div>
-            </div>
-
-            <!-- 🌸 賛助会員 -->
-            <div class="membership-info__section membership-info__section--pink">
-                <h2 class="membership-info__title">
-                    <?php echo esc_html($membership['supporter_section']['supporter_title']); ?>
-                </h2>
-
-                <div class="membership-info__table-wrap">
-                    <?php echo wp_kses_post($membership['supporter_section']['supporter_table']); ?>
-                </div>
-            </div>
-            <div class="membership-info__btn common-btn">
-                <a class="membership-info__btn-link common-btn__link" href="<?php echo esc_url(home_url("/application")) ?>">各種申込書はこちら</a>
-            </div>
+            </dl>
         </div>
+    <?php endif; ?>
+    <!-- 年会費・参加費 -->
+    <div class="membership-info__section membership-info__section--orange">
+        <h2 class="membership-info__title">年会費・参加費</h2>
+        <p class="membership-info__text">入会には、年会費（保険料を含む）＋参加費が必要です。</p>
+        <?php
+        $entry_group2 = get_field('entry_group2');
+        if ($entry_group2) : ?>
+            <table class="membership-info__table">
+                <thead>
+                    <tr>
+                        <th>区分</th>
+                        <th>年会費（10月以降）</th>
+                        <th>参加費</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?php echo esc_html($entry_group2['fee_row1_label']); ?></td>
+                        <td><?php echo esc_html($entry_group2['fee_row1_price']); ?></td>
+                        <td rowspan="3">
+                            <?php echo apply_filters('the_content', $entry_group2['participation_fee_note'] ?? ''); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($entry_group2['fee_row2_label']); ?></td>
+                        <td><?php echo esc_html($entry_group2['fee_row2_price']); ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo esc_html($entry_group2['fee_row3_label']); ?></td>
+                        <td><?php echo esc_html($entry_group2['fee_row3_price']); ?></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="membership-info__notes">
+                <div class="membership-info__note-list">
+                    <?php echo apply_filters('the_content', $entry_group2['fee_notes'] ?? ''); ?>
+                </div>
+            </div>
+    </div>
+<?php endif; ?>
+<!-- 賛助会員 -->
+<div class="membership-info__section membership-info__section--pink">
+    <h2 class="membership-info__title">賛助会員の募集</h2>
+    <?php
+    $entry_group3 = get_field('entry_group3');
+    if ($entry_group3) : ?>
+        <table class="membership-info__table">
+            <thead>
+                <tr>
+                    <th>区分</th>
+                    <th>年会費</th>
+                    <th>備考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>個人</td>
+                    <td><?php echo esc_html($entry_group3['support_individual_fee']); ?></td>
+                    <td rowspan="2">
+                        <?php echo wp_kses_post($entry_group3['support_note']); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>法人および団体</td>
+                    <td><?php echo esc_html($entry_group3['support_corporate_fee']); ?></td>
+                </tr>
+            </tbody>
+        </table>
+    <?php endif; ?>
+
+</div>
+<div class="membership-info__btn common-btn">
+    <a class="membership-info__btn-link common-btn__link" href="application.html">各種申込書はこちら</a>
+</div>
+    </div>
 </section>
 <?php get_footer(); ?>

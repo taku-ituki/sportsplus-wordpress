@@ -4,7 +4,7 @@
         <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/yoga.jpg" media="(max-width: 767px)" />
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/yoga.jpg" alt="sports" />
     </picture>
-    <h1 class="sub-fv__title sub-fv__title--program">sports program<span>スポーツ講座</span></h1>
+    <h1 class="sub-fv__title sub-fv__title--program">スポーツ講座<span>sports program</span></h1>
 </section>
 
 <!-- パンくず -->
@@ -78,6 +78,10 @@
                                         <dt>紹介文</dt>
                                         <dd><?php the_field('program_description'); ?></dd>
                                     </div>
+                                    <div class="intro-card__detail">
+                                        <dt>定員</dt>
+                                        <dd><?php the_field('program_capacity'); ?></dd>
+                                    </div>
                                 </dl>
                             </div>
                         </li>
@@ -89,6 +93,9 @@
                 endif;
                 ?>
             </ul>
+        </div>
+        <div class="program__btn common-btn">
+            <a class="program__btn-link common-btn__link" href="<?php echo esc_url(home_url("/entry")) ?>">お申込方法はこちら</a>
         </div>
     </div>
 </section>

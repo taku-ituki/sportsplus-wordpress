@@ -23,10 +23,11 @@
 }
 
 .footer__list {
-  padding-left: rem(20);
+  padding-left: rem(15);
   margin-top: rem(15);
   @include mq(md) {
     margin-top: 0;
+      padding-left: rem(20);
   }
 }
 

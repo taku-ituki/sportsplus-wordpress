@@ -9,31 +9,36 @@
 <div class="mv">
     <div class="mv__inner mv__scroll-inner">
         <div class="mv__scroll-track">
-            <div class="mv__scroll-row mv__scroll-row--row1">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hand1.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/soccer.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/baseball.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/hand1.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/soccer.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/baseball.jpg" alt="スライド画像" />
-            </div>
-            <div class="mv__scroll-row mv__scroll-row--row2">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/pinpon2.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv01.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv01.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/pinpon2.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv01.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv01.jpg" alt="スライド画像" />
-            </div>
-            <div class="mv__scroll-row mv__scroll-row--row3">
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv01.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv01.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv01.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv01.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv01.jpg" alt="スライド画像" />
-                <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/mv01.jpg" alt="スライド画像" />
-            </div>
+            <?php
+            $prefix = 'slide_image_';
+            $rows = 3;
+            $images_per_row = 3;
+
+            for ($row = 1; $row <= $rows; $row++) :
+                $start = ($row - 1) * $images_per_row + 1;
+                $end = $start + $images_per_row - 1;
+
+                echo "<!-- row $row -->"; // ← 追加
+
+            ?>
+                <div class="mv__scroll-row mv__scroll-row--row<?php echo $row; ?>">
+                    <?php for ($loop = 0; $loop < 10; $loop++): ?>
+                        <?php for ($i = $start; $i <= $end; $i++): ?>
+                            <?php
+                            $image_url = get_field($prefix . $i);
+                            echo "<!-- image: $prefix$i -->"; // ← 追加
+
+                            if ($image_url): ?>
+                                <img src="<?php echo esc_url($image_url); ?>" alt="スライド画像">
+                            <?php else: ?>
+                                <?php echo "<!-- $prefix$i is empty -->"; ?>
+                            <?php endif; ?>
+                        <?php endfor; ?>
+                    <?php endfor; ?>
+                </div>
+            <?php endfor; ?>
         </div>
+
         <div class="mv__title">
             <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/main.png" alt="メンビューのアイコン" />
         </div>
@@ -92,7 +97,7 @@
             ?>
         </div>
         <div class="top-news__btn-wrap common-btn">
-            <a class="top-news-btn common-btn__link" href="<?php echo esc_url(home_url("/news")) ?>">一覧へ</a>
+            <a class="top-news-btn common-btn__link" href="<?php echo esc_url(home_url("/news")) ?>">お知らせ一覧へ</a>
         </div>
     </div>
 </section>
@@ -165,7 +170,7 @@
                         <p class="works-list__item-text">
                             学校で「部活動」として活動していた土日の活動を「地域クラブ活動」とし、実業団や競技経験豊富な方が指導に加わるようになります。</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/partnership")) ?>">詳しく見る</a>
+                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/club")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>
