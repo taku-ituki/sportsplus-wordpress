@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="ja">
-<?php wp_head(); ?>
-
+<head>
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <?php wp_head(); ?>
+</head>
 <body>
     <!-- ページトップボタン -->
     <button class="top-button js-top-button"><span></span>TOP</button>
