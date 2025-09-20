@@ -54,15 +54,15 @@
                 </p>
                 <ul class="challenge__img-list">
                     <li class="challenge__item-img">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/baseball.jpg"
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/foot.png"
                             alt="スポーツチャレンジの様子" />
                     </li>
                     <li class="challenge__item-img">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/baseball.jpg"
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challenge-view.jpg"
                             alt="スポーツチャレンジの様子" />
                     </li>
                     <li class="challenge__item-img">
-                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/baseball.jpg"
+                        <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challengetop.jpg"
                             alt="スポーツチャレンジの様子" />
                     </li>
                 </ul>
