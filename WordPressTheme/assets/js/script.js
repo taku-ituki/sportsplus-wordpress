@@ -24,6 +24,20 @@ jQuery(function ($) {
   }
   $(window).on("load", loading);
 
+  // Safari BFCache（戻る進む）対策
+  window.addEventListener("pageshow", function (event) {
+    if (event.persisted || performance.getEntriesByType("navigation")[0]?.type === "back_forward") {
+      hideLoading();
+    }
+  });
+
+  // 念のため、ロード後3秒経ってもローディングが残っていたら削除（保険処理）
+  setTimeout(function () {
+    if ($(".js-loading").length) {
+      $(".js-loading").remove();
+    }
+  }, 3000);
+
   //ハンバーガーメニュー
   $(function () {
     $(".js-hamburger").click(function () {
@@ -90,12 +104,12 @@ jQuery(function ($) {
     speed: 2000,
     effect: "fade",
     fadeEffect: {
-      crossFade: true
+      crossFade: true,
     },
     autoplay: {
       delay: 4000,
-      disableOnInteraction: false
-    }
+      disableOnInteraction: false,
+    },
   });
 
   /////FAQアコーディオン/////
@@ -112,13 +126,15 @@ jQuery(function ($) {
   });
 
   //フェードインアニメーション
-  $(window).on("scroll", function () {
-    $(".js-fadeIn").each(function () {
-      if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.75) {
-        $(this).addClass("is-active");
-      }
-    });
-  }).trigger("scroll");
+  $(window)
+    .on("scroll", function () {
+      $(".js-fadeIn").each(function () {
+        if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.75) {
+          $(this).addClass("is-active");
+        }
+      });
+    })
+    .trigger("scroll");
 
   //講座・部活動のクリック時モーダル
   // モーダル処理をjQueryで統一
@@ -139,7 +155,7 @@ jQuery(function ($) {
   button.addEventListener("click", function () {
     window.scroll({
       top: 0,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   });
   window.addEventListener("scroll", function () {
@@ -220,14 +236,14 @@ jQuery(function ($) {
       type: "POST",
       data: {
         action: "filter_news_by_category",
-        slug: slug
+        slug: slug,
       },
       success: function success(res) {
         $("#news-list").html(res);
       },
       error: function error() {
         $("#news-list").html("<p>読み込みに失敗しました。</p>");
-      }
+      },
     });
   });
 
@@ -248,14 +264,14 @@ jQuery(function ($) {
       data: {
         action: "filter_program_by_category",
         // ← PHP側のアクション名と合わせる
-        slug: slug
+        slug: slug,
       },
       success: function success(res) {
         $("#program-list").html(res);
       },
       error: function error() {
         $("#program-list").html("<p class='program__no-posts'>読み込みに失敗しました。</p>");
-      }
+      },
     });
   });
 });
@@ -263,26 +279,8 @@ jQuery(function ($) {
 //部活動地域移行カードのフェードアニメーショn
 document.addEventListener("DOMContentLoaded", function () {
   var cards = document.querySelectorAll(".js-club-card");
-  var observer = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(function (entry, index) {
-      if (entry.isIntersecting) {
-        setTimeout(function () {
-          entry.target.classList.add("is-visible");
-        }, index * 150); // 順番に表示させるためのディレイ（150msずつ遅らせる）
-
-        observer.unobserve(entry.target); // 一度表示されたら監視解除
-      }
-    });
-  }, {
-    threshold: 0.1 // 10%見えたら発火
-  });
-
-  cards.forEach(function (card) {
-    observer.observe(card);
-  });
-  document.addEventListener("DOMContentLoaded", function () {
-    var cards = document.querySelectorAll(".club-card");
-    var observer = new IntersectionObserver(function (entries, observer) {
+  var observer = new IntersectionObserver(
+    function (entries, observer) {
       entries.forEach(function (entry, index) {
         if (entry.isIntersecting) {
           setTimeout(function () {
@@ -292,9 +290,33 @@ document.addEventListener("DOMContentLoaded", function () {
           observer.unobserve(entry.target); // 一度表示されたら監視解除
         }
       });
-    }, {
-      threshold: 0.1 // 10%見えたら発火
-    });
+    },
+    {
+      threshold: 0.1, // 10%見えたら発火
+    }
+  );
+
+  cards.forEach(function (card) {
+    observer.observe(card);
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    var cards = document.querySelectorAll(".club-card");
+    var observer = new IntersectionObserver(
+      function (entries, observer) {
+        entries.forEach(function (entry, index) {
+          if (entry.isIntersecting) {
+            setTimeout(function () {
+              entry.target.classList.add("is-visible");
+            }, index * 150); // 順番に表示させるためのディレイ（150msずつ遅らせる）
+
+            observer.unobserve(entry.target); // 一度表示されたら監視解除
+          }
+        });
+      },
+      {
+        threshold: 0.1, // 10%見えたら発火
+      }
+    );
 
     cards.forEach(function (card) {
       observer.observe(card);
