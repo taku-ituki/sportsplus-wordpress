@@ -4,10 +4,11 @@ jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
   // //ローディングアニメーション
   function loading() {
-    // すでにローディング済みかをsessionStorageで確認
-    const hasLoaded = sessionStorage.getItem("hasLoaded");
+    // Safari対応：localStorageとsessionStorageの両方をチェック
+    const hasLoadedSession = sessionStorage.getItem("hasLoaded");
+    const hasLoadedLocal = localStorage.getItem("hasLoaded");
 
-    if (!hasLoaded) {
+    if (!hasLoadedSession && !hasLoadedLocal) {
       // 初回アクセス：ローディングアニメーションを実行
       setTimeout(function () {
         $(".js-loading").addClass("is-hide");
@@ -16,27 +17,44 @@ jQuery(function ($) {
         }, 800);
       }, 2000);
 
-      // フラグを保存（再訪問時はスキップするため）
+      // フラグを両方に保存（Safari対応）
       sessionStorage.setItem("hasLoaded", "true");
+      localStorage.setItem("hasLoaded", "true");
     } else {
       // 2回目以降：即座に非表示
       $(".js-loading").remove();
     }
   }
-  $(window).on("load", loading);
+
+  // Safari対応：重複実行を防ぐフラグ
+  let loadingExecuted = false;
+  function executeLoading() {
+    if (!loadingExecuted) {
+      loadingExecuted = true;
+      loading();
+    }
+  }
+
+  // Safari対応：複数のイベントで実行
+  $(document).ready(function () {
+    executeLoading();
+  });
+  $(window).on("load", function () {
+    executeLoading();
+  });
 
   //ハンバーガーメニュー
   $(function () {
     $(".js-hamburger").click(function () {
       $(this).toggleClass("is-open");
-       $(".js-header").toggleClass("is-color");
+      $(".js-header").toggleClass("is-color");
       $(".js-drawer").fadeToggle();
     });
 
     // ドロワーナビのaタグをクリックで閉じる
     $(".js-drawer a[href]").on("click", function () {
       $(".js-hamburger").removeClass("is-open");
-       $(".js-header").removeClass("is-color");
+      $(".js-header").removeClass("is-color");
       $(".js-drawer").fadeOut();
     });
 
@@ -44,7 +62,7 @@ jQuery(function ($) {
     $(window).on("resize", function () {
       if (window.matchMedia("(min-width: 768px)").matches) {
         $(".js-hamburger").removeClass("is-open");
-         $(".js-header").removeClass("is-color");
+        $(".js-header").removeClass("is-color");
         $(".js-drawer").fadeOut();
       }
     });

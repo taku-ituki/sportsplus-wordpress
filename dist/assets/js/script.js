@@ -4,9 +4,10 @@ jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
   // //ローディングアニメーション
   function loading() {
-    // すでにローディング済みかをsessionStorageで確認
-    var hasLoaded = sessionStorage.getItem("hasLoaded");
-    if (!hasLoaded) {
+    // Safari対応：localStorageとsessionStorageの両方をチェック
+    var hasLoadedSession = sessionStorage.getItem("hasLoaded");
+    var hasLoadedLocal = localStorage.getItem("hasLoaded");
+    if (!hasLoadedSession && !hasLoadedLocal) {
       // 初回アクセス：ローディングアニメーションを実行
       setTimeout(function () {
         $(".js-loading").addClass("is-hide");
@@ -15,14 +16,31 @@ jQuery(function ($) {
         }, 800);
       }, 2000);
 
-      // フラグを保存（再訪問時はスキップするため）
+      // フラグを両方に保存（Safari対応）
       sessionStorage.setItem("hasLoaded", "true");
+      localStorage.setItem("hasLoaded", "true");
     } else {
       // 2回目以降：即座に非表示
       $(".js-loading").remove();
     }
   }
-  $(window).on("load", loading);
+
+  // Safari対応：重複実行を防ぐフラグ
+  var loadingExecuted = false;
+  function executeLoading() {
+    if (!loadingExecuted) {
+      loadingExecuted = true;
+      loading();
+    }
+  }
+
+  // Safari対応：複数のイベントで実行
+  $(document).ready(function () {
+    executeLoading();
+  });
+  $(window).on("load", function () {
+    executeLoading();
+  });
 
   //ハンバーガーメニュー
   $(function () {

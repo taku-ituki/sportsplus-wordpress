@@ -4,33 +4,28 @@ jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
   // //ローディングアニメーション
   function loading() {
-    // Safari対応：localStorageを使用（より確実）
-    var hasLoaded = localStorage.getItem("hasLoaded");
-    
-    if (!hasLoaded) {
+    // Safari対応：localStorageとsessionStorageの両方をチェック
+    var hasLoadedSession = sessionStorage.getItem("hasLoaded");
+    var hasLoadedLocal = localStorage.getItem("hasLoaded");
+    if (!hasLoadedSession && !hasLoadedLocal) {
       // 初回アクセス：ローディングアニメーションを実行
-      console.log("初回ローディング開始"); // デバッグ用
-      
       setTimeout(function () {
-        console.log("ローディング非表示開始"); // デバッグ用
         $(".js-loading").addClass("is-hide");
-        
         setTimeout(function () {
-          console.log("ローディング要素削除"); // デバッグ用
           $(".js-loading").remove();
         }, 800);
       }, 2000);
 
-      // フラグを保存（再訪問時はスキップするため）
+      // フラグを両方に保存（Safari対応）
+      sessionStorage.setItem("hasLoaded", "true");
       localStorage.setItem("hasLoaded", "true");
     } else {
       // 2回目以降：即座に非表示
-      console.log("2回目以降：ローディングスキップ"); // デバッグ用
       $(".js-loading").remove();
     }
   }
-  
-  // Safari対応：複数のイベントで実行（重複を防ぐ）
+
+  // Safari対応：重複実行を防ぐフラグ
   var loadingExecuted = false;
   function executeLoading() {
     if (!loadingExecuted) {
@@ -38,14 +33,12 @@ jQuery(function ($) {
       loading();
     }
   }
-  
-  // DOMContentLoadedで実行
-  $(document).ready(function() {
+
+  // Safari対応：複数のイベントで実行
+  $(document).ready(function () {
     executeLoading();
   });
-  
-  // window.loadでも実行（Safari対応）
-  $(window).on("load", function() {
+  $(window).on("load", function () {
     executeLoading();
   });
 
