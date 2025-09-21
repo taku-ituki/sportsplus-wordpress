@@ -4,25 +4,50 @@ jQuery(function ($) {
   // この中であればWordpressでも「$」が使用可能になる
   // //ローディングアニメーション
   function loading() {
-    // すでにローディング済みかをsessionStorageで確認
-    var hasLoaded = sessionStorage.getItem("hasLoaded");
+    // Safari対応：localStorageを使用（より確実）
+    var hasLoaded = localStorage.getItem("hasLoaded");
+    
     if (!hasLoaded) {
       // 初回アクセス：ローディングアニメーションを実行
+      console.log("初回ローディング開始"); // デバッグ用
+      
       setTimeout(function () {
+        console.log("ローディング非表示開始"); // デバッグ用
         $(".js-loading").addClass("is-hide");
+        
         setTimeout(function () {
+          console.log("ローディング要素削除"); // デバッグ用
           $(".js-loading").remove();
         }, 800);
       }, 2000);
 
       // フラグを保存（再訪問時はスキップするため）
-      sessionStorage.setItem("hasLoaded", "true");
+      localStorage.setItem("hasLoaded", "true");
     } else {
       // 2回目以降：即座に非表示
+      console.log("2回目以降：ローディングスキップ"); // デバッグ用
       $(".js-loading").remove();
     }
   }
-  $(window).on("load", loading);
+  
+  // Safari対応：複数のイベントで実行（重複を防ぐ）
+  var loadingExecuted = false;
+  function executeLoading() {
+    if (!loadingExecuted) {
+      loadingExecuted = true;
+      loading();
+    }
+  }
+  
+  // DOMContentLoadedで実行
+  $(document).ready(function() {
+    executeLoading();
+  });
+  
+  // window.loadでも実行（Safari対応）
+  $(window).on("load", function() {
+    executeLoading();
+  });
 
   //ハンバーガーメニュー
   $(function () {
