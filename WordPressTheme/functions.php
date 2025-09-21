@@ -91,22 +91,22 @@ function my_admin_post_thumbnail_preview()
     if (has_post_thumbnail($post->ID)) {
         $thumb_url = get_the_post_thumbnail_url($post->ID, 'medium');
 ?>
-        <style>
-            .editor-styles-wrapper:before {
-                content: '';
-                display: block;
-                width: 100%;
-                max-width: 600px;
-                margin: 0 auto 20px;
-                background-image: url('<?php echo esc_url($thumb_url); ?>');
-                background-size: cover;
-                background-position: center;
-                aspect-ratio: 16 / 9;
-                border: 2px solid #ddd;
-                border-radius: 4px;
-            }
-        </style>
-        <?php
+<style>
+.editor-styles-wrapper:before {
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    background-image: url('<?php echo esc_url($thumb_url); ?>');
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 16 / 9;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+</style>
+<?php
     }
 }
 add_action('admin_head', 'my_admin_post_thumbnail_preview');
@@ -148,23 +148,23 @@ function filter_news_by_category()
     if ($query->have_posts()) :
         echo '<ul class="top-news__list list">';
         while ($query->have_posts()) : $query->the_post(); ?>
-            <li class="list__item">
-                <a href="<?php the_permalink(); ?>">
-                    <div class="list__item-meta">
-                        <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
-                            <?php echo get_the_date('Y.m.d'); ?>
-                        </time>
-                        <?php
+<li class="list__item">
+    <a href="<?php the_permalink(); ?>">
+        <div class="list__item-meta">
+            <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                <?php echo get_the_date('Y.m.d'); ?>
+            </time>
+            <?php
                         $terms = get_the_terms(get_the_ID(), 'news_category');
                         if ($terms && !is_wp_error($terms)) {
                             echo '<p class="list__item-category">' . esc_html($terms[0]->name) . '</p>';
                         }
                         ?>
-                    </div>
-                    <p class="list__item-title"><?php the_title(); ?></p>
-                </a>
-            </li>
-        <?php endwhile;
+        </div>
+        <p class="list__item-title"><?php the_title(); ?></p>
+    </a>
+</li>
+<?php endwhile;
         echo '</ul>';
     else :
         echo '<p>現在お知らせはありません。</p>';
@@ -209,40 +209,40 @@ function filter_program_by_category()
 
             $fallback_src = get_theme_file_uri('/assets/images/common/no-image.jpg');
         ?>
-            <li class="intro-card">
-                <figure class="intro-card__image">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('medium'); ?>
-                    <?php else : ?>
-                        <img src="<?php echo esc_url($fallback_src); ?>" alt="no image" loading="lazy" />
-                    <?php endif; ?>
-                </figure>
-                <div class="intro-card__content">
-                    <h3 class="intro-card__title"><?php the_title(); ?></h3>
-                    <dl class="intro-card__details">
-                        <div class="intro-card__detail">
-                            <dt>開催日</dt>
-                            <dd><?php the_field('program_day'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>時間</dt>
-                            <dd><?php the_field('program_time'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>対象年齢</dt>
-                            <dd><?php the_field('program_age'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>講師</dt>
-                            <dd><?php the_field('program_teacher'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>紹介文</dt>
-                            <dd><?php the_field('program_description'); ?></dd>
-                        </div>
-                    </dl>
-                </div>
-            </li>
+<li class="intro-card">
+    <figure class="intro-card__image">
+        <?php if (has_post_thumbnail()) : ?>
+        <?php the_post_thumbnail('medium'); ?>
+        <?php else : ?>
+        <img src="<?php echo esc_url($fallback_src); ?>" alt="no image" loading="lazy" />
+        <?php endif; ?>
+    </figure>
+    <div class="intro-card__content">
+        <h3 class="intro-card__title"><?php the_title(); ?></h3>
+        <dl class="intro-card__details">
+            <div class="intro-card__detail">
+                <dt>開催日</dt>
+                <dd><?php the_field('program_day'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>時間</dt>
+                <dd><?php the_field('program_time'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>対象年齢</dt>
+                <dd><?php the_field('program_age'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>講師</dt>
+                <dd><?php the_field('program_teacher'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>紹介文</dt>
+                <dd><?php the_field('program_description'); ?></dd>
+            </div>
+        </dl>
+    </div>
+</li>
 <?php
         endwhile;
         echo '</ul>';
@@ -297,3 +297,40 @@ function redirect_program_pdf_to_archive()
 add_action('template_redirect', 'redirect_program_pdf_to_archive');
 
 
+//ログイン画面のロゴ変更
+function login_logo()
+{
+	echo '<style type="text/css">
+	  #login h1 a {
+		background: url(' . get_template_directory_uri() . '/assets/images/common/login-icon.png) no-repeat top center;
+		background-size: 100% auto;
+		width: 180px;
+		height: 60px;
+		text-indent: -9999px;
+		overflow: hidden;
+		display: block;
+	  }
+	  body.login {
+		background: url(' . get_template_directory_uri() . '/assets/images/common/login-top.jpg) no-repeat center center;
+		background-color: rgba(255,255,255,0.5);
+		background-blend-mode: lighten;
+		background-size: cover;
+		background-attachment: fixed;
+	  }
+	</style>';
+}
+add_action('login_head', 'login_logo');
+
+// ログイン画面のロゴのリンク先を変更
+function login_logo_url()
+{
+	return home_url();
+}
+add_filter('login_headerurl', 'login_logo_url');
+
+// ログイン画面のロゴのタイトルを変更
+function login_logo_url_title()
+{
+	return get_bloginfo('name');
+}
+add_filter('login_headertitle', 'login_logo_url_title');

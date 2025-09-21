@@ -21,21 +21,21 @@
                 echo "<!-- row $row -->"; // ← 追加
 
             ?>
-                <div class="mv__scroll-row mv__scroll-row--row<?php echo $row; ?>">
-                    <?php for ($loop = 0; $loop < 10; $loop++): ?>
-                        <?php for ($i = $start; $i <= $end; $i++): ?>
-                            <?php
+            <div class="mv__scroll-row mv__scroll-row--row<?php echo $row; ?>">
+                <?php for ($loop = 0; $loop < 10; $loop++): ?>
+                <?php for ($i = $start; $i <= $end; $i++): ?>
+                <?php
                             $image_url = get_field($prefix . $i);
                             echo "<!-- image: $prefix$i -->"; // ← 追加
 
                             if ($image_url): ?>
-                                <img src="<?php echo esc_url($image_url); ?>" alt="スライド画像">
-                            <?php else: ?>
-                                <?php echo "<!-- $prefix$i is empty -->"; ?>
-                            <?php endif; ?>
-                        <?php endfor; ?>
-                    <?php endfor; ?>
-                </div>
+                <img src="<?php echo esc_url($image_url); ?>" alt="スライド画像">
+                <?php else: ?>
+                <?php echo "<!-- $prefix$i is empty -->"; ?>
+                <?php endif; ?>
+                <?php endfor; ?>
+                <?php endfor; ?>
+            </div>
             <?php endfor; ?>
         </div>
 
@@ -72,22 +72,22 @@
             if ($query->have_posts()) :
                 echo '<ul class="top-news__list list">';
                 while ($query->have_posts()) : $query->the_post(); ?>
-                    <li class="list__item">
-                        <a href="<?php the_permalink(); ?>">
-                            <div class="list__item-meta">
-                                <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
-                                    <?php echo get_the_date('Y.m.d'); ?>
-                                </time>
-                                <?php
+            <li class="list__item">
+                <a href="<?php the_permalink(); ?>">
+                    <div class="list__item-meta">
+                        <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                            <?php echo get_the_date('Y.m.d'); ?>
+                        </time>
+                        <?php
                                 $terms = get_the_terms(get_the_ID(), 'news_category');
                                 if ($terms && !is_wp_error($terms)) {
                                     echo '<p class="list__item-category">' . esc_html($terms[0]->name) . '</p>';
                                 }
                                 ?>
-                            </div>
-                            <p class="list__item-title"><?php the_title(); ?></p>
-                        </a>
-                    </li>
+                    </div>
+                    <p class="list__item-title"><?php the_title(); ?></p>
+                </a>
+            </li>
             <?php endwhile;
                 echo '</ul>';
                 wp_reset_postdata();
@@ -147,7 +147,7 @@
         <ul class="works__list works-list">
             <li class="works-list__item fade-in js-fadeIn">
                 <div class="works-list__item-img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/works.jpg" alt="省略" />
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/suguru.jpg" alt="省略" />
                 </div>
                 <div class="works-list__item-content-bg">
                     <div class="works-list__item-content">
@@ -155,7 +155,8 @@
                         <p class="works-list__item-text">年間講座
                             、短期講座、イベントがあり、自分に合った運動を楽しむことができます。複数の講座が受講できます。大治町の方はもちろん、町外のどなたでも参加できます！</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/program")) ?>">詳しく見る</a>
+                            <a class="works-list__item-btn common-btn__link"
+                                href="<?php echo esc_url(home_url("/program")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>
@@ -170,7 +171,8 @@
                         <p class="works-list__item-text">
                             学校で「部活動」として活動していた土日の活動を「地域クラブ活動」とし、実業団や競技経験豊富な方が指導に加わるようになります。</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/club")) ?>">詳しく見る</a>
+                            <a class="works-list__item-btn common-btn__link"
+                                href="<?php echo esc_url(home_url("/club")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>
@@ -184,7 +186,8 @@
                         <h3 class="works-list__item-title">スポーツチャレンジ</h3>
                         <p class="works-list__item-text">子どもたちの体力やコミュニケーション力向上を目指して、球技を中心に様々なレクリエーションをします！</p>
                         <div class="works-list__item-btn-wrap common-btn">
-                            <a class="works-list__item-btn common-btn__link" href="<?php echo esc_url(home_url("/challenge")) ?>">詳しく見る</a>
+                            <a class="works-list__item-btn common-btn__link"
+                                href="<?php echo esc_url(home_url("/challenge")) ?>">詳しく見る</a>
                         </div>
                     </div>
                 </div>
