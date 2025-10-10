@@ -147,13 +147,13 @@ a {
 
 .about-layout {
 	background-color: skyblue;
-	margin-top: 2.5rem;
+	margin-top: 3.75rem;
 	padding-bottom: 2.5rem;
 	padding-top: 2.5rem;
 }
 
 .access-layout {
-	margin-top: 2.5rem;
+	margin-top: 1.875rem;
 }
 
 .application-layout {
@@ -193,11 +193,15 @@ a {
 }
 
 .faq-layout {
-	margin-top: 2.5rem;
+	margin-top: 3.75rem;
 }
 
 .footer-layout {
 	margin-top: 2.5rem;
+}
+
+.guide-layout {
+	margin-top: 1.875rem;
 }
 
 .layout-header {
@@ -232,6 +236,10 @@ a {
 	margin-top: 2.5rem;
 }
 
+.program-intro-layout {
+	margin-top: 2.5rem;
+}
+
 .program-layout {
 	margin-top: 2.5rem;
 }
@@ -253,7 +261,7 @@ a {
 }
 
 .works-layout {
-	margin-top: 2.5rem;
+	margin-top: 3.75rem;
 }
 
 .about__title.section-title {
@@ -310,13 +318,6 @@ a {
 
 .about__item-title br {
 	display: none;
-}
-
-.about__text {
-	color: #666;
-	flex: 1;
-	line-height: 1.6;
-	margin-top: 1.25rem;
 }
 
 .access-table {
@@ -485,6 +486,10 @@ a {
 	margin-top: 1.875rem;
 	text-align: center;
 	text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+}
+
+.access__google.access__google--page {
+	margin-top: 2.5rem;
 }
 
 .application__description {
@@ -1439,13 +1444,14 @@ body {
 /*アコーディオンタイトル*/
 
 .faq-item__accordion-title {
-	background: #4682b4;
+	background: #87ceeb;
 	color: #fff;
 	cursor: pointer;
 	font-size: 1rem;
 	font-weight: normal;
 	padding: 1rem 6.25rem 1rem 1.5625rem;
 	position: relative; /*+マークの位置基準とするためrelative指定*/
+	text-shadow: 0.0625rem 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3);
 	transition: all 0.5s ease;
 }
 
@@ -1530,16 +1536,26 @@ body {
 	top: 0;
 }
 
+.faq-item__accordion-box-text a {
+	-webkit-text-decoration: underline;
+	color: red;
+	text-decoration: underline;
+	transition: 0.3s;
+}
+
+.faq-item__accordion-box-text a:hover {
+	-webkit-text-decoration: none;
+	color: #005a99;
+	text-decoration: none;
+	transition: 0.3s;
+}
+
 .faq [id] {
 	scroll-margin-top: 5.625rem;
 }
 
 .faq {
 	position: relative;
-}
-
-.faq__title.section-title {
-	background: #4682b4;
 }
 
 .faq__sub-title {
@@ -1653,6 +1669,50 @@ main {
 	margin-top: 2.125rem;
 	padding: 0 0.875rem 1.875rem 0.875rem;
 	text-align: center;
+}
+
+.guide-table {
+	border-collapse: collapse; /* 枠線が重なって1本になるようにする */
+	display: block;
+	margin-top: 2.5rem;
+	width: 100%;
+}
+
+.guide-table__row {
+	display: block; /* スマホでは1行をブロック表示 */
+}
+
+.guide-table__label {
+	display: block;
+	padding: 0.5rem 0.75rem;
+	text-align: left;
+	white-space: nowrap;
+}
+
+.guide-table__data {
+	display: block;
+	line-height: 1.6;
+	padding: 0.5rem 0.75rem;
+}
+
+.guide-table__time {
+	display: flex; /* 横並びにする */
+	gap: 1.25rem; /* 間に適度なスペースを入れる */
+	line-height: 1.5; /* 行間の調整 */
+}
+
+.guide-table__day {
+	flex-shrink: 0; /* 縮まないように固定 */
+	width: 5rem; /* 固定幅にして、曜日欄の長さを統一 */
+}
+
+.guide-table__hour {
+	flex: 1; /* 時間部分は自動で幅を取る */
+}
+
+.guide-table__address {
+	display: flex;
+	flex-direction: column;
 }
 
 .header {
@@ -2046,6 +2106,7 @@ main {
 	border-radius: 0.75rem;
 	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
 	counter-increment: program-number;
+	cursor: pointer;
 	display: block;
 	gap: 1.25rem;
 	padding: 1.5rem;
@@ -2077,23 +2138,6 @@ main {
 	display: flex;
 	flex: 1;
 	flex-direction: column;
-}
-
-/* タイトル＋番号部分 */
-
-.intro-card__header {
-	align-items: baseline;
-	display: flex;
-}
-
-/* 自動連番の表示（before使用） */
-
-.intro-card__number::before {
-	color: #333;
-	content: counter(program-number) ".";
-	font-size: 1.5rem;
-	font-weight: bold;
-	margin-right: 0.5rem;
 }
 
 /* タイトルテキスト */
@@ -2352,11 +2396,12 @@ main {
 	-o-object-fit: contain;
 	aspect-ratio: 16/10;
 	display: block;
-	left: 15%;
+	left: 50%;
 	max-width: 70%;
 	object-fit: contain;
 	position: absolute;
-	top: 40%;
+	top: 35%;
+	transform: translateX(-50%);
 	width: 100%;
 	z-index: 2;
 }
@@ -2583,6 +2628,10 @@ main {
 	margin-top: 2.5rem;
 }
 
+.program-intro__text {
+	margin-top: 1.25rem;
+}
+
 .program__category {
 	margin-top: 1.25rem;
 }
@@ -2608,6 +2657,82 @@ main {
 .program__btn.common-btn {
 	margin-top: 1.25rem;
 	text-align: center;
+}
+
+.program__pdf-block {
+	margin-top: 2.5rem;
+}
+
+.program__pdfs {
+	margin-top: 2.5rem;
+}
+
+.program__pdf {
+	margin-top: 1.25rem;
+}
+
+/* ================== モーダルエリア ================== */
+
+.program__modal {
+	bottom: 0;
+	display: none;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+}
+
+.program__modal-overlay {
+	background: rgba(0, 0, 0, 0.7);
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.program__modal-content {
+	background: #fff;
+	border-radius: 0.5rem;
+	left: 50%;
+	max-width: 37.5rem;
+	padding: 2rem;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	width: 90%;
+}
+
+.program__modal-close {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	color: #333;
+	cursor: pointer;
+	font-size: 1.8rem;
+	position: absolute;
+	right: 0.625rem;
+	top: -0.3125rem;
+	user-select: none;
+}
+
+/* 画像グリッド */
+
+.program__modal-image {
+	margin-top: 1.25rem;
+}
+
+.program__modal-image img {
+	-o-object-fit: cover;
+	aspect-ratio: 8/5;
+	object-fit: cover;
+	width: 100%;
+}
+
+/* モーダル開閉時の背景固定 */
+
+html.program--modal-open {
+	overflow: hidden;
 }
 
 .section-title {
@@ -3235,7 +3360,9 @@ main {
 	-o-object-fit: cover;
 	aspect-ratio: 375/280;
 	object-fit: cover;
+	position: relative;
 	width: 100%;
+	z-index: 0;
 }
 
 .works-list__item-content-bg {
@@ -3270,8 +3397,24 @@ main {
 	overflow-x: hidden;
 }
 
+.works__inner {
+	position: relative;
+}
+
 .works__list {
 	margin-top: 2.5rem;
+}
+
+.works__title {
+	margin-top: 2.5rem;
+	opacity: 0;
+	transform: translateY(50px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.works__title.is-active {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .wp-pagenavi {
@@ -3381,7 +3524,7 @@ html {
 }
 
 .access-layout {
-	margin-top: 5rem;
+	margin-top: 3.75rem;
 }
 
 .application-layout {
@@ -3417,11 +3560,15 @@ html {
 }
 
 .faq-layout {
-	margin-top: 5rem;
+	margin-top: 7.5rem;
 }
 
 .footer-layout {
 	margin-top: 7.5rem;
+}
+
+.guide-layout {
+	margin-top: 3.75rem;
 }
 
 .membership-info-layout {
@@ -3437,6 +3584,10 @@ html {
 }
 
 .program-availability-layout {
+	margin-top: 5rem;
+}
+
+.program-intro-layout {
 	margin-top: 5rem;
 }
 
@@ -3461,7 +3612,7 @@ html {
 }
 
 .works-layout {
-	margin-top: 5rem;
+	margin-top: 7.5rem;
 }
 
 .about__title br {
@@ -3569,6 +3720,10 @@ html {
 .access__sub-title {
 	font-size: 2rem;
 	margin-top: 3.125rem;
+}
+
+.access__google.access__google--page {
+	margin-top: 5rem;
 }
 
 .application__description {
@@ -3886,7 +4041,9 @@ body {
 	left: -1.5625rem;
 }
 
-.faq__inner.inner {
+.faq__block {
+	margin-left: auto;
+	margin-right: auto;
 	width: 80%;
 }
 
@@ -3942,6 +4099,24 @@ body {
 	margin-top: 1.875rem;
 }
 
+.guide-table__row {
+	display: table-row;
+}
+
+.guide-table__label {
+	display: table-cell;
+	vertical-align: top;
+	width: 7.5rem; /* ラベル幅を固定して整える */
+}
+
+.guide-table__data {
+	display: table-cell;
+}
+
+.guide-table__day {
+	width: 6rem;
+}
+
 .header {
 	height: 5.625rem;
 }
@@ -3987,10 +4162,6 @@ body {
 	object-fit: cover;
 }
 
-.intro-card__number::before {
-	font-size: 1.75rem;
-}
-
 .intro-card__title {
 	font-size: 1.5625rem;
 }
@@ -4026,9 +4197,8 @@ body {
 }
 
 .mv__title {
-	left: 23%;
 	max-width: 50%;
-	top: 34%;
+	top: 25%;
 }
 
 .mv__scroll-row img {
@@ -4091,6 +4261,10 @@ body {
 	margin-top: 5rem;
 }
 
+.program-intro__text {
+	font-size: 1.25rem;
+}
+
 .program__category {
 	margin-top: 2.5rem;
 }
@@ -4102,6 +4276,33 @@ body {
 
 .program__btn.common-btn {
 	margin-top: 2.5rem;
+}
+
+.program__pdf-block {
+	margin-top: 5rem;
+}
+
+.program__pdfs {
+	margin-top: 5rem;
+}
+
+.program__pdf {
+	margin-top: 2.5rem;
+}
+
+.program__modal-images {
+	grid-gap: 1rem;
+	display: grid;
+	gap: 1rem;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.program__modal-image {
+	margin-top: 0;
+}
+
+.program__modal-image img {
+	aspect-ratio: 1/1;
 }
 
 .section-title {

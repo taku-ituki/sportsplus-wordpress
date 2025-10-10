@@ -9,6 +9,7 @@
   counter-increment: program-number;
   gap: rem(20);
   display: block;
+  cursor: pointer;
   @include mq(md) {
     display: flex;
   }
@@ -55,23 +56,23 @@
   flex: 1; // ✅ 残りの幅を全て使う
 }
 
-/* タイトル＋番号部分 */
-.intro-card__header {
-  display: flex;
-  align-items: baseline;
-}
+// /* タイトル＋番号部分 */
+// .intro-card__header {
+//   display: flex;
+//   align-items: baseline;
+// }
 
-/* 自動連番の表示（before使用） */
-.intro-card__number::before {
-  content: counter(program-number) ".";
-  font-weight: bold;
-  font-size: rem(24);
-  color: $black333;
-  margin-right: rem(8);
-  @include mq(md) {
-    font-size: rem(28);
-  }
-}
+// /* 自動連番の表示（before使用） */
+// .intro-card__number::before {
+//   content: counter(program-number) ".";
+//   font-weight: bold;
+//   font-size: rem(24);
+//   color: $black333;
+//   margin-right: rem(8);
+//   @include mq(md) {
+//     font-size: rem(28);
+//   }
+// }
 
 /* タイトルテキスト */
 .intro-card__title {

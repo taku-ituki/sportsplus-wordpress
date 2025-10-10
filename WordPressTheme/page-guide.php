@@ -6,58 +6,63 @@
             media="(max-width: 767px)" />
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/centre.jpg" alt="メインビューの画像" />
     </picture>
-    <h1 class="sub-fv__title sub-fv__title--access">アクセス<span>access</span></h1>
+    <h1 class="sub-fv__title sub-fv__title--access">施設案内<span>guide</span></h1>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <?php get_template_part('parts/breadcrumb'); ?>
 </div>
 <!-- 施設案内 -->
-<section class="access access-layout">
-    <div class="access__inner inner">
-        <h2 class="access__title section-title">アクセス</h2>
+<section class="guide guide-layout">
+    <div class="guide__inner inner">
+        <h2 class="guide__title section-title">施設案内</h2>
         <!-- 施設情報 -->
-        <div class="access__info access__info--page">
-            <table class="access__table access-table">
-                <tbody class="access-table__body">
-                    <tr class="access-table__row">
-                        <th class="access-table__label">住所</th>
-                        <td class="access-table__data">
-                            <div class="access-table__address">
+        <div class="guide__info guide__info--page">
+            <table class="guide__table guide-table">
+                <tbody class="guide-table__body">
+                    <tr class="guide-table__row">
+                        <th class="guide-table__label">開所時間</th>
+                        <td class="guide-table__data">
+                            <div class="guide-table__time">
+                                <span class="guide-table__day">月・木</span>
+                                <span class="guide-table__hour">9:00～17:00</span>
+                            </div>
+                            <div class="guide-table__time">
+                                <span class="guide-table__day">日・火・金</span>
+                                <span class="guide-table__hour">9:00～12:00</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="guide-table__row">
+                        <th class="guide-table__label">住所</th>
+                        <td class="guide-table__data">
+                            <div class="guide-table__address">
                                 <span>愛知県海部郡大治町大字北間島字藤田33-1</span>
                                 <span>（大治町スポーツセンター内 1階）</span>
                             </div>
                         </td>
                     </tr>
-                    <tr class="access-table__row">
-                        <th class="access-table__label">TEL</th>
-                        <td class="access-table__data">052-217-6211</td>
+                    <tr class="guide-table__row">
+                        <th class="guide-table__label">TEL</th>
+                        <td class="guide-table__data">052-217-6211</td>
                     </tr>
-                    <tr class="access-table__row">
-                        <th class="access-table__label">営業時間</th>
-                        <td class="access-table__data">
-                            <div class="access-table__time">
-                                <span class="access-table__day">月・木</span>
-                                <span class="access-table__hour">9:00～17:00</span>
-                            </div>
-                            <div class="access-table__time">
-                                <span class="access-table__day">日・火・金</span>
-                                <span class="access-table__hour">9:00～12:00</span>
-                            </div>
-                        </td>
+                    <tr class="guide-table__row">
+                        <th class="guide-table__label">休日</th>
+                        <td class="guide-table__data">水 ・ 土 ・ 祝日の翌日 ・ 年末年始（１２/２９～１/３）</td>
                     </tr>
-                    <tr class="access-table__row">
-                        <th class="access-table__label">休日</th>
-                        <td class="access-table__data">水 ・ 土 ・ 祝日の翌日 ・ 年末年始（１２/２９～１/３）</td>
-                    </tr>
-                    <tr class="access-table__row">
-                        <th class="access-table__label">メール</th>
-                        <td class="access-table__data"><a
+                    <tr class="guide-table__row">
+                        <th class="guide-table__label">メール</th>
+                        <td class="guide-table__data"><a
                                 href="mailto:spplus-oharu@clovernet.ne.jp">spplus-oharu@clovernet.ne.jp</a></td>
                     </tr>
                 </tbody>
             </table>
         </div>
+    </div>
+</section>
+<section class="access access-layout">
+    <div class="access__inner inner">
+        <h2 class="access__title section-title">アクセス</h2>
         <!-- Google Map -->
         <div class="access__google access__google--page">
             <iframe

@@ -4,9 +4,24 @@
   overflow-x: hidden;
 }
 
+.works__inner{
+position: relative;
+}
+
 .works__list {
   margin-top: rem(40);
   @include mq(md) {
     margin-top: rem(80);
+  }
+}
+
+.works__title {
+  margin-top: rem(40); // 適宜調整（例: 80px）
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  &.is-active {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

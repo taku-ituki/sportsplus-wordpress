@@ -1,31 +1,23 @@
 "use strict";
 
 jQuery(function ($) {
-  // この中であればWordpressでも「$」が使用可能になる
-  // //ローディングアニメーション
+  // ===== ローディングアニメーション =====
   function loading() {
-    // Safari対応：localStorageとsessionStorageの両方をチェック
     var hasLoadedSession = sessionStorage.getItem("hasLoaded");
     var hasLoadedLocal = localStorage.getItem("hasLoaded");
     if (!hasLoadedSession && !hasLoadedLocal) {
-      // 初回アクセス：ローディングアニメーションを実行
       setTimeout(function () {
         $(".js-loading").addClass("is-hide");
         setTimeout(function () {
           $(".js-loading").remove();
         }, 800);
       }, 2000);
-
-      // フラグを両方に保存（Safari対応）
       sessionStorage.setItem("hasLoaded", "true");
       localStorage.setItem("hasLoaded", "true");
     } else {
-      // 2回目以降：即座に非表示
       $(".js-loading").remove();
     }
   }
-
-  // Safari対応：重複実行を防ぐフラグ
   var loadingExecuted = false;
   function executeLoading() {
     if (!loadingExecuted) {
@@ -33,76 +25,54 @@ jQuery(function ($) {
       loading();
     }
   }
+  $(document).ready(executeLoading);
+  $(window).on("load", executeLoading);
 
-  // Safari対応：複数のイベントで実行
-  $(document).ready(function () {
-    executeLoading();
+  // ===== ハンバーガーメニュー =====
+  $(".js-hamburger").on("click", function () {
+    $(this).toggleClass("is-open");
+    $(".js-header").toggleClass("is-color");
+    $(".js-drawer").fadeToggle();
   });
-  $(window).on("load", function () {
-    executeLoading();
+  $(".js-drawer a[href]").on("click", function () {
+    $(".js-hamburger").removeClass("is-open");
+    $(".js-header").removeClass("is-color");
+    $(".js-drawer").fadeOut();
   });
-
-  //ハンバーガーメニュー
-  $(function () {
-    $(".js-hamburger").click(function () {
-      $(this).toggleClass("is-open");
-      $(".js-header").toggleClass("is-color");
-      $(".js-drawer").fadeToggle();
-    });
-
-    // ドロワーナビのaタグをクリックで閉じる
-    $(".js-drawer a[href]").on("click", function () {
+  $(window).on("resize", function () {
+    if (window.matchMedia("(min-width: 768px)").matches) {
       $(".js-hamburger").removeClass("is-open");
       $(".js-header").removeClass("is-color");
       $(".js-drawer").fadeOut();
-    });
-
-    // resizeイベント
-    $(window).on("resize", function () {
-      if (window.matchMedia("(min-width: 768px)").matches) {
-        $(".js-hamburger").removeClass("is-open");
-        $(".js-header").removeClass("is-color");
-        $(".js-drawer").fadeOut();
-      }
-    });
+    }
   });
-
-  // ヘッダーのアコーディオン
   $(".js-drawer-accordion").on("click", function () {
     $(this).next().slideToggle();
     $(this).toggleClass("is-open");
   });
-  //
 
-  //  ヘッダーのドロワー展開時に背面のスクロールを止める
+  // ===== ドロワー開閉でスクロール制御 =====
   var drawer = document.querySelector(".js-drawer");
   var overlay = document.querySelector(".js-overlay");
   function openDrawer() {
     drawer.classList.add("is-open");
     overlay.style.display = "block";
-    document.body.style.overflow = "hidden"; // ドロワーが開いている間は本体のスクロールを無効にする
+    document.body.style.overflow = "hidden";
   }
-
   function closeDrawer() {
     drawer.classList.remove("is-open");
     overlay.style.display = "none";
-    document.body.style.overflow = ""; // ドロワーが閉じられたら本体のスクロールを有効にする
+    document.body.style.overflow = "";
   }
+  var hamburger = document.querySelector(".js-hamburger");
+  if (hamburger) {
+    hamburger.addEventListener("click", function () {
+      drawer.classList.contains("is-open") ? closeDrawer() : openDrawer();
+    });
+  }
+  if (overlay) overlay.addEventListener("click", closeDrawer);
 
-  document.querySelector(".js-hamburger").addEventListener("click", function () {
-    if (drawer.classList.contains("is-open")) {
-      closeDrawer();
-    } else {
-      openDrawer();
-    }
-  });
-  if (overlay) {
-    overlay.addEventListener("click", closeDrawer);
-  } else {
-    console.warn("Overlay element not found.");
-  }
-  //
-  //MVのスワイパー
+  // ===== MVスライダー =====
   var mv_swiper = new Swiper(".js-mv-swiper", {
     loop: true,
     speed: 2000,
@@ -116,20 +86,13 @@ jQuery(function ($) {
     }
   });
 
-  /////FAQアコーディオン/////
-  // アコーディオンのタイトルがクリックされたときの動き
-  // FAQのタイトルがクリックされたら開閉する
+  // ===== FAQアコーディオン =====
   $(".js-faq-accordion-title").on("click", function () {
-    var $box = $(this).next(".js-faq-accordion-box");
-
-    // 表示/非表示の切り替え
-    $box.slideToggle();
-
-    // 「close」クラスで「＋／−」を切り替える
+    $(this).next(".js-faq-accordion-box").slideToggle();
     $(this).toggleClass("close");
   });
 
-  //フェードインアニメーション
+  // ===== フェードインアニメーション =====
   $(window).on("scroll", function () {
     $(".js-fadeIn").each(function () {
       if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.75) {
@@ -138,67 +101,92 @@ jQuery(function ($) {
     });
   }).trigger("scroll");
 
-  //講座・部活動のクリック時モーダル
-  // モーダル処理をjQueryで統一
-  $(".js-modal-trigger").on("click", function (e) {
+  // ===== 講座カテゴリータブ（Ajax切り替え） =====
+  $(".js-program-tabs .category__menu a").on("click", function (e) {
     e.preventDefault();
-    var modalId = $(this).data("modal-id");
-    var $modal = $("#" + modalId);
-    if ($modal.length) {
-      $modal.addClass("is-active");
-    }
-  });
-  $(".js-modal-close").on("click", function () {
-    $(this).closest(".modal").removeClass("is-active");
-  });
-
-  //トップページへ戻るボタン
-  var button = document.querySelector(".js-top-button");
-  button.addEventListener("click", function () {
-    window.scroll({
-      top: 0,
-      behavior: "smooth"
+    var $this = $(this);
+    var slug = $this.data("slug");
+    $this.closest(".category__menu").addClass("category__menu--current").siblings().removeClass("category__menu--current");
+    $.ajax({
+      url: ajax_news.url,
+      type: "POST",
+      data: {
+        action: "filter_program_by_category",
+        slug: slug
+      },
+      success: function success(res) {
+        $("#program-list").html(res);
+        // 🔁 新しく生成されたHTMLにイベントを再度バインド
+        initProgramModals();
+      },
+      error: function error() {
+        $("#program-list").html("<p class='program__no-posts'>読み込みに失敗しました。</p>");
+      }
     });
   });
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 100) {
-      button.classList.add("is-active");
-    } else {
-      button.classList.remove("is-active");
-    }
-  });
 
-  //informationのタブ切り替え
+  // ===== 講座ページ モーダル処理（Ajax対応） =====
+  function initProgramModals() {
+    var programScrollPosition = 0;
+    $(".js-program-modal-open").off("click").on("click", function (e) {
+      e.preventDefault();
+      var target = $(this).data("target");
+      var modal = document.getElementById(target);
+      if (!modal) {
+        console.warn("モーダルが見つかりません:", target);
+        return;
+      }
+      $(modal).fadeIn(200);
+      programScrollPosition = $(window).scrollTop();
+      $("html").addClass("program--modal-open");
+    });
+    $(".js-program-modal-close").off("click").on("click", function () {
+      $(".js-program-modal").fadeOut(200);
+      $("html").removeClass("program--modal-open");
+      $(window).scrollTop(programScrollPosition);
+    });
+  }
+
+  // 初回登録
+  initProgramModals();
+
+  // ===== トップページへ戻るボタン =====
+  var button = document.querySelector(".js-top-button");
+  if (button) {
+    button.addEventListener("click", function () {
+      window.scroll({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 100) {
+        button.classList.add("is-active");
+      } else {
+        button.classList.remove("is-active");
+      }
+    });
+  }
+
+  // ===== information タブ切り替え =====
   $(document).ready(function () {
-    // クエリパラメータから "tab" の値を取得
     var params = new URLSearchParams(window.location.search);
-    var defaultTab = "license-link"; // デフォルトタブ（ライセンス講習）のID
-    var selectedTab = params.get("tab") || defaultTab; // クエリパラメータがない場合、デフォルトタブを使用
-
-    // すべてのタブとコンテンツを非表示にしてリセット
+    var defaultTab = "license-link";
+    var selectedTab = params.get("tab") || defaultTab;
     $(".js-info-content-tab").removeClass("active");
     $(".js-info-content-card").hide();
-
-    // URLパラメータ、またはデフォルトタブに基づき、該当のタブとコンテンツを表示
     $(".js-info-content-tab[data-id='" + selectedTab + "']").addClass("active");
     $("#" + selectedTab).show();
-
-    // タブクリック時の動作
-    $(".js-info-content-tab").click(function () {
-      // クリックされたタブのIDを取得
+    $(".js-info-content-tab").on("click", function () {
       var tabId = $(this).data("id");
-
-      // すべてのタブとコンテンツを非表示にしてリセット
       $(".js-info-content-tab").removeClass("active");
       $(".js-info-content-card").hide();
-
-      // クリックされたタブをアクティブにし、対応するコンテンツを表示
       $(this).addClass("active");
       $("#" + tabId).show();
     });
   });
 
-  // ======== ページネーション =========
+  // ===== ページネーション =====
   var $pagination = $(".news__pagination");
   var $items = $pagination.find(".news__pagination__page");
   var $prev = $pagination.find(".news__pagination__prev");
@@ -211,8 +199,7 @@ jQuery(function ($) {
     var $current = $items.filter(".news__pagination__page--current");
     var index = $items.index($current);
     var nextIndex = Math.min($items.length - 1, Math.max(0, index + direction));
-    $items.removeClass("pagination__page--current");
-    $items.eq(nextIndex).addClass("pagination__page--current");
+    changeActive($items.eq(nextIndex));
   }
   $items.on("click", function (e) {
     e.preventDefault();
@@ -227,7 +214,7 @@ jQuery(function ($) {
     moveActive(1);
   });
 
-  //////トップページお知らせ（Ajax）//////
+  // ===== トップページお知らせ（Ajax） =====
   $(".js-top-news__tabs .category__menu a").on("click", function (e) {
     e.preventDefault();
     var $this = $(this);
@@ -248,37 +235,9 @@ jQuery(function ($) {
       }
     });
   });
-
-  //////講座ページ（Ajax）//////
-  $(".js-program-tabs .category__menu a").on("click", function (e) {
-    e.preventDefault();
-    var $this = $(this);
-    var slug = $this.data("slug");
-
-    // タブの見た目を更新
-    $this.closest(".category__menu").addClass("category__menu--current").siblings().removeClass("category__menu--current");
-
-    // Ajaxリクエスト
-    $.ajax({
-      url: ajax_news.url,
-      // wp_localize_scriptで渡した変数
-      type: "POST",
-      data: {
-        action: "filter_program_by_category",
-        // ← PHP側のアクション名と合わせる
-        slug: slug
-      },
-      success: function success(res) {
-        $("#program-list").html(res);
-      },
-      error: function error() {
-        $("#program-list").html("<p class='program__no-posts'>読み込みに失敗しました。</p>");
-      }
-    });
-  });
 });
 
-//部活動地域移行カードのフェードアニメーショn
+// ===== 部活動地域移行カードのフェードアニメーション =====
 document.addEventListener("DOMContentLoaded", function () {
   var cards = document.querySelectorAll(".js-club-card");
   var observer = new IntersectionObserver(function (entries, observer) {
@@ -286,36 +245,14 @@ document.addEventListener("DOMContentLoaded", function () {
       if (entry.isIntersecting) {
         setTimeout(function () {
           entry.target.classList.add("is-visible");
-        }, index * 150); // 順番に表示させるためのディレイ（150msずつ遅らせる）
-
-        observer.unobserve(entry.target); // 一度表示されたら監視解除
+        }, index * 150);
+        observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.1 // 10%見えたら発火
+    threshold: 0.1
   });
-
   cards.forEach(function (card) {
-    observer.observe(card);
-  });
-  document.addEventListener("DOMContentLoaded", function () {
-    var cards = document.querySelectorAll(".club-card");
-    var observer = new IntersectionObserver(function (entries, observer) {
-      entries.forEach(function (entry, index) {
-        if (entry.isIntersecting) {
-          setTimeout(function () {
-            entry.target.classList.add("is-visible");
-          }, index * 150); // 順番に表示させるためのディレイ（150msずつ遅らせる）
-
-          observer.unobserve(entry.target); // 一度表示されたら監視解除
-        }
-      });
-    }, {
-      threshold: 0.1 // 10%見えたら発火
-    });
-
-    cards.forEach(function (card) {
-      observer.observe(card);
-    });
+    return observer.observe(card);
   });
 });

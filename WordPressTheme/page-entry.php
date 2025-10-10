@@ -7,7 +7,7 @@
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/spo.jpg" alt="diving" />
     </picture>
     <div class="sub-fv__overlay"></div>
-    <h2 class="sub-fv__title sub-fv__title--entry">講座お申込の流れ<span>program entry</span></h2>
+    <h2 class="sub-fv__title sub-fv__title--entry">会員募集<span>join us</span></h2>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
@@ -15,7 +15,7 @@
 </div>
 <section class="entry entry-layout">
     <div class="entry__inner inner">
-        <h2 class="entry__title section-title">講座ご参加までの流れ</h2>
+        <h2 class="entry__title section-title">ご参加までの流れ</h2>
         <p class="entry__lead">ご参加までの流れを4つのステップに分けてご案内します。</p>
         <ul class="entry__steps">
             <li class="entry__step">
@@ -46,7 +46,7 @@
                 <div class="entry__step-content">
                     <h3 class="entry__step-heading">年会費・参加費を支払う</h3>
                     <p class="entry__step-text">
-                        年会費（一般3,000円／65歳以上2,200円）と、講座の参加費（月・3ヶ月単位）を支払います。<br />
+                        年会費（一般3,000円／65歳以上2,200円/中学生以下1,500円）と、講座の参加費（昼講座は２ヶ月単位・夜講座は3ヶ月単位）を支払います。<br />
                         ※納入後の返金はできません。
                     </p>
                 </div>
@@ -81,7 +81,9 @@
                     </div>
                     <div class="membership-info__definition">
                         <dt class="membership-info__term">新規会員受付</dt>
-                        <dd class="membership-info__desc"><?php echo esc_html($entry_group['term2_desc']); ?></dd>
+                        <dd class="membership-info__desc">
+                            <?php echo nl2br(esc_html($entry_group['term2_desc'])); ?>
+                        </dd>
                     </div>
                     <div class="membership-info__definition">
                         <dt class="membership-info__term">随 時 受 付</dt>

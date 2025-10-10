@@ -68,7 +68,7 @@
                 </ul>
                 <div class="club__btn common-btn">
                     <a class="club__btn-link common-btn__link" href="
-                    <?php echo esc_url(home_url('/faq/#spochalle')); ?>">「スポーツチャレンジ」に関するQ&A</a>
+                    <?php echo esc_url(home_url('/#spochalle')); ?>">「スポーツチャレンジ」に関するQ&A</a>
                 </div>
             </div>
         </div>

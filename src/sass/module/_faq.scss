@@ -7,15 +7,14 @@
   position: relative;
 }
 
-.faq__inner.inner {
+.faq__block {
   @include mq(md) {
     width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
-.faq__title.section-title {
-  background: #4682b4;
-}
 
 .faq__sub-title {
   color: #4682b4;

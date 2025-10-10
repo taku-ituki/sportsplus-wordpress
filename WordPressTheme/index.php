@@ -161,7 +161,7 @@
                 </div>
                 <div class="works-list__item-content-bg">
                     <div class="works-list__item-content">
-                        <h3 class="works-list__item-title">部活動地域連携</h3>
+                        <h3 class="works-list__item-title">部活動地域展開</h3>
                         <p class="works-list__item-text">
                             学校で「部活動」として活動していた土日の活動を「地域クラブ活動」とし、実業団や競技経験豊富な方が指導に加わるようになります。</p>
                         <div class="works-list__item-btn-wrap common-btn">

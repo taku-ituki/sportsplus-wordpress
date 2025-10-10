@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.program-intro__text {
+  margin-top: rem(20);
+  @include mq(md) {
+    font-size: rem(20);
+  }
+}

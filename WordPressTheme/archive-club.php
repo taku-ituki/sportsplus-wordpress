@@ -6,20 +6,20 @@
     <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/valley.jpg" alt="valley" />
   </picture>
   <div class="sub-fv__overlay"></div>
-  <h1 class="sub-fv__title sub-fv__title--club">部活動地域連携<span>club partnership</span></h1>
+  <h1 class="sub-fv__title sub-fv__title--club">部活動地域展開<span>club partnership</span></h1>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs breadcrumbs-blog-layout">
   <?php get_template_part('parts/breadcrumb') ?>
 </div>
-<!-- 部活動地域連携 -->
+<!-- 部活動地域展開 -->
 <section class="club club-layout">
   <div class="inner club__inner">
-    <h2 class="club__title section-title">部活動地域連携</h2>
+    <h2 class="club__title section-title">部活動地域展開</h2>
     <nav class="club__toc toc">
       <div class="club__tok-title toc__title">【目次】</div>
       <ul class="club__toc-list toc__list">
-        <li class="club__toc-item toc__item"><a href="#club" class="toc__link">部活動地域連携とは？</a></li>
+        <li class="club__toc-item toc__item"><a href="#club" class="toc__link">部活動地域展開とは？</a></li>
         <li class="club__toc-item toc__item"><a href="#area-club" class="toc__link">「部活動」・「地域クラブ」・「クラブチーム」との違い</a></li>
         <li class="club__toc-item toc__item"><a href="#ongoing-activities" class="toc__link">実施中の地域クラブ活動</a></li>
         <li class="club__toc-item toc__item"><a href="#support-members" class="toc__link">賛助会員の募集</a></li>
@@ -27,17 +27,17 @@
       </ul>
     </nav>
     <div class="club__bg-color">
-      <h3 class="club__sub-title club__sub-title--color" id="club">部活動地域連携とは？</h3>
+      <h3 class="club__sub-title club__sub-title--color" id="club">部活動地域展開とは？</h3>
       <div class="club__text">
         <p>今まで中学校の部活動は、学校の教育活動の一環として行うことが基本でした。これからは、学習指導要領の改訂等により、休日の部活動を段階的に地域クラブ等へ移行していくことが求められています。そこで、大治町では学校と地域が連携して地域クラブ活動を実施していきます。</p>
       </div>
       <div class="club__btn common-btn">
-        <a class="club__btn-link common-btn__link" href="<?php echo esc_url(home_url('/faq/#club')); ?>">「部活動地域連携」に関するQ&A</a>
+        <a class="club__btn-link common-btn__link" href="<?php echo esc_url(home_url('/#club')); ?>">「部活動地域展開」に関するQ&A</a>
       </div>
     </div>
     <h3 class="club__sub-title" id="area-club">「部活動」・「地域クラブ」・「クラブチーム」との違い</h3>
     <div class="club__img">
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/bukatudou.jpg" alt="部活動地域連携とは" />
+      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/bukatudou.jpg" alt="部活動地域展開とは" />
     </div>
     <div class="club__difference-cards">
       <div class="club__difference-card">
@@ -91,7 +91,7 @@
       <div class="club__support">
         <div class="club__support-lead">
           <p class="club__support-text">
-            スポーツプラスおおはるの賛助会員になって部活動地域連携のサポーターになっていただき、 企業名等を練習用Tシャツに印刷して生徒へ配布します。<br />
+            スポーツプラスおおはるの賛助会員になって部活動地域展開のサポーターになっていただき、 企業名等を練習用Tシャツに印刷して生徒へ配布します。<br />
             生徒たちに応援してくださる地元企業を知る機会として紹介していきます。
           </p>
         </div>

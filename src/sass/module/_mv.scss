@@ -15,12 +15,12 @@
   display: block;
   object-fit: contain;
   z-index: 2;
-  top: 40%;
-  left: 15%;
+  top: 35%;
+  left: 50%;
+  transform: translateX(-50%);
   @include mq(md) {
     max-width: 50%;
-    top: 34%;
-    left: 23%;
+    top: 25%;
   }
 }
 

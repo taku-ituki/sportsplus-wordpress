@@ -16,7 +16,8 @@
   padding: rem(16) rem(100) rem(16) rem(25); // 右側に余白追加して + アイコンと分離
   transition: all 0.5s ease;
   color: $white;
-  background: #4682b4;
+  text-shadow: 0.0625rem 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3);
+  background: $skyblue;
   @include mq(md) {
     padding: rem(24) rem(100) rem(24) rem(40);
   }
@@ -116,4 +117,17 @@
   @include mq(md) {
     left: rem(-25);
   }
+}
+
+//管理画面側リンクの装飾
+.faq-item__accordion-box-text a {
+  color: red;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.faq-item__accordion-box-text a:hover {
+  color: #005a99;
+  text-decoration: none;
+  transition: 0.3s;
 }

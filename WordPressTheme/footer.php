@@ -16,7 +16,7 @@
                                     <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/program")) ?>">スポーツ講座</a>
                                 </li>
                                 <li class="footer__sub-item">
-                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/club")) ?>">部活動地域連携</a>
+                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/club")) ?>">部活動地域展開</a>
                                 </li>
                                 <li class="footer__sub-item">
                                     <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/challenge")) ?>">スポーツチャレンジ</a>
@@ -27,10 +27,7 @@
                             <div class="footer__item-link">施設案内</div>
                             <ul class="footer__sub-list">
                                 <li class="footer__sub-item">
-                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/access")) ?>">アクセス</a>
-                                </li>
-                                <li class="footer__sub-item">
-                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/faq")) ?>">よくあるご質問 </a>
+                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/guide")) ?>">施設案内</a>
                                 </li>
                                 <li class="footer__sub-item">
                                     <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/support")) ?>">賛助団体</a>
@@ -48,7 +45,7 @@
                             <a class="footer__item-link" href="<?php echo esc_url(home_url("/blog")) ?>">活動報告</a>
                         </li>
                         <li class="footer__item">
-                            <a class="footer__item-link" href="<?php echo esc_url(home_url("/application")) ?>"><span>各種申請用紙</span></a>
+                            <a class="footer__item-link" href="<?php echo esc_url(home_url("/application")) ?>"><span>各種申込用紙</span></a>
                         </li>
                     </ul>
                 </div>

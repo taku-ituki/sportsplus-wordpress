@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <?php wp_head(); ?>
 </head>
+
 <body>
     <!-- ページトップボタン -->
     <button class="top-button js-top-button"><span></span>TOP</button>
@@ -25,7 +27,7 @@
                                 <a href="<?php echo esc_url(home_url("/program")) ?>"><span>スポーツ講座</span></a>
                             </li>
                             <li class="header__nav-modal-item">
-                                <a href="<?php echo esc_url(home_url("/club")) ?>"><span>部活動地域連携</span></a>
+                                <a href="<?php echo esc_url(home_url("/club")) ?>"><span>部活動地域展開</span></a>
                             </li>
                             <li class="header__nav-modal-item">
                                 <a href="<?php echo esc_url(home_url("/challenge")) ?>"><span>スポーツチャレンジ</span></a>
@@ -36,10 +38,7 @@
                         <p>施設案内</p>
                         <ul class="header__nav-modal">
                             <li class="header__nav-modal-item">
-                                <a href="<?php echo esc_url(home_url("/access")) ?>"><span>アクセス</span></a>
-                            </li>
-                            <li class="header__nav-modal-item">
-                                <a href="<?php echo esc_url(home_url("/faq")) ?>"><span>よくあるご質問 </span></a>
+                                <a href="<?php echo esc_url(home_url("/guide")) ?>"><span>施設案内</span></a>
                             </li>
                             <li class="header__nav-modal-item">
                                 <a href="<?php echo esc_url(home_url("/support")) ?>"><span>賛助団体</span></a>
@@ -53,7 +52,7 @@
                         <a href="<?php echo esc_url(home_url("/blog")) ?>"><span>活動報告</span></a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="<?php echo esc_url(home_url("/application")) ?>"><span>各種申請用紙</span></a>
+                        <a href="<?php echo esc_url(home_url("/application")) ?>"><span>各種申込用紙</span></a>
                     </li>
                     <li class="header__nav-item header__nav-item--access">
                         <a href="mailto:spplus-oharu@clovernet.ne.jp">お問い合わせ</a>
@@ -75,7 +74,7 @@
                                     <a href="<?php echo esc_url(home_url("/program")) ?>"><span>スポーツ講座</span></a>
                                 </li>
                                 <li class="header__drawer-acc-accordion-item">
-                                    <a href="<?php echo esc_url(home_url("/club")) ?>">部活動地域連携</a>
+                                    <a href="<?php echo esc_url(home_url("/club")) ?>">部活動地域展開</a>
                                 </li>
                                 <li class="header__drawer-accordion-item">
                                     <a href="<?php echo esc_url(home_url("/challenge")) ?>">スポーツチャレンジ</a>
@@ -89,9 +88,6 @@
                                     <a href="<?php echo esc_url(home_url("/access")) ?>">アクセス</a>
                                 </li>
                                 <li class="header__drawer-accordion-item">
-                                    <a href="<?php echo esc_url(home_url("/faq")) ?>">よくあるご質問 </a>
-                                </li>
-                                <li class="header__drawer-accordion-item">
                                     <a href="<?php echo esc_url(home_url("/support")) ?>">賛助団体</a>
                                 </li>
                             </ul>
@@ -103,7 +99,7 @@
                             <a href="<?php echo esc_url(home_url("/blog")) ?>">活動報告</a>
                         </li>
                         <li class="header__drawer-item">
-                            <a href="<?php echo esc_url(home_url("/application")) ?>">各種申請用紙</a>
+                            <a href="<?php echo esc_url(home_url("/application")) ?>">各種申込用紙</a>
                         </li>
                         <li class="header__drawer-item">
                             <a href="mailto:spplus-oharu@clovernet.ne.jp">お問い合わせ</a>
