@@ -23,7 +23,7 @@
         <li class="club__toc-item toc__item"><a href="#area-club" class="toc__link">「部活動」・「地域クラブ」・「クラブチーム」との違い</a></li>
         <li class="club__toc-item toc__item"><a href="#ongoing-activities" class="toc__link">実施中の地域クラブ活動</a></li>
         <li class="club__toc-item toc__item"><a href="#support-members" class="toc__link">賛助会員の募集</a></li>
-        <li class="club__toc-item toc__item"><a href="#club-info" class="toc__link">申し込み・問い合わせ先</a></li>
+        <li class="club__toc-item toc__item"><a href="#club-info" class="toc__link">申込・問合せ先</a></li>
       </ul>
     </nav>
     <div class="club__bg-color">
@@ -106,13 +106,13 @@
         </div>
       </div>
     </div>
-    <!-- 申し込み・お問い合わせ -->
+    <!-- 申込・お問合せ -->
     <div class="club__info">
-      <h3 class="club__info-title section-title" id="club-info">申し込み・問い合わせ先</h3>
+      <h3 class="club__info-title section-title" id="club-info">申込・問合せ先</h3>
       <table class="club__access-table access__table">
         <tbody class="access-table__body">
           <tr class="access-table__row">
-            <th class="access-table__label">問い合わせ先</th>
+            <th class="access-table__label">問合せ先</th>
             <td class="access-table__data">
               <div class="access-table__address">
                 <span>スポーツプラスおおはる事務所</span>

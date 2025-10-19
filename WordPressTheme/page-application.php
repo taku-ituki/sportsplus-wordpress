@@ -22,14 +22,14 @@
             プリントアウトしてご記入いただき、スポーツプラスおおはる事務所へ持参されることで、各種お手続きがスムーズに行えます。
         </p>
         <?php
-        for ($i = 1; $i <= 10; $i++) :
+        for ($i = 1; $i <= 8; $i++) :
             $section = get_field("application_section_{$i}");
             if (!$section || empty($section['section_title'])) continue;
         ?>
             <div class="application__section">
                 <h3 class="application__sub-title"><?php echo esc_html($section['section_title']); ?></h3>
                 <ul class="application__list">
-                    <?php for ($j = 1; $j <= 10; $j++) :
+                    <?php for ($j = 1; $j <= 8; $j++) :
                         $text = $section["link_{$j}_text"];
                         $url = $section["link_{$j}_url"];
                         if (!empty($text) && !empty($url)) :

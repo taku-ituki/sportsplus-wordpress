@@ -55,7 +55,7 @@
                         <a href="<?php echo esc_url(home_url("/application")) ?>"><span>各種申込用紙</span></a>
                     </li>
                     <li class="header__nav-item header__nav-item--access">
-                        <a href="mailto:spplus-oharu@clovernet.ne.jp">お問い合わせ</a>
+                        <a href="mailto:spplus-oharu@clovernet.ne.jp">お問合せ</a>
                     </li>
                 </ul>
             </nav>
@@ -85,7 +85,7 @@
                             <p class="header__drawer-accordion-title js-drawer-accordion">施設案内</p>
                             <ul class="header__drawer-accordion-list">
                                 <li class="header__drawer-accordion-item">
-                                    <a href="<?php echo esc_url(home_url("/access")) ?>">アクセス</a>
+                                    <a href="<?php echo esc_url(home_url("/guide")) ?>">施設案内</a>
                                 </li>
                                 <li class="header__drawer-accordion-item">
                                     <a href="<?php echo esc_url(home_url("/support")) ?>">賛助団体</a>
@@ -102,7 +102,7 @@
                             <a href="<?php echo esc_url(home_url("/application")) ?>">各種申込用紙</a>
                         </li>
                         <li class="header__drawer-item">
-                            <a href="mailto:spplus-oharu@clovernet.ne.jp">お問い合わせ</a>
+                            <a href="mailto:spplus-oharu@clovernet.ne.jp">お問合せ</a>
                         </li>
                     </ul>
                 </nav>

@@ -41,7 +41,7 @@
                     <a href="#challenge-date" class="toc__link">「申込状況・日程」</a>
                 </li>
                 <li class="club__toc-item toc__item"><a href="#challenge-info" class="toc__link">
-                        申し込み・問い合わせ先</a>
+                        申込・問合せ先</a>
                 </li>
             </ul>
         </nav>
@@ -154,13 +154,13 @@
                 <?php endif; ?>
             </div>
         </div>
-        <!-- 申し込み・お問い合わせ -->
+        <!-- 申込・お問合せ -->
         <div class="challenge__info">
-            <h2 class="challenge__title section-title" id="challenge-info">申し込み・問い合わせ先</h2>
+            <h2 class="challenge__title section-title" id="challenge-info">申込・問合せ先</h2>
             <table class="challenge__access-table access__table">
                 <tbody class="access-table__body">
                     <tr class="access-table__row">
-                        <th class="access-table__label">問い合わせ先</th>
+                        <th class="access-table__label">問合せ先</th>
                         <td class="access-table__data">
                             <div class="access-table__address">
                                 <span>スポーツプラスおおはる事務所</span>

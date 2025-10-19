@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.newsletter__list {
+  margin-top: rem(20);
+  @include mq(md) {
+    margin-top: rem(40);
+  }
+}
+
+.newsletter__item {
+  position: relative;
+  padding-left: rem(15);
+  text-decoration: underline;
+  @include mq(md) {
+    padding-left: rem(20);
+    font-size: rem(24);
+  }
+}
+
+.newsletter__item a{
+    display: inline-block;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.newsletter__item a:hover{
+    text-decoration:none;
+    transition: 0.3s;
+}
+
+.newsletter__item::before {
+  position: absolute;
+  content: "・";
+  left: 0;
+}

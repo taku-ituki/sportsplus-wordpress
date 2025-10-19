@@ -278,32 +278,32 @@ function filter_program_by_category()
     endif;
 
     // ▼ PDFファイルの出力部分
-    if ($slug !== 'all') {
-        $term = get_term_by('slug', $slug, 'program_category');
-        if ($term) {
-            $pdf_exist = false;
-            $pdf_html = '';
+    // if ($slug !== 'all') {
+    //     $term = get_term_by('slug', $slug, 'program_category');
+    //     if ($term) {
+    //         $pdf_exist = false;
+    //         $pdf_html = '';
 
-            for ($i = 1; $i <= 3; $i++) {
-                $pdf_url = get_term_meta($term->term_id, "pdf_file_{$i}", true);
-                if (!empty($pdf_url)) {
-                    $pdf_exist = true;
-                    $pdf_html .= '<li class="program__pdf pdf">';
-                    $pdf_html .= '<embed src="' . esc_url($pdf_url) . '" type="application/pdf" class="pdf__url">';
-                    $pdf_html .= '</li>';
-                }
-            }
+    //         for ($i = 1; $i <= 3; $i++) {
+    //             $pdf_url = get_term_meta($term->term_id, "pdf_file_{$i}", true);
+    //             if (!empty($pdf_url)) {
+    //                 $pdf_exist = true;
+    //                 $pdf_html .= '<li class="program__pdf pdf">';
+    //                 $pdf_html .= '<embed src="' . esc_url($pdf_url) . '" type="application/pdf" class="pdf__url">';
+    //                 $pdf_html .= '</li>';
+    //             }
+    //         }
 
-            if ($pdf_exist) {
-                echo '<div class="program__pdf-block">';
-                echo '<h2 class="program__pdfs-title section-title">カレンダー</h2>';
-                echo '<ul class="program__pdfs">';
-                echo $pdf_html;
-                echo '</ul>';
-                echo '</div>';
-            }
-        }
-    }
+    //         if ($pdf_exist) {
+    //             echo '<div class="program__pdf-block">';
+    //             echo '<h2 class="program__pdfs-title section-title">カレンダー</h2>';
+    //             echo '<ul class="program__pdfs">';
+    //             echo $pdf_html;
+    //             echo '</ul>';
+    //             echo '</div>';
+    //         }
+    //     }
+    // }
 
     echo ob_get_clean();
     wp_die();

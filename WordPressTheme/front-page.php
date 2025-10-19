@@ -193,6 +193,49 @@
         </ul>
     </div>
 </section>
+<section class="newsletter newsletter-layout">
+    <div class="inner newsletter__inner">
+        <h2 class="newsletter__title section-title">会報</h2>
+        <ul class="newsletter__list">
+            <?php
+            // PDFとテキストのフィールド名を対応させて配列にまとめる
+            $newsletters = [
+                ['pdf' => 'newsletter_pdf1', 'text' => 'newsletter_text1'],
+                ['pdf' => 'newsletter_pdf2', 'text' => 'newsletter_text2'],
+                ['pdf' => 'newsletter_pdf3', 'text' => 'newsletter_text3']
+            ];
+
+            // 表示したPDFの数をカウント
+            $pdf_count = 0;
+
+            foreach ($newsletters as $item) {
+                $pdf_url = get_field($item['pdf']);
+                $pdf_text = get_field($item['text']);
+
+                if ($pdf_url) {
+                    $pdf_count++;
+
+                    // テキストが未入力ならデフォルト文字を使う
+                    $link_text = $pdf_text ? $pdf_text : '会報をダウンロード（' . $pdf_count . '）';
+            ?>
+                    <li class="newsletter__item">
+                        <a href="<?php echo esc_url($pdf_url); ?>" target="_blank" rel="noopener">
+                            <?php echo esc_html($link_text); ?>
+                        </a>
+                    </li>
+                <?php
+                }
+            }
+            // どのPDFも登録されていない場合
+            if ($pdf_count === 0): ?>
+                <li class="newsletter__item">
+                    <span>現在ダウンロードできる会報はありません</span>
+                </li>
+            <?php endif; ?>
+        </ul>
+    </div>
+</section>
+
 <!-- 施設案内 -->
 <section class="access access-layout">
     <div class="access__inner inner">
@@ -249,7 +292,7 @@
             </div>
         </div>
         <div class="access__btn common-btn">
-            <a class="access__btn-link common-btn__link" href="<?php echo esc_url(home_url("/access")) ?>">詳しく見る</a>
+            <a class="access__btn-link common-btn__link" href="<?php echo esc_url(home_url("/guide")) ?>">詳しく見る</a>
         </div>
     </div>
 </section>
@@ -297,4 +340,5 @@
         <?php endif; ?>
     </div>
 </section>
+
 <?php get_footer(); ?>

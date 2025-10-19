@@ -135,13 +135,13 @@
     </div>
 </section>
 
-
 <?php
 // 講座申込状況PDF
 $pdf_page = get_page_by_path('program-pdf');
 $pdf_page_id = $pdf_page ? $pdf_page->ID : null;
 $pdf_availability = get_field('pdf_availability', $pdf_page_id);
 ?>
+
 <section class="program-availability program-availability-layout">
     <div class="inner program-availability__inner">
         <h2 class="program-availability__title section-title">講座の申込状況</h2>

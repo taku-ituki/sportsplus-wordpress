@@ -1,8 +1,5 @@
 @use "global" as *;
 
-.works {
-  overflow-x: hidden;
-}
 
 .works__inner{
 position: relative;
@@ -25,3 +22,6 @@ position: relative;
     transform: translateY(0);
   }
 }
+
+
+
