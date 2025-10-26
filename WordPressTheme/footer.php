@@ -39,7 +39,7 @@
                 <div class="footer__box-right">
                     <ul class="footer__list">
                         <li class="footer__item">
-                            <a class="footer__item-link" href="<?php echo esc_url(home_url("/entry")) ?>">入会案内</a>
+                            <a class="footer__item-link" href="<?php echo esc_url(home_url("/entry")) ?>">会員募集</a>
                         </li>
                         <li class="footer__item">
                             <a class="footer__item-link" href="<?php echo esc_url(home_url("/blog")) ?>">活動報告</a>

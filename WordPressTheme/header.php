@@ -46,7 +46,7 @@
                         </ul>
                     </li>
                     <li class="header__nav-item">
-                        <a href="<?php echo esc_url(home_url("/entry")) ?>"><span>入会案内</span></a>
+                        <a href="<?php echo esc_url(home_url("/entry")) ?>"><span>会員募集</span></a>
                     </li>
                     <li class="header__nav-item">
                         <a href="<?php echo esc_url(home_url("/blog")) ?>"><span>活動報告</span></a>
@@ -93,7 +93,7 @@
                             </ul>
                         </li>
                         <li class="header__drawer-item">
-                            <a href="<?php echo esc_url(home_url("/entry")) ?>"><span>入会案内</span></a>
+                            <a href="<?php echo esc_url(home_url("/entry")) ?>"><span>会員募集</span></a>
                         </li>
                         <li class="header__drawer-item">
                             <a href="<?php echo esc_url(home_url("/blog")) ?>">活動報告</a>

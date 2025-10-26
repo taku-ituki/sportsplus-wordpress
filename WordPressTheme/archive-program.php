@@ -20,7 +20,12 @@
         <p class="program-intro__text">
             「スポーツプラスおおはる」では、多彩なスポーツ講座を開催しています。ご参加をお待ちしております。
             <br>各種教室については、下記「講座一覧」をご覧ください。
+            <br>（※スポーツプラスおおはるへの入会が必要です。）
         </p>
+        <!-- お申込リンク -->
+        <div class="program__btn common-btn">
+            <a class="program__btn-link common-btn__link" href="<?php echo esc_url(home_url("/entry")) ?>">お申込方法はこちら</a>
+        </div>
     </div>
 </section>
 <section class="program program-layout">
@@ -129,10 +134,6 @@
         </div>
     </div>
 
-    <!-- お申込リンク -->
-    <div class="program__btn common-btn">
-        <a class="program__btn-link common-btn__link" href="<?php echo esc_url(home_url("/entry")) ?>">お申込方法はこちら</a>
-    </div>
 </section>
 
 

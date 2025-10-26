@@ -145,7 +145,7 @@
 
         <!-- 申込状況・日程 -->
         <div class="challenge__item" id="challenge-date">
-            <h2 class="challenge__title section-title">申込状況・日程</h2>
+            <h2 class="challenge__title section-title">申込状況</h2>
             <div class="challenge__pdf pdf">
                 <?php if ($pdf_schedule): ?>
                     <embed src="<?php echo esc_url($pdf_schedule); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
