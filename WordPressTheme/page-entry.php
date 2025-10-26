@@ -114,7 +114,7 @@
         <?php
         $entry_group2 = get_field('entry_group2');
         if ($entry_group2) : ?>
-            <table class="membership-info__table">
+            <table class="membership-info__table membership-table">
                 <thead>
                     <tr>
                         <th>区分</th>
@@ -148,37 +148,7 @@
             </div>
     </div>
 <?php endif; ?>
-<!-- 賛助会員 -->
-<div class="membership-info__section membership-info__section--pink">
-    <h2 class="membership-info__title">賛助会員の募集</h2>
-    <?php
-    $entry_group3 = get_field('entry_group3');
-    if ($entry_group3) : ?>
-        <table class="membership-info__table">
-            <thead>
-                <tr>
-                    <th>区分</th>
-                    <th>年会費</th>
-                    <th>備考</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>個人</td>
-                    <td><?php echo esc_html($entry_group3['support_individual_fee']); ?></td>
-                    <td rowspan="2">
-                        <?php echo wp_kses_post($entry_group3['support_note']); ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td>法人および団体</td>
-                    <td><?php echo esc_html($entry_group3['support_corporate_fee']); ?></td>
-                </tr>
-            </tbody>
-        </table>
-    <?php endif; ?>
 
-</div>
 <div class="membership-info__btn common-btn">
     <a class="membership-info__btn-link common-btn__link" href="<?php echo esc_url(home_url("/application")) ?>">各種申込書はこちら</a>
 </div>

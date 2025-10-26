@@ -1,6 +1,6 @@
 @use "global" as *;
 
 //フロントページのworksスクロール重なりの解消
-// html,body {
-//   overflow-x: hidden;
-// }
+html,body {
+  overflow-x: hidden;
+}

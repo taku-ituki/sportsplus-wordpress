@@ -2,29 +2,39 @@
 
 jQuery(function ($) {
   // ===== ローディングアニメーション =====
+
+  var loadingExecuted = false;
+  function shouldShowLoading() {
+    var hasLoaded = sessionStorage.getItem("hasLoaded");
+
+    // セッション内で初回ならローディング表示
+    if (!hasLoaded) {
+      sessionStorage.setItem("hasLoaded", "true");
+      return true;
+    }
+    return false;
+  }
   function loading() {
-    var hasLoadedSession = sessionStorage.getItem("hasLoaded");
-    var hasLoadedLocal = localStorage.getItem("hasLoaded");
-    if (!hasLoadedSession && !hasLoadedLocal) {
+    var $loading = $(".js-loading");
+    if ($loading.length === 0) return; // ローディングHTMLが無ければスキップ
+
+    if (shouldShowLoading()) {
       setTimeout(function () {
-        $(".js-loading").addClass("is-hide");
+        $loading.addClass("is-hide");
         setTimeout(function () {
-          $(".js-loading").remove();
+          $loading.remove();
         }, 800);
       }, 2000);
-      sessionStorage.setItem("hasLoaded", "true");
-      localStorage.setItem("hasLoaded", "true");
     } else {
-      $(".js-loading").remove();
+      $loading.remove();
     }
   }
-  var loadingExecuted = false;
-  function executeLoading() {
+  var executeLoading = function executeLoading() {
     if (!loadingExecuted) {
       loadingExecuted = true;
       loading();
     }
-  }
+  };
   $(document).ready(executeLoading);
   $(window).on("load", executeLoading);
 
@@ -54,23 +64,53 @@ jQuery(function ($) {
   // ===== ドロワー開閉でスクロール制御 =====
   var drawer = document.querySelector(".js-drawer");
   var overlay = document.querySelector(".js-overlay");
-  function openDrawer() {
-    drawer.classList.add("is-open");
-    overlay.style.display = "block";
-    document.body.style.overflow = "hidden";
-  }
-  function closeDrawer() {
-    drawer.classList.remove("is-open");
-    overlay.style.display = "none";
-    document.body.style.overflow = "";
-  }
   var hamburger = document.querySelector(".js-hamburger");
+  var scrollPosition = 0;
+  function openDrawer() {
+    // スクロール位置を記録しておく
+    scrollPosition = window.pageYOffset;
+
+    // ドロワーを開くクラス追加
+    drawer.classList.add("is-open");
+
+    // オーバーレイ表示
+    overlay.style.display = "block";
+
+    // スクロール位置を固定（画面が動かないように）
+    document.body.style.position = 'fixed';
+    document.body.style.top = "-".concat(scrollPosition, "px");
+    document.body.style.width = '100%';
+    document.documentElement.style.overflow = 'hidden'; // ← htmlにも制御
+  }
+
+  function closeDrawer() {
+    // ドロワーを閉じるクラスを削除
+    drawer.classList.remove("is-open");
+
+    // オーバーレイ非表示
+    overlay.style.display = "none";
+
+    // スクロールの制御を解除
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.documentElement.style.overflow = '';
+
+    // 元のスクロール位置に戻す
+    window.scrollTo(0, scrollPosition);
+  }
+
+  // ハンバーガーメニューのクリックイベント
   if (hamburger) {
     hamburger.addEventListener("click", function () {
       drawer.classList.contains("is-open") ? closeDrawer() : openDrawer();
     });
   }
-  if (overlay) overlay.addEventListener("click", closeDrawer);
+
+  // オーバーレイのクリックでも閉じる
+  if (overlay) {
+    overlay.addEventListener("click", closeDrawer);
+  }
 
   // ===== MVスライダー =====
   var mv_swiper = new Swiper(".js-mv-swiper", {

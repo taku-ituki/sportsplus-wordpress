@@ -161,7 +161,7 @@ const imgImagemin = () => {
   };
   
   const browserSyncOption = {
-    notify: false,
+    // notify: false,
     // server: "../dist/", // ローカルサーバーのルートディレクトリ
     //WordPressの場合は↓を有効にする。その場合、↑(server)はコメントアウトする。
     proxy: "localhost:10013", // ローカルサーバーのURL（WordPress）

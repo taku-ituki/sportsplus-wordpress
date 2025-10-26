@@ -220,6 +220,10 @@ a {
 	z-index: 900;
 }
 
+.member-layout {
+	margin-top: 2.5rem;
+}
+
 .membership-info-layout {
 	margin-top: 2.5rem;
 }
@@ -237,6 +241,10 @@ a {
 }
 
 .program-availability-layout {
+	margin-top: 2.5rem;
+}
+
+.program-calendar-layout {
 	margin-top: 2.5rem;
 }
 
@@ -322,6 +330,42 @@ a {
 
 .about__item-title br {
 	display: none;
+}
+
+.about__sub-title {
+	color: #fff;
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin-top: 1.25rem;
+	text-align: center;
+	text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+}
+
+.about__sub-intro {
+	color: #fff;
+	font-size: 1.125rem;
+	margin-top: 1.25rem;
+	text-align: center;
+	text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+}
+
+.about-sub-list-block {
+	margin-top: 0.9375rem;
+}
+
+.about__sub-item {
+	color: #fff;
+	font-size: 1.125rem;
+	padding-left: 0.9375rem;
+	position: relative;
+	text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+}
+
+.about__sub-item::before {
+	content: "○";
+	left: -0.3125rem;
+	position: absolute;
+	top: 0;
 }
 
 .access-table {
@@ -818,6 +862,7 @@ body {
 
 .inner.breadcrumbs__inner {
 	display: flex;
+	font-size: 0.75rem;
 	gap: 0.5rem;
 	margin-top: 0.9375rem;
 }
@@ -838,10 +883,10 @@ body {
 }
 
 .category__list {
-	grid-gap: 1.25rem;
+	grid-gap: 0.9375rem;
 	grid-row-gap: 0.9375rem;
 	display: grid;
-	gap: 1.25rem;
+	gap: 0.9375rem;
 	grid-template-columns: repeat(2, 1fr);
 	margin-left: auto;
 	margin-right: auto;
@@ -2094,6 +2139,11 @@ main {
 	padding: 0.625rem 2rem;
 }
 
+html,
+body {
+	overflow-x: hidden;
+}
+
 .inner {
 	margin-left: auto;
 	margin-right: auto;
@@ -2292,10 +2342,6 @@ main {
 	background-color: #ffe5cc;
 }
 
-.membership-info__section--pink {
-	background-color: #fbd3e2;
-}
-
 .membership-info__section--green {
 	background-color: #d3f2d3;
 }
@@ -2319,18 +2365,6 @@ main {
 
 .membership-info__label {
 	font-weight: bold;
-}
-
-.membership-info__table {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-.membership-info__table th,
-.membership-info__table td {
-	border: 0.0625rem solid #ccc;
-	padding: 0.5rem;
-	text-align: left;
 }
 
 .membership-info__contact p {
@@ -2387,6 +2421,23 @@ main {
 
 .membership-info__title.section-title {
 	background: #87ceeb;
+}
+
+.member-info__table.membership-table {
+	background-color: #fbd3e2;
+	margin-top: 2.5rem;
+}
+
+.membership-table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.membership-table th,
+.membership-table td {
+	border: 0.0625rem solid #ccc;
+	padding: 0.5rem;
+	text-align: left;
 }
 
 .mv {
@@ -2660,6 +2711,17 @@ main {
 
 .program-availability__pdf {
 	margin-top: 2.5rem;
+}
+
+.program-calendar__sub-title {
+	background: #a8e6cf;
+	color: #00695c;
+	margin-top: 1.25rem;
+	text-align: center;
+}
+
+.program-calendar__pdf {
+	margin-top: 1.25rem;
 }
 
 .program-intro__text {
@@ -3601,6 +3663,10 @@ html {
 	margin-top: 3.75rem;
 }
 
+.member-layout {
+	margin-top: 5rem;
+}
+
 .membership-info-layout {
 	margin-top: 5rem;
 }
@@ -3666,6 +3732,26 @@ html {
 
 .about__item-title br {
 	display: block;
+}
+
+.about__sub-title {
+	font-size: 2rem;
+	margin-top: 2.5rem;
+}
+
+.about__sub-intro {
+	font-size: 1.5rem;
+	margin-top: 2.5rem;
+	text-align: left;
+}
+
+.about-sub-list-block {
+	margin-top: 1.875rem;
+}
+
+.about__sub-item {
+	font-size: 1.5rem;
+	padding-left: 1.25rem;
 }
 
 .access-table__row {
@@ -3864,11 +3950,18 @@ body {
 	padding-top: 5.625rem;
 }
 
+.inner.breadcrumbs__inner {
+	font-size: 1rem;
+}
+
 .category__list {
-	gap: 1.9375rem;
 	grid-template-columns: repeat(4, 1fr);
 	max-width: 80%;
 	width: 100%;
+}
+
+.category__list.category__list--program {
+	gap: 1.3125rem;
 }
 
 .category__list:not(:first-child) {
@@ -4230,6 +4323,10 @@ body {
 	padding-left: 0.625rem;
 }
 
+.member-info__table.membership-table {
+	margin-top: 3.75rem;
+}
+
 .mv__title {
 	max-width: 50%;
 	top: 25%;
@@ -4302,6 +4399,11 @@ body {
 
 .program-availability__pdf {
 	margin-top: 5rem;
+}
+
+.program-calendar__sub-title {
+	font-size: 1.5rem;
+	margin-top: 2.5rem;
 }
 
 .program-intro__text {

@@ -1,0 +1,12 @@
+@use 'global' as *;
+
+.membership-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.membership-table th,
+.membership-table td {
+  border: rem(1) solid #ccc;
+  padding: rem(8);
+  text-align: left;}

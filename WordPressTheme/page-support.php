@@ -19,13 +19,13 @@
 
         <?php
         // SCFから繰り返しグループを取得
-        $support_groups = SCF::get('support_group');
+        $members = SCF::get('support_group');
 
         // 種類ごとに分類して保持する配列
         $support_by_type = [];
 
         // 団体の種類ごとに分類処理
-        foreach ($support_groups as $group) {
+        foreach ($members as $group) {
             $type = $group['group_type']; // 「ご助成団体」など
 
             // 未定義の場合は空の配列を初期化
@@ -81,6 +81,39 @@
             <?php endif; ?>
         <?php endforeach; ?>
 
+    </div>
+</section>
+
+<!-- 賛助会員 -->
+<section class="member member-layout">
+    <div class="inner member__inner ">
+        <h2 class="member-info__title section-title">賛助会員の募集</h2>
+        <?php
+        $member = get_field('member_group');
+        if ($member) : ?>
+            <table class="member-info__table membership-table">
+                <thead>
+                    <tr>
+                        <th>区分</th>
+                        <th>年会費</th>
+                        <th>備考</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>個人</td>
+                        <td><?php echo esc_html($member['member_individual_fee']); ?></td>
+                        <td rowspan="2">
+                            <?php echo wp_kses_post($member['member_note']); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>法人および団体</td>
+                        <td><?php echo esc_html($member['member_corporate_fee']); ?></td>
+                    </tr>
+                </tbody>
+            </table>
+        <?php endif; ?>
     </div>
 </section>
 

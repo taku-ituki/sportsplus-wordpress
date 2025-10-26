@@ -17,7 +17,7 @@
     <div class="blog__inner inner">
         <!-- カテゴリー一覧 -->
         <div class="program__category category">
-            <ul class="category__list">
+            <ul class="category__list category__list--program">
                 <?php
                 $categories = get_categories(); // 全カテゴリー取得
                 foreach ($categories as $category) {

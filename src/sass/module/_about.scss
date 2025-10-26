@@ -70,3 +70,54 @@
   }
 }
 
+.about__sub-title {
+  text-align: center;
+  font-size: rem(24);
+  color: $white;
+  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+  font-weight: $bold;
+  margin-top: rem(20);
+  @include mq(md) {
+    font-size: rem(32);
+    margin-top: rem(40);
+  }
+}
+
+.about__sub-intro {
+  font-size: rem(18);
+  margin-top: rem(20);
+  color: $white;
+  text-align: center;
+  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+  @include mq(md) {
+    margin-top: rem(40);
+    text-align: left;
+    font-size: rem(24);
+  }
+}
+
+.about-sub-list-block {
+  margin-top: rem(15);
+  @include mq(md) {
+    margin-top: rem(30);
+  }
+}
+
+.about__sub-item {
+  position: relative;
+  font-size: rem(18);
+  color: $white;
+  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+  padding-left: rem(15);
+  @include mq(md) {
+    font-size: rem(24);
+    padding-left: rem(20);
+  }
+}
+
+.about__sub-item::before {
+  position: absolute;
+  content: "○";
+  top: 0;
+  left: rem(-5);
+}

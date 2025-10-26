@@ -137,20 +137,89 @@
 
 
 <?php
-// 講座申込状況PDF
-$pdf_page = get_page_by_path('program-pdf');
-$pdf_page_id = $pdf_page ? $pdf_page->ID : null;
-$pdf_availability = get_field('pdf_availability', $pdf_page_id);
+// 固定ページ「calendar-settings」の投稿オブジェクトを取得
+$calendar_page = get_page_by_path('calendar-settings');
+
+// 事前に null を代入しておくことで安全に扱えるようにする
+$month_pdf = null;
+$week_pdf = null;
+
+if ($calendar_page) {
+    $calendar_page_id = $calendar_page->ID;
+
+    // ACFからPDFフィールドを取得（フィールド名に注意！）
+    $month_pdf = get_field('month_calendar_pdf', $calendar_page_id);
+    $week_pdf = get_field('week_calendar_pdf', $calendar_page_id);
+}
 ?>
+
+<section class="program-calendar program-calendar-layout">
+    <div class="inner program-calendar__inner">
+        <h2 class="program-calendar__title section-title">カレンダー</h2>
+
+        <!-- 月間カレンダー -->
+        <h3 class="program-calendar__sub-title">月間カレンダー</h3>
+        <?php if (!empty($month_pdf)) : ?>
+            <div class="program-calendar__pdf pdf">
+                <embed
+                    src="<?php echo esc_url(is_array($month_pdf) ? $month_pdf['url'] : $month_pdf); ?>"
+                    class="pdf__url"
+                    type="application/pdf"
+                    width="100%"
+                    height="600px" />
+            </div>
+        <?php else : ?>
+            <p>月間カレンダーは現在準備中です。</p>
+        <?php endif; ?>
+        <div class="access__btn common-btn">
+            <a class="access__btn-link common-btn__link" href="<?php echo esc_url($month_pdf); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
+        </div>
+
+        <!-- 週間カレンダー
+        <h3 class="program-calendar__sub-title">週間カレンダー</h3>
+        <?php if (!empty($week_pdf)) : ?>
+            <div class="program-calendar__pdf pdf">
+                <embed
+                    src="<?php echo esc_url(is_array($week_pdf) ? $week_pdf['url'] : $week_pdf); ?>"
+                    class="pdf__url"
+                    type="application/pdf"
+                    width="100%"
+                    height="600px" />
+            </div>
+        <?php else : ?>
+            <p>週間カレンダーは現在準備中です。</p>
+        <?php endif; ?> -->
+        <!-- <div class="access__btn common-btn">
+            <a class="access__btn-link common-btn__link" href="<?php echo esc_url($week_pdf); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
+        </div> -->
+    </div>
+</section>
+
+
+<?php
+// 固定ページ「availability-settings」の投稿オブジェクトを取得
+$availability_page = get_page_by_path('availability-settings');
+
+// 事前に null を代入しておくことで安全に扱えるようにする
+$availability_pdf = null;
+
+if ($availability_page) {
+    $availability_page_id = $availability_page->ID;
+
+    // ACFからPDFフィールドを取得（フィールド名に注意！）
+    $availability_pdf = get_field('availability_pdf', $availability_page_id);
+}
+?>
+
 <section class="program-availability program-availability-layout">
     <div class="inner program-availability__inner">
         <h2 class="program-availability__title section-title">講座の申込状況</h2>
         <div class="program-availability__item">
             <div class="program-availability__pdf">
-                <?php if ($pdf_availability) : ?>
-                    <embed src="<?php echo esc_url($pdf_availability); ?>" type="application/pdf" width="100%" height="600px" class="pdf__url" />
+                <?php if ($availability_pdf) : ?>
+                    <embed src="<?php echo esc_url($availability_pdf); ?>" type="application/pdf" width="100%" height="600px" class="pdf__url" />
                     <div class="access__btn common-btn">
-                        <a class="access__btn-link common-btn__link" href="<?php echo esc_url($pdf_availability); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
+                        <a class="access__btn-link common-btn__link" href="<?php echo esc_url($availability_pdf); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
                     </div>
                 <?php else : ?>
                     <p>現在準備中</p>

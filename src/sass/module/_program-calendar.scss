@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.program-calendar__sub-title {
+  background: $bg-entry;
+  color: #00695c;
+  text-align: center;
+  margin-top: rem(20);
+  @include mq(md) {
+    margin-top: rem(40);
+    font-size: rem(24);
+  }
+}
+
+.program-calendar__pdf {
+  margin-top: rem(20);
+}

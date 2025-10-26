@@ -91,22 +91,22 @@ function my_admin_post_thumbnail_preview()
     if (has_post_thumbnail($post->ID)) {
         $thumb_url = get_the_post_thumbnail_url($post->ID, 'medium');
 ?>
-        <style>
-            .editor-styles-wrapper:before {
-                content: '';
-                display: block;
-                width: 100%;
-                max-width: 600px;
-                margin: 0 auto 20px;
-                background-image: url('<?php echo esc_url($thumb_url); ?>');
-                background-size: cover;
-                background-position: center;
-                aspect-ratio: 16 / 9;
-                border: 2px solid #ddd;
-                border-radius: 4px;
-            }
-        </style>
-        <?php
+<style>
+.editor-styles-wrapper:before {
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    background-image: url('<?php echo esc_url($thumb_url); ?>');
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 16 / 9;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+</style>
+<?php
     }
 }
 add_action('admin_head', 'my_admin_post_thumbnail_preview');
@@ -148,23 +148,23 @@ function filter_news_by_category()
     if ($query->have_posts()) :
         echo '<ul class="top-news__list list">';
         while ($query->have_posts()) : $query->the_post(); ?>
-            <li class="list__item">
-                <a href="<?php the_permalink(); ?>">
-                    <div class="list__item-meta">
-                        <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
-                            <?php echo get_the_date('Y.m.d'); ?>
-                        </time>
-                        <?php
+<li class="list__item">
+    <a href="<?php the_permalink(); ?>">
+        <div class="list__item-meta">
+            <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                <?php echo get_the_date('Y.m.d'); ?>
+            </time>
+            <?php
                         $terms = get_the_terms(get_the_ID(), 'news_category');
                         if ($terms && !is_wp_error($terms)) {
                             echo '<p class="list__item-category">' . esc_html($terms[0]->name) . '</p>';
                         }
                         ?>
-                    </div>
-                    <p class="list__item-title"><?php the_title(); ?></p>
-                </a>
-            </li>
-        <?php endwhile;
+        </div>
+        <p class="list__item-title"><?php the_title(); ?></p>
+    </a>
+</li>
+<?php endwhile;
         echo '</ul>';
     else :
         echo '<p>現在お知らせはありません。</p>';
@@ -172,6 +172,18 @@ function filter_news_by_category()
 
     wp_die();
 }
+
+// お知らせ投稿タイプ（news）の登録
+// 「news」カスタム投稿タイプのアーカイブページで、1ページに表示する件数を変更
+function set_news_list_posts_per_page($query)
+{
+    // 管理画面ではなく、メインクエリかつ「news」のアーカイブページのとき
+    if (!is_admin() && $query->is_main_query() && is_post_type_archive('news')) {
+        $query->set('posts_per_page', 10); // 1ページに10件表示
+    }
+}
+add_action('pre_get_posts', 'set_news_list_posts_per_page');
+
 
 ////////////////////////
 // ▼ Ajax: スポーツ講座（program）
@@ -207,68 +219,68 @@ function filter_program_by_category()
             $fallback_src = get_theme_file_uri('/assets/images/common/no-image.jpg');
             $modal_id = 'programModal_' . get_the_ID();
         ?>
-            <!-- カード -->
-            <li class="intro-card js-program-modal-open" data-target="<?php echo esc_attr($modal_id); ?>">
-                <figure class="intro-card__image">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('medium'); ?>
-                    <?php else : ?>
-                        <img src="<?php echo esc_url($fallback_src); ?>" alt="no image" loading="lazy" />
-                    <?php endif; ?>
-                </figure>
-                <div class="intro-card__content">
-                    <h3 class="intro-card__title"><?php the_title(); ?></h3>
-                    <dl class="intro-card__details">
-                        <div class="intro-card__detail">
-                            <dt>開催日</dt>
-                            <dd><?php the_field('program_day'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>時間</dt>
-                            <dd><?php the_field('program_time'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>対象</dt>
-                            <dd><?php the_field('program_age'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>講師</dt>
-                            <dd><?php the_field('program_teacher'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>定員</dt>
-                            <dd><?php the_field('program_capacity'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>紹介文</dt>
-                            <dd><?php the_field('program_description'); ?></dd>
-                        </div>
-                    </dl>
-                </div>
-            </li>
+<!-- カード -->
+<li class="intro-card js-program-modal-open" data-target="<?php echo esc_attr($modal_id); ?>">
+    <figure class="intro-card__image">
+        <?php if (has_post_thumbnail()) : ?>
+        <?php the_post_thumbnail('medium'); ?>
+        <?php else : ?>
+        <img src="<?php echo esc_url($fallback_src); ?>" alt="no image" loading="lazy" />
+        <?php endif; ?>
+    </figure>
+    <div class="intro-card__content">
+        <h3 class="intro-card__title"><?php the_title(); ?></h3>
+        <dl class="intro-card__details">
+            <div class="intro-card__detail">
+                <dt>開催日</dt>
+                <dd><?php the_field('program_day'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>時間</dt>
+                <dd><?php the_field('program_time'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>対象</dt>
+                <dd><?php the_field('program_age'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>講師</dt>
+                <dd><?php the_field('program_teacher'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>定員</dt>
+                <dd><?php the_field('program_capacity'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>紹介文</dt>
+                <dd><?php the_field('program_description'); ?></dd>
+            </div>
+        </dl>
+    </div>
+</li>
 
-            <!-- ===== モーダル（各講座専用） ===== -->
-            <div id="<?php echo esc_attr($modal_id); ?>" class="program__modal js-program-modal" aria-hidden="true">
-                <div class="program__modal-overlay js-program-modal-close"></div>
-                <div class="program__modal-content">
-                    <div class="program__modal-close js-program-modal-close">×</div>
-                    <div class="program__modal-images">
-                        <?php
+<!-- ===== モーダル（各講座専用） ===== -->
+<div id="<?php echo esc_attr($modal_id); ?>" class="program__modal js-program-modal" aria-hidden="true">
+    <div class="program__modal-overlay js-program-modal-close"></div>
+    <div class="program__modal-content">
+        <div class="program__modal-close js-program-modal-close">×</div>
+        <div class="program__modal-images">
+            <?php
                         // program_modal_image1〜4 を順に取得
                         for ($i = 1; $i <= 4; $i++) :
                             $image = get_field('program_modal_image' . $i);
                             if ($image) :
                         ?>
-                                <figure class="program__modal-image">
-                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                                </figure>
-                        <?php
+            <figure class="program__modal-image">
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+            </figure>
+            <?php
                             endif;
                         endfor;
                         ?>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </div>
+</div>
 <?php
         endwhile;
         echo '</ul>';
@@ -309,6 +321,16 @@ function filter_program_by_category()
     wp_die();
 }
 
+// 通常の投稿（ブログ）のアーカイブページで、1ページの表示件数を制御
+function set_post_list_posts_per_page($query)
+{
+    if (!is_admin() && $query->is_main_query() && is_home()) {
+        $query->set('posts_per_page', 9); // ← 任意の件数に変更可
+    }
+}
+add_action('pre_get_posts', 'set_post_list_posts_per_page');
+
+
 //ログイン画面のロゴ変更
 function login_logo()
 {
@@ -346,3 +368,4 @@ function login_logo_url_title()
     return get_bloginfo('name');
 }
 add_filter('login_headertitle', 'login_logo_url_title');
+

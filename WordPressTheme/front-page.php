@@ -18,7 +18,7 @@
                 $start = ($row - 1) * $images_per_row + 1;
                 $end = $start + $images_per_row - 1;
 
-                echo "<!-- row $row -->"; // ← 追加
+                echo "<!-- row $row -->";
 
             ?>
                 <div class="mv__scroll-row mv__scroll-row--row<?php echo $row; ?>">
@@ -26,7 +26,7 @@
                         <?php for ($i = $start; $i <= $end; $i++): ?>
                             <?php
                             $image_url = get_field($prefix . $i);
-                            echo "<!-- image: $prefix$i -->"; // ← 追加
+                            echo "<!-- image: $prefix$i -->";
 
                             if ($image_url): ?>
                                 <img src="<?php echo esc_url($image_url); ?>" alt="スライド画像">
@@ -104,11 +104,66 @@
 </section>
 
 
-
 <!-- スポーツプラスおおはるについて -->
 <section class="about about-layout">
     <div class="about__inner inner">
-        <h2 class="about__title section-title fade-in js-fadeIn">「スポーツプラス<br />おおはる」とは</h2>
+        <h2 class="about__title section-title fade-in js-fadeIn">「スポーツプラス<br />おおはる」について</h2>
+        <p class="about__intro fade-in js-fadeIn">
+            大治町総合型地域スポーツクラブ　スポーツプラスおおはるは、地域住民のみなさんが主体となって自ら運営・管理する組織として、２０１５年（平成２７年）２月８日に設立されました。
+        </p>
+        <h3 class="about__sub-title fade-in js-fadeIn">
+            【総合型地域スポーツクラブとは】
+        </h3>
+        <p class="about__sub-intro fade-in js-fadeIn">
+            国が提唱している地域住民のための新しいタイプのスポーツクラブです。子供から高齢者まで幅広い年齢層が自分にあった種目を選択できるとともに、初心者から上級者までそれぞれの志向・レベルに合わせて参加でき、住民の健康・体力づくりだけでなく、交流を深める・豊かなコミュニティ形成の場を目指しています。
+        </p>
+        <h3 class="about__sub-title fade-in js-fadeIn">
+            【スポーツプラスおおはるの理念】
+        </h3>
+        <div class="about-sub-list-block">
+            <ul class="about__sub-list fade-in js-fadeIn">
+                <li class="about__sub-item fade-in js-fadeIn">
+                    <p>大人から子どもまで、いつでも、いつまでも加入できます。</p>
+                </li>
+                <li class="about__sub-item fade-in js-fadeIn">
+                    <p>おもしろく、気軽にスポーツに参加できる環境をつくります。</p>
+                </li>
+                <li class="about__sub-item fade-in js-fadeIn">
+                    <p>ハッピーでプラスαの毎日をおくるために、がんばるみなさんを応援します。</p>
+                </li>
+            </ul>
+        </div>
+        <p class="about__sub-intro fade-in js-fadeIn">
+            みなさんの健康・体力づくりだけでなく、地域の仲間・豊かなコミュニティづくりもできるクラブとして、大治町を元気にします。
+        </p>
+        <ul class="about__list fade-in js-fadeIn">
+            <li class="about__item">
+                <div class="about__item-img">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/family.jpg" alt="スポーツクラブアイコン"
+                        class="about__icon" />
+                </div>
+                <h3 class="about__item-title">幅広い年齢層が選べる<br />スポーツクラブ</h3>
+            </li>
+            <li class="about__item">
+                <div class="about__item-img">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/run.jpg" alt="健康アイコン"
+                        class="about__icon" />
+                </div>
+                <h3 class="about__item-title">健康・体力づくりの場</h3>
+            </li>
+            <li class="about__item">
+                <div class="about__item-img">
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/frend.jpg" alt="コミュニティアイコン"
+                        class="about__icon" />
+                </div>
+                <h3 class="about__item-title">交流を深めるコミュニティ</h3>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- <section class="about about-layout">
+    <div class="about__inner inner">
+        <h2 class="about__title section-title fade-in js-fadeIn">「スポーツプラス<br />おおはる」について</h2>
         <p class="about__intro fade-in js-fadeIn">
             総合型地域スポーツクラブは、人々が、身近な地域でスポ－ツに親しむことのできる新しいタイプのスポーツクラブで、子供から高齢者まで（多世代）、様々なスポーツを愛好する人々が（多種目）、初心者からトップレベルまで、それぞれの志向・レベルに合わせて参加できる（多志向）、という特徴を持ち、地域住民により自主的・主体的に運営されるスポーツクラブです。
             スポーツの振興やスポーツを通じた地域づくりなどに向けた多様な活動を展開し、地域スポーツの担い手としての役割や交流を深める場・豊かなコミュニティ形成の場にもなっています。
@@ -137,7 +192,8 @@
             </li>
         </ul>
     </div>
-</section>
+</section> -->
+
 <!-- 事業内容 -->
 <section class="works works-layout">
     <div class="works__inner inner">
@@ -195,8 +251,8 @@
 </section>
 <section class="newsletter newsletter-layout">
     <div class="inner newsletter__inner">
-        <h2 class="newsletter__title section-title">会報</h2>
-        <ul class="newsletter__list">
+        <h2 class="newsletter__title section-title fade-in js-fadeIn">会報</h2>
+        <ul class="newsletter__list fade-in js-fadeIn">
             <?php
             // PDFとテキストのフィールド名を対応させて配列にまとめる
             $newsletters = [
@@ -218,7 +274,7 @@
                     // テキストが未入力ならデフォルト文字を使う
                     $link_text = $pdf_text ? $pdf_text : '会報をダウンロード（' . $pdf_count . '）';
             ?>
-                    <li class="newsletter__item">
+                    <li class="newsletter__item fade-in js-fadeIn">
                         <a href="<?php echo esc_url($pdf_url); ?>" target="_blank" rel="noopener">
                             <?php echo esc_html($link_text); ?>
                         </a>
@@ -299,7 +355,7 @@
 <!-- faq -->
 <section class="faq faq-layout">
     <div class="faq__inner inner">
-        <h2 class="faq__title section-title">よくあるご質問</h2>
+        <h2 class="faq__title section-title fade-in js-fadeIn">よくあるご質問</h2>
 
         <?php $faq_blocks = SCF::get('faq_blocks'); ?>
         <?php if (!empty($faq_blocks)) : ?>
@@ -309,8 +365,8 @@
                 $block_id = esc_attr($block['faq_block_id']);
                 ?>
                 <div class="faq__block" id="<?php echo $block_id; ?>">
-                    <h3 class="faq__sub-title"><?php echo $block_title; ?></h3>
-                    <ul class="faq-item__accordion-area js-faq-accordion-area">
+                    <h3 class="faq__sub-title fade-in js-fadeIn" fade-in js-fadeIn><?php echo $block_title; ?></h3>
+                    <ul class="faq-item__accordion-area js-faq-accordion-area fade-in js-fadeIn">
 
                         <?php
                         for ($i = 1; $i <= 10; $i++) :
