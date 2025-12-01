@@ -45,7 +45,20 @@
     </div>
 </div>
 </section>
-<section class="top-news top-news-layout">
+<!-- <section class="front-guide front-guide-layout">
+    <div class="inner front-guide__inner">
+        <nav class="front-guide__toc toc">
+            <div class="front-guide__tok-title toc__title">【目次】</div>
+            <ul class="front-guide__toc-list toc__list">
+                <li class="front-guide__toc-item toc__item"><a href="#news" class="toc__link">お知らせ</a></li>
+                <li class="front-guide__toc-item toc__item"><a href="#about" class="toc__link">スポーツプラスおおはるについて</a></li>
+                <li class="front-guide__toc-item toc__item"><a href="#works" class="toc__link">実施事業</a></li>
+                <li class="front-guide__toc-item toc__item"><a href="#newsletter" class="toc__link">会報</a></li>
+            </ul>
+        </nav>
+    </div>
+</section> -->
+<section class="top-news top-news-layout" id="news">
     <div class="top-news__inner inner">
         <h2 class="top-news__title section-title">お知らせ</h2>
 
@@ -105,7 +118,7 @@
 
 
 <!-- スポーツプラスおおはるについて -->
-<section class="about about-layout">
+<section class="about about-layout" id="about">
     <div class="about__inner inner">
         <h2 class="about__title section-title fade-in js-fadeIn">「スポーツプラス<br />おおはる」について</h2>
         <p class="about__intro fade-in js-fadeIn">
@@ -136,66 +149,11 @@
         <p class="about__sub-intro fade-in js-fadeIn">
             みなさんの健康・体力づくりだけでなく、地域の仲間・豊かなコミュニティづくりもできるクラブとして、大治町を元気にします。
         </p>
-        <ul class="about__list fade-in js-fadeIn">
-            <li class="about__item">
-                <div class="about__item-img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/family.jpg" alt="スポーツクラブアイコン"
-                        class="about__icon" />
-                </div>
-                <h3 class="about__item-title">幅広い年齢層が選べる<br />スポーツクラブ</h3>
-            </li>
-            <li class="about__item">
-                <div class="about__item-img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/run.jpg" alt="健康アイコン"
-                        class="about__icon" />
-                </div>
-                <h3 class="about__item-title">健康・体力づくりの場</h3>
-            </li>
-            <li class="about__item">
-                <div class="about__item-img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/frend.jpg" alt="コミュニティアイコン"
-                        class="about__icon" />
-                </div>
-                <h3 class="about__item-title">交流を深めるコミュニティ</h3>
-            </li>
-        </ul>
     </div>
 </section>
-<!-- <section class="about about-layout">
-    <div class="about__inner inner">
-        <h2 class="about__title section-title fade-in js-fadeIn">「スポーツプラス<br />おおはる」について</h2>
-        <p class="about__intro fade-in js-fadeIn">
-            総合型地域スポーツクラブは、人々が、身近な地域でスポ－ツに親しむことのできる新しいタイプのスポーツクラブで、子供から高齢者まで（多世代）、様々なスポーツを愛好する人々が（多種目）、初心者からトップレベルまで、それぞれの志向・レベルに合わせて参加できる（多志向）、という特徴を持ち、地域住民により自主的・主体的に運営されるスポーツクラブです。
-            スポーツの振興やスポーツを通じた地域づくりなどに向けた多様な活動を展開し、地域スポーツの担い手としての役割や交流を深める場・豊かなコミュニティ形成の場にもなっています。
-        </p>
-        <ul class="about__list fade-in js-fadeIn">
-            <li class="about__item">
-                <div class="about__item-img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/family.jpg" alt="スポーツクラブアイコン"
-                        class="about__icon" />
-                </div>
-                <h3 class="about__item-title">幅広い年齢層が選べる<br />スポーツクラブ</h3>
-            </li>
-            <li class="about__item">
-                <div class="about__item-img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/run.jpg" alt="健康アイコン"
-                        class="about__icon" />
-                </div>
-                <h3 class="about__item-title">健康・体力づくりの場</h3>
-            </li>
-            <li class="about__item">
-                <div class="about__item-img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/frend.jpg" alt="コミュニティアイコン"
-                        class="about__icon" />
-                </div>
-                <h3 class="about__item-title">交流を深めるコミュニティ</h3>
-            </li>
-        </ul>
-    </div>
-</section> -->
 
 <!-- 事業内容 -->
-<section class="works works-layout">
+<section class="works works-layout" id="works">
     <div class="works__inner inner">
         <h2 class="works__title section-title fade-in js-fadeIn">実施事業</h2>
         <ul class="works__list works-list">
@@ -249,7 +207,7 @@
         </ul>
     </div>
 </section>
-<section class="newsletter newsletter-layout">
+<section class="newsletter newsletter-layout" id="newsletter">
     <div class="inner newsletter__inner">
         <h2 class="newsletter__title section-title fade-in js-fadeIn">会報</h2>
         <ul class="newsletter__list fade-in js-fadeIn">
@@ -292,68 +250,8 @@
     </div>
 </section>
 
-<!-- 施設案内 -->
-<section class="access access-layout">
-    <div class="access__inner inner">
-        <h2 class="access__title section-title fade-in js-fadeIn">施設案内</h2>
-        <div class="access__wrap">
-            <!-- 施設情報 -->
-            <div class="access__info fade-in js-fadeIn">
-                <table class="access__table access-table">
-                    <tbody class="access-table__body">
-                        <tr class="access-table__row">
-                            <th class="access-table__label">住所</th>
-                            <td class="access-table__data">
-                                <div class="access-table__address">
-                                    <span>愛知県海部郡大治町大字北間島字藤田33-1</span>
-                                    <span>（大治町スポーツセンター内 1階）</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="access-table__row">
-                            <th class="access-table__label">TEL</th>
-                            <td class="access-table__data">052-217-6211</td>
-                        </tr>
-                        <tr class="access-table__row">
-                            <th class="access-table__label">営業時間</th>
-                            <td class="access-table__data">
-                                <div class="access-table__time">
-                                    <span class="access-table__day">月・木</span>
-                                    <span class="access-table__hour">9:00～17:00</span>
-                                </div>
-                                <div class="access-table__time">
-                                    <span class="access-table__day">日・火・金</span>
-                                    <span class="access-table__hour">9:00～12:00</span>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="access-table__row">
-                            <th class="access-table__label">休日</th>
-                            <td class="access-table__data">水 ・ 土 ・ 祝日の翌日 ・ 年末年始（１２/２９～１/３）</td>
-                        </tr>
-                        <tr class="access-table__row">
-                            <th class="access-table__label">メール</th>
-                            <td class="access-table__data"><a
-                                    href="mailto:spplus-oharu@clovernet.ne.jp">spplus-oharu@clovernet.ne.jp</a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="access__google">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.1261931675376!2d136.8271740757655!3d35.17840717275375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600375fe844192dd%3A0x338b3aa92864acab!2z5aSn5rK755S657eP5ZCI5Z6L5Zyw5Z-f44K544Od44O844OE44Kv44Op44OWIOOCueODneODvOODhOODl-ODqeOCueOBiuOBiuOBr-OCiw!5e0!3m2!1sja!2sjp!4v1746776642662!5m2!1sja!2sjp"
-                    width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-        <div class="access__btn common-btn">
-            <a class="access__btn-link common-btn__link" href="<?php echo esc_url(home_url("/guide")) ?>">詳しく見る</a>
-        </div>
-    </div>
-</section>
 <!-- faq -->
-<section class="faq faq-layout">
+<!-- <section class="faq faq-layout">
     <div class="faq__inner inner">
         <h2 class="faq__title section-title fade-in js-fadeIn">よくあるご質問</h2>
 
@@ -395,6 +293,6 @@
             <?php endforeach; ?>
         <?php endif; ?>
     </div>
-</section>
+</section> -->
 
 <?php get_footer(); ?>

@@ -13,10 +13,25 @@
 <div class="breadcrumbs breadcrumbs-blog-layout">
     <?php get_template_part('parts/breadcrumb'); ?>
 </div>
-<section class="entry entry-layout">
+<!-- 目次 -->
+<section class="entry-toc entry-toc-layout program-intro__guide">
+    <div class="inner entry-toc__inner">
+        <nav class="entry-toc__nav entry-toc toc">
+            <h2 class="entry-toc__title toc__title">【目次】</h2>
+            <ul class="entry-toc-list toc__list">
+                <li class="entry-toc-item toc__item"><a href="#school" class="toc__link">年間講座の申込方法</a></li>
+                <li class="entry-toc-item toc__item"><a href="#apply-club" class="toc__link">部活動地域展開の申込方法</a></li>
+                <li class="entry-toc-item toc__item"><a href="#apply-challenge" class="toc__link">授業後スポーツチャレンジの申込方法</a></li>
+                <li class="entry-toc-item toc__item"><a href="#member" class="toc__link">賛助会員の募集</a></li>
+                <li class="entry-toc-item toc__item"><a href="#support-group" class="toc__link">助成団体</a></li>
+            </ul>
+        </nav>
+    </div>
+</section>
+<!-- 年間講座 -->
+<section class="entry entry-layout" id="school">
     <div class="entry__inner inner">
-        <h2 class="entry__title section-title">ご参加までの流れ</h2>
-        <p class="entry__lead">ご参加までの流れを4つのステップに分けてご案内します。</p>
+        <h2 class="entry__title section-title">①年間講座の申込方法</h2>
         <ul class="entry__steps">
             <li class="entry__step">
                 <div class="entry__step-label">step 1</div>
@@ -35,7 +50,7 @@
                     <h3 class="entry__step-heading">申込み手続きをする</h3>
                     <p class="entry__step-text">
                         継続会員・新規会員で申込み開始時期が異なります。<br />
-                        申込みは、窓口での提出が必要です。申込書は窓口で受け取るか、
+                        申込みは、スポーツプラスおおはる窓口での提出が必要です。申込書は窓口で受け取るか、
                         <a class="entry__link" href="<?php echo esc_url(home_url("/application")) ?>" target="_blank" rel="noopener noreferrer">こちら</a>
                         から入会申込書ダウンロードしてご持参ください。<br />抽選対象の講座もございますので、ご注意ください。
                     </p>
@@ -44,9 +59,9 @@
             <li class="entry__step">
                 <div class="entry__step-label">step 3</div>
                 <div class="entry__step-content">
-                    <h3 class="entry__step-heading">年会費・参加費を支払う</h3>
+                    <h3 class="entry__step-heading">年会費・参加費を確認する</h3>
                     <p class="entry__step-text">
-                        年会費（一般3,000円／65歳以上2,200円/中学生以下1,500円）と、講座の参加費（昼講座は２ヶ月単位・夜講座は3ヶ月単位）を支払います。<br />
+                        年会費（一般3,000円／65歳以上2,200円/中学生以下1,500円）と、講座の参加費（昼講座は２ヶ月単位・夜講座は3ヶ月単位）を納入してください。<br />
                         ※納入後の返金はできません。
                     </p>
                 </div>
@@ -62,13 +77,6 @@
                 </div>
             </li>
         </ul>
-    </div>
-</section>
-
-<!-- 入会手続きの詳細 -->
-<section class="membership-info membership-info-layout">
-    <div class="membership-info__inner inner">
-        <h2 class="entry__title section-title">入会手続・費用</h2>
         <div class="membership-info__section membership-info__section--blue">
             <h2 class="membership-info__title">入会手続きの方法</h2>
             <dl class="membership-info__definition-list">
@@ -148,10 +156,235 @@
             </div>
     </div>
 <?php endif; ?>
-
-<div class="membership-info__btn common-btn">
-    <a class="membership-info__btn-link common-btn__link" href="<?php echo esc_url(home_url("/application")) ?>">各種申込書はこちら</a>
-</div>
     </div>
 </section>
+
+<!-- 部活動地域展開 -->
+<section class="apply apply-layout" id="apply-club">
+    <div class="inner apply__inner apply__inner--club">
+        <h2 class="apply__title section-title">②部活動地域展開の申込方法</h2>
+        <div class="apply__border">
+            <h3 class="apply__sub-title">参加手順</h3>
+
+            <?php
+            $group = get_field('group_apply_club'); // グループフィールドの取得
+            if ($group):
+            ?>
+                <!-- 対象者 -->
+                <div class="apply__step">
+                    <h3 class="apply__step-title">対象者</h3>
+                    <div class="apply__content">
+                        <?php echo $group['apply_club_step1']; ?>
+                    </div>
+                </div>
+
+                <!-- 参加申込 -->
+                <div class="apply__step">
+                    <h3 class="apply__step-title">参加申込</h3>
+                    <div class="apply__content">
+                        <?php echo $group['apply_club_step2']; ?>
+                    </div>
+                </div>
+
+                <!-- 連絡方法 -->
+                <div class="apply__step">
+                    <h3 class="apply__step-title">連絡方法</h3>
+                    <div class="apply__content">
+                        <?php echo $group['apply_club_step3']; ?>
+                    </div>
+                </div>
+
+                <!-- 備考 -->
+                <div class="apply__step">
+                    <h3 class="apply__step-title">備考</h3>
+                    <div class="apply__content">
+                        <?php echo $group['apply_club_step4']; ?>
+                    </div>
+                </div>
+
+                <!-- 連絡先 -->
+                <div class="apply__contact">
+                    <p class="apply__contact-label"><?php echo $group['apply_contact_label']; ?></p>
+                    <p class="apply__contact-info"><?php echo $group['apply_contact_info']; ?></p>
+                </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</section>
+
+
+<!-- スポーツチャレンジ -->
+<section class="apply apply-layout" id="apply-challenge">
+    <div class="inner apply__inner apply__inner--challenge">
+        <h2 class="apply__title section-title">③授業後スポーツチャレンジの<br>申込方法</h2>
+        <div class="apply__border">
+            <h3 class="apply__sub-title">参加手順</h3>
+            <div class="apply__step">
+                <h3 class="apply__step-title">対象者</h3>
+                <?php
+                $group = get_field('group_apply_challenge'); // グループフィールドの取得
+                if ($group):
+                ?>
+                    <!-- 対象者 -->
+                    <div class="apply__step">
+                        <h3 class="apply__step-title">対象者</h3>
+                        <div class="apply__content">
+                            <?php echo $group['apply_club_challenge1']; ?>
+                        </div>
+                    </div>
+
+                    <!-- 参加申込 -->
+                    <div class="apply__step">
+                        <h3 class="apply__step-title">参加申込</h3>
+                        <div class="apply__content">
+                            <?php echo $group['apply_club_challenge2']; ?>
+                        </div>
+                    </div>
+
+                    <!-- 連絡方法 -->
+                    <div class="apply__step">
+                        <h3 class="apply__step-title">連絡方法</h3>
+                        <div class="apply__content">
+                            <?php echo $group['apply_club_challenge3']; ?>
+                        </div>
+                    </div>
+
+                    <!-- 備考 -->
+                    <div class="apply__step">
+                        <h3 class="apply__step-title">備考</h3>
+                        <div class="apply__content">
+                            <?php echo $group['apply_club_challenge4']; ?>
+                        </div>
+                    </div>
+
+                    <!-- 連絡先 -->
+                    <div class="apply__contact">
+                        <p class="apply__contact-label"><?php echo $group['apply_contact_label']; ?></p>
+                        <p class="apply__contact-info"><?php echo $group['apply_contact_info']; ?></p>
+                    </div>
+                <?php endif; ?>
+            </div>
+        </div>
+</section>
+
+<!-- 賛助会員の募集 -->
+<section class="member member-layout" id="member">
+    <div class="inner member__inner ">
+        <h2 class="member__title section-title">④賛助会員の募集</h2>
+        <h3 class="member__sub-title section-sub-title"><span>スポーツぷらすおおはる賛助会員</span></h3>
+        <?php
+        $member = get_field('member_group');
+        if ($member) : ?>
+            <table class="member-info__table membership-table">
+                <thead>
+                    <tr>
+                        <th>区分</th>
+                        <th>年会費</th>
+                        <th>備考</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>個人</td>
+                        <td><?php echo esc_html($member['member_individual_fee']); ?></td>
+                        <td rowspan="2">
+                            <?php echo wp_kses_post($member['member_note']); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>法人および団体</td>
+                        <td><?php echo esc_html($member['member_corporate_fee']); ?></td>
+                    </tr>
+                </tbody>
+            </table>
+        <?php endif; ?>
+        <div class="member__club-support-wrap">
+            <h3 class=" section-sub-title" id="support-members">部活動地域展開サポーターTシャツ</h3>
+            <div class="member__club-support">
+                <div class="member__club-support-lead">
+                    <p class="member__club-support-text">
+                        スポーツプラスおおはるの賛助会員になって部活動地域展開のサポーターになっていただき、 企業名等を練習用Tシャツに印刷して生徒へ配布します。<br />
+                        生徒たちに応援してくださる地元企業を知る機会として紹介していきます。
+                    </p>
+                </div>
+                <div class="member__club-support-shirt">
+                    <h4 class="member__club-support-title">サポーターTシャツについて</h4>
+                    <p class="member__club-support-text">Tシャツの前後を12分割し、協力いただける企業様の名称を印刷します。</p>
+                    <ul class="member__club-support-list">
+                        <li class="member__club-support-item">【前後】（ひと枠）：縦10cm×横10cm　10万円</li>
+                        <li class="member__club-support-item">上部2列・下部2列：各8万円</li>
+                        <li class="member__club-support-item">【袖】（ひと枠）：縦5cm×横8cm　5万円</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- 助成団体 -->
+<section class="support support-layout" id="support-group">
+    <div class="support_inner inner">
+        <h2 class="support__title section-title">⑤助成団体</h2>
+        <?php
+        // SCFから繰り返しグループを取得
+        $members = SCF::get('support_group');
+
+        // 種類ごとに分類して保持する配列
+        $support_by_type = [];
+
+        // 団体の種類ごとに分類処理
+        foreach ($members as $group) {
+            $type = $group['group_type']; // 「ご助成団体」など
+
+            // 未定義の場合は空の配列を初期化
+            if (!isset($support_by_type[$type])) {
+                $support_by_type[$type] = [];
+            }
+
+            // 該当種類に追加
+            $support_by_type[$type][] = $group;
+        }
+        // 団体カードの出力用関数
+        function display_support_group($groups)
+        {
+            foreach ($groups as $item) :
+                $title = esc_html($item['group_title']);
+                $url = esc_url($item['group_url']);
+                // 添付ファイルIDから画像URLを取得（←ここが重要！）
+                $image_id = $item['group_image'];
+                $image_url = $image_id
+                    ? esc_url(wp_get_attachment_url($image_id))
+                    : esc_url(get_theme_file_uri('/assets/images/common/no-image.jpg'));
+                $text = esc_html($item['group_text']);
+        ?>
+                <li class="support__group-link">
+                    <a href="<?php echo $url; ?>" target="_blank" rel="noopener noreferrer">
+                        <h3 class="support__link-title"><span><?php echo $title; ?></span></h3>
+                        <div class="support__card">
+                            <div class="support__card-img">
+                                <img src="<?php echo $image_url; ?>" alt="<?php echo $title ? esc_attr($title) . 'のリンク画像' : 'アイキャッチ画像未設定'; ?>" />
+                            </div>
+                            <p class="support__card-text"><?php echo $text; ?></p>
+                        </div>
+                    </a>
+                </li>
+        <?php
+            endforeach;
+        }
+        ?>
+        <!-- 自動で種類ごとに出力 -->
+        <?php foreach ($support_by_type as $type_label => $group_items) : ?>
+            <?php if (!empty($group_items)) : ?>
+                <div class="support__group">
+                    <h3 class="support__sub-title"><span><?php echo esc_html($type_label); ?></span></h3>
+                    <ul>
+                        <?php display_support_group($group_items); ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </div>
+</section>
+
+
+
 <?php get_footer(); ?>

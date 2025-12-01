@@ -23,9 +23,12 @@
         <li class="club__toc-item toc__item"><a href="#area-club" class="toc__link">「部活動」・「地域クラブ」・「クラブチーム」との違い</a></li>
         <li class="club__toc-item toc__item"><a href="#ongoing-activities" class="toc__link">実施中の地域クラブ活動</a></li>
         <li class="club__toc-item toc__item"><a href="#support-members" class="toc__link">賛助会員の募集</a></li>
-        <li class="club__toc-item toc__item"><a href="#club-info" class="toc__link">申込・問合せ先</a></li>
       </ul>
     </nav>
+    <!-- お申込リンク -->
+    <div class="club__btn common-btn">
+      <a class="club__btn-link common-btn__link common-btn__link--color" href="<?php echo esc_url(home_url("/entry#club-entry")) ?>">お申込方法はこちら</a>
+    </div>
     <div class="club__bg-color">
       <h3 class="club__sub-title club__sub-title--color" id="club">部活動地域展開とは？</h3>
       <div class="club__text">
@@ -86,7 +89,7 @@
     </ul>
 
 
-    <div class="club__support-wrap">
+    <!-- <div class="club__support-wrap">
       <h3 class="club__sub-title" id="support-members">賛助会員の募集</h3>
       <div class="club__support">
         <div class="club__support-lead">
@@ -105,9 +108,9 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- 申込・お問合せ -->
-    <div class="club__info">
+    <!-- <div class="club__info">
       <h3 class="club__info-title section-title" id="club-info">申込・問合せ先</h3>
       <table class="club__access-table access__table">
         <tbody class="access-table__body">
@@ -148,7 +151,7 @@
           </tr>
         </tbody>
       </table>
-    </div>
+    </div> -->
   </div>
 </section>
 

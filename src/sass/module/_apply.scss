@@ -1,0 +1,90 @@
+@use "global" as *;
+
+/* ===== 全体ブロック ===== */
+.apply {
+  color: $black333;
+  line-height: 1.6;
+}
+
+
+.apply__border {
+  border-radius: rem(8);
+  margin-top: rem(20);
+  padding: rem(15);
+}
+
+.apply__inner--club .apply__border {
+  background-color: #fffde7;
+  border: rem(1) solid #ccc;
+}
+
+.apply__inner--challenge .apply__border {
+  background-color: #f0f7ff;
+  border: rem(1) solid #ccc;
+}
+
+/* ===== セクションタイトル ===== */
+.apply__sub-title {
+  font-size: rem(32);
+  margin-bottom: rem(24);
+}
+
+.apply__title.section-title br {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.apply__inner--club .apply__sub-title {
+  border-left: rem(6) solid #007acc;
+  padding-left: rem(16);
+  color: #007acc;
+}
+
+.apply__inner--challenge .apply__sub-title {
+  border-left: rem(6) solid #0f4c81;
+  padding-left: rem(16);
+  color: #0f4c81;
+}
+
+/* ===== 各ステップブロック ===== */
+.apply__step {
+  margin-bottom: rem(32);
+}
+
+/* ===== ステップの見出し ===== */
+.apply__step-title {
+  font-size: rem(24);
+  margin-bottom: rem(16);
+  color: #444;
+  border-bottom: rem(2) solid #e0e0e0;
+  padding-bottom: rem(8);
+}
+
+/* ===== 項目リスト（ul） ===== */
+.apply__list {
+  list-style: disc;
+  padding-left: rem(24);
+}
+
+/* ===== リストアイテム（li） ===== */
+.apply__item {
+  margin-top: rem(12);
+}
+
+/* ===== 連絡先ブロック ===== */
+.apply__contact {
+  padding-top: rem(16);
+  border-top: rem(1) dashed #ccc;
+  margin-top: rem(32);
+}
+
+.apply__contact-label {
+  font-weight: bold;
+  color: #555;
+}
+
+.apply__contact-info {
+  margin-top: rem(4);
+  color: #222;
+}

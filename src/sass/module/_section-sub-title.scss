@@ -1,0 +1,20 @@
+@use "global" as *;
+
+.section-sub-title {
+  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+  color: $white;
+  display: inline-block;
+  margin-top: rem(20);
+  background-color: #ff8c42;
+  padding-left: rem(10);
+  padding-right: rem(10);
+  scroll-margin-top: rem(90); /* 固定ヘッダーの高さ + 余白分 */
+  text-align: center;
+  @include mq(md) {
+    font-size: rem(32);
+    margin-top: rem(80);
+  }
+}
+
+
+

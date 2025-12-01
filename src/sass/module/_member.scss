@@ -1,5 +1,43 @@
 @use "global" as *;
 
+.member__club-support {
+  margin-top: rem(32);
+  padding: rem(32);
+  background-color: #f4f8ff;
+  border-radius: rem(8);
+}
+
+.member__club-support-lead {
+  margin-bottom: rem(24);
+}
+
+.member__club-support-title {
+  font-size: rem(20);
+  font-weight: bold;
+  border-left: rem(4) solid $club-blue;
+  padding-left: rem(16);
+  margin-bottom: rem(16);
+  color: #004080;
+}
+
+.member__club-support-text {
+  font-size: rem(16);
+  line-height: 1.75;
+  color: $black333;
+}
+
+.member__club-support-list {
+  margin-top: rem(16);
+  padding-left: rem(24);
+}
+
+.member__club-support-item {
+  list-style: disc;
+  margin-bottom: rem(8);
+}
+
+
+
 .member-info__table.membership-table {
   background-color: #fbd3e2;
   margin-top: rem(40);

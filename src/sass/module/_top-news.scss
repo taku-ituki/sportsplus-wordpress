@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.top-news {
+  scroll-margin-top: rem(80);
+}
+
 .top-news__list {
   margin-top: rem(30);
 }
@@ -15,3 +19,5 @@
     margin-top:rem(40);
   }
 }
+
+

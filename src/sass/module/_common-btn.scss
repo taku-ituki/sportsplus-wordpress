@@ -54,3 +54,9 @@
 .challenge__btn-wrap .common-btn__link {
   padding: rem(20) rem(40);
 }
+
+//各ページのリンク強調
+.common-btn__link--color.common-btn__link {
+  color: $white;
+  background-color:$accent;
+}

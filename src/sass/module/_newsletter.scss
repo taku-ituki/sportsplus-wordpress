@@ -1,5 +1,9 @@
 @use "global" as *;
 
+.newsletter{
+ scroll-margin-top: rem(80);
+}
+
 .newsletter__list {
   margin-top: rem(20);
   @include mq(md) {

@@ -1,7 +1,15 @@
 @use "global" as *;
 
+.about {
+  scroll-margin-top: rem(80);
+}
+
 .about__title.section-title {
-  background: $skyblue;
+  background: #e0f7fa;
+  color: #1a1a1a;
+  text-shadow: none;
+  padding-bottom:rem(15);
+  border-bottom: rem(2) solid $accent;
 }
 
 .about__title br {
@@ -11,11 +19,11 @@
 }
 
 .about__intro {
+  font-weight: $bold;
   font-size: rem(18);
   margin-top: rem(40);
-  color: $white;
+  color: #1a1a1a;
   text-align: center;
-  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
   @include mq(md) {
     margin-top: rem(60);
     text-align: left;
@@ -73,10 +81,10 @@
 .about__sub-title {
   text-align: center;
   font-size: rem(24);
-  color: $white;
-  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+  color: #2980b9;
   font-weight: $bold;
   margin-top: rem(20);
+  padding-left: 10px;
   @include mq(md) {
     font-size: rem(32);
     margin-top: rem(40);
@@ -84,11 +92,13 @@
 }
 
 .about__sub-intro {
+  font-weight: $bold;
   font-size: rem(18);
   margin-top: rem(20);
-  color: $white;
+  // color: $white;
+  color: #1a1a1a;
   text-align: center;
-  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+  // text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
   @include mq(md) {
     margin-top: rem(40);
     text-align: left;
@@ -104,10 +114,11 @@
 }
 
 .about__sub-item {
+  font-weight: $bold;
   position: relative;
   font-size: rem(18);
-  color: $white;
-  text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+  color: #1a1a1a;
+  // text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
   padding-left: rem(15);
   @include mq(md) {
     font-size: rem(24);
@@ -117,7 +128,8 @@
 
 .about__sub-item::before {
   position: absolute;
-  content: "○";
+  content: "✔︎";
+  color: #27ae60;
   top: 0;
   left: rem(-5);
 }

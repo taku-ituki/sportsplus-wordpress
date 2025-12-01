@@ -19,28 +19,20 @@
                                     <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/club")) ?>">部活動地域展開</a>
                                 </li>
                                 <li class="footer__sub-item">
-                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/challenge")) ?>">スポーツチャレンジ</a>
+                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/challenge")) ?>">授業後スポーツチャレンジ</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="footer__item">
-                            <div class="footer__item-link">施設案内</div>
-                            <ul class="footer__sub-list">
-                                <li class="footer__sub-item">
-                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/guide")) ?>">施設案内</a>
-                                </li>
-                                <li class="footer__sub-item">
-                                    <a class="footer__sub-item-link" href="<?php echo esc_url(home_url("/support")) ?>">賛助団体</a>
-                                </li>
-                            </ul>
+                            <a class="footer__item-link" href="<?php echo esc_url(home_url("/guide")) ?>">施設案内</a>
+                        </li>
+                        <li class="footer__item">
+                            <a class="footer__item-link" href="<?php echo esc_url(home_url("/entry")) ?>">会員募集</a>
                         </li>
                     </ul>
                 </div>
                 <div class="footer__box-right">
                     <ul class="footer__list">
-                        <li class="footer__item">
-                            <a class="footer__item-link" href="<?php echo esc_url(home_url("/entry")) ?>">会員募集</a>
-                        </li>
                         <li class="footer__item">
                             <a class="footer__item-link" href="<?php echo esc_url(home_url("/blog")) ?>">活動報告</a>
                         </li>

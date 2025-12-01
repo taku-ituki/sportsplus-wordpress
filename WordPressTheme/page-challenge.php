@@ -7,7 +7,7 @@
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/challengetop.jpg" alt="diving" />
     </picture>
     <div class="sub-fv__overlay"></div>
-    <h1 class="sub-fv__title">スポーツチャレンジ<span>sports challenge</span></h1>
+    <h1 class="sub-fv__title">授業後スポーツ<br>チャレンジ<span>sports challenge</span></h1>
 </section>
 <!-- パンくずリスト -->
 <div class="breadcrumbs .breadcrumbs-mini-layout">
@@ -20,7 +20,7 @@
             <div class="toc__title">【目次】</div>
             <ul class="toc__list">
                 <li class="toc__item">
-                    <a href="#challenge" class="toc__link">「スポーツチャレンジ」とは</a>
+                    <a href="#challenge" class="toc__link">「授業後スポーツチャレンジ」とは</a>
                 </li>
                 <li class="toc__item">
                     <a href="#oharu" class="toc__link">「大治小学校」募集要項</a>
@@ -39,9 +39,6 @@
                 </li>
                 <li class="toc__item">
                     <a href="#challenge-date" class="toc__link">「申込状況・日程」</a>
-                </li>
-                <li class="club__toc-item toc__item"><a href="#challenge-info" class="toc__link">
-                        申込・問合せ先</a>
                 </li>
             </ul>
         </nav>
@@ -155,7 +152,7 @@
             </div>
         </div>
         <!-- 申込・お問合せ -->
-        <div class="challenge__info">
+        <!-- <div class="challenge__info">
             <h2 class="challenge__title section-title" id="challenge-info">申込・問合せ先</h2>
             <table class="challenge__access-table access__table">
                 <tbody class="access-table__body">
@@ -196,7 +193,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>
+        </div> -->
     </div>
     </div>
     <!-- //inner -->

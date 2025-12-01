@@ -30,20 +30,12 @@
                                 <a href="<?php echo esc_url(home_url("/club")) ?>"><span>部活動地域展開</span></a>
                             </li>
                             <li class="header__nav-modal-item">
-                                <a href="<?php echo esc_url(home_url("/challenge")) ?>"><span>スポーツチャレンジ</span></a>
+                                <a href="<?php echo esc_url(home_url("/challenge")) ?>"><span>授業後スポーツチャレンジ</span></a>
                             </li>
                         </ul>
                     </li>
-                    <li class="header__nav-modal-wrap">
-                        <p>施設案内</p>
-                        <ul class="header__nav-modal">
-                            <li class="header__nav-modal-item">
-                                <a href="<?php echo esc_url(home_url("/guide")) ?>"><span>施設案内</span></a>
-                            </li>
-                            <li class="header__nav-modal-item">
-                                <a href="<?php echo esc_url(home_url("/support")) ?>"><span>賛助団体</span></a>
-                            </li>
-                        </ul>
+                    <li class="header__nav-item">
+                        <a href="<?php echo esc_url(home_url("/guide")) ?>"><span>施設案内</span></a>
                     </li>
                     <li class="header__nav-item">
                         <a href="<?php echo esc_url(home_url("/entry")) ?>"><span>会員募集</span></a>
@@ -53,6 +45,9 @@
                     </li>
                     <li class="header__nav-item">
                         <a href="<?php echo esc_url(home_url("/application")) ?>"><span>各種申込用紙</span></a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="<?php echo esc_url(home_url("/faq")) ?>"><span>よくあるご質問</span></a>
                     </li>
                     <li class="header__nav-item header__nav-item--access">
                         <a href="mailto:spplus-oharu@clovernet.ne.jp">お問合せ</a>
@@ -77,20 +72,12 @@
                                     <a href="<?php echo esc_url(home_url("/club")) ?>">部活動地域展開</a>
                                 </li>
                                 <li class="header__drawer-accordion-item">
-                                    <a href="<?php echo esc_url(home_url("/challenge")) ?>">スポーツチャレンジ</a>
+                                    <a href="<?php echo esc_url(home_url("/challenge")) ?>">授業後スポーツチャレンジ</a>
                                 </li>
                             </ul>
                         </li>
                         <li class="header__drawer-item">
-                            <p class="header__drawer-accordion-title js-drawer-accordion">施設案内</p>
-                            <ul class="header__drawer-accordion-list">
-                                <li class="header__drawer-accordion-item">
-                                    <a href="<?php echo esc_url(home_url("/guide")) ?>">施設案内</a>
-                                </li>
-                                <li class="header__drawer-accordion-item">
-                                    <a href="<?php echo esc_url(home_url("/support")) ?>">賛助団体</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo esc_url(home_url("/guide")) ?>">施設案内</a>
                         </li>
                         <li class="header__drawer-item">
                             <a href="<?php echo esc_url(home_url("/entry")) ?>"><span>会員募集</span></a>
@@ -100,6 +87,9 @@
                         </li>
                         <li class="header__drawer-item">
                             <a href="<?php echo esc_url(home_url("/application")) ?>">各種申込用紙</a>
+                        </li>
+                        <li class="header__drawer-item">
+                            <a href="<?php echo esc_url(home_url("/faq")) ?>">よくあるご質問</a>
                         </li>
                         <li class="header__drawer-item">
                             <a href="mailto:spplus-oharu@clovernet.ne.jp">お問合せ</a>

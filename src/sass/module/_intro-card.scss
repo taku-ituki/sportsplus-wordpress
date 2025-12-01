@@ -4,7 +4,6 @@
   border: rem(2) solid #ccc;
   border-radius: rem(12);
   padding: rem(24);
-  background: $bg;
   box-shadow: 0 rem(4) rem(8) rgba(0, 0, 0, 0.05);
   counter-increment: program-number;
   gap: rem(20);
@@ -37,9 +36,9 @@
   aspect-ratio: 1/1;
   object-fit: contain;
   transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
-  @include mq(md){
-      aspect-ratio: 4/3;
-      object-fit: cover;
+  @include mq(md) {
+    aspect-ratio: 4/3;
+    object-fit: cover;
   }
 }
 
@@ -55,24 +54,6 @@
   flex-direction: column;
   flex: 1; // ✅ 残りの幅を全て使う
 }
-
-// /* タイトル＋番号部分 */
-// .intro-card__header {
-//   display: flex;
-//   align-items: baseline;
-// }
-
-// /* 自動連番の表示（before使用） */
-// .intro-card__number::before {
-//   content: counter(program-number) ".";
-//   font-weight: bold;
-//   font-size: rem(24);
-//   color: $black333;
-//   margin-right: rem(8);
-//   @include mq(md) {
-//     font-size: rem(28);
-//   }
-// }
 
 /* タイトルテキスト */
 .intro-card__title {
@@ -96,8 +77,8 @@
 }
 
 //項目が改行しないように幅確保。「対象年齢」の幅に合わせて整形
-.intro-card__detail dt{
-  min-width:rem(64);
+.intro-card__detail dt {
+  min-width: rem(64);
 }
 
 /* 各ラベル（開催日など） */
@@ -114,3 +95,17 @@
   font-size: rem(18);
 }
 
+/* 年間講座 */
+.intro-card.intro-card--annual {
+  background: $bg;
+}
+
+/* 短期講座 */
+.intro-card.intro-card--short {
+  background: #ffe0b2;
+}
+
+/* イベント */
+.intro-card.intro-card--event {
+  background: #f8bbd0;
+}

@@ -1,4 +1,7 @@
 @use "global" as *;
+.works {
+  scroll-margin-top: rem(80);
+}
 
 
 .works__inner{

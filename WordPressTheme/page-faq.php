@@ -15,8 +15,7 @@
 <!-- faq -->
 <section class="faq faq-layout">
     <div class="faq__inner inner">
-        <h2 class="faq__title section-title">よくあるご質問</h2>
-
+        <h2 class="faq__title section-title fade-in js-fadeIn">よくあるご質問</h2>
         <?php $faq_blocks = SCF::get('faq_blocks'); ?>
         <?php if (!empty($faq_blocks)) : ?>
             <?php foreach ($faq_blocks as $block) : ?>
@@ -25,8 +24,8 @@
                 $block_id = esc_attr($block['faq_block_id']);
                 ?>
                 <div class="faq__block" id="<?php echo $block_id; ?>">
-                    <h3 class="faq__sub-title"><?php echo $block_title; ?></h3>
-                    <ul class="faq-item__accordion-area js-faq-accordion-area">
+                    <h3 class="faq__sub-title fade-in js-fadeIn" fade-in js-fadeIn><?php echo $block_title; ?></h3>
+                    <ul class="faq-item__accordion-area js-faq-accordion-area fade-in js-fadeIn">
 
                         <?php
                         for ($i = 1; $i <= 10; $i++) :
@@ -39,7 +38,10 @@
                                         <span class="faq-item__accordion-title-text"><?php echo esc_html($q); ?></span>
                                     </div>
                                     <div class="faq-item__accordion-box js-faq-accordion-box">
-                                        <p class="faq-item__accordion-box-text"><?php echo nl2br(esc_html($a)); ?></p>
+                                        <div class="faq-item__accordion-box-text">
+                                            <?php echo wp_kses_post($a); ?>
+                                        </div>
+
                                     </div>
                                 </li>
                         <?php

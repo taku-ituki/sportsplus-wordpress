@@ -146,7 +146,7 @@ a {
 }
 
 .about-layout {
-	background-color: skyblue;
+	background-color: #e0f7fa;
 	margin-top: 3.75rem;
 	padding-bottom: 2.5rem;
 	padding-top: 2.5rem;
@@ -157,6 +157,10 @@ a {
 }
 
 .application-layout {
+	margin-top: 2.5rem;
+}
+
+.apply-layout {
 	margin-top: 2.5rem;
 }
 
@@ -224,6 +228,12 @@ a {
 	margin-top: 2.5rem;
 }
 
+/* 例えばヘッダーの高さが80pxの場合 */
+
+[id] {
+	scroll-margin-top: 80px;
+}
+
 .membership-info-layout {
 	margin-top: 2.5rem;
 }
@@ -256,6 +266,10 @@ a {
 	margin-top: 2.5rem;
 }
 
+.program-pamphlet-layout {
+	margin-top: 2.5rem;
+}
+
 .single-blog-layout {
 	margin-top: 2.5rem;
 }
@@ -276,16 +290,24 @@ a {
 	margin-top: 3.75rem;
 }
 
+.about {
+	scroll-margin-top: 5rem;
+}
+
 .about__title.section-title {
-	background: #87ceeb;
+	background: #e0f7fa;
+	border-bottom: 0.125rem solid #ff8c42;
+	color: #1a1a1a;
+	padding-bottom: 0.9375rem;
+	text-shadow: none;
 }
 
 .about__intro {
-	color: #fff;
+	color: #1a1a1a;
 	font-size: 1.125rem;
+	font-weight: 700;
 	margin-top: 2.5rem;
 	text-align: center;
-	text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
 }
 
 .about__list {
@@ -333,20 +355,20 @@ a {
 }
 
 .about__sub-title {
-	color: #fff;
+	color: #2980b9;
 	font-size: 1.5rem;
 	font-weight: 700;
 	margin-top: 1.25rem;
+	padding-left: 10px;
 	text-align: center;
-	text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
 }
 
 .about__sub-intro {
-	color: #fff;
+	color: #1a1a1a;
 	font-size: 1.125rem;
+	font-weight: 700;
 	margin-top: 1.25rem;
 	text-align: center;
-	text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
 }
 
 .about-sub-list-block {
@@ -354,15 +376,16 @@ a {
 }
 
 .about__sub-item {
-	color: #fff;
+	color: #1a1a1a;
 	font-size: 1.125rem;
+	font-weight: 700;
 	padding-left: 0.9375rem;
 	position: relative;
-	text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
 }
 
 .about__sub-item::before {
-	content: "○";
+	color: #27ae60;
+	content: "✔︎";
 	left: -0.3125rem;
 	position: absolute;
 	top: 0;
@@ -572,6 +595,95 @@ a {
 
 .application__item {
 	margin-top: 0.9375rem;
+}
+
+/* ===== 全体ブロック ===== */
+
+.apply {
+	color: #333;
+	line-height: 1.6;
+}
+
+.apply__border {
+	border-radius: 0.5rem;
+	margin-top: 1.25rem;
+	padding: 0.9375rem;
+}
+
+.apply__inner--club .apply__border {
+	background-color: #fffde7;
+	border: 0.0625rem solid #ccc;
+}
+
+.apply__inner--challenge .apply__border {
+	background-color: #f0f7ff;
+	border: 0.0625rem solid #ccc;
+}
+
+/* ===== セクションタイトル ===== */
+
+.apply__sub-title {
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+}
+
+.apply__inner--club .apply__sub-title {
+	border-left: 0.375rem solid #007acc;
+	color: #007acc;
+	padding-left: 1rem;
+}
+
+.apply__inner--challenge .apply__sub-title {
+	border-left: 0.375rem solid #0f4c81;
+	color: #0f4c81;
+	padding-left: 1rem;
+}
+
+/* ===== 各ステップブロック ===== */
+
+.apply__step {
+	margin-bottom: 2rem;
+}
+
+/* ===== ステップの見出し ===== */
+
+.apply__step-title {
+	border-bottom: 0.125rem solid #e0e0e0;
+	color: #444;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	padding-bottom: 0.5rem;
+}
+
+/* ===== 項目リスト（ul） ===== */
+
+.apply__list {
+	list-style: disc;
+	padding-left: 1.5rem;
+}
+
+/* ===== リストアイテム（li） ===== */
+
+.apply__item {
+	margin-top: 0.75rem;
+}
+
+/* ===== 連絡先ブロック ===== */
+
+.apply__contact {
+	border-top: 0.0625rem dashed #ccc;
+	margin-top: 2rem;
+	padding-top: 1rem;
+}
+
+.apply__contact-label {
+	color: #555;
+	font-weight: bold;
+}
+
+.apply__contact-info {
+	color: #222;
+	margin-top: 0.25rem;
 }
 
 .archive-blog__inner {
@@ -1142,42 +1254,6 @@ body {
 	margin-top: 1.875rem;
 }
 
-.club__support {
-	background-color: #f4f8ff;
-	border-radius: 0.5rem;
-	margin-top: 2rem;
-	padding: 2rem;
-}
-
-.club__support-lead {
-	margin-bottom: 1.5rem;
-}
-
-.club__support-title {
-	border-left: 0.25rem solid #007acc;
-	color: #004080;
-	font-size: 1.25rem;
-	font-weight: bold;
-	margin-bottom: 1rem;
-	padding-left: 1rem;
-}
-
-.club__support-text {
-	color: #333;
-	font-size: 1rem;
-	line-height: 1.75;
-}
-
-.club__support-list {
-	margin-top: 1rem;
-	padding-left: 1.5rem;
-}
-
-.club__support-item {
-	list-style: disc;
-	margin-bottom: 0.5rem;
-}
-
 .club__difference {
 	background-color: #f4f9ff;
 	padding: 3rem 1.5rem;
@@ -1223,7 +1299,7 @@ body {
 }
 
 .club__btn-link.common-btn__link {
-	padding: 0.875rem 1.25rem;
+	padding: 1rem 4rem;
 }
 
 .club__bg-color {
@@ -1284,6 +1360,11 @@ body {
 
 .challenge__btn-wrap .common-btn__link {
 	padding: 1.25rem 2.5rem;
+}
+
+.common-btn__link--color.common-btn__link {
+	background-color: #ff8c42;
+	color: #fff;
 }
 
 .common-category {
@@ -1487,31 +1568,31 @@ body {
 }
 
 .faq-item {
-	border: 0.0625rem solid #111;
+	border: 0.0625rem solid #1A2B3C;
 }
 
 /*アコーディオンタイトル*/
 
 .faq-item__accordion-title {
 	background: #87ceeb;
-	color: #fff;
+	color: #1A2B3C;
 	cursor: pointer;
 	font-size: 1rem;
 	font-weight: normal;
 	padding: 1rem 6.25rem 1rem 1.5625rem;
 	position: relative; /*+マークの位置基準とするためrelative指定*/
-	text-shadow: 0.0625rem 0.0625rem 0.1875rem rgba(0, 0, 0, 0.3);
 	transition: all 0.5s ease;
 }
 
 .faq-item__accordion-title-text {
+	color: #111;
 	max-width: 85%;
 	position: relative;
 	width: 100%;
 }
 
 .faq-item__accordion-title-text::before {
-	color: #fff;
+	color: #1A2B3C;
 	content: "Q.";
 	left: -1.125rem;
 	position: absolute;
@@ -1524,10 +1605,10 @@ body {
 
 .faq-item__accordion-title::before,
 .faq-item__accordion-title::after {
-	background-color: whitesmoke;
+	background-color: #2a4a5b;
 	content: "";
 	display: block;
-	height: 0.0625rem;
+	height: 0.09375rem;
 	position: absolute;
 	right: 1.875rem;
 	top: 50%;
@@ -2155,7 +2236,6 @@ body {
 /* カード全体のラップ（レイアウト、枠線など） */
 
 .intro-card {
-	background: linear-gradient(135deg, #e0f7ff 0%, #add8e6 50%, #87cefa 100%);
 	border: 0.125rem solid #ccc;
 	border-radius: 0.75rem;
 	box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
@@ -2232,6 +2312,24 @@ body {
 	color: #444;
 	font-size: 1.125rem;
 	margin: 0;
+}
+
+/* 年間講座 */
+
+.intro-card.intro-card--annual {
+	background: linear-gradient(135deg, #e0f7ff 0%, #add8e6 50%, #87cefa 100%);
+}
+
+/* 短期講座 */
+
+.intro-card.intro-card--short {
+	background: #ffe0b2;
+}
+
+/* イベント */
+
+.intro-card.intro-card--event {
+	background: #f8bbd0;
 }
 
 .list {
@@ -2320,6 +2418,47 @@ body {
 	height: 100%;
 	object-fit: contain;
 	width: 100%;
+}
+
+.member__club-support {
+	background-color: #f4f8ff;
+	border-radius: 0.5rem;
+	margin-top: 2rem;
+	padding: 2rem;
+}
+
+.member__club-support-lead {
+	margin-bottom: 1.5rem;
+}
+
+.member__club-support-title {
+	border-left: 0.25rem solid #007acc;
+	color: #004080;
+	font-size: 1.25rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+	padding-left: 1rem;
+}
+
+.member__club-support-text {
+	color: #333;
+	font-size: 1rem;
+	line-height: 1.75;
+}
+
+.member__club-support-list {
+	margin-top: 1rem;
+	padding-left: 1.5rem;
+}
+
+.member__club-support-item {
+	list-style: disc;
+	margin-bottom: 0.5rem;
+}
+
+.member-info__table.membership-table {
+	background-color: #fbd3e2;
+	margin-top: 2.5rem;
 }
 
 .membership-info {
@@ -2421,11 +2560,6 @@ body {
 
 .membership-info__title.section-title {
 	background: #87ceeb;
-}
-
-.member-info__table.membership-table {
-	background-color: #fbd3e2;
-	margin-top: 2.5rem;
 }
 
 .membership-table {
@@ -2589,6 +2723,10 @@ body {
 	text-align: center;
 }
 
+.newsletter {
+	scroll-margin-top: 5rem;
+}
+
 .newsletter__list {
 	margin-top: 1.25rem;
 }
@@ -2728,6 +2866,10 @@ body {
 	margin-top: 1.25rem;
 }
 
+.program-pamphlet__pdf {
+	margin-top: 2.5rem;
+}
+
 .program__category {
 	margin-top: 1.25rem;
 }
@@ -2829,6 +2971,18 @@ body {
 
 html.program--modal-open {
 	overflow: hidden;
+}
+
+.section-sub-title {
+	background-color: #ff8c42;
+	color: #fff;
+	display: inline-block;
+	margin-top: 1.25rem;
+	padding-left: 0.625rem;
+	padding-right: 0.625rem;
+	scroll-margin-top: 5.625rem; /* 固定ヘッダーの高さ + 余白分 */
+	text-align: center;
+	text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
 }
 
 .section-title {
@@ -3402,28 +3556,32 @@ html.program--modal-open {
 	border-width: 0.0625rem 0.0625rem 0 0;
 	content: "";
 	display: block;
-	height: 1rem;
+	height: 1.25rem;
 	left: 1.125rem;
 	position: absolute;
 	top: -1.6875rem;
 	transform: rotate(-45deg);
-	width: 1rem;
+	width: 1.25rem;
 }
 
 .top-button span:after {
 	border: 0.0625rem solid #111;
 	border-radius: 100%;
 	content: "";
-	height: 2.625rem;
+	height: 3rem;
 	left: 0.3125rem;
 	position: absolute;
 	top: -2.6875rem;
-	width: 2.625rem;
+	width: 3rem;
 }
 
 .is-active {
 	opacity: 1;
 	visibility: visible;
+}
+
+.top-news {
+	scroll-margin-top: 5rem;
 }
 
 .top-news__list {
@@ -3487,6 +3645,10 @@ html.program--modal-open {
 
 .works-list__item-btn-wrap {
 	margin-top: 2.5rem;
+}
+
+.works {
+	scroll-margin-top: 5rem;
 }
 
 .works__inner {
@@ -3623,6 +3785,10 @@ html {
 	margin-top: 5rem;
 }
 
+.apply-layout {
+	margin-top: 5rem;
+}
+
 .blog-layout {
 	margin-top: 5rem;
 }
@@ -3692,6 +3858,10 @@ html {
 }
 
 .program-layout {
+	margin-top: 5rem;
+}
+
+.program-pamphlet-layout {
 	margin-top: 5rem;
 }
 
@@ -3854,6 +4024,10 @@ html {
 	margin-top: 3.75rem;
 }
 
+.apply__title.section-title br {
+	display: none;
+}
+
 .archive-blog__inner {
 	max-width: 75rem;
 	padding: 0 1.5625rem;
@@ -3955,7 +4129,7 @@ body {
 }
 
 .category__list {
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	max-width: 80%;
 	width: 100%;
 }
@@ -4303,6 +4477,10 @@ body {
 	display: flex;
 }
 
+.member-info__table.membership-table {
+	margin-top: 3.75rem;
+}
+
 .membership-info__section--blue {
 	margin-top: 2.5rem;
 }
@@ -4321,10 +4499,6 @@ body {
 
 .membership-info__desc {
 	padding-left: 0.625rem;
-}
-
-.member-info__table.membership-table {
-	margin-top: 3.75rem;
 }
 
 .mv__title {
@@ -4410,6 +4584,10 @@ body {
 	font-size: 1.25rem;
 }
 
+.program-pamphlet__pdf {
+	margin-top: 5rem;
+}
+
 .program__category {
 	margin-top: 2.5rem;
 }
@@ -4448,6 +4626,11 @@ body {
 
 .program__modal-image img {
 	aspect-ratio: 1/1;
+}
+
+.section-sub-title {
+	font-size: 2rem;
+	margin-top: 5rem;
 }
 
 .section-title {
@@ -4602,6 +4785,10 @@ body {
 	font-size: 5rem;
 	left: 49.5%;
 	top: 59%;
+}
+
+.sub-fv__title br {
+	display: none;
 }
 
 .sub-fv__title span {

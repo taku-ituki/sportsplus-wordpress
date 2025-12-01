@@ -5,3 +5,8 @@
     margin-top: rem(80);
   }
 }
+
+/* 例えばヘッダーの高さが80pxの場合 */
+[id] {
+  scroll-margin-top: 80px;
+}

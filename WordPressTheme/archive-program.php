@@ -19,16 +19,26 @@
         </h2>
         <p class="program-intro__text">
             「スポーツプラスおおはる」では、多彩なスポーツ講座を開催しています。ご参加をお待ちしております。
-            <br>各種教室については、下記「講座一覧」をご覧ください。
             <br>（※スポーツプラスおおはるへの入会が必要です。）
         </p>
+        <div class="program-intro__guide">
+            <nav class="program-intro__toc toc">
+                <ul class="program-intro__toc-list toc__list">
+                    <li class="program-intro__toc-item toc__item"><a href="#archive" class="toc__link">講座一覧</a></li>
+                    <li class="program-intro__toc-item toc__item"><a href="#pamphlet" class="toc__link">講座パンフレット</a></li>
+                    <li class="program-intro__toc-item toc__item"><a href="#calendar" class="toc__link">カレンダー</a></li>
+                    <li class="program-intro__toc-item toc__item"><a href="#availability" class="toc__link">講座の申込状況</a></li>
+                </ul>
+            </nav>
+        </div>
         <!-- お申込リンク -->
         <div class="program__btn common-btn">
-            <a class="program__btn-link common-btn__link" href="<?php echo esc_url(home_url("/entry")) ?>">お申込方法はこちら</a>
+            <a class="program__btn-link common-btn__link common-btn__link--color" href="<?php echo esc_url(home_url("/entry#school")) ?>">お申込方法はこちら</a>
         </div>
     </div>
 </section>
-<section class="program program-layout">
+
+<section class="program program-layout" id="archive">
     <div class="program__inner inner">
         <h2 class="program__title section-title">講座一覧</h2>
 
@@ -58,8 +68,18 @@
                         $fallback_src = get_theme_file_uri('/assets/images/common/no-image.jpg');
                         $modal_id = 'programModal_' . get_the_ID();
                 ?>
+                        <?php
+                        $terms = get_the_terms(get_the_ID(), 'program_category');
+                        $category_class = '';
+
+                        if ($terms && !is_wp_error($terms)) {
+                            foreach ($terms as $term) {
+                                $category_class .= ' intro-card--' . esc_attr($term->slug);
+                            }
+                        }
+                        ?>
                         <!-- カード -->
-                        <li class="intro-card js-program-modal-open" data-target="<?php echo esc_attr($modal_id); ?>">
+                        <li class="intro-card js-program-modal-open<?php echo $category_class; ?>" data-target="<?php echo esc_attr($modal_id); ?>">
                             <figure class="intro-card__image">
                                 <?php if (has_post_thumbnail()) : the_post_thumbnail('medium');
                                 else : ?>
@@ -69,6 +89,20 @@
                             <div class="intro-card__content">
                                 <h3 class="intro-card__title"><?php the_title(); ?></h3>
                                 <dl class="intro-card__details">
+                                    <div class="intro-card__detail">
+                                        <dt>区分</dt>
+                                        <dd>
+                                            <?php
+                                            $terms = get_the_terms(get_the_ID(), 'program_category');
+                                            if ($terms && !is_wp_error($terms)) {
+                                                // 複数カテゴリーがついている場合は最初の1つだけ表示
+                                                echo esc_html($terms[0]->name);
+                                            } else {
+                                                echo 'カテゴリなし';
+                                            }
+                                            ?>
+                                        </dd>
+                                    </div>
                                     <div class="intro-card__detail">
                                         <dt>開催日</dt>
                                         <dd><?php the_field('program_day'); ?></dd>
@@ -133,28 +167,60 @@
                 ?>
         </div>
     </div>
-
 </section>
 
-
+<!-- パンフレット -->
 <?php
-// 固定ページ「calendar-settings」の投稿オブジェクトを取得
-$calendar_page = get_page_by_path('calendar-settings');
+$program_page = get_page_by_path('program');
 
-// 事前に null を代入しておくことで安全に扱えるようにする
-$month_pdf = null;
-$week_pdf = null;
+$pamphlet_pdf = null;
 
-if ($calendar_page) {
-    $calendar_page_id = $calendar_page->ID;
-
-    // ACFからPDFフィールドを取得（フィールド名に注意！）
-    $month_pdf = get_field('month_calendar_pdf', $calendar_page_id);
-    $week_pdf = get_field('week_calendar_pdf', $calendar_page_id);
+if ($program_page) {
+    $program_page_id = $program_page->ID;
+    $pamphlet_pdf = get_field('pamphlet_pdf', $program_page_id);
 }
 ?>
 
-<section class="program-calendar program-calendar-layout">
+<?php if (!empty($pamphlet_pdf)) : ?>
+    <section class="program-pamphlet program-pamphlet-layout" id="pamphlet">
+        <div class="inner program-pamphlet__inner">
+            <h2 class="program-pamphlet__title section-title">パンフレット</h2>
+            <div class="inner program-pamphlet__inner">
+                <div class="program-pamphlet__pdf pdf">
+                    <embed
+                        src="<?php echo esc_url($pamphlet_pdf); ?>"
+                        class="pdf__url"
+                        type="application/pdf"
+                        width="100%"
+                        height="600px" />
+                </div>
+                <div class="access__btn common-btn">
+                    <a class="access__btn-link common-btn__link" href="<?php echo esc_url($pamphlet_pdf); ?>" download target="_blank" rel="noopener">
+                        PDFをダウンロードする
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
+
+
+<!-- カレンダー -->
+<?php
+$program_page = get_page_by_path('program');
+
+$month_pdf = null;
+$annual_pdf = null;
+
+if ($program_page) {
+    $program_page_id = $program_page->ID;
+
+    $month_pdf = get_field('month_calendar_pdf', $program_page_id);
+    $annual_pdf = get_field('annual_calendar_pdf', $program_page_id);
+}
+?>
+
+<section class="program-calendar program-calendar-layout" id="calendar">
     <div class="inner program-calendar__inner">
         <h2 class="program-calendar__title section-title">カレンダー</h2>
 
@@ -169,58 +235,69 @@ if ($calendar_page) {
                     width="100%"
                     height="600px" />
             </div>
+            <div class="access__btn common-btn">
+                <a class="access__btn-link common-btn__link" href="<?php echo esc_url(is_array($month_pdf) ? $month_pdf['url'] : $month_pdf); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
+            </div>
         <?php else : ?>
             <p>月間カレンダーは現在準備中です。</p>
         <?php endif; ?>
-        <div class="access__btn common-btn">
-            <a class="access__btn-link common-btn__link" href="<?php echo esc_url($month_pdf); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
-        </div>
 
-        <!-- 週間カレンダー
-        <h3 class="program-calendar__sub-title">週間カレンダー</h3>
-        <?php if (!empty($week_pdf)) : ?>
+        <!-- 年間カレンダー -->
+        <h3 class="program-calendar__sub-title">年間カレンダー</h3>
+        <?php if (!empty($annual_pdf)) : ?>
             <div class="program-calendar__pdf pdf">
                 <embed
-                    src="<?php echo esc_url(is_array($week_pdf) ? $week_pdf['url'] : $week_pdf); ?>"
+                    src="<?php echo esc_url(is_array($annual_pdf) ? $annual_pdf['url'] : $annual_pdf); ?>"
                     class="pdf__url"
                     type="application/pdf"
                     width="100%"
                     height="600px" />
             </div>
+            <div class="access__btn common-btn">
+                <a class="access__btn-link common-btn__link" href="<?php echo esc_url(is_array($annual_pdf) ? $annual_pdf['url'] : $annual_pdf); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
+            </div>
         <?php else : ?>
-            <p>週間カレンダーは現在準備中です。</p>
-        <?php endif; ?> -->
-        <!-- <div class="access__btn common-btn">
-            <a class="access__btn-link common-btn__link" href="<?php echo esc_url($week_pdf); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
-        </div> -->
+            <p>年間カレンダーは現在準備中です。</p>
+        <?php endif; ?>
     </div>
 </section>
 
 
 <?php
-// 固定ページ「availability-settings」の投稿オブジェクトを取得
-$availability_page = get_page_by_path('availability-settings');
+// 固定ページ「program」の投稿オブジェクトを取得
+$program_page = get_page_by_path('program');
 
-// 事前に null を代入しておくことで安全に扱えるようにする
+// nullで初期化して安全に扱う
 $availability_pdf = null;
 
-if ($availability_page) {
-    $availability_page_id = $availability_page->ID;
+if ($program_page) {
+    $program_page_id = $program_page->ID;
 
-    // ACFからPDFフィールドを取得（フィールド名に注意！）
-    $availability_pdf = get_field('availability_pdf', $availability_page_id);
+    // 「program」固定ページからACFフィールドを取得
+    $availability_pdf = get_field('availability_pdf', $program_page_id);
 }
 ?>
 
-<section class="program-availability program-availability-layout">
+<section class="program-availability program-availability-layout" id="availability">
     <div class="inner program-availability__inner">
         <h2 class="program-availability__title section-title">講座の申込状況</h2>
         <div class="program-availability__item">
             <div class="program-availability__pdf">
-                <?php if ($availability_pdf) : ?>
-                    <embed src="<?php echo esc_url($availability_pdf); ?>" type="application/pdf" width="100%" height="600px" class="pdf__url" />
+                <?php if (!empty($availability_pdf)) : ?>
+                    <embed
+                        src="<?php echo esc_url(is_array($availability_pdf) ? $availability_pdf['url'] : $availability_pdf); ?>"
+                        type="application/pdf"
+                        width="100%"
+                        height="600px"
+                        class="pdf__url" />
+
                     <div class="access__btn common-btn">
-                        <a class="access__btn-link common-btn__link" href="<?php echo esc_url($availability_pdf); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
+                        <a
+                            class="access__btn-link common-btn__link"
+                            href="<?php echo esc_url(is_array($availability_pdf) ? $availability_pdf['url'] : $availability_pdf); ?>"
+                            download target="_blank" rel="noopener">
+                            PDFをダウンロードする
+                        </a>
                     </div>
                 <?php else : ?>
                     <p>現在準備中</p>
@@ -229,5 +306,6 @@ if ($availability_page) {
         </div>
     </div>
 </section>
+
 
 <?php get_footer(); ?>

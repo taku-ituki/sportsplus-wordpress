@@ -39,6 +39,12 @@
   }
 }
 
+.sub-fv__title br{
+  @include mq(md){
+    display: none;
+  }
+}
+
 .sub-fv__title span {
   display: block;
   font-size: rem(35);

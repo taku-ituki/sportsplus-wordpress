@@ -47,8 +47,8 @@
                         <td class="guide-table__data">052-217-6211</td>
                     </tr>
                     <tr class="guide-table__row">
-                        <th class="guide-table__label">休日</th>
-                        <td class="guide-table__data">水 ・ 土 ・ 祝日の翌日 ・ 年末年始（１２/２９～１/３）</td>
+                        <th class="guide-table__label">閉所日</th>
+                        <td class="guide-table__data">水 ・ 土 ・ 祝日の翌日 ・ 年末年始　他</td>
                     </tr>
                     <tr class="guide-table__row">
                         <th class="guide-table__label">メール</th>
@@ -65,10 +65,7 @@
         <h2 class="access__title section-title">アクセス</h2>
         <!-- Google Map -->
         <div class="access__google access__google--page">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.1261931675376!2d136.8271740757655!3d35.17840717275375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600375fe844192dd%3A0x338b3aa92864acab!2z5aSn5rK755S657eP5ZCI5Z6L5Zyw5Z-f44K544Od44O844OE44Kv44Op44OWIOOCueODneODvOODhOODl-ODqeOCueOBiuOBiuOBr-OCiw!5e0!3m2!1sja!2sjp!4v1746776642662!5m2!1sja!2sjp"
-                width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6522.256147279447!2d136.8296804!3d35.1783603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600375fe84667bb7%3A0xbf161128c5c6ac81!2z5aSn5rK755S644K544Od44O844OE44K744Oz44K_44O8!5e0!3m2!1sja!2sjp!4v1763881122472!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="access__google-street">
             <iframe

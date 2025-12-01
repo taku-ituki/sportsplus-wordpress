@@ -19,9 +19,21 @@
         <div class="program__category category">
             <ul class="category__list category__list--program">
                 <?php
-                $categories = get_categories(); // 全カテゴリー取得
+                // ▼ 一覧タブの追加（投稿一覧ページのみ current）
+                $is_list_page = is_home(); // home.php上では true
+                $list_class = $is_list_page ? ' category__menu--current' : '';
+
+                echo '<li class="category__menu' . $list_class . '">';
+                echo '<a href="' . esc_url(home_url('/blog')) . '">一覧</a>';
+                echo '</li>';
+
+                // ▼ 通常のカテゴリー一覧
+                $categories = get_categories(array(
+                    'orderby' => 'ID',
+                    'order' => 'ASC'
+                ));
+
                 foreach ($categories as $category) {
-                    // 現在表示中のカテゴリーページかどうかを判定
                     $current_class = (is_category($category->term_id)) ? ' category__menu--current' : '';
 
                     echo '<li class="category__menu' . $current_class . '">';
@@ -30,6 +42,7 @@
                 }
                 ?>
             </ul>
+
         </div>
         <?php if (have_posts()) : ?>
             <ul class="blog__list blog-list">

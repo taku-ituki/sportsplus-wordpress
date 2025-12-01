@@ -15,7 +15,7 @@
 </div>
 <section class="support support-layout">
     <div class="support_inner inner">
-        <h2 class="support__title section-title">リンク</h2>
+        <h2 class="support__title section-title">助成団体</h2>
 
         <?php
         // SCFから繰り返しグループを取得
