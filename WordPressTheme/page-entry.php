@@ -162,7 +162,7 @@
 <!-- 部活動地域展開 -->
 <section class="apply apply-layout" id="apply-club">
     <div class="inner apply__inner apply__inner--club">
-        <h2 class="apply__title section-title">②部活動地域展開の申込方法</h2>
+        <h2 class="apply__title section-title">②部活動地域展開の<br>申込方法</h2>
         <div class="apply__border">
             <h3 class="apply__sub-title">参加手順</h3>
 
@@ -236,7 +236,7 @@
 <!-- スポーツチャレンジ -->
 <section class="apply apply-layout" id="apply-challenge">
     <div class="inner apply__inner apply__inner--challenge">
-        <h2 class="apply__title section-title">③授業後スポーツチャレンジの<br>申込方法</h2>
+        <h2 class="apply__title section-title">③授業後スポーツチャレンジの申込方法</h2>
         <div class="apply__border">
             <h3 class="apply__sub-title">参加手順</h3>
             <?php

@@ -8,7 +8,7 @@
   background: #e0f7fa;
   color: #1a1a1a;
   text-shadow: none;
-  padding-bottom:rem(15);
+  padding-bottom: rem(15);
   border-bottom: rem(2) solid $accent;
 }
 
@@ -20,13 +20,12 @@
 
 .about__intro {
   font-weight: $bold;
-  font-size: rem(18);
+  font-size: rem(16);
   margin-top: rem(40);
   color: #1a1a1a;
-  text-align: center;
+  text-align: left;
   @include mq(md) {
     margin-top: rem(60);
-    text-align: left;
     font-size: rem(24);
   }
 }
@@ -80,7 +79,7 @@
 
 .about__sub-title {
   text-align: center;
-  font-size: rem(24);
+  font-size: rem(20);
   color: #2980b9;
   font-weight: $bold;
   margin-top: rem(20);
@@ -95,13 +94,10 @@
   font-weight: $bold;
   font-size: rem(18);
   margin-top: rem(20);
-  // color: $white;
+  text-align: left;
   color: #1a1a1a;
-  text-align: center;
-  // text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
   @include mq(md) {
     margin-top: rem(40);
-    text-align: left;
     font-size: rem(24);
   }
 }
@@ -116,7 +112,7 @@
 .about__sub-item {
   font-weight: $bold;
   position: relative;
-  font-size: rem(18);
+  font-size: rem(16);
   color: #1a1a1a;
   // text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
   padding-left: rem(15);
