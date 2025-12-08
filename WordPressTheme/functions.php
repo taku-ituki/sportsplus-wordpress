@@ -371,8 +371,8 @@ function custom_acf_admin_styles()
     echo '
     <style>
         /* ACFグループ用に background-color を適用 */
-        .entry--color {
-            background-color: #d5efff !important;
+        .color--pink {
+            background-color: #fbd3e2 !important;
        }
     </style>
     ';

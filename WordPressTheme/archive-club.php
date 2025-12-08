@@ -22,12 +22,11 @@
         <li class="club__toc-item toc__item"><a href="#club" class="toc__link">部活動地域展開とは？</a></li>
         <li class="club__toc-item toc__item"><a href="#area-club" class="toc__link">「部活動」・「地域クラブ」・「クラブチーム」との違い</a></li>
         <li class="club__toc-item toc__item"><a href="#ongoing-activities" class="toc__link">実施中の地域クラブ活動</a></li>
-        <li class="club__toc-item toc__item"><a href="#support-members" class="toc__link">賛助会員の募集</a></li>
       </ul>
     </nav>
     <!-- お申込リンク -->
     <div class="club__btn common-btn">
-      <a class="club__btn-link common-btn__link common-btn__link--color" href="<?php echo esc_url(home_url("/entry#club-entry")) ?>">お申込方法はこちら</a>
+      <a class="club__btn-link common-btn__link common-btn__link--color" href="<?php echo esc_url(home_url("/entry#apply-club")) ?>">お申込方法はこちら</a>
     </div>
     <div class="club__bg-color">
       <h3 class="club__sub-title club__sub-title--color" id="club">部活動地域展開とは？</h3>
@@ -35,7 +34,7 @@
         <p>今まで中学校の部活動は、学校の教育活動の一環として行うことが基本でした。これからは、学習指導要領の改訂等により、休日の部活動を段階的に地域クラブ等へ移行していくことが求められています。そこで、大治町では学校と地域が連携して地域クラブ活動を実施していきます。</p>
       </div>
       <div class="club__btn common-btn">
-        <a class="club__btn-link common-btn__link" href="<?php echo esc_url(home_url('/#club')); ?>">「部活動地域展開」に関するQ&A</a>
+        <a class="club__btn-link common-btn__link" href="<?php echo esc_url(home_url('/faq#club')); ?>">「部活動地域展開」に関するQ&A</a>
       </div>
     </div>
     <h3 class="club__sub-title" id="area-club">「部活動」・「地域クラブ」・「クラブチーム」との違い</h3>

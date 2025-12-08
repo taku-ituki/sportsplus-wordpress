@@ -7,7 +7,7 @@
 
 .toc__title {
   font-weight: bold;
-  color: $purple;
+  color: $club-blue;
   text-align: center;
   margin-top: rem(20);
   font-size: rem(24);
@@ -37,7 +37,7 @@
   content: counter(section, decimal-leading-zero); /* 01, 02, 03... の形式で表示 */
   width: 2.25rem;
   height: 2.25rem;
-  background-color: $purple;
+  background-color:$club-blue;
   color: $white;
   font-weight: bold;
   border-radius: 50%;
@@ -61,5 +61,5 @@
 }
 
 .toc__link:hover {
-  text-decoration-color: $purple;
+  text-decoration-color:$club-blue;
 }

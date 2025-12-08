@@ -58,5 +58,11 @@
 //各ページのリンク強調
 .common-btn__link--color.common-btn__link {
   color: $white;
-  background-color:$accent;
+  background-color: $accent;
+  box-shadow: 0 rem(5) 0 #cc6e1e;
+}
+
+.common-btn__link--color.common-btn__link:hover {
+  box-shadow: none;
+  transform: translateY(rem(5));
 }

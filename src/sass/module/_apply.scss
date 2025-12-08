@@ -75,16 +75,36 @@
 /* ===== 連絡先ブロック ===== */
 .apply__contact {
   padding-top: rem(16);
-  border-top: rem(1) dashed #ccc;
   margin-top: rem(32);
 }
 
-.apply__contact-label {
-  font-weight: bold;
-  color: #555;
-}
 
 .apply__contact-info {
   margin-top: rem(4);
   color: #222;
+}
+
+
+.apply__img-list {
+  display: grid;
+  gap: rem(30);
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0 rem(20);
+  @include mq(md) {
+    gap: rem(50);
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.apply__item-img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.apply__item-img img {
+  width: 100%;
+  aspect-ratio: 195/160;
+  object-fit: cover;
+  border-radius: rem(10);
+  transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
 }

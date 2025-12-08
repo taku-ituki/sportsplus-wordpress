@@ -174,7 +174,11 @@
                 <div class="apply__step">
                     <h3 class="apply__step-title">対象者</h3>
                     <div class="apply__content">
-                        <?php echo $group['apply_club_step1']; ?>
+                        <?php
+                        echo !empty($group['apply_club_step1'])
+                            ? wp_kses_post($group['apply_club_step1'])
+                            : '現在準備中';
+                        ?>
                     </div>
                 </div>
 
@@ -182,7 +186,11 @@
                 <div class="apply__step">
                     <h3 class="apply__step-title">参加申込</h3>
                     <div class="apply__content">
-                        <?php echo $group['apply_club_step2']; ?>
+                        <?php
+                        echo !empty($group['apply_club_step2'])
+                            ? wp_kses_post($group['apply_club_step2'])
+                            : '現在準備中';
+                        ?>
                     </div>
                 </div>
 
@@ -190,7 +198,11 @@
                 <div class="apply__step">
                     <h3 class="apply__step-title">連絡方法</h3>
                     <div class="apply__content">
-                        <?php echo $group['apply_club_step3']; ?>
+                        <?php
+                        echo !empty($group['apply_club_step3'])
+                            ? wp_kses_post($group['apply_club_step3'])
+                            : '現在準備中';
+                        ?>
                     </div>
                 </div>
 
@@ -198,14 +210,22 @@
                 <div class="apply__step">
                     <h3 class="apply__step-title">備考</h3>
                     <div class="apply__content">
-                        <?php echo $group['apply_club_step4']; ?>
+                        <?php
+                        echo !empty($group['apply_club_step4'])
+                            ? wp_kses_post($group['apply_club_step4']) // HTMLタグOK、安全に出力
+                            : '現在準備中';
+                        ?>
                     </div>
                 </div>
 
                 <!-- 連絡先 -->
                 <div class="apply__contact">
-                    <p class="apply__contact-label"><?php echo $group['apply_contact_label']; ?></p>
-                    <p class="apply__contact-info"><?php echo $group['apply_contact_info']; ?></p>
+                    <h3 class="apply__step-title">連絡先</h3>
+                    <?php
+                    echo !empty($group['apply_contact_info'])
+                        ? wp_kses_post($group['apply_contact_info'])
+                        : '現在準備中';
+                    ?>
                 </div>
             <?php endif; ?>
         </div>
@@ -219,52 +239,73 @@
         <h2 class="apply__title section-title">③授業後スポーツチャレンジの<br>申込方法</h2>
         <div class="apply__border">
             <h3 class="apply__sub-title">参加手順</h3>
-            <div class="apply__step">
-                <h3 class="apply__step-title">対象者</h3>
-                <?php
-                $group = get_field('group_apply_challenge'); // グループフィールドの取得
-                if ($group):
-                ?>
-                    <!-- 対象者 -->
-                    <div class="apply__step">
-                        <h3 class="apply__step-title">対象者</h3>
-                        <div class="apply__content">
-                            <?php echo $group['apply_club_challenge1']; ?>
-                        </div>
+            <?php
+            $group = get_field('group_apply_challenge'); // グループフィールドの取得
+            if ($group):
+            ?>
+                <!-- 対象者 -->
+                <div class="apply__step">
+                    <h3 class="apply__step-title">対象者</h3>
+                    <div class="apply__content">
+                        <?php
+                        echo !empty($group['group_apply_challenge1'])
+                            ? wp_kses_post($group['group_apply_challenge1'])
+                            : '現在準備中';
+                        ?>
                     </div>
+                </div>
 
-                    <!-- 参加申込 -->
-                    <div class="apply__step">
-                        <h3 class="apply__step-title">参加申込</h3>
-                        <div class="apply__content">
-                            <?php echo $group['apply_club_challenge2']; ?>
-                        </div>
+                <!-- 参加申込 -->
+                <div class="apply__step">
+                    <h3 class="apply__step-title">参加申込</h3>
+                    <div class="apply__content">
+                        <?php
+                        echo !empty($group['group_apply_challenge2'])
+                            ? wp_kses_post($group['group_apply_challenge2'])
+                            : '現在準備中';
+                        ?>
                     </div>
+                </div>
 
-                    <!-- 連絡方法 -->
-                    <div class="apply__step">
-                        <h3 class="apply__step-title">連絡方法</h3>
-                        <div class="apply__content">
-                            <?php echo $group['apply_club_challenge3']; ?>
-                        </div>
+                <!-- 連絡方法 -->
+                <div class="apply__step">
+                    <h3 class="apply__step-title">連絡方法</h3>
+                    <div class="apply__content">
+                        <?php
+                        echo !empty($group['group_apply_challenge3'])
+                            ? wp_kses_post($group['group_apply_challenge3'])
+                            : '現在準備中';
+                        ?>
                     </div>
+                </div>
 
-                    <!-- 備考 -->
-                    <div class="apply__step">
-                        <h3 class="apply__step-title">備考</h3>
-                        <div class="apply__content">
-                            <?php echo $group['apply_club_challenge4']; ?>
-                        </div>
+                <!-- 備考 -->
+                <div class="apply__step">
+                    <h3 class="apply__step-title">備考</h3>
+                    <div class="apply__content">
+                        <?php
+                        echo !empty($group['group_apply_challenge4'])
+                            ? wp_kses_post($group['group_apply_challenge4'])
+                            : '現在準備中';
+                        ?>
                     </div>
+                </div>
 
-                    <!-- 連絡先 -->
-                    <div class="apply__contact">
-                        <p class="apply__contact-label"><?php echo $group['apply_contact_label']; ?></p>
-                        <p class="apply__contact-info"><?php echo $group['apply_contact_info']; ?></p>
-                    </div>
-                <?php endif; ?>
-            </div>
+                <!-- 連絡先 -->
+                <div class="apply__contact">
+                    <h3 class="apply__step-title">連絡先</h3>
+                    <p class="apply__contact-info">
+                        <?php
+                        echo !empty($group['apply_contact_info'])
+                            ? wp_kses_post($group['apply_contact_info'])
+                            : '現在準備中';
+                        ?>
+                    </p>
+                </div>
+            <?php endif; ?>
+
         </div>
+    </div>
 </section>
 
 <!-- 賛助会員の募集 -->
@@ -300,23 +341,73 @@
         <?php endif; ?>
         <div class="member__club-support-wrap">
             <h3 class=" section-sub-title" id="support-members">部活動地域展開サポーターTシャツ</h3>
-            <div class="member__club-support">
-                <div class="member__club-support-lead">
-                    <p class="member__club-support-text">
-                        スポーツプラスおおはるの賛助会員になって部活動地域展開のサポーターになっていただき、 企業名等を練習用Tシャツに印刷して生徒へ配布します。<br />
-                        生徒たちに応援してくださる地元企業を知る機会として紹介していきます。
-                    </p>
+            <?php
+            $block = get_field('club_support_block');
+            if ($block) :
+            ?>
+                <div class="member__club-support">
+                    <?php if (!empty($block['lead_text'])) : ?>
+                        <div class="member__club-support-lead">
+                            <p class="member__club-support-text">
+                                <?php echo nl2br(esc_html($block['lead_text'])); ?>
+                            </p>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="member__club-support-shirt">
+                        <?php if (!empty($block['title'])) : ?>
+                            <h4 class="member__club-support-title">
+                                <?php echo esc_html($block['title']); ?>
+                            </h4>
+                        <?php endif; ?>
+
+                        <?php if (!empty($block['subtext'])) : ?>
+                            <p class="member__club-support-text">
+                                <?php echo nl2br(esc_html($block['subtext'])); ?>
+                            </p>
+                        <?php endif; ?>
+
+                        <ul class="member__club-support-list">
+                            <?php if (!empty($block['item_1'])) : ?>
+                                <li class="member__club-support-item"><?php echo esc_html($block['item_1']); ?></li>
+                            <?php endif; ?>
+                            <?php if (!empty($block['item_2'])) : ?>
+                                <li class="member__club-support-item"><?php echo esc_html($block['item_2']); ?></li>
+                            <?php endif; ?>
+                            <?php if (!empty($block['item_3'])) : ?>
+                                <li class="member__club-support-item"><?php echo esc_html($block['item_3']); ?></li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                    <?php
+                    $block = get_field('club_support_block');
+
+                    if (is_array($block) && !empty($block['apply_image_list']) && is_array($block['apply_image_list'])) :
+                        $images = $block['apply_image_list'];
+                    ?>
+                        <ul class="apply__img-list">
+                            <?php if (!empty($images['img_1'])) : ?>
+                                <li class="apply__item-img">
+                                    <img src="<?php echo esc_url($images['img_1']); ?>" alt="スポーツチャレンジの様子">
+                                </li>
+                            <?php endif; ?>
+
+                            <?php if (!empty($images['img_2'])) : ?>
+                                <li class="apply__item-img">
+                                    <img src="<?php echo esc_url($images['img_2']); ?>" alt="スポーツチャレンジの様子">
+                                </li>
+                            <?php endif; ?>
+
+                            <?php if (!empty($images['img_3'])) : ?>
+                                <li class="apply__item-img">
+                                    <img src="<?php echo esc_url($images['img_3']); ?>" alt="スポーツチャレンジの様子">
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    <?php endif; ?>
                 </div>
-                <div class="member__club-support-shirt">
-                    <h4 class="member__club-support-title">サポーターTシャツについて</h4>
-                    <p class="member__club-support-text">Tシャツの前後を12分割し、協力いただける企業様の名称を印刷します。</p>
-                    <ul class="member__club-support-list">
-                        <li class="member__club-support-item">【前後】（ひと枠）：縦10cm×横10cm　10万円</li>
-                        <li class="member__club-support-item">上部2列・下部2列：各8万円</li>
-                        <li class="member__club-support-item">【袖】（ひと枠）：縦5cm×横8cm　5万円</li>
-                    </ul>
-                </div>
-            </div>
+            <?php endif; ?>
+
         </div>
     </div>
 </section>

@@ -12,11 +12,11 @@
   position: relative; /*+マークの位置基準とするためrelative指定*/
   cursor: pointer;
   font-size: rem(16);
-  font-weight:normal;
+  font-weight:bold;
   padding: rem(16) rem(100) rem(16) rem(25); // 右側に余白追加して + アイコンと分離
   transition: all 0.5s ease;
   color:#1A2B3C;
-  background: $skyblue;
+  background:#e0f7fa;
   @include mq(md) {
     padding: rem(24) rem(100) rem(24) rem(40);
   }
@@ -130,3 +130,5 @@
   text-decoration: none;
   transition: 0.3s;
 }
+
+

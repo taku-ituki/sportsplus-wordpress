@@ -671,19 +671,35 @@ a {
 /* ===== 連絡先ブロック ===== */
 
 .apply__contact {
-	border-top: 0.0625rem dashed #ccc;
 	margin-top: 2rem;
 	padding-top: 1rem;
-}
-
-.apply__contact-label {
-	color: #555;
-	font-weight: bold;
 }
 
 .apply__contact-info {
 	color: #222;
 	margin-top: 0.25rem;
+}
+
+.apply__img-list {
+	grid-gap: 1.875rem;
+	display: grid;
+	gap: 1.875rem;
+	grid-template-columns: repeat(1, 1fr);
+	padding: 0 1.25rem;
+}
+
+.apply__item-img {
+	overflow: hidden;
+	width: 100%;
+}
+
+.apply__item-img img {
+	-o-object-fit: cover;
+	aspect-ratio: 195/160;
+	border-radius: 0.625rem;
+	object-fit: cover;
+	transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
+	width: 100%;
 }
 
 .archive-blog__inner {
@@ -1125,6 +1141,23 @@ body {
 	margin-top: 1.25rem;
 }
 
+.challenge__btn.common-btn {
+	text-align: center;
+}
+
+.challenge__btn-link.common-btn__link {
+	padding: 1rem 4rem;
+}
+
+.club__bg-color {
+	background: #87ceeb;
+	padding-bottom: 1.875rem;
+}
+
+.challenge__btn.common-btn {
+	text-shadow: none;
+}
+
 .club-card {
 	box-shadow: 0.125rem 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.25);
 	display: flex;
@@ -1364,7 +1397,13 @@ body {
 
 .common-btn__link--color.common-btn__link {
 	background-color: #ff8c42;
+	box-shadow: 0 0.3125rem 0 #cc6e1e;
 	color: #fff;
+}
+
+.common-btn__link--color.common-btn__link:hover {
+	box-shadow: none;
+	transform: translateY(0.3125rem);
 }
 
 .common-category {
@@ -1574,11 +1613,11 @@ body {
 /*アコーディオンタイトル*/
 
 .faq-item__accordion-title {
-	background: #87ceeb;
+	background: #e0f7fa;
 	color: #1A2B3C;
 	cursor: pointer;
 	font-size: 1rem;
-	font-weight: normal;
+	font-weight: bold;
 	padding: 1rem 6.25rem 1rem 1.5625rem;
 	position: relative; /*+マークの位置基準とするためrelative指定*/
 	transition: all 0.5s ease;
@@ -3483,7 +3522,7 @@ html.program--modal-open {
 }
 
 .toc__title {
-	color: #8a2be2;
+	color: #007acc;
 	font-size: 1.5rem;
 	font-weight: bold;
 	margin-top: 1.25rem;
@@ -3506,7 +3545,7 @@ html.program--modal-open {
 
 .toc__item::before {
 	align-items: center;
-	background-color: #8a2be2;
+	background-color: #007acc;
 	border-radius: 50%;
 	color: #fff;
 	content: counter(section, decimal-leading-zero); /* 01, 02, 03... の形式で表示 */
@@ -3530,7 +3569,7 @@ html.program--modal-open {
 }
 
 .toc__link:hover {
-	text-decoration-color: #8a2be2;
+	text-decoration-color: #007acc;
 }
 
 .top-button {
@@ -4026,6 +4065,11 @@ html {
 
 .apply__title.section-title br {
 	display: none;
+}
+
+.apply__img-list {
+	gap: 3.125rem;
+	grid-template-columns: repeat(3, 1fr);
 }
 
 .archive-blog__inner {

@@ -42,6 +42,10 @@
                 </li>
             </ul>
         </nav>
+        <!-- お申込リンク -->
+        <div class="challenge__btn common-btn">
+            <a class="challenge__btn-link common-btn__link common-btn__link--color" href="<?php echo esc_url(home_url("/entry#apply-challenge")) ?>">お申込方法はこちら</a>
+        </div>
         <!-- スポーツチャレンジとは -->
         <div class="challenge__intro-wrapper">
             <div class="challenge__intro inner">
@@ -63,9 +67,9 @@
                             alt="スポーツチャレンジの様子" />
                     </li>
                 </ul>
-                <div class="club__btn common-btn">
-                    <a class="club__btn-link common-btn__link" href="
-                    <?php echo esc_url(home_url('/#spochalle')); ?>">「スポーツチャレンジ」に関するQ&A</a>
+                <div class="challenge__btn common-btn">
+                    <a class="challenge__btn-link common-btn__link" href="
+                    <?php echo esc_url(home_url('/faq#challenge')); ?>">「スポーツチャレンジ」に関するQ&A</a>
                 </div>
             </div>
         </div>

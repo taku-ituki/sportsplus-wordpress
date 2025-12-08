@@ -79,3 +79,21 @@
     margin-top: rem(40);
   }
 }
+
+
+.challenge__btn.common-btn {
+  text-align: center;
+}
+
+.challenge__btn-link.common-btn__link {
+  padding: rem(16) rem(64);
+}
+
+.club__bg-color {
+  padding-bottom: rem(30);
+  background: $skyblue;
+}
+
+.challenge__btn.common-btn {
+  text-shadow: none;
+}
