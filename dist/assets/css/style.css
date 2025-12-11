@@ -1101,7 +1101,7 @@ body {
 }
 
 .challenge__intro-wrapper {
-	background-color: #87ceeb;
+	background-color: #4682b4;
 	margin-left: calc(50% - 50vw);
 	margin-right: calc(50% - 50vw);
 	width: 100vw;
@@ -1110,6 +1110,10 @@ body {
 .challenge__title.section-title {
 	background: #87ceeb;
 	font-size: 1.5rem;
+}
+
+.challenge__title.challenge__title--color {
+	background: #4682b4;
 }
 
 .challenge__img-list {
@@ -1150,7 +1154,7 @@ body {
 }
 
 .club__bg-color {
-	background: #87ceeb;
+	background: #4682b4;
 	padding-bottom: 1.875rem;
 }
 
@@ -1254,7 +1258,7 @@ body {
 }
 
 .club__sub-title.club__sub-title--color {
-	background: #87ceeb;
+	background: #4682b4;
 	padding-top: 1.875rem;
 }
 
@@ -1263,7 +1267,7 @@ body {
 }
 
 .club__text {
-	background: #87ceeb;
+	background: #4682b4;
 	color: #fff;
 	font-size: 1.125rem;
 	padding: 2.5rem 1.25rem;
@@ -1331,12 +1335,8 @@ body {
 	text-align: center;
 }
 
-.club__btn-link.common-btn__link {
-	padding: 1rem 4rem;
-}
-
 .club__bg-color {
-	background: #87ceeb;
+	background: #4682b4;
 	padding-bottom: 1.875rem;
 }
 
@@ -1368,6 +1368,7 @@ body {
 	letter-spacing: 0.1em;
 	line-height: 1;
 	padding: 0.625rem 2.3125rem;
+	padding: 1.25rem 2.5rem;
 	text-transform: uppercase;
 	transition: box-shadow 0.3s, transform 0.3s;
 }
@@ -1807,6 +1808,10 @@ main {
 	margin-top: 0.625rem;
 }
 
+.footer__sub-item-link {
+	font-size: 0.875rem;
+}
+
 .footer__sub-item-link::before {
 	content: "- ";
 }
@@ -1825,11 +1830,12 @@ main {
 .footer__box {
 	border-top: 0.03125rem solid #fff;
 	display: flex;
+	justify-content: space-around;
 	margin-top: 1.5rem;
 }
 
 .footer__box-right {
-	margin-left: 2.5rem;
+	margin-left: 1.25rem;
 }
 
 .footer__copy-right {
@@ -2497,7 +2503,7 @@ body {
 
 .member-info__table.membership-table {
 	background-color: #fbd3e2;
-	margin-top: 2.5rem;
+	margin-top: 1.25rem;
 }
 
 .membership-info {
@@ -3016,7 +3022,7 @@ html.program--modal-open {
 	background-color: #ff8c42;
 	color: #fff;
 	display: inline-block;
-	margin-top: 1.25rem;
+	margin-top: 2.5rem;
 	padding-left: 0.625rem;
 	padding-right: 0.625rem;
 	scroll-margin-top: 5.625rem; /* 固定ヘッダーの高さ + 余白分 */
@@ -4429,6 +4435,10 @@ body {
 	padding-left: 1.25rem;
 }
 
+.footer__sub-item-link {
+	font-size: 1rem;
+}
+
 .footer__box-wrap {
 	display: flex;
 	flex-direction: row;
@@ -4437,8 +4447,13 @@ body {
 .footer__box {
 	border-right: 0.03125rem solid #fff;
 	border-top: 0;
+	justify-content: stretch;
 	margin-top: 0rem;
 	width: 60%;
+}
+
+.footer__box-right {
+	margin-left: 2.5rem;
 }
 
 .footer__copy-right {
@@ -4524,7 +4539,7 @@ body {
 }
 
 .member-info__table.membership-table {
-	margin-top: 3.75rem;
+	margin-top: 2.5rem;
 }
 
 .membership-info__section--blue {

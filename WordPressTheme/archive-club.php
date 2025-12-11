@@ -20,7 +20,6 @@
       <div class="club__tok-title toc__title">【目次】</div>
       <ul class="club__toc-list toc__list">
         <li class="club__toc-item toc__item"><a href="#club" class="toc__link">部活動地域展開とは？</a></li>
-        <li class="club__toc-item toc__item"><a href="#area-club" class="toc__link">「部活動」・「地域クラブ」・「クラブチーム」との違い</a></li>
         <li class="club__toc-item toc__item"><a href="#ongoing-activities" class="toc__link">実施中の地域クラブ活動</a></li>
       </ul>
     </nav>
@@ -28,33 +27,29 @@
     <div class="club__btn common-btn">
       <a class="club__btn-link common-btn__link common-btn__link--color" href="<?php echo esc_url(home_url("/entry#apply-club")) ?>">お申込方法はこちら</a>
     </div>
-    <div class="club__bg-color">
-      <h3 class="club__sub-title club__sub-title--color" id="club">部活動地域展開とは？</h3>
-      <div class="club__text">
-        <p>今まで中学校の部活動は、学校の教育活動の一環として行うことが基本でした。これからは、学習指導要領の改訂等により、休日の部活動を段階的に地域クラブ等へ移行していくことが求められています。そこで、大治町では学校と地域が連携して地域クラブ活動を実施していきます。</p>
+    <?php
+    // ページスラッグからIDを取得
+    $club_page = get_page_by_path('club-archive-settings');
+
+    if ($club_page) :
+      $club_page_id = $club_page->ID;
+    ?>
+
+      <div class="club__bg-color">
+        <?php if (get_field('club_title', $club_page_id)) : ?>
+          <h3 class="club__sub-title club__sub-title--color" id="club">
+            <?php the_field('club_title', $club_page_id); ?>
+          </h3>
+        <?php endif; ?>
+
+        <?php if (get_field('club_text', $club_page_id)) : ?>
+          <div class="club__text">
+            <?php the_field('club_text', $club_page_id); ?>
+          </div>
+        <?php endif; ?>
       </div>
-      <div class="club__btn common-btn">
-        <a class="club__btn-link common-btn__link" href="<?php echo esc_url(home_url('/faq#club')); ?>">「部活動地域展開」に関するQ&A</a>
-      </div>
-    </div>
-    <h3 class="club__sub-title" id="area-club">「部活動」・「地域クラブ」・「クラブチーム」との違い</h3>
-    <div class="club__img">
-      <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/bukatudou.jpg" alt="部活動地域展開とは" />
-    </div>
-    <div class="club__difference-cards">
-      <div class="club__difference-card">
-        <h4 class="club__difference-card-title">学校部活動</h4>
-        <p class="club__difference-card-text">学校の教員が指導し、学校の施設内で実施される活動。主に放課後や休日に行われ、教員の負担が大きいのが課題です。</p>
-      </div>
-      <div class="club__difference-card">
-        <h4 class="club__difference-card-title">地域クラブ活動</h4>
-        <p class="club__difference-card-text">地域の指導者が主体となり、地域施設を活用して行う活動。多世代が関われる持続可能な新しい部活動の形です。</p>
-      </div>
-      <div class="club__difference-card">
-        <h4 class="club__difference-card-title">クラブチーム</h4>
-        <p class="club__difference-card-text">学校外で専門指導者が活動を主導し、競技力向上を目的とした活動。費用や保護者のサポートが求められます。</p>
-      </div>
-    </div>
+
+    <?php endif; ?>
     <h3 class="club__sub-title" id="ongoing-activities">実施中の地域クラブ活動</h3>
     <ul class="club__cards club-cards">
       <?php if (have_posts()) : ?>

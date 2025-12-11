@@ -21,6 +21,7 @@
   box-shadow: 0 rem(5) 0 $black;
   transition: box-shadow 0.3s, transform 0.3s;
   background-color: $white;
+  padding: rem(20) rem(40);
   @include mq(md) {
     padding: rem(14) rem(55);
     font-size: rem(15);

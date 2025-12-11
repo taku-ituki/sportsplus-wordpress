@@ -49,7 +49,7 @@
         <!-- スポーツチャレンジとは -->
         <div class="challenge__intro-wrapper">
             <div class="challenge__intro inner">
-                <h2 class="challenge__title section-title" id="challenge">「スポーツチャレンジ」とは</h2>
+                <h2 class="challenge__title section-title challenge__title--color" id="challenge">「スポーツチャレンジ」とは</h2>
                 <p class="challenge__intro">
                     スポーツチャレンジは、体力、コミュニケーション力向上を目指して行います。球技を中心に楽しく遊んだりコーディネーショントレーニングで体の動きを高めたりします。原則、毎月２回、１回２時間、自校の体育館で行います。５月〜３月で７月と９月は熱中症の関係で行わず、８月と３月にはスポーツセンターでいろいろなスポーツ体験や３校ドッヂボール大会を行います。
                 </p>
@@ -67,23 +67,20 @@
                             alt="スポーツチャレンジの様子" />
                     </li>
                 </ul>
-                <div class="challenge__btn common-btn">
+                <!-- <div class="challenge__btn common-btn">
                     <a class="challenge__btn-link common-btn__link" href="
                     <?php echo esc_url(home_url('/faq#challenge')); ?>">「スポーツチャレンジ」に関するQ&A</a>
-                </div>
+                </div> -->
             </div>
         </div>
-        <!-- 共通のPDF表示ブロック -->
         <?php
-        // 各PDFのURLを個別に取得する例（必要に応じてカスタムフィールド名を変更）
-        $pdf_oharu       = get_field('pdf_oharu');       // 大治小学校
-        $pdf_oharu_south = get_field('pdf_oharu_south'); // 大治南小学校
-        $pdf_oharu_west  = get_field('pdf_oharu_west');  // 大治西小学校
-        $pdf_spring      = get_field('pdf_spring');      // 春休みスポーツチャレンジ
-        $pdf_summer      = get_field('pdf_summer');      // 夏休みスポーツチャレンジ
-        $pdf_schedule    = get_field('pdf_schedule');    // 申込状況・日程
+        $pdf_oharu       = get_field('pdf_oharu');
+        $pdf_oharu_south = get_field('pdf_oharu_south');
+        $pdf_oharu_west  = get_field('pdf_oharu_west');
+        $pdf_spring     = get_field('pdf_spring');
+        $pdf_summer      = get_field('pdf_summer');
+        $pdf_schedule    = get_field('pdf_schedule');
         ?>
-
         <!-- 大治小学校 -->
         <div class="challenge__item" id="oharu">
             <h2 class="challenge__title section-title">「大治小学校」<br />募集要項</h2>
@@ -95,7 +92,6 @@
                 <?php endif; ?>
             </div>
         </div>
-
         <!-- 大治南小学校 -->
         <div class="challenge__item" id="oharu-south">
             <h2 class="challenge__title section-title">「大治南小学校」<br />募集要項</h2>
@@ -107,7 +103,6 @@
                 <?php endif; ?>
             </div>
         </div>
-
         <!-- 大治西小学校 -->
         <div class="challenge__item" id="oharu-west">
             <h2 class="challenge__title section-title">「大治西小学校」<br />募集要項</h2>
@@ -119,7 +114,6 @@
                 <?php endif; ?>
             </div>
         </div>
-
         <!-- 春休みスポーツチャレンジ -->
         <div class="challenge__item" id="spring">
             <h2 class="challenge__title section-title">「春休みスポーツチャレンジ」<br />募集要項</h2>
@@ -131,7 +125,6 @@
                 <?php endif; ?>
             </div>
         </div>
-
         <!-- 夏休みスポーツチャレンジ -->
         <div class="challenge__item" id="summer">
             <h2 class="challenge__title section-title">「夏休みスポーツチャレンジ」<br />募集要項</h2>
@@ -143,7 +136,6 @@
                 <?php endif; ?>
             </div>
         </div>
-
         <!-- 申込状況・日程 -->
         <div class="challenge__item" id="challenge-date">
             <h2 class="challenge__title section-title">申込状況</h2>
@@ -155,49 +147,6 @@
                 <?php endif; ?>
             </div>
         </div>
-        <!-- 申込・お問合せ -->
-        <!-- <div class="challenge__info">
-            <h2 class="challenge__title section-title" id="challenge-info">申込・問合せ先</h2>
-            <table class="challenge__access-table access__table">
-                <tbody class="access-table__body">
-                    <tr class="access-table__row">
-                        <th class="access-table__label">問合せ先</th>
-                        <td class="access-table__data">
-                            <div class="access-table__address">
-                                <span>スポーツプラスおおはる事務所</span>
-                                <span>（大治町スポーツセンター内 1階）</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="access-table__row">
-                        <th class="access-table__label">TEL</th>
-                        <td class="access-table__data">052-217-6211</td>
-                    </tr>
-                    <tr class="access-table__row">
-                        <th class="access-table__label">営業時間</th>
-                        <td class="access-table__data">
-                            <div class="access-table__time">
-                                <span class="access-table__day">月・木</span>
-                                <span class="access-table__hour">9:00～17:00</span>
-                            </div>
-                            <div class="access-table__time">
-                                <span class="access-table__day">日・火・金</span>
-                                <span class="access-table__hour">9:00～12:00</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="access-table__row">
-                        <th class="access-table__label">休日</th>
-                        <td class="access-table__data">水 ・ 土 ・ 祝日の翌日 ・ 年末年始（１２/２９～１/３）</td>
-                    </tr>
-                    <tr class="access-table__row">
-                        <th class="access-table__label">メール</th>
-                        <td class="access-table__data"><a
-                                href="mailto:spplus-oharu@clovernet.ne.jp">spplus-oharu@clovernet.ne.jp</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div> -->
     </div>
     </div>
     <!-- //inner -->

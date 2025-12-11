@@ -4,7 +4,7 @@
 }
 
 .club__sub-title.club__sub-title--color {
-  background: $skyblue;
+  background: $footer-blue;
   padding-top: rem(30);
 }
 
@@ -18,7 +18,7 @@
 .club__text {
   font-size: rem(18);
   padding: rem(40) rem(20);
-  background: $skyblue;
+  background: $footer-blue;
   color: $white;
   text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
   @include mq(md) {
@@ -93,13 +93,9 @@
   text-align: center;
 }
 
-.club__btn-link.common-btn__link {
-  padding: rem(16) rem(64);
-}
-
 .club__bg-color {
   padding-bottom: rem(30);
-  background: $skyblue;
+  background: $footer-blue;
 }
 
 .club__btn.common-btn {

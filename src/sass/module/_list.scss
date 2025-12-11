@@ -18,17 +18,18 @@
   }
 }
 
-.list__item{
-      border-bottom:1px solid #e2e2e2;
+.list__item {
+  border-bottom: 1px solid #e2e2e2;
 }
 
-.list__item:first-child{
-      border-top:rem(1) solid #e2e2e2;
+.list__item:first-child {
+  border-top: rem(1) solid #e2e2e2;
 }
 
 .list__item a:hover .list__item-title {
   text-decoration: underline; /* ホバー時に下線表示 */
 }
+
 
 //お知らせ記事CSS//
 .list__item a {
@@ -65,5 +66,3 @@
   background-color: $bg-blue;
   text-align: center;
 }
-
-

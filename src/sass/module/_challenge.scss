@@ -20,7 +20,7 @@
 
 //背景色だけ画面幅いっぱいに
 .challenge__intro-wrapper {
-  background-color: $skyblue;
+  background-color: $footer-blue;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   width: 100vw;
@@ -32,6 +32,10 @@
   @include mq(md) {
     font-size: rem(40);
   }
+}
+
+.challenge__title.challenge__title--color{
+  background:$footer-blue;
 }
 
 .challenge__title.section-title br {
@@ -91,7 +95,7 @@
 
 .club__bg-color {
   padding-bottom: rem(30);
-  background: $skyblue;
+  background: $footer-blue;
 }
 
 .challenge__btn.common-btn {

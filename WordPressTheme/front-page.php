@@ -45,19 +45,6 @@
     </div>
 </div>
 </section>
-<!-- <section class="front-guide front-guide-layout">
-    <div class="inner front-guide__inner">
-        <nav class="front-guide__toc toc">
-            <div class="front-guide__tok-title toc__title">【目次】</div>
-            <ul class="front-guide__toc-list toc__list">
-                <li class="front-guide__toc-item toc__item"><a href="#news" class="toc__link">お知らせ</a></li>
-                <li class="front-guide__toc-item toc__item"><a href="#about" class="toc__link">スポーツプラスおおはるについて</a></li>
-                <li class="front-guide__toc-item toc__item"><a href="#works" class="toc__link">実施事業</a></li>
-                <li class="front-guide__toc-item toc__item"><a href="#newsletter" class="toc__link">会報</a></li>
-            </ul>
-        </nav>
-    </div>
-</section> -->
 <section class="top-news top-news-layout" id="news">
     <div class="top-news__inner inner">
         <h2 class="top-news__title section-title">お知らせ</h2>
