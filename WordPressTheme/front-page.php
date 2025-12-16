@@ -146,7 +146,7 @@
         <ul class="works__list works-list">
             <li class="works-list__item fade-in js-fadeIn">
                 <div class="works-list__item-img">
-                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/suguru.jpg" alt="省略" />
+                    <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/pin.jpg" alt="省略" />
                 </div>
                 <div class="works-list__item-content-bg">
                     <div class="works-list__item-content">

@@ -94,7 +94,7 @@
                         </dd>
                     </div>
                     <div class="membership-info__definition">
-                        <dt class="membership-info__term">随 時 受 付</dt>
+                        <dt class="membership-info__term">随時受付</dt>
                         <dd class="membership-info__desc"><?php echo esc_html($entry_group['term3_desc']); ?></dd>
                     </div>
             </dl>
