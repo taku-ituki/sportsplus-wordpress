@@ -702,6 +702,23 @@ a {
 	width: 100%;
 }
 
+.apply__school {
+	margin-bottom: 1.5em;
+}
+
+.apply__school-name {
+	font-weight: bold;
+	margin-bottom: 0.5em;
+}
+
+.apply__school-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3em;
+	line-height: 1.5;
+	margin-left: 0.9375rem;
+}
+
 .archive-blog__inner {
 	margin: auto;
 	max-width: 37.5rem;
@@ -4078,6 +4095,14 @@ html {
 .apply__img-list {
 	gap: 3.125rem;
 	grid-template-columns: repeat(3, 1fr);
+}
+
+.apply__school {
+	display: flex;
+}
+
+.apply__school-grade.first {
+	margin-left: 0.9375rem;
 }
 
 .archive-blog__inner {

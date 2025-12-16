@@ -6,7 +6,6 @@
   line-height: 1.6;
 }
 
-
 .apply__border {
   border-radius: rem(8);
   margin-top: rem(20);
@@ -78,12 +77,10 @@
   margin-top: rem(32);
 }
 
-
 .apply__contact-info {
   margin-top: rem(4);
   color: #222;
 }
-
 
 .apply__img-list {
   display: grid;
@@ -107,4 +104,30 @@
   object-fit: cover;
   border-radius: rem(10);
   transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
+}
+
+.apply__school {
+  margin-bottom: 1.5em;
+@include mq(md){
+  display: flex;
+}
+}
+
+.apply__school-name {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.apply__school-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  margin-left:rem(15);
+  line-height: 1.5;
+}
+
+.apply__school-grade.first{
+  @include mq(md){
+    margin-left:rem(15);
+  }
 }

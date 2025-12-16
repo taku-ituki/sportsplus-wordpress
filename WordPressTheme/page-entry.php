@@ -248,12 +248,26 @@
                     <h3 class="apply__step-title">対象者</h3>
                     <div class="apply__content">
                         <?php
-                        echo !empty($group['group_apply_challenge1'])
-                            ? wp_kses_post($group['group_apply_challenge1'])
-                            : '現在準備中';
+                        // 最大3校まで想定
+                        for ($i = 1; $i <= 3; $i++) {
+                            $school_name = isset($group["school_{$i}_name"]) ? $group["school_{$i}_name"] : '';
+                            $school_low  = isset($group["school_{$i}_low"])  ? $group["school_{$i}_low"]  : '';
+                            $school_high = isset($group["school_{$i}_high"]) ? $group["school_{$i}_high"] : '';
+
+                            if ($school_name && $school_low && $school_high): ?>
+                                <div class="apply__school">
+                                    <p class="apply__school-name"><?php echo esc_html($school_name); ?></p>
+                                    <div class="apply__school-group">
+                                        <span class="apply__school-grade"><?php echo esc_html($school_low); ?></span>
+                                        <span class="apply__school-grade"><?php echo esc_html($school_high); ?></span>
+                                    </div>
+                                </div>
+                        <?php endif;
+                        }
                         ?>
                     </div>
                 </div>
+
 
                 <!-- 参加申込 -->
                 <div class="apply__step">
