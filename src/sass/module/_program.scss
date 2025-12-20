@@ -56,7 +56,6 @@
   }
 }
 
-
 /* ================== モーダルエリア ================== */
 .program__modal {
   display: none;
@@ -80,7 +79,10 @@
   padding: 2rem;
   border-radius: rem(8);
   max-width: rem(600);
-  width: 90%;
+  width: 75%;
+  @include mq(md) {
+    width: 90%;
+  }
 }
 
 .program__modal-close {

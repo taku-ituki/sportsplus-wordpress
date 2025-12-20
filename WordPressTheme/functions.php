@@ -326,43 +326,7 @@ function set_post_list_posts_per_page($query)
 add_action('pre_get_posts', 'set_post_list_posts_per_page');
 
 
-//ログイン画面のロゴ変更
-function login_logo()
-{
-    echo '<style type="text/css">
-	  #login h1 a {
-		background: url(' . get_template_directory_uri() . '/assets/images/common/login-icon.png) no-repeat top center;
-		background-size: 100% auto;
-		width: 180px;
-		height: 60px;
-		text-indent: -9999px;
-		overflow: hidden;
-		display: block;
-	  }
-	  body.login {
-		background: url(' . get_template_directory_uri() . '/assets/images/common/login-top.jpg) no-repeat center center;
-		background-color: rgba(255,255,255,0.5);
-		background-blend-mode: lighten;
-		background-size: cover;
-		background-attachment: fixed;
-	  }
-	</style>';
-}
-add_action('login_head', 'login_logo');
 
-// ログイン画面のロゴのリンク先を変更
-function login_logo_url()
-{
-    return home_url();
-}
-add_filter('login_headerurl', 'login_logo_url');
-
-// ログイン画面のロゴのタイトルを変更
-function login_logo_url_title()
-{
-    return get_bloginfo('name');
-}
-add_filter('login_headertitle', 'login_logo_url_title');
 
 //「会員募集」ページACFフィールドの色分け
 function custom_acf_admin_styles()

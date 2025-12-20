@@ -3001,7 +3001,7 @@ body {
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	width: 90%;
+	width: 75%;
 }
 
 .program__modal-close {
@@ -4697,6 +4697,10 @@ body {
 
 .program__pdf {
 	margin-top: 2.5rem;
+}
+
+.program__modal-content {
+	width: 90%;
 }
 
 .program__modal-images {
