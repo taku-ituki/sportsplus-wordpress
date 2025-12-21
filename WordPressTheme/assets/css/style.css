@@ -2997,11 +2997,11 @@ body {
 	border-radius: 0.5rem;
 	left: 50%;
 	max-width: 37.5rem;
-	padding: 2rem;
+	padding: 1rem;
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	width: 75%;
+	width: 70%;
 }
 
 .program__modal-close {
@@ -4700,6 +4700,7 @@ body {
 }
 
 .program__modal-content {
+	padding: 2rem;
 	width: 90%;
 }
 

@@ -12,7 +12,7 @@
             <?php
             $prefix = 'slide_image_';
             $rows = 3;
-            $images_per_row = 3;
+            $images_per_row = 5;
 
             for ($row = 1; $row <= $rows; $row++) :
                 $start = ($row - 1) * $images_per_row + 1;
@@ -48,7 +48,6 @@
 <section class="top-news top-news-layout" id="news">
     <div class="top-news__inner inner">
         <h2 class="top-news__title section-title">お知らせ</h2>
-
         <!-- タブ -->
         <ul class="top-news__tabs category__list js-top-news__tabs">
             <li class="category__menu category__menu--current">
@@ -102,8 +101,6 @@
         </div>
     </div>
 </section>
-
-
 <!-- スポーツプラスおおはるについて -->
 <section class="about about-layout" id="about">
     <div class="about__inner inner">
@@ -138,7 +135,6 @@
         </p>
     </div>
 </section>
-
 <!-- 事業内容 -->
 <section class="works works-layout" id="works">
     <div class="works__inner inner">
@@ -236,7 +232,6 @@
         </ul>
     </div>
 </section>
-
 <!-- faq -->
 <!-- <section class="faq faq-layout">
     <div class="faq__inner inner">
