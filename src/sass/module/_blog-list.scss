@@ -17,7 +17,9 @@
   }
 }
 
-.blog-list__item{
+.blog-list__item {
+  max-width: rem(360);
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding: rem(16) rem(16) rem(24) rem(16);
@@ -32,14 +34,16 @@
 
 .blog-list__item-img {
   width: 100%;
+  aspect-ratio: 195 / 160;
   overflow: hidden;
+  border-radius: rem(10);
 }
 
 .blog-list__item-img img {
   width: 100%;
-  aspect-ratio: 195/160;
+  height: 100%;
   object-fit: cover;
-  border-radius: rem(10);
+  display: block;
   transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
 }
 

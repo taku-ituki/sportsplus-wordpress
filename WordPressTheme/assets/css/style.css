@@ -928,7 +928,9 @@ a {
 	box-shadow: 0.125rem 0.125rem 0.625rem 0 rgba(0, 0, 0, 0.25);
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 22.5rem;
 	padding: 1rem 1rem 1.5rem 1rem;
+	width: 100%;
 }
 
 .blog-list__item a {
@@ -938,14 +940,16 @@ a {
 }
 
 .blog-list__item-img {
+	aspect-ratio: 195/160;
+	border-radius: 0.625rem;
 	overflow: hidden;
 	width: 100%;
 }
 
 .blog-list__item-img img {
 	-o-object-fit: cover;
-	aspect-ratio: 195/160;
-	border-radius: 0.625rem;
+	display: block;
+	height: 100%;
 	object-fit: cover;
 	transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
 	width: 100%;
@@ -1185,10 +1189,12 @@ body {
 	flex-direction: column;
 	margin-left: auto;
 	margin-right: auto;
+	max-width: 22.5rem;
 	opacity: 0;
 	padding: 1rem 1rem 1.5rem 1rem;
 	transform: translateY(30px);
 	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+	width: 100%;
 }
 
 .club-card:first-child {
@@ -1196,15 +1202,18 @@ body {
 }
 
 .club-card__image {
+	aspect-ratio: 4/3;
+	display: block;
 	overflow: hidden;
 	width: 100%;
 }
 
 .club-card__image img {
 	-o-object-fit: cover;
-	aspect-ratio: 4/3;
+	height: 100%;
 	object-fit: cover;
 	transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
+	width: 100%;
 }
 
 .club-card a {
@@ -2315,13 +2324,13 @@ body {
 /* 左側画像 */
 
 .intro-card__image {
+	aspect-ratio: 1/1;
 	flex-shrink: 0;
 	overflow: hidden;
 }
 
 .intro-card__image img {
 	-o-object-fit: contain;
-	aspect-ratio: 1/1;
 	height: 100%;
 	object-fit: contain;
 	transition: transform 1s cubic-bezier(0.6, 0, 0, 1);
@@ -3001,7 +3010,7 @@ body {
 	position: absolute;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	width: 70%;
+	width: 65%;
 }
 
 .program__modal-close {
@@ -4540,12 +4549,12 @@ body {
 }
 
 .intro-card__image {
+	aspect-ratio: 4/3;
 	width: 30%;
 }
 
 .intro-card__image img {
 	-o-object-fit: cover;
-	aspect-ratio: 4/3;
 	object-fit: cover;
 }
 
