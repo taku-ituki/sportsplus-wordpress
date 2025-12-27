@@ -1,16 +1,54 @@
 @use "global" as *;
 
+.inner.program-calendar__inner {
+  text-align: center;
+}
+
 .program-calendar__sub-title {
-  background: $bg-entry;
-  color: #00695c;
+  display: inline-block;
+  font-size: rem(24);
+  color: $white;
+  background-color: $accent;
   text-align: center;
   margin-top: rem(20);
+  padding-left: rem(60);
+  padding-right: rem(60);
   @include mq(md) {
     margin-top: rem(40);
-    font-size: rem(24);
+    font-size: rem(32);
+    padding-left: rem(120);
+    padding-right: rem(120);
   }
+}
+
+.program-calender__month {
+  position: relative;
+  margin-top: rem(24);
+  margin-top: rem(60);
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
+.program-calender__month::after {
+  position: absolute;
+  content: "";
+  max-width: rem(60);
+  width: 100%;
+  height: rem(4);
+  background-color: #f8bbd0;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%); // ← これで幅の半分を左にずらす
 }
 
 .program-calendar__pdf {
   margin-top: rem(20);
+}
+
+.program-calendar__sub-title.program-calendar__sub-title-year {
+  margin-top: rem(60);
+  @include mq(md) {
+    margin-top: rem(120);
+  }
 }

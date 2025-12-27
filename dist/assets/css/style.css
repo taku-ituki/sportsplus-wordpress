@@ -2922,15 +2922,45 @@ body {
 	margin-top: 2.5rem;
 }
 
-.program-calendar__sub-title {
-	background: #a8e6cf;
-	color: #00695c;
-	margin-top: 1.25rem;
+.inner.program-calendar__inner {
 	text-align: center;
+}
+
+.program-calendar__sub-title {
+	background-color: #ff8c42;
+	color: #fff;
+	display: inline-block;
+	font-size: 1.5rem;
+	margin-top: 1.25rem;
+	padding-left: 3.75rem;
+	padding-right: 3.75rem;
+	text-align: center;
+}
+
+.program-calender__month {
+	margin-top: 1.5rem;
+	margin-top: 3.75rem;
+	position: relative;
+}
+
+.program-calender__month::after {
+	background-color: #f8bbd0;
+	bottom: -10%;
+	content: "";
+	height: 0.25rem;
+	left: 50%;
+	max-width: 3.75rem;
+	position: absolute;
+	transform: translateX(-50%);
+	width: 100%;
 }
 
 .program-calendar__pdf {
 	margin-top: 1.25rem;
+}
+
+.program-calendar__sub-title.program-calendar__sub-title-year {
+	margin-top: 3.75rem;
 }
 
 .program-intro__text {
@@ -3924,6 +3954,10 @@ html {
 	margin-top: 5rem;
 }
 
+.program-calendar-layout {
+	margin-top: 5rem;
+}
+
 .program-intro-layout {
 	margin-top: 5rem;
 }
@@ -4671,8 +4705,18 @@ body {
 }
 
 .program-calendar__sub-title {
-	font-size: 1.5rem;
+	font-size: 2rem;
 	margin-top: 2.5rem;
+	padding-left: 7.5rem;
+	padding-right: 7.5rem;
+}
+
+.program-calender__month {
+	font-size: 2rem;
+}
+
+.program-calendar__sub-title.program-calendar__sub-title-year {
+	margin-top: 7.5rem;
 }
 
 .program-intro__text {

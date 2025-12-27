@@ -21,7 +21,7 @@
             <table class="guide__table guide-table">
                 <tbody class="guide-table__body">
                     <tr class="guide-table__row">
-                        <th class="guide-table__label">開所時間</th>
+                        <th class="guide-table__label">事務所の開所時間</th>
                         <td class="guide-table__data">
                             <div class="guide-table__time">
                                 <span class="guide-table__day">月・木</span>

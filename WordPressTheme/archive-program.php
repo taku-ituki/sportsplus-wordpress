@@ -215,7 +215,8 @@ $annual_pdf = null;
 if ($program_page) {
     $program_page_id = $program_page->ID;
 
-    $month_pdf = get_field('month_calendar_pdf', $program_page_id);
+    $month_pdf1 = get_field('month_calendar_pdf_1', $program_page_id);
+    $month_pdf2 = get_field('month_calendar_pdf_2', $program_page_id);
     $annual_pdf = get_field('annual_calendar_pdf', $program_page_id);
 }
 ?>
@@ -226,24 +227,47 @@ if ($program_page) {
 
         <!-- 月間カレンダー -->
         <h3 class="program-calendar__sub-title">月間カレンダー</h3>
-        <?php if (!empty($month_pdf)) : ?>
+        <h4 class="program-calender__month">
+            【今月分】
+        </h4>
+        <?php if (!empty($month_pdf1)) : ?>
             <div class="program-calendar__pdf pdf">
                 <embed
-                    src="<?php echo esc_url(is_array($month_pdf) ? $month_pdf['url'] : $month_pdf); ?>"
+                    src="<?php echo esc_url(is_array($month_pdf1) ? $month_pdf1['url'] : $month_pdf1); ?>"
                     class="pdf__url"
                     type="application/pdf"
                     width="100%"
                     height="600px" />
             </div>
             <div class="access__btn common-btn">
-                <a class="access__btn-link common-btn__link" href="<?php echo esc_url(is_array($month_pdf) ? $month_pdf['url'] : $month_pdf); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
+                <a class="access__btn-link common-btn__link" href="<?php echo esc_url(is_array($month_pdf1) ? $month_pdf1['url'] : $month_pdf1); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
+            </div>
+        <?php else : ?>
+            <p>月間カレンダーは現在準備中です。</p>
+        <?php endif; ?>
+
+        <!-- 月間カレンダー -->
+        <h4 class="program-calender__month">
+            【翌月分】
+        </h4>
+        <?php if (!empty($month_pdf2)) : ?>
+            <div class="program-calendar__pdf pdf">
+                <embed
+                    src="<?php echo esc_url(is_array($month_pdf2) ? $month_pdf2['url'] : $month_pdf2); ?>"
+                    class="pdf__url"
+                    type="application/pdf"
+                    width="100%"
+                    height="600px" />
+            </div>
+            <div class="access__btn common-btn">
+                <a class="access__btn-link common-btn__link" href="<?php echo esc_url(is_array($month_pdf2) ? $month_pdf2['url'] : $month_pdf2); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
             </div>
         <?php else : ?>
             <p>月間カレンダーは現在準備中です。</p>
         <?php endif; ?>
 
         <!-- 年間カレンダー -->
-        <h3 class="program-calendar__sub-title">年間カレンダー</h3>
+        <h3 class="program-calendar__sub-title program-calendar__sub-title-year">年間カレンダー</h3>
         <?php if (!empty($annual_pdf)) : ?>
             <div class="program-calendar__pdf pdf">
                 <embed
