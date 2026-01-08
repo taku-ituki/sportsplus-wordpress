@@ -35,8 +35,11 @@
                         if (!empty($text) && !empty($url)) :
                     ?>
                             <li class="application__item">
-                                <a href="<?php echo esc_url($url); ?>"><?php echo esc_html($text); ?></a>
+                                <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer">
+                                    <?php echo esc_html($text); ?>
+                                </a>
                             </li>
+
                     <?php endif;
                     endfor; ?>
                 </ul>

@@ -1129,12 +1129,7 @@ body {
 }
 
 .challenge__title.section-title {
-	background: #87ceeb;
 	font-size: 1.5rem;
-}
-
-.challenge__title.challenge__title--color {
-	background: #4682b4;
 }
 
 .challenge__img-list {
@@ -3087,12 +3082,32 @@ html.program--modal-open {
 }
 
 .section-title {
-	background: linear-gradient(90deg, #add8e6 0%, #87cefa 50%, #b0e0e6 100%);
 	color: #fff;
 	font-size: 2rem;
 	font-weight: 700;
+	position: relative;
 	text-align: center;
 	text-shadow: 0.125rem 0.125rem 0.3125rem rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
+	z-index: 100;
+}
+
+.section-title::after {
+	background: linear-gradient(90deg, #add8e6 0%, #87cefa 50%, #b0e0e6 100%);
+	bottom: 0;
+	content: "";
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: -1;
+}
+
+.about__title.section-title::after {
+	background: none;
+}
+
+.challenge__title--color.section-title::after {
+	background: none;
 }
 
 .single-blog__inner.inner {

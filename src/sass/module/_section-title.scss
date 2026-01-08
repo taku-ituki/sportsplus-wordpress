@@ -1,13 +1,32 @@
 @use "global" as *;
 
+
 .section-title {
+  position: relative;
   text-align: center;
   font-size: rem(32);
   color: $white;
-  background: $title;
+  // background: $title;
   text-shadow: rem(2) rem(2) rem(5) rgba(0, 0, 0, 0.6); /* 黒っぽい影を追加 */
   font-weight: $bold;
+  z-index: 100;
   @include mq(md) {
     font-size: rem(40);
   }
+}
+
+.section-title::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background: $title;
+  z-index: -1;
+}
+
+.about__title.section-title::after{
+  background:none;
+}
+
+.challenge__title--color.section-title::after{
+  background:none;
 }

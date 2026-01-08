@@ -27,16 +27,12 @@
 }
 
 .challenge__title.section-title {
-  background: $skyblue;
   font-size: rem(24);
   @include mq(md) {
     font-size: rem(40);
   }
 }
 
-.challenge__title.challenge__title--color{
-  background:$footer-blue;
-}
 
 .challenge__title.section-title br {
   @include mq(md) {
