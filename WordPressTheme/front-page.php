@@ -21,21 +21,21 @@
                 echo "<!-- row $row -->";
 
             ?>
-                <div class="mv__scroll-row mv__scroll-row--row<?php echo $row; ?>">
-                    <?php for ($loop = 0; $loop < 10; $loop++): ?>
-                        <?php for ($i = $start; $i <= $end; $i++): ?>
-                            <?php
+            <div class="mv__scroll-row mv__scroll-row--row<?php echo $row; ?>">
+                <?php for ($loop = 0; $loop < 10; $loop++): ?>
+                <?php for ($i = $start; $i <= $end; $i++): ?>
+                <?php
                             $image_url = get_field($prefix . $i);
                             echo "<!-- image: $prefix$i -->";
 
                             if ($image_url): ?>
-                                <img src="<?php echo esc_url($image_url); ?>" alt="スライド画像">
-                            <?php else: ?>
-                                <?php echo "<!-- $prefix$i is empty -->"; ?>
-                            <?php endif; ?>
-                        <?php endfor; ?>
-                    <?php endfor; ?>
-                </div>
+                <img src="<?php echo esc_url($image_url); ?>" alt="スライド画像">
+                <?php else: ?>
+                <?php echo "<!-- $prefix$i is empty -->"; ?>
+                <?php endif; ?>
+                <?php endfor; ?>
+                <?php endfor; ?>
+            </div>
             <?php endfor; ?>
         </div>
 
@@ -44,7 +44,6 @@
         </div>
     </div>
 </div>
-</section>
 <section class="top-news top-news-layout" id="news">
     <div class="top-news__inner inner">
         <h2 class="top-news__title section-title">お知らせ</h2>
@@ -72,22 +71,22 @@
             if ($query->have_posts()) :
                 echo '<ul class="top-news__list list">';
                 while ($query->have_posts()) : $query->the_post(); ?>
-                    <li class="list__item">
-                        <a href="<?php the_permalink(); ?>">
-                            <div class="list__item-meta">
-                                <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
-                                    <?php echo get_the_date('Y.m.d'); ?>
-                                </time>
-                                <?php
+            <li class="list__item">
+                <a href="<?php the_permalink(); ?>">
+                    <div class="list__item-meta">
+                        <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                            <?php echo get_the_date('Y.m.d'); ?>
+                        </time>
+                        <?php
                                 $terms = get_the_terms(get_the_ID(), 'news_category');
                                 if ($terms && !is_wp_error($terms)) {
                                     echo '<p class="list__item-category">' . esc_html($terms[0]->name) . '</p>';
                                 }
                                 ?>
-                            </div>
-                            <p class="list__item-title"><?php the_title(); ?></p>
-                        </a>
-                    </li>
+                    </div>
+                    <p class="list__item-title"><?php the_title(); ?></p>
+                </a>
+            </li>
             <?php endwhile;
                 echo '</ul>';
                 wp_reset_postdata();
@@ -215,66 +214,22 @@
                     // テキストが未入力ならデフォルト文字を使う
                     $link_text = $pdf_text ? $pdf_text : '会報をダウンロード（' . $pdf_count . '）';
             ?>
-                    <li class="newsletter__item fade-in js-fadeIn">
-                        <a href="<?php echo esc_url($pdf_url); ?>" target="_blank" rel="noopener">
-                            <?php echo esc_html($link_text); ?>
-                        </a>
-                    </li>
-                <?php
+            <li class="newsletter__item fade-in js-fadeIn">
+                <a href="<?php echo esc_url($pdf_url); ?>" target="_blank" rel="noopener">
+                    <?php echo esc_html($link_text); ?>
+                </a>
+            </li>
+            <?php
                 }
             }
             // どのPDFも登録されていない場合
             if ($pdf_count === 0): ?>
-                <li class="newsletter__item">
-                    <span>現在ダウンロードできる会報はありません</span>
-                </li>
+            <li class="newsletter__item">
+                <span>現在ダウンロードできる会報はありません</span>
+            </li>
             <?php endif; ?>
         </ul>
     </div>
 </section>
-<!-- faq -->
-<!-- <section class="faq faq-layout">
-    <div class="faq__inner inner">
-        <h2 class="faq__title section-title fade-in js-fadeIn">よくあるご質問</h2>
-
-        <?php $faq_blocks = SCF::get('faq_blocks'); ?>
-        <?php if (!empty($faq_blocks)) : ?>
-            <?php foreach ($faq_blocks as $block) : ?>
-                <?php
-                $block_title = esc_html($block['faq_block_title']);
-                $block_id = esc_attr($block['faq_block_id']);
-                ?>
-                <div class="faq__block" id="<?php echo $block_id; ?>">
-                    <h3 class="faq__sub-title fade-in js-fadeIn" fade-in js-fadeIn><?php echo $block_title; ?></h3>
-                    <ul class="faq-item__accordion-area js-faq-accordion-area fade-in js-fadeIn">
-
-                        <?php
-                        for ($i = 1; $i <= 10; $i++) :
-                            $q = $block["faq_question_{$i}"] ?? '';
-                            $a = $block["faq_answer_{$i}"] ?? '';
-                            if (!empty($q) && !empty($a)) :
-                        ?>
-                                <li class="faq-item faq__item">
-                                    <div class="faq-item__accordion-title js-faq-accordion-title">
-                                        <span class="faq-item__accordion-title-text"><?php echo esc_html($q); ?></span>
-                                    </div>
-                                    <div class="faq-item__accordion-box js-faq-accordion-box">
-                                        <div class="faq-item__accordion-box-text">
-                                            <?php echo wp_kses_post($a); ?>
-                                        </div>
-
-                                    </div>
-                                </li>
-                        <?php
-                            endif;
-                        endfor;
-                        ?>
-
-                    </ul>
-                </div>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    </div>
-</section> -->
 
 <?php get_footer(); ?>

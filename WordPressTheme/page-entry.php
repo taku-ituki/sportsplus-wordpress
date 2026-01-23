@@ -2,8 +2,7 @@
 <!-- メインビュー -->
 <section class="sub-fv sub-fv-layout">
     <picture class="sub-fv__img">
-        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/spo.jpg"
-            media="(max-width: 767px)" />
+        <source srcset="<?php echo get_theme_file_uri(); ?>/assets/images/common/spo.jpg" media="(max-width: 767px)" />
         <img src="<?php echo get_theme_file_uri(); ?>/assets/images/common/spo.jpg" alt="diving" />
     </picture>
     <div class="sub-fv__overlay"></div>
@@ -21,7 +20,8 @@
             <ul class="entry-toc-list toc__list">
                 <li class="entry-toc-item toc__item"><a href="#school" class="toc__link">年間講座の申込方法</a></li>
                 <li class="entry-toc-item toc__item"><a href="#apply-club" class="toc__link">部活動地域展開の申込方法</a></li>
-                <li class="entry-toc-item toc__item"><a href="#apply-challenge" class="toc__link">授業後スポーツチャレンジの申込方法</a></li>
+                <li class="entry-toc-item toc__item"><a href="#apply-challenge" class="toc__link">授業後スポーツチャレンジの申込方法</a>
+                </li>
                 <li class="entry-toc-item toc__item"><a href="#member" class="toc__link">賛助会員の募集</a></li>
                 <li class="entry-toc-item toc__item"><a href="#support-group" class="toc__link">助成団体</a></li>
             </ul>
@@ -51,7 +51,8 @@
                     <p class="entry__step-text">
                         継続会員・新規会員で申込み開始時期が異なります。<br />
                         申込みは、スポーツプラスおおはる窓口での提出が必要です。申込書は窓口で受け取るか、
-                        <a class="entry__link" href="<?php echo esc_url(home_url("/application")) ?>" target="_blank" rel="noopener noreferrer">こちら</a>
+                        <a class="entry__link" href="<?php echo esc_url(home_url("/application")) ?>" target="_blank"
+                            rel="noopener noreferrer">こちら</a>
                         から入会申込書ダウンロードしてご持参ください。<br />抽選対象の講座もございますので、ご注意ください。
                     </p>
                 </div>
@@ -83,20 +84,20 @@
                 <?php
                 $entry_group = get_field('entry_group1');
                 if ($entry_group) : ?>
-                    <div class="membership-info__definition">
-                        <dt class="membership-info__term">継続会員受付</dt>
-                        <dd class="membership-info__desc"><?php echo esc_html($entry_group['term1_desc']); ?></dd>
-                    </div>
-                    <div class="membership-info__definition">
-                        <dt class="membership-info__term">新規会員受付</dt>
-                        <dd class="membership-info__desc">
-                            <?php echo nl2br(esc_html($entry_group['term2_desc'])); ?>
-                        </dd>
-                    </div>
-                    <div class="membership-info__definition">
-                        <dt class="membership-info__term">随時受付</dt>
-                        <dd class="membership-info__desc"><?php echo esc_html($entry_group['term3_desc']); ?></dd>
-                    </div>
+                <div class="membership-info__definition">
+                    <dt class="membership-info__term">継続会員受付</dt>
+                    <dd class="membership-info__desc"><?php echo esc_html($entry_group['term1_desc']); ?></dd>
+                </div>
+                <div class="membership-info__definition">
+                    <dt class="membership-info__term">新規会員受付</dt>
+                    <dd class="membership-info__desc">
+                        <?php echo nl2br(esc_html($entry_group['term2_desc'])); ?>
+                    </dd>
+                </div>
+                <div class="membership-info__definition">
+                    <dt class="membership-info__term">随時受付</dt>
+                    <dd class="membership-info__desc"><?php echo esc_html($entry_group['term3_desc']); ?></dd>
+                </div>
             </dl>
 
             <dl class="membership-info__definition-list">
@@ -106,7 +107,8 @@
                 </div>
                 <div class="membership-info__definition">
                     <dt class="membership-info__term">方法</dt>
-                    <dd class="membership-info__desc"> <?php echo apply_filters('the_content', $entry_group['term5_desc'] ?? ''); ?></dd>
+                    <dd class="membership-info__desc">
+                        <?php echo apply_filters('the_content', $entry_group['term5_desc'] ?? ''); ?></dd>
                 </div>
                 <div class="membership-info__definition">
                     <dt class="membership-info__term">注意</dt>
@@ -114,12 +116,12 @@
                 </div>
             </dl>
         </div>
-    <?php endif; ?>
-    <!-- 年会費・参加費 -->
-    <div class="membership-info__section membership-info__section--orange">
-        <h2 class="membership-info__title">年会費・参加費</h2>
-        <p class="membership-info__text">入会には、年会費（保険料を含む）＋参加費が必要です。</p>
-        <?php
+        <?php endif; ?>
+        <!-- 年会費・参加費 -->
+        <div class="membership-info__section membership-info__section--orange">
+            <h2 class="membership-info__title">年会費・参加費</h2>
+            <p class="membership-info__text">入会には、年会費（保険料を含む）＋参加費が必要です。</p>
+            <?php
         $entry_group2 = get_field('entry_group2');
         if ($entry_group2) : ?>
             <table class="membership-info__table membership-table">
@@ -154,8 +156,8 @@
                     <?php echo apply_filters('the_content', $entry_group2['fee_notes'] ?? ''); ?>
                 </div>
             </div>
-    </div>
-<?php endif; ?>
+        </div>
+        <?php endif; ?>
     </div>
 </section>
 
@@ -170,63 +172,63 @@
             $group = get_field('group_apply_club'); // グループフィールドの取得
             if ($group):
             ?>
-                <!-- 対象者 -->
-                <div class="apply__step">
-                    <h3 class="apply__step-title">対象者</h3>
-                    <div class="apply__content">
-                        <?php
+            <!-- 対象者 -->
+            <div class="apply__step">
+                <h3 class="apply__step-title">対象者</h3>
+                <div class="apply__content">
+                    <?php
                         echo !empty($group['apply_club_step1'])
                             ? wp_kses_post($group['apply_club_step1'])
                             : '現在準備中';
                         ?>
-                    </div>
                 </div>
+            </div>
 
-                <!-- 参加申込 -->
-                <div class="apply__step">
-                    <h3 class="apply__step-title">参加申込</h3>
-                    <div class="apply__content">
-                        <?php
+            <!-- 参加申込 -->
+            <div class="apply__step">
+                <h3 class="apply__step-title">参加申込</h3>
+                <div class="apply__content">
+                    <?php
                         echo !empty($group['apply_club_step2'])
                             ? wp_kses_post($group['apply_club_step2'])
                             : '現在準備中';
                         ?>
-                    </div>
                 </div>
+            </div>
 
-                <!-- 連絡方法 -->
-                <div class="apply__step">
-                    <h3 class="apply__step-title">連絡方法</h3>
-                    <div class="apply__content">
-                        <?php
+            <!-- 連絡方法 -->
+            <div class="apply__step">
+                <h3 class="apply__step-title">連絡方法</h3>
+                <div class="apply__content">
+                    <?php
                         echo !empty($group['apply_club_step3'])
                             ? wp_kses_post($group['apply_club_step3'])
                             : '現在準備中';
                         ?>
-                    </div>
                 </div>
+            </div>
 
-                <!-- 備考 -->
-                <div class="apply__step">
-                    <h3 class="apply__step-title">備考</h3>
-                    <div class="apply__content">
-                        <?php
+            <!-- 備考 -->
+            <div class="apply__step">
+                <h3 class="apply__step-title">備考</h3>
+                <div class="apply__content">
+                    <?php
                         echo !empty($group['apply_club_step4'])
                             ? wp_kses_post($group['apply_club_step4']) // HTMLタグOK、安全に出力
                             : '現在準備中';
                         ?>
-                    </div>
                 </div>
+            </div>
 
-                <!-- 連絡先 -->
-                <div class="apply__contact">
-                    <h3 class="apply__step-title">連絡先</h3>
-                    <?php
+            <!-- 連絡先 -->
+            <div class="apply__contact">
+                <h3 class="apply__step-title">連絡先</h3>
+                <?php
                     echo !empty($group['apply_contact_info'])
                         ? wp_kses_post($group['apply_contact_info'])
                         : '現在準備中';
                     ?>
-                </div>
+            </div>
             <?php endif; ?>
         </div>
     </div>
@@ -243,66 +245,66 @@
             $group = get_field('group_apply_challenge'); // グループフィールドの取得
             if ($group):
             ?>
-                <!-- 対象者 -->
-                <div class="apply__step">
-                    <h3 class="apply__step-title">対象者</h3>
-                    <div class="apply__content">
-                        <?php
+            <!-- 対象者 -->
+            <div class="apply__step">
+                <h3 class="apply__step-title">対象者</h3>
+                <div class="apply__content">
+                    <?php
                         echo !empty($group['group_apply_challenge1'])
                             ? wp_kses_post($group['group_apply_challenge1'])
                             : '現在準備中';
                         ?>
-                    </div>
                 </div>
+            </div>
 
 
-                <!-- 参加申込 -->
-                <div class="apply__step">
-                    <h3 class="apply__step-title">参加申込</h3>
-                    <div class="apply__content">
-                        <?php
+            <!-- 参加申込 -->
+            <div class="apply__step">
+                <h3 class="apply__step-title">参加申込</h3>
+                <div class="apply__content">
+                    <?php
                         echo !empty($group['group_apply_challenge2'])
                             ? wp_kses_post($group['group_apply_challenge2'])
                             : '現在準備中';
                         ?>
-                    </div>
                 </div>
+            </div>
 
-                <!-- 連絡方法 -->
-                <div class="apply__step">
-                    <h3 class="apply__step-title">連絡方法</h3>
-                    <div class="apply__content">
-                        <?php
+            <!-- 連絡方法 -->
+            <div class="apply__step">
+                <h3 class="apply__step-title">連絡方法</h3>
+                <div class="apply__content">
+                    <?php
                         echo !empty($group['group_apply_challenge3'])
                             ? wp_kses_post($group['group_apply_challenge3'])
                             : '現在準備中';
                         ?>
-                    </div>
                 </div>
+            </div>
 
-                <!-- 備考 -->
-                <div class="apply__step">
-                    <h3 class="apply__step-title">備考</h3>
-                    <div class="apply__content">
-                        <?php
+            <!-- 備考 -->
+            <div class="apply__step">
+                <h3 class="apply__step-title">備考</h3>
+                <div class="apply__content">
+                    <?php
                         echo !empty($group['group_apply_challenge4'])
                             ? wp_kses_post($group['group_apply_challenge4'])
                             : '現在準備中';
                         ?>
-                    </div>
                 </div>
+            </div>
 
-                <!-- 連絡先 -->
-                <div class="apply__contact">
-                    <h3 class="apply__step-title">連絡先</h3>
-                    <p class="apply__contact-info">
-                        <?php
+            <!-- 連絡先 -->
+            <div class="apply__contact">
+                <h3 class="apply__step-title">連絡先</h3>
+                <p class="apply__contact-info">
+                    <?php
                         echo !empty($group['apply_contact_info'])
                             ? wp_kses_post($group['apply_contact_info'])
                             : '現在準備中';
                         ?>
-                    </p>
-                </div>
+                </p>
+            </div>
             <?php endif; ?>
 
         </div>
@@ -317,28 +319,28 @@
         <?php
         $member = get_field('member_group');
         if ($member) : ?>
-            <table class="member-info__table membership-table">
-                <thead>
-                    <tr>
-                        <th>区分</th>
-                        <th>年会費</th>
-                        <th>備考</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>個人</td>
-                        <td><?php echo esc_html($member['member_individual_fee']); ?></td>
-                        <td rowspan="2">
-                            <?php echo wp_kses_post($member['member_note']); ?>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>法人および団体</td>
-                        <td><?php echo esc_html($member['member_corporate_fee']); ?></td>
-                    </tr>
-                </tbody>
-            </table>
+        <table class="member-info__table membership-table">
+            <thead>
+                <tr>
+                    <th>区分</th>
+                    <th>年会費</th>
+                    <th>備考</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>個人</td>
+                    <td><?php echo esc_html($member['member_individual_fee']); ?></td>
+                    <td rowspan="2">
+                        <?php echo wp_kses_post($member['member_note']); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <td>法人および団体</td>
+                    <td><?php echo esc_html($member['member_corporate_fee']); ?></td>
+                </tr>
+            </tbody>
+        </table>
         <?php endif; ?>
         <div class="member__club-support-wrap">
             <h3 class=" section-sub-title" id="support-members">部活動地域展開サポーターTシャツ</h3>
@@ -346,67 +348,67 @@
             $block = get_field('club_support_block');
             if ($block) :
             ?>
-                <div class="member__club-support">
-                    <?php if (!empty($block['lead_text'])) : ?>
-                        <div class="member__club-support-lead">
-                            <p class="member__club-support-text">
-                                <?php echo nl2br(esc_html($block['lead_text'])); ?>
-                            </p>
-                        </div>
+            <div class="member__club-support">
+                <?php if (!empty($block['lead_text'])) : ?>
+                <div class="member__club-support-lead">
+                    <p class="member__club-support-text">
+                        <?php echo nl2br(esc_html($block['lead_text'])); ?>
+                    </p>
+                </div>
+                <?php endif; ?>
+
+                <div class="member__club-support-shirt">
+                    <?php if (!empty($block['title'])) : ?>
+                    <h4 class="member__club-support-title">
+                        <?php echo esc_html($block['title']); ?>
+                    </h4>
                     <?php endif; ?>
 
-                    <div class="member__club-support-shirt">
-                        <?php if (!empty($block['title'])) : ?>
-                            <h4 class="member__club-support-title">
-                                <?php echo esc_html($block['title']); ?>
-                            </h4>
-                        <?php endif; ?>
+                    <?php if (!empty($block['subtext'])) : ?>
+                    <p class="member__club-support-text">
+                        <?php echo nl2br(esc_html($block['subtext'])); ?>
+                    </p>
+                    <?php endif; ?>
 
-                        <?php if (!empty($block['subtext'])) : ?>
-                            <p class="member__club-support-text">
-                                <?php echo nl2br(esc_html($block['subtext'])); ?>
-                            </p>
+                    <ul class="member__club-support-list">
+                        <?php if (!empty($block['item_1'])) : ?>
+                        <li class="member__club-support-item"><?php echo esc_html($block['item_1']); ?></li>
                         <?php endif; ?>
-
-                        <ul class="member__club-support-list">
-                            <?php if (!empty($block['item_1'])) : ?>
-                                <li class="member__club-support-item"><?php echo esc_html($block['item_1']); ?></li>
-                            <?php endif; ?>
-                            <?php if (!empty($block['item_2'])) : ?>
-                                <li class="member__club-support-item"><?php echo esc_html($block['item_2']); ?></li>
-                            <?php endif; ?>
-                            <?php if (!empty($block['item_3'])) : ?>
-                                <li class="member__club-support-item"><?php echo esc_html($block['item_3']); ?></li>
-                            <?php endif; ?>
-                        </ul>
-                    </div>
-                    <?php
+                        <?php if (!empty($block['item_2'])) : ?>
+                        <li class="member__club-support-item"><?php echo esc_html($block['item_2']); ?></li>
+                        <?php endif; ?>
+                        <?php if (!empty($block['item_3'])) : ?>
+                        <li class="member__club-support-item"><?php echo esc_html($block['item_3']); ?></li>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+                <?php
                     $block = get_field('club_support_block');
 
                     if (is_array($block) && !empty($block['apply_image_list']) && is_array($block['apply_image_list'])) :
                         $images = $block['apply_image_list'];
                     ?>
-                        <ul class="apply__img-list">
-                            <?php if (!empty($images['img_1'])) : ?>
-                                <li class="apply__item-img">
-                                    <img src="<?php echo esc_url($images['img_1']); ?>" alt="スポーツチャレンジの様子">
-                                </li>
-                            <?php endif; ?>
-
-                            <?php if (!empty($images['img_2'])) : ?>
-                                <li class="apply__item-img">
-                                    <img src="<?php echo esc_url($images['img_2']); ?>" alt="スポーツチャレンジの様子">
-                                </li>
-                            <?php endif; ?>
-
-                            <?php if (!empty($images['img_3'])) : ?>
-                                <li class="apply__item-img">
-                                    <img src="<?php echo esc_url($images['img_3']); ?>" alt="スポーツチャレンジの様子">
-                                </li>
-                            <?php endif; ?>
-                        </ul>
+                <ul class="apply__img-list">
+                    <?php if (!empty($images['img_1'])) : ?>
+                    <li class="apply__item-img">
+                        <img src="<?php echo esc_url($images['img_1']); ?>" alt="スポーツチャレンジの様子">
+                    </li>
                     <?php endif; ?>
-                </div>
+
+                    <?php if (!empty($images['img_2'])) : ?>
+                    <li class="apply__item-img">
+                        <img src="<?php echo esc_url($images['img_2']); ?>" alt="スポーツチャレンジの様子">
+                    </li>
+                    <?php endif; ?>
+
+                    <?php if (!empty($images['img_3'])) : ?>
+                    <li class="apply__item-img">
+                        <img src="<?php echo esc_url($images['img_3']); ?>" alt="スポーツチャレンジの様子">
+                    </li>
+                    <?php endif; ?>
+                </ul>
+                <?php endif; ?>
+            </div>
             <?php endif; ?>
 
         </div>
@@ -448,31 +450,32 @@
                     : esc_url(get_theme_file_uri('/assets/images/common/no-image.jpg'));
                 $text = esc_html($item['group_text']);
         ?>
-                <li class="support__group-link">
-                    <a href="<?php echo $url; ?>" target="_blank" rel="noopener noreferrer">
-                        <h3 class="support__link-title"><span><?php echo $title; ?></span></h3>
-                        <div class="support__card">
-                            <div class="support__card-img">
-                                <img src="<?php echo $image_url; ?>" alt="<?php echo $title ? esc_attr($title) . 'のリンク画像' : 'アイキャッチ画像未設定'; ?>" />
-                            </div>
-                            <p class="support__card-text"><?php echo $text; ?></p>
-                        </div>
-                    </a>
-                </li>
+        <li class="support__group-link">
+            <a href="<?php echo $url; ?>" target="_blank" rel="noopener noreferrer">
+                <h3 class="support__link-title"><span><?php echo $title; ?></span></h3>
+                <div class="support__card">
+                    <div class="support__card-img">
+                        <img src="<?php echo $image_url; ?>"
+                            alt="<?php echo $title ? esc_attr($title) . 'のリンク画像' : 'アイキャッチ画像未設定'; ?>" />
+                    </div>
+                    <p class="support__card-text"><?php echo $text; ?></p>
+                </div>
+            </a>
+        </li>
         <?php
             endforeach;
         }
         ?>
         <!-- 自動で種類ごとに出力 -->
         <?php foreach ($support_by_type as $type_label => $group_items) : ?>
-            <?php if (!empty($group_items)) : ?>
-                <div class="support__group">
-                    <h3 class="support__sub-title"><span><?php echo esc_html($type_label); ?></span></h3>
-                    <ul>
-                        <?php display_support_group($group_items); ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
+        <?php if (!empty($group_items)) : ?>
+        <div class="support__group">
+            <h3 class="support__sub-title"><span><?php echo esc_html($type_label); ?></span></h3>
+            <ul>
+                <?php display_support_group($group_items); ?>
+            </ul>
+        </div>
+        <?php endif; ?>
         <?php endforeach; ?>
     </div>
 </section>

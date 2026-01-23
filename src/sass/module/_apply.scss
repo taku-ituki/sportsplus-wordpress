@@ -82,6 +82,13 @@
   color: #222;
 }
 
+.apply__content {
+  font-size: rem(14);
+  @include mq(md) {
+    font-size: rem(16);
+  }
+}
+
 .apply__img-list {
   display: grid;
   gap: rem(30);
@@ -108,9 +115,9 @@
 
 .apply__school {
   margin-bottom: 1.5em;
-@include mq(md){
-  display: flex;
-}
+  @include mq(md) {
+    display: flex;
+  }
 }
 
 .apply__school-name {
@@ -122,12 +129,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.3em;
-  margin-left:rem(15);
+  margin-left: rem(15);
   line-height: 1.5;
 }
 
-.apply__school-grade.first{
-  @include mq(md){
-    margin-left:rem(15);
+.apply__school-grade.first {
+  @include mq(md) {
+    margin-left: rem(15);
   }
 }

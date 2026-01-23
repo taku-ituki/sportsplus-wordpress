@@ -38,12 +38,35 @@ function custom_enqueue_scripts()
         true
     );
 
+    // GSAP（head に読み込み）
+    wp_enqueue_script(
+        'gsap',
+        'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js',
+        [],
+        '3.13.0',
+        false  // head に出力
+    );
+    wp_enqueue_script(
+        'gsap-scrolltrigger',
+        'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js',
+        ['gsap'],
+        '3.13.0',
+        false  // head に出力
+    );
+    wp_enqueue_script(
+        'gsap-splittext',
+        'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js',
+        ['gsap'],
+        '3.13.0',
+        false  // head に出力
+    );
+
     // メインJS
     //Ajaxに必要なコード
     wp_enqueue_script(
         'theme-script',
         get_theme_file_uri('/assets/js/script.js'),
-        ['jquery'], // jQuery依存を指定
+        ['jquery', 'gsap', 'gsap-scrolltrigger', 'gsap-splittext'],
         filemtime(get_theme_file_path('/assets/js/script.js')),
         true
     );
@@ -91,22 +114,22 @@ function my_admin_post_thumbnail_preview()
     if (has_post_thumbnail($post->ID)) {
         $thumb_url = get_the_post_thumbnail_url($post->ID, 'medium');
 ?>
-        <style>
-            .editor-styles-wrapper:before {
-                content: '';
-                display: block;
-                width: 100%;
-                max-width: 600px;
-                margin: 0 auto 20px;
-                background-image: url('<?php echo esc_url($thumb_url); ?>');
-                background-size: cover;
-                background-position: center;
-                aspect-ratio: 16 / 9;
-                border: 2px solid #ddd;
-                border-radius: 4px;
-            }
-        </style>
-        <?php
+<style>
+.editor-styles-wrapper:before {
+    content: '';
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    background-image: url('<?php echo esc_url($thumb_url); ?>');
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 16 / 9;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+</style>
+<?php
     }
 }
 add_action('admin_head', 'my_admin_post_thumbnail_preview');
@@ -148,23 +171,23 @@ function filter_news_by_category()
     if ($query->have_posts()) :
         echo '<ul class="top-news__list list">';
         while ($query->have_posts()) : $query->the_post(); ?>
-            <li class="list__item">
-                <a href="<?php the_permalink(); ?>">
-                    <div class="list__item-meta">
-                        <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
-                            <?php echo get_the_date('Y.m.d'); ?>
-                        </time>
-                        <?php
+<li class="list__item">
+    <a href="<?php the_permalink(); ?>">
+        <div class="list__item-meta">
+            <time class="list__item-date" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                <?php echo get_the_date('Y.m.d'); ?>
+            </time>
+            <?php
                         $terms = get_the_terms(get_the_ID(), 'news_category');
                         if ($terms && !is_wp_error($terms)) {
                             echo '<p class="list__item-category">' . esc_html($terms[0]->name) . '</p>';
                         }
                         ?>
-                    </div>
-                    <p class="list__item-title"><?php the_title(); ?></p>
-                </a>
-            </li>
-        <?php endwhile;
+        </div>
+        <p class="list__item-title"><?php the_title(); ?></p>
+    </a>
+</li>
+<?php endwhile;
         echo '</ul>';
     else :
         echo '<p>現在お知らせはありません。</p>';
@@ -228,22 +251,24 @@ function filter_program_by_category()
             }
 
         ?>
-            <!-- カード -->
-            <li class="intro-card js-program-modal-open<?php echo $category_class; ?>" data-target="<?php echo esc_attr($modal_id); ?>">
-                <figure class="intro-card__image">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('medium'); ?>
-                    <?php else : ?>
-                        <img src="<?php echo esc_url($fallback_src); ?>" alt="no image" loading="lazy" />
-                    <?php endif; ?>
-                </figure>
-                <div class="intro-card__content">
-                    <h3 class="intro-card__title"><?php the_title(); ?></h3>
-                    <dl class="intro-card__details">
-                        <div class="intro-card__detail">
-                            <dt>区分</dt>
-                            <dd>
-                                <?php
+<!-- カード -->
+<li class="intro-card js-program-modal-open<?php echo $category_class; ?>"
+    data-target="<?php echo esc_attr($modal_id); ?>">
+    <figure class="intro-card__image">
+        <?php if (has_post_thumbnail()) : ?>
+        <?php the_post_thumbnail('medium'); ?>
+        <?php else : ?>
+        <img src="<?php echo esc_url($fallback_src); ?>" alt="no image" loading="lazy" />
+        <?php endif; ?>
+    </figure>
+    <div class="intro-card__content">
+        <h4 class="intro-card__click">👆クリックで活動風景を紹介👆</h4>
+        <h3 class="intro-card__title"><?php the_title(); ?></h3>
+        <dl class="intro-card__details">
+            <div class="intro-card__detail">
+                <dt>区分</dt>
+                <dd>
+                    <?php
                                 $terms = get_the_terms(get_the_ID(), 'program_category');
                                 if ($terms && !is_wp_error($terms)) {
                                     // 複数カテゴリーがついている場合は最初の1つだけ表示
@@ -252,58 +277,58 @@ function filter_program_by_category()
                                     echo 'カテゴリなし';
                                 }
                                 ?>
-                            </dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>開催日</dt>
-                            <dd><?php the_field('program_day'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>時間</dt>
-                            <dd><?php the_field('program_time'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>対象</dt>
-                            <dd><?php the_field('program_age'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>講師</dt>
-                            <dd><?php the_field('program_teacher'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>定員</dt>
-                            <dd><?php the_field('program_capacity'); ?></dd>
-                        </div>
-                        <div class="intro-card__detail">
-                            <dt>紹介文</dt>
-                            <dd><?php the_field('program_description'); ?></dd>
-                        </div>
-                    </dl>
-                </div>
-            </li>
+                </dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>開催日</dt>
+                <dd><?php the_field('program_day'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>時間</dt>
+                <dd><?php the_field('program_time'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>対象</dt>
+                <dd><?php the_field('program_age'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>講師</dt>
+                <dd><?php the_field('program_teacher'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>定員</dt>
+                <dd><?php the_field('program_capacity'); ?></dd>
+            </div>
+            <div class="intro-card__detail">
+                <dt>紹介文</dt>
+                <dd><?php the_field('program_description'); ?></dd>
+            </div>
+        </dl>
+    </div>
+</li>
 
-            <!-- ===== モーダル（各講座専用） ===== -->
-            <div id="<?php echo esc_attr($modal_id); ?>" class="program__modal js-program-modal" aria-hidden="true">
-                <div class="program__modal-overlay js-program-modal-close"></div>
-                <div class="program__modal-content">
-                    <div class="program__modal-close js-program-modal-close">×</div>
-                    <div class="program__modal-images">
-                        <?php
+<!-- ===== モーダル（各講座専用） ===== -->
+<div id="<?php echo esc_attr($modal_id); ?>" class="program__modal js-program-modal" aria-hidden="true">
+    <div class="program__modal-overlay js-program-modal-close"></div>
+    <div class="program__modal-content">
+        <div class="program__modal-close js-program-modal-close">×</div>
+        <div class="program__modal-images">
+            <?php
                         // program_modal_image1〜4 を順に取得
                         for ($i = 1; $i <= 4; $i++) :
                             $image = get_field('program_modal_image' . $i);
                             if ($image) :
                         ?>
-                                <figure class="program__modal-image">
-                                    <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                                </figure>
-                        <?php
+            <figure class="program__modal-image">
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+            </figure>
+            <?php
                             endif;
                         endfor;
                         ?>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </div>
+</div>
 <?php
         endwhile;
         echo '</ul>';

@@ -10,10 +10,12 @@ jQuery(function ($) {
     // セッション内で初回ならローディング表示
     if (!hasLoaded) {
       sessionStorage.setItem("hasLoaded", "true");
-      return true;
+      return true; // 初回アクセス → ローディング表示
     }
-    return false;
+
+    return false; // 2回目以降 → ローディング非表示
   }
+
   function loading() {
     var $loading = $(".js-loading");
     if ($loading.length === 0) return; // ローディングHTMLが無ければスキップ
@@ -132,14 +134,35 @@ jQuery(function ($) {
     $(this).toggleClass("close");
   });
 
-  // ===== フェードインアニメーション =====
-  $(window).on("scroll", function () {
-    $(".js-fadeIn").each(function () {
-      if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.75) {
-        $(this).addClass("is-active");
-      }
+  // ===== フェードインアニメーション（GSAP + ScrollTrigger） =====
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".js-fadeIn").forEach(function (el) {
+      gsap.fromTo(el, {
+        opacity: 0,
+        y: 50
+      }, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 75%",
+          once: true
+        }
+      });
     });
-  }).trigger("scroll");
+  } else {
+    // フォールバック: GSAP 未読込時は従来の jQuery で実行
+    $(window).on("scroll", function () {
+      $(".js-fadeIn").each(function () {
+        if ($(this).offset().top < $(window).scrollTop() + $(window).height() * 0.75) {
+          $(this).addClass("is-active");
+        }
+      });
+    }).trigger("scroll");
+  }
 
   // ===== 講座カテゴリータブ（Ajax切り替え） =====
   $(".js-program-tabs .category__menu a").on("click", function (e) {

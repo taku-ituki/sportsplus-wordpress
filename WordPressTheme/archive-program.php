@@ -25,15 +25,18 @@
             <nav class="program-intro__toc toc">
                 <ul class="program-intro__toc-list toc__list">
                     <li class="program-intro__toc-item toc__item"><a href="#archive" class="toc__link">講座一覧</a></li>
-                    <li class="program-intro__toc-item toc__item"><a href="#pamphlet" class="toc__link">講座パンフレット</a></li>
+                    <li class="program-intro__toc-item toc__item"><a href="#pamphlet" class="toc__link">講座パンフレット</a>
+                    </li>
                     <li class="program-intro__toc-item toc__item"><a href="#calendar" class="toc__link">カレンダー</a></li>
-                    <li class="program-intro__toc-item toc__item"><a href="#availability" class="toc__link">講座の申込状況</a></li>
+                    <li class="program-intro__toc-item toc__item"><a href="#availability" class="toc__link">講座の申込状況</a>
+                    </li>
                 </ul>
             </nav>
         </div>
         <!-- お申込リンク -->
         <div class="program__btn common-btn">
-            <a class="program__btn-link common-btn__link common-btn__link--color" href="<?php echo esc_url(home_url("/entry#school")) ?>">お申込方法はこちら</a>
+            <a class="program__btn-link common-btn__link common-btn__link--color"
+                href="<?php echo esc_url(home_url("/entry#school")) ?>">お申込方法はこちら</a>
         </div>
     </div>
 </section>
@@ -50,9 +53,10 @@
                 $terms = get_terms(['taxonomy' => 'program_category', 'hide_empty' => true]);
                 foreach ($terms as $term) :
                 ?>
-                    <li class="category__menu">
-                        <a href="#" data-slug="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></a>
-                    </li>
+                <li class="category__menu">
+                    <a href="#"
+                        data-slug="<?php echo esc_attr($term->slug); ?>"><?php echo esc_html($term->name); ?></a>
+                </li>
                 <?php endforeach; ?>
             </ul>
         </div>
@@ -68,7 +72,7 @@
                         $fallback_src = get_theme_file_uri('/assets/images/common/no-image.jpg');
                         $modal_id = 'programModal_' . get_the_ID();
                 ?>
-                        <?php
+                <?php
                         $terms = get_the_terms(get_the_ID(), 'program_category');
                         $category_class = '';
 
@@ -78,21 +82,23 @@
                             }
                         }
                         ?>
-                        <!-- カード -->
-                        <li class="intro-card js-program-modal-open<?php echo $category_class; ?>" data-target="<?php echo esc_attr($modal_id); ?>">
-                            <figure class="intro-card__image">
-                                <?php if (has_post_thumbnail()) : the_post_thumbnail('medium');
+                <!-- カード -->
+                <li class="intro-card js-program-modal-open<?php echo $category_class; ?>"
+                    data-target="<?php echo esc_attr($modal_id); ?>">
+                    <figure class="intro-card__image">
+                        <?php if (has_post_thumbnail()) : the_post_thumbnail('medium');
                                 else : ?>
-                                    <img src="<?php echo esc_url($fallback_src); ?>" alt="no image" loading="lazy">
-                                <?php endif; ?>
-                            </figure>
-                            <div class="intro-card__content">
-                                <h3 class="intro-card__title"><?php the_title(); ?></h3>
-                                <dl class="intro-card__details">
-                                    <div class="intro-card__detail">
-                                        <dt>区分</dt>
-                                        <dd>
-                                            <?php
+                        <img src="<?php echo esc_url($fallback_src); ?>" alt="no image" loading="lazy">
+                        <?php endif; ?>
+                    </figure>
+                    <div class="intro-card__content">
+                        <h4 class="intro-card__click">👆クリックで活動風景を紹介👆</h4>
+                        <h3 class="intro-card__title"><?php the_title(); ?></h3>
+                        <dl class=" intro-card__details">
+                            <div class="intro-card__detail">
+                                <dt>区分</dt>
+                                <dd>
+                                    <?php
                                             $terms = get_the_terms(get_the_ID(), 'program_category');
                                             if ($terms && !is_wp_error($terms)) {
                                                 // 複数カテゴリーがついている場合は最初の1つだけ表示
@@ -101,36 +107,36 @@
                                                 echo 'カテゴリなし';
                                             }
                                             ?>
-                                        </dd>
-                                    </div>
-                                    <div class="intro-card__detail">
-                                        <dt>開催日</dt>
-                                        <dd><?php the_field('program_day'); ?></dd>
-                                    </div>
-                                    <div class="intro-card__detail">
-                                        <dt>時間</dt>
-                                        <dd><?php the_field('program_time'); ?></dd>
-                                    </div>
-                                    <div class="intro-card__detail">
-                                        <dt>対象</dt>
-                                        <dd><?php the_field('program_age'); ?></dd>
-                                    </div>
-                                    <div class="intro-card__detail">
-                                        <dt>講師</dt>
-                                        <dd><?php the_field('program_teacher'); ?></dd>
-                                    </div>
-                                    <div class="intro-card__detail">
-                                        <dt>定員</dt>
-                                        <dd><?php the_field('program_capacity'); ?></dd>
-                                    </div>
-                                    <div class="intro-card__detail">
-                                        <dt>紹介文</dt>
-                                        <dd><?php the_field('program_description'); ?></dd>
-                                    </div>
-                                </dl>
+                                </dd>
                             </div>
-                        </li>
-                    <?php endwhile;
+                            <div class="intro-card__detail">
+                                <dt>開催日</dt>
+                                <dd><?php the_field('program_day'); ?></dd>
+                            </div>
+                            <div class="intro-card__detail">
+                                <dt>時間</dt>
+                                <dd><?php the_field('program_time'); ?></dd>
+                            </div>
+                            <div class="intro-card__detail">
+                                <dt>対象</dt>
+                                <dd><?php the_field('program_age'); ?></dd>
+                            </div>
+                            <div class="intro-card__detail">
+                                <dt>講師</dt>
+                                <dd><?php the_field('program_teacher'); ?></dd>
+                            </div>
+                            <div class="intro-card__detail">
+                                <dt>定員</dt>
+                                <dd><?php the_field('program_capacity'); ?></dd>
+                            </div>
+                            <div class="intro-card__detail">
+                                <dt>紹介文</dt>
+                                <dd><?php the_field('program_description'); ?></dd>
+                            </div>
+                        </dl>
+                    </div>
+                </li>
+                <?php endwhile;
                     echo '</ul>'; // ✅ ul閉じる
 
                     // ===== モーダル一覧（ulの外） =====
@@ -138,26 +144,27 @@
                     while ($program_query->have_posts()) : $program_query->the_post();
                         $modal_id = 'programModal_' . get_the_ID();
                     ?>
-                        <div id="<?php echo esc_attr($modal_id); ?>" class="program__modal js-program-modal" aria-hidden="true">
-                            <div class="program__modal-overlay js-program-modal-close"></div>
-                            <div class="program__modal-content">
-                                <div class="program__modal-close js-program-modal-close">×</div>
-                                <div class="program__modal-images">
-                                    <?php
+                <div id="<?php echo esc_attr($modal_id); ?>" class="program__modal js-program-modal" aria-hidden="true">
+                    <div class="program__modal-overlay js-program-modal-close"></div>
+                    <div class="program__modal-content">
+                        <div class="program__modal-close js-program-modal-close">×</div>
+                        <div class="program__modal-images">
+                            <?php
                                     for ($i = 1; $i <= 4; $i++) :
                                         $image = get_field('program_modal_image' . $i);
                                         if ($image) :
                                     ?>
-                                            <figure class="program__modal-image">
-                                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                                            </figure>
-                                    <?php
+                            <figure class="program__modal-image">
+                                <img src="<?php echo esc_url($image['url']); ?>"
+                                    alt="<?php echo esc_attr($image['alt']); ?>">
+                            </figure>
+                            <?php
                                         endif;
                                     endfor;
                                     ?>
-                                </div>
-                            </div>
                         </div>
+                    </div>
+                </div>
                 <?php
                     endwhile;
                     wp_reset_postdata();
@@ -182,26 +189,27 @@ if ($program_page) {
 ?>
 
 <?php if (!empty($pamphlet_pdf)) : ?>
-    <section class="program-pamphlet program-pamphlet-layout" id="pamphlet">
-        <div class="inner program-pamphlet__inner">
-            <h2 class="program-pamphlet__title section-title">パンフレット</h2>
-            <div class="inner program-pamphlet__inner">
-                <div class="program-pamphlet__pdf pdf">
-                    <embed
-                        src="<?php echo esc_url($pamphlet_pdf); ?>"
-                        class="pdf__url"
-                        type="application/pdf"
-                        width="100%"
-                        height="600px" />
-                </div>
-                <div class="access__btn common-btn">
-                    <a class="access__btn-link common-btn__link" href="<?php echo esc_url($pamphlet_pdf); ?>" download target="_blank" rel="noopener">
-                        PDFをダウンロードする
-                    </a>
-                </div>
+<section class="program-pamphlet program-pamphlet-layout" id="pamphlet">
+    <div class="inner program-pamphlet__inner">
+        <h2 class="program-pamphlet__title section-title">パンフレット</h2>
+
+        <div class="program-pamphlet__pdf pdf">
+            <div class="pdf__viewer-wrapper">
+                <iframe
+                    src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url($pamphlet_pdf)); ?>&embedded=true"
+                    loading="lazy" allowfullscreen>
+                </iframe>
+            </div>
+
+            <div class="access__btn common-btn">
+                <a class="access__btn-link common-btn__link" href="<?php echo esc_url($pamphlet_pdf); ?>" download
+                    target="_blank" rel="noopener noreferrer">
+                    PDFをダウンロードする
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 <?php endif; ?>
 
 
@@ -209,7 +217,8 @@ if ($program_page) {
 <?php
 $program_page = get_page_by_path('program');
 
-$month_pdf = null;
+$month_pdf1 = null;
+$month_pdf2 = null;
 $annual_pdf = null;
 
 if ($program_page) {
@@ -227,65 +236,71 @@ if ($program_page) {
 
         <!-- 月間カレンダー -->
         <h3 class="program-calendar__sub-title">月間カレンダー</h3>
-        <h4 class="program-calender__month">
-            【今月分】
-        </h4>
+
+        <!-- 今月分 -->
+        <h4 class="program-calender__month">【今月分】</h4>
         <?php if (!empty($month_pdf1)) : ?>
-            <div class="program-calendar__pdf pdf">
-                <embed
-                    src="<?php echo esc_url(is_array($month_pdf1) ? $month_pdf1['url'] : $month_pdf1); ?>"
-                    class="pdf__url"
-                    type="application/pdf"
-                    width="100%"
-                    height="600px" />
+        <div class="program-calendar__pdf pdf">
+            <div class="pdf__viewer-wrapper">
+                <iframe
+                    src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url(is_array($month_pdf1) ? $month_pdf1['url'] : $month_pdf1)); ?>&embedded=true"
+                    loading="lazy" allowfullscreen>
+                </iframe>
             </div>
             <div class="access__btn common-btn">
-                <a class="access__btn-link common-btn__link" href="<?php echo esc_url(is_array($month_pdf1) ? $month_pdf1['url'] : $month_pdf1); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
+                <a class="access__btn-link common-btn__link"
+                    href="<?php echo esc_url(is_array($month_pdf1) ? $month_pdf1['url'] : $month_pdf1); ?>" download
+                    target="_blank" rel="noopener">
+                    PDFをダウンロードする
+                </a>
             </div>
-        <?php else : ?>
+            <?php else : ?>
             <p>月間カレンダーは現在準備中です。</p>
-        <?php endif; ?>
+            <?php endif; ?>
 
-        <!-- 月間カレンダー -->
-        <h4 class="program-calender__month">
-            【翌月分】
-        </h4>
-        <?php if (!empty($month_pdf2)) : ?>
+            <!-- 翌月分 -->
+            <h4 class="program-calender__month">【翌月分】</h4>
+            <?php if (!empty($month_pdf2)) : ?>
             <div class="program-calendar__pdf pdf">
-                <embed
-                    src="<?php echo esc_url(is_array($month_pdf2) ? $month_pdf2['url'] : $month_pdf2); ?>"
-                    class="pdf__url"
-                    type="application/pdf"
-                    width="100%"
-                    height="600px" />
-            </div>
-            <div class="access__btn common-btn">
-                <a class="access__btn-link common-btn__link" href="<?php echo esc_url(is_array($month_pdf2) ? $month_pdf2['url'] : $month_pdf2); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
-            </div>
-        <?php else : ?>
-            <p>月間カレンダーは現在準備中です。</p>
-        <?php endif; ?>
+                <div class="pdf__viewer-wrapper">
+                    <iframe
+                        src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url(is_array($month_pdf2) ? $month_pdf2['url'] : $month_pdf2)); ?>&embedded=true"
+                        loading="lazy" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="access__btn common-btn">
+                    <a class="access__btn-link common-btn__link"
+                        href="<?php echo esc_url(is_array($month_pdf2) ? $month_pdf2['url'] : $month_pdf2); ?>" download
+                        target="_blank" rel="noopener">
+                        PDFをダウンロードする
+                    </a>
+                </div>
+                <?php else : ?>
+                <p>月間カレンダーは現在準備中です。</p>
+                <?php endif; ?>
 
-        <!-- 年間カレンダー -->
-        <h3 class="program-calendar__sub-title program-calendar__sub-title-year">年間カレンダー</h3>
-        <?php if (!empty($annual_pdf)) : ?>
-            <div class="program-calendar__pdf pdf">
-                <embed
-                    src="<?php echo esc_url(is_array($annual_pdf) ? $annual_pdf['url'] : $annual_pdf); ?>"
-                    class="pdf__url"
-                    type="application/pdf"
-                    width="100%"
-                    height="600px" />
-            </div>
-            <div class="access__btn common-btn">
-                <a class="access__btn-link common-btn__link" href="<?php echo esc_url(is_array($annual_pdf) ? $annual_pdf['url'] : $annual_pdf); ?>" download target="_blank" rel="noopener">PDFをダウンロードする</a>
-            </div>
-        <?php else : ?>
-            <p>年間カレンダーは現在準備中です。</p>
-        <?php endif; ?>
-    </div>
+                <!-- 年間カレンダー -->
+                <h3 class="program-calendar__sub-title program-calendar__sub-title-year">年間カレンダー</h3>
+                <?php if (!empty($annual_pdf)) : ?>
+                <div class="program-calendar__pdf pdf">
+                    <div class="pdf__viewer-wrapper">
+                        <iframe
+                            src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url(is_array($annual_pdf) ? $annual_pdf['url'] : $annual_pdf)); ?>&embedded=true"
+                            loading="lazy" allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="access__btn common-btn">
+                        <a class="access__btn-link common-btn__link"
+                            href="<?php echo esc_url(is_array($annual_pdf) ? $annual_pdf['url'] : $annual_pdf); ?>"
+                            download target="_blank" rel="noopener">
+                            PDFをダウンロードする
+                        </a>
+                    </div>
+                    <?php else : ?>
+                    <p>年間カレンダーは現在準備中です。</p>
+                    <?php endif; ?>
+                </div>
 </section>
-
 
 <?php
 // 固定ページ「program」の投稿オブジェクトを取得
@@ -305,31 +320,30 @@ if ($program_page) {
 <section class="program-availability program-availability-layout" id="availability">
     <div class="inner program-availability__inner">
         <h2 class="program-availability__title section-title">講座の申込状況</h2>
-        <div class="program-availability__item">
-            <div class="program-availability__pdf">
-                <?php if (!empty($availability_pdf)) : ?>
-                    <embed
-                        src="<?php echo esc_url(is_array($availability_pdf) ? $availability_pdf['url'] : $availability_pdf); ?>"
-                        type="application/pdf"
-                        width="100%"
-                        height="600px"
-                        class="pdf__url" />
 
-                    <div class="access__btn common-btn">
-                        <a
-                            class="access__btn-link common-btn__link"
-                            href="<?php echo esc_url(is_array($availability_pdf) ? $availability_pdf['url'] : $availability_pdf); ?>"
-                            download target="_blank" rel="noopener">
-                            PDFをダウンロードする
-                        </a>
-                    </div>
+        <div class="program-availability__item">
+            <div class="program-availability__pdf pdf">
+                <?php if (!empty($availability_pdf)) : ?>
+                <div class="pdf__viewer-wrapper">
+                    <iframe
+                        src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url(is_array($availability_pdf) ? $availability_pdf['url'] : $availability_pdf)); ?>&embedded=true"
+                        loading="lazy" allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="access__btn common-btn">
+                    <a class="access__btn-link common-btn__link"
+                        href="<?php echo esc_url(is_array($availability_pdf) ? $availability_pdf['url'] : $availability_pdf); ?>"
+                        download target="_blank" rel="noopener noreferrer">
+                        PDFをダウンロードする
+                    </a>
+                </div>
                 <?php else : ?>
-                    <p>現在準備中</p>
+                <p>現在準備中</p>
                 <?php endif; ?>
             </div>
         </div>
     </div>
 </section>
-
 
 <?php get_footer(); ?>

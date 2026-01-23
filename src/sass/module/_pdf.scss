@@ -15,3 +15,25 @@
       font-size:rem(24);
     }
   }
+
+  .pdf__viewer-wrapper {
+    max-width: rem(600);  
+    width: 100%;      /* 最大幅を制限 */
+    margin: rem(40) auto;       /* 中央寄せ */
+    padding: rem(0) rem(16);         /* モバイル対応の余白 */
+    box-sizing: border-box;
+    position: relative;
+    @include mq(md){
+      max-width: rem(800);  
+    }
+  }
+  
+  .pdf__viewer-wrapper iframe {
+    width: 100%;
+    height: rem(400);
+    border: none;
+    display: block;
+    @include mq(md){
+      height: rem(600);
+    }
+  }

@@ -44,7 +44,8 @@
         </nav>
         <!-- お申込リンク -->
         <div class="challenge__btn common-btn">
-            <a class="challenge__btn-link common-btn__link common-btn__link--color" href="<?php echo esc_url(home_url("/entry#apply-challenge")) ?>">お申込方法はこちら</a>
+            <a class="challenge__btn-link common-btn__link common-btn__link--color"
+                href="<?php echo esc_url(home_url("/entry#apply-challenge")) ?>">お申込方法はこちら</a>
         </div>
         <!-- スポーツチャレンジとは -->
         <div class="challenge__intro-wrapper">
@@ -86,9 +87,14 @@
             <h2 class="challenge__title section-title">「大治小学校」<br />募集要項</h2>
             <div class="challenge__pdf pdf">
                 <?php if ($pdf_oharu): ?>
-                    <embed src="<?php echo esc_url($pdf_oharu); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <div class="pdf__viewer-wrapper">
+                    <iframe
+                        src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url($pdf_oharu)); ?>&embedded=true"
+                        loading="lazy" allowfullscreen>
+                    </iframe>
+                </div>
                 <?php else: ?>
-                    <p>現在準備中</p>
+                <p>現在準備中</p>
                 <?php endif; ?>
             </div>
         </div>
@@ -97,9 +103,14 @@
             <h2 class="challenge__title section-title">「大治南小学校」<br />募集要項</h2>
             <div class="challenge__pdf pdf">
                 <?php if ($pdf_oharu_south): ?>
-                    <embed src="<?php echo esc_url($pdf_oharu_south); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <div class="pdf__viewer-wrapper">
+                    <iframe
+                        src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url($pdf_oharu_south)); ?>&embedded=true"
+                        loading="lazy" allowfullscreen>
+                    </iframe>
+                </div>
                 <?php else: ?>
-                    <p>現在準備中</p>
+                <p>現在準備中</p>
                 <?php endif; ?>
             </div>
         </div>
@@ -108,9 +119,14 @@
             <h2 class="challenge__title section-title">「大治西小学校」<br />募集要項</h2>
             <div class="challenge__pdf pdf">
                 <?php if ($pdf_oharu_west): ?>
-                    <embed src="<?php echo esc_url($pdf_oharu_west); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <div class="pdf__viewer-wrapper">
+                    <iframe
+                        src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url($pdf_oharu_west)); ?>&embedded=true"
+                        loading="lazy" allowfullscreen>
+                    </iframe>
+                </div>
                 <?php else: ?>
-                    <p>現在準備中</p>
+                <p>現在準備中</p>
                 <?php endif; ?>
             </div>
         </div>
@@ -119,9 +135,14 @@
             <h2 class="challenge__title section-title">「春休みスポーツチャレンジ」<br />募集要項</h2>
             <div class="challenge__pdf pdf">
                 <?php if ($pdf_spring): ?>
-                    <embed src="<?php echo esc_url($pdf_spring); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <div class="pdf__viewer-wrapper">
+                    <iframe
+                        src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url($pdf_spring)); ?>&embedded=true"
+                        loading="lazy" allowfullscreen>
+                    </iframe>
+                </div>
                 <?php else: ?>
-                    <p>現在準備中</p>
+                <p>現在準備中</p>
                 <?php endif; ?>
             </div>
         </div>
@@ -129,10 +150,15 @@
         <div class="challenge__item" id="summer">
             <h2 class="challenge__title section-title">「夏休みスポーツチャレンジ」<br />募集要項</h2>
             <div class="challenge__pdf pdf">
-                <?php if ($pdf_summer): ?>
-                    <embed src="<?php echo esc_url($pdf_summer); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <div class="pdf__viewer-wrapper">
+                    <?php if ($pdf_summer): ?>
+                    <iframe
+                        src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url($pdf_summer)); ?>&embedded=true"
+                        loading="lazy" allowfullscreen>
+                    </iframe>
+                </div>
                 <?php else: ?>
-                    <p>現在準備中</p>
+                <p>現在準備中</p>
                 <?php endif; ?>
             </div>
         </div>
@@ -140,15 +166,18 @@
         <div class="challenge__item" id="challenge-date">
             <h2 class="challenge__title section-title">申込状況</h2>
             <div class="challenge__pdf pdf">
-                <?php if ($pdf_schedule): ?>
-                    <embed src="<?php echo esc_url($pdf_schedule); ?>" type="application/pdf" class="pdf__url" width="100%" height="600px" />
+                <div class="pdf__viewer-wrapper">
+                    <?php if ($pdf_schedule): ?>
+                    <iframe
+                        src="https://docs.google.com/viewer?url=<?php echo urlencode(esc_url($pdf_schedule)); ?>&embedded=true"
+                        width="100%" height="600" style="border: none;">
+                    </iframe>
+                </div>
                 <?php else: ?>
-                    <p>現在準備中</p>
+                <p>現在準備中</p>
                 <?php endif; ?>
             </div>
         </div>
     </div>
-    </div>
-    <!-- //inner -->
 </section>
 <?php get_footer(); ?>]
